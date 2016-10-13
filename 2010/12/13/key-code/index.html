@@ -111,7 +111,7 @@ Next
 34
 End
 35">
-<meta property="og:updated_time" content="2016-10-13T15:56:06.391Z">
+<meta property="og:updated_time" content="2016-10-13T15:59:17.969Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js 键盘码">
 <meta name="twitter:description" content="键盘各按键对应的数字
@@ -454,14 +454,18 @@ End
 </tr>
 </tbody>
 </table>
-<h2 id="键盘码使用"><a href="#键盘码使用" class="headerlink" title="键盘码使用"></a>键盘码使用</h2><blockquote>
-<p>document.onkeyup = function (event) {<br>    var e = event ? event : window.event;<br>    if (e.keyCode == 13) {<br>        alert(‘您按了回车键。’);<br>    }<br>};</p>
-</blockquote>
+<h2 id="键盘码使用"><a href="#键盘码使用" class="headerlink" title="键盘码使用"></a>键盘码使用</h2><ol>
+<li><p>原生js使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">document.onkeyup = <span class="keyword">function</span> (event) &#123;</div><div class="line">    var e = event ? event : window.event;</div><div class="line">    <span class="keyword">if</span> (e.keyCode == 13) &#123;</div><div class="line">        alert(<span class="string">'您按了回车键。'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>jQuery使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(document).on(<span class="string">'keyup'</span>,<span class="keyword">function</span>(event)&#123;</div><div class="line">    <span class="keyword">if</span> (event.keyCode == 13) &#123;</div><div class="line">        alert(<span class="string">'您按了回车键。'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jiuyeye.github.io/2010/12/13/key-code/" data-id="ciu8j2a0n0003ms7r4yaxx2cc" class="article-share-link">Share</a>
+      <a data-url="http://jiuyeye.github.io/2010/12/13/key-code/" data-id="ciu8j6g6t00039w7rya40ofb6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/键盘码/">键盘码</a></li></ul>
