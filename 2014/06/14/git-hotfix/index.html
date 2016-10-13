@@ -3,18 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>语义化的软件版本号规则 | 0℃不结冰</title>
+  <title>hotfix 修复流程 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="当以不向后兼容的方式，变更API时，递增主版本号。当以向后兼容的方式，增加功能时，递增副版本号。当以向后兼容的方式，修正BUG时，递增补丁版本号。">
+  <meta name="description" content="git status  查看自己的git状态 保证没有未提交的git stash list   查看自己的stash列表 保证是空的git stash    暂存git check hotfix   切到hotfixgit pull   
+##开始修改git addgit commitgit push
+##修改完成git status   查看自己的git状态 保证没有未提交的git check">
 <meta property="og:type" content="article">
-<meta property="og:title" content="语义化的软件版本号规则">
-<meta property="og:url" content="http://jiuyeye.github.io/2014/01/01/hello-world/index.html">
+<meta property="og:title" content="hotfix 修复流程">
+<meta property="og:url" content="http://jiuyeye.github.io/2014/06/14/git-hotfix/index.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="当以不向后兼容的方式，变更API时，递增主版本号。当以向后兼容的方式，增加功能时，递增副版本号。当以向后兼容的方式，修正BUG时，递增补丁版本号。">
-<meta property="og:updated_time" content="2016-10-13T16:02:10.333Z">
+<meta property="og:description" content="git status  查看自己的git状态 保证没有未提交的git stash list   查看自己的stash列表 保证是空的git stash    暂存git check hotfix   切到hotfixgit pull   
+##开始修改git addgit commitgit push
+##修改完成git status   查看自己的git状态 保证没有未提交的git check">
+<meta property="og:updated_time" content="2016-10-13T16:08:16.390Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="语义化的软件版本号规则">
-<meta name="twitter:description" content="当以不向后兼容的方式，变更API时，递增主版本号。当以向后兼容的方式，增加功能时，递增副版本号。当以向后兼容的方式，修正BUG时，递增补丁版本号。">
+<meta name="twitter:title" content="hotfix 修复流程">
+<meta name="twitter:description" content="git status  查看自己的git状态 保证没有未提交的git stash list   查看自己的stash列表 保证是空的git stash    暂存git check hotfix   切到hotfixgit pull   
+##开始修改git addgit commitgit push
+##修改完成git status   查看自己的git状态 保证没有未提交的git check">
   
     <link rel="alternate" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -67,10 +73,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-git-hotfix" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/01/01/hello-world/" class="article-date">
-  <time datetime="2013-12-31T16:00:00.000Z" itemprop="datePublished">2014-01-01</time>
+    <a href="/2014/06/14/git-hotfix/" class="article-date">
+  <time datetime="2014-06-14T02:07:00.000Z" itemprop="datePublished">2014-06-14</time>
 </a>
     
   </div>
@@ -81,7 +87,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      语义化的软件版本号规则
+      hotfix 修复流程
     </h1>
   
 
@@ -89,15 +95,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>当以不向后兼容的方式，变更API时，递增主版本号。<br>当以向后兼容的方式，增加功能时，递增副版本号。<br>当以向后兼容的方式，修正BUG时，递增补丁版本号。</p>
+        <a id="more"></a>
+<p>git status  查看自己的git状态 保证没有未提交的<br>git stash list   查看自己的stash列表 保证是空的<br>git stash    暂存<br>git check hotfix   切到hotfix<br>git pull   </p>
+<p>##开始修改<br>git add<br>git commit<br>git push</p>
+<p>##修改完成<br>git status   查看自己的git状态 保证没有未提交的<br>git check develop  切换到develop分支<br>git pull</p>
+<p>##合并到dev<br>git merge hotfix    合并hotfix代码   这里如果有冲入需要merge冲突然后再提交</p>
+<p>##合并完成<br>git stash pop    把自己暂存的代码拿出来</p>
+<p>ok</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jiuyeye.github.io/2014/01/01/hello-world/" data-id="ciu8ji1fo0003es7rohskurcy" class="article-share-link">Share</a>
+      <a data-url="http://jiuyeye.github.io/2014/06/14/git-hotfix/" data-id="ciu8ji1fo0001es7r3unmnuvf" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件版本号/">软件版本号</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
 
     </footer>
   </div>
@@ -105,19 +117,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/06/14/git-hotfix/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          hotfix 修复流程
-        
-      </div>
-    </a>
   
-  
-    <a href="/2013/10/13/Design-pattern/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2014/01/01/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">javascript设计模式-学习一</div>
+      <div class="article-nav-title">语义化的软件版本号规则</div>
     </a>
   
 </nav>
