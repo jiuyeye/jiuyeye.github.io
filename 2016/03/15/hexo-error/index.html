@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: js设计模式 | 0℃不结冰</title>
+  <title>用Hexo搭建静态博客出现spawn ENOENT的解决办法 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="0℃不结冰">
-<meta property="og:type" content="website">
-<meta property="og:title" content="0℃不结冰">
-<meta property="og:url" content="http://jiuyeye.github.io/tags/js设计模式/index.html">
+  <meta name="description" content="在用Hexo搭建静态博客的时候，deploy时出现如下错误：123Error: spawn ENOENT    at errnoException (child_process.js:980:11)    at Process.ChildProcess._handle.onexit (child_process.js:771:34)
+原因是：在cmd中敲命令导致无法上传github，改为在git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用Hexo搭建静态博客出现spawn ENOENT的解决办法">
+<meta property="og:url" content="http://jiuyeye.github.io/2016/03/15/hexo-error/index.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="0℃不结冰">
+<meta property="og:description" content="在用Hexo搭建静态博客的时候，deploy时出现如下错误：123Error: spawn ENOENT    at errnoException (child_process.js:980:11)    at Process.ChildProcess._handle.onexit (child_process.js:771:34)
+原因是：在cmd中敲命令导致无法上传github，改为在git">
+<meta property="og:updated_time" content="2016-10-15T14:44:18.669Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="0℃不结冰">
-<meta name="twitter:description" content="0℃不结冰">
+<meta name="twitter:title" content="用Hexo搭建静态博客出现spawn ENOENT的解决办法">
+<meta name="twitter:description" content="在用Hexo搭建静态博客的时候，deploy时出现如下错误：123Error: spawn ENOENT    at errnoException (child_process.js:980:11)    at Process.ChildProcess._handle.onexit (child_process.js:771:34)
+原因是：在cmd中敲命令导致无法上传github，改为在git">
   
     <link rel="alternate" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -66,39 +70,53 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2013" class="archive-year">2013</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2013/10/13/Design-pattern/" class="archive-article-date">
-  <time datetime="2013-10-13T14:57:15.000Z" itemprop="datePublished">10月 13</time>
+        <section id="main"><article id="post-hexo-error" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/15/hexo-error/" class="article-date">
+  <time datetime="2016-03-15T14:42:30.000Z" itemprop="datePublished">2016-03-15</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2013/10/13/Design-pattern/">javascript设计模式-学习一</a>
+    <h1 class="article-title" itemprop="name">
+      用Hexo搭建静态博客出现spawn ENOENT的解决办法
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在用Hexo搭建静态博客的时候，deploy时出现如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Error: spawn ENOENT</div><div class="line">    at errnoException (child_process.js:980:11)</div><div class="line">    at Process.ChildProcess._handle.onexit (child_process.js:771:34)</div></pre></td></tr></table></figure></p>
+<p>原因是：<br>在cmd中敲命令导致无法上传github，改为在git bash中deploy 后正常。因为可能当初装git时只使用 git bash，导致cmd中无法使用git命令。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jiuyeye.github.io/2016/03/15/hexo-error/" data-id="ciubbdqb90008p87rfkqhunxq" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/10/15/mockjs/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Mock.js 生成随机数据，拦截 Ajax 请求</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
