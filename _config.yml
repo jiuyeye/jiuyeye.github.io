@@ -3,16 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 梁长青
-subtitle: 
-description: 天外飞仙
-author: Joye
+title: 0℃不结冰
+subtitle:  0℃不结冰
+description:  0℃不结冰
+author: 梁长青
+email: lcq0202@163.com
 language: zh-CN
-timezone:
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://jiuyeye.github.io/
+url: http://jiuyeye.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
