@@ -23,20 +23,20 @@ git stash    暂存
 git check hotfix   切到hotfix
 git pull   
  
-##开始修改
+## 开始修改
 git add 
 git commit
 git push
 
-##修改完成
+## 修改完成
 git status   查看自己的git状态 保证没有未提交的
 git check develop  切换到develop分支
 git pull
 
-##合并到dev
+## 合并到dev
 git merge hotfix    合并hotfix代码   这里如果有冲入需要merge冲突然后再提交
 
-##合并完成
+## 合并完成
 git stash pop    把自己暂存的代码拿出来
 
 ok
