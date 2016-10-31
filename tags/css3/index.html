@@ -4,18 +4,17 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>hotfix 修复流程 | 0℃不结冰</title>
+  <title>Tag: css3 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hotfix 修复流程">
-<meta property="og:type" content="article">
-<meta property="og:title" content="hotfix 修复流程">
-<meta property="og:url" content="http://jiuyeye.github.io/2014/06/14/git-hotfix/index.html">
+  <meta name="description" content="0℃不结冰">
+<meta property="og:type" content="website">
+<meta property="og:title" content="0℃不结冰">
+<meta property="og:url" content="http://jiuyeye.github.io/tags/css3/index.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="hotfix 修复流程">
-<meta property="og:updated_time" content="2016-10-31T14:37:44.965Z">
+<meta property="og:description" content="0℃不结冰">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hotfix 修复流程">
-<meta name="twitter:description" content="hotfix 修复流程">
+<meta name="twitter:title" content="0℃不结冰">
+<meta name="twitter:description" content="0℃不结冰">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -143,103 +142,54 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-git-hotfix" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      hotfix 修复流程
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2015" class="archive-year">2015</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2015/07/01/css3-rotate/" class="archive-article-date">
+  	<time datetime="2015-07-01T14:22:14.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-07-01</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2015/07/01/css3-rotate/">CSS3变形</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>小型项目：git下hotfix修复流程，<br>开发阶段（第一版上线后）：3个分支 develop、master、hotfix</p>
-<p>多处于来的hotfix用于紧急上线（bug，新需求等）。hotfix基于master，因为develop已经越走越远，基于develop的hotfix会将带上一些当前不想上线的新功能。</p>
-<p>hotfix完成后hotfix要merge到master上，因为线上不管何种情况都是master版本。qa完成测试并且上线后要将master版本merge到develop避免hotfix的修改在develop中丢失。</p>
-<p>维护阶段(停止常规开发)：2个分支 master、hotfix。</p>
-<a id="more"></a>
-<p>git status  查看自己的git状态 保证没有未提交的<br>git stash list   查看自己的stash列表 保证是空的<br>git stash    暂存<br>git check hotfix   切到hotfix<br>git pull   </p>
-<h2 id="开始修改"><a href="#开始修改" class="headerlink" title="开始修改"></a>开始修改</h2><p>git add<br>git commit<br>git push</p>
-<h2 id="修改完成"><a href="#修改完成" class="headerlink" title="修改完成"></a>修改完成</h2><p>git status   查看自己的git状态 保证没有未提交的<br>git check develop  切换到develop分支<br>git pull</p>
-<h2 id="合并到dev"><a href="#合并到dev" class="headerlink" title="合并到dev"></a>合并到dev</h2><p>git merge hotfix    合并hotfix代码   这里如果有冲入需要merge冲突然后再提交</p>
-<h2 id="合并完成"><a href="#合并完成" class="headerlink" title="合并完成"></a>合并完成</h2><p>git stash pop    把自己暂存的代码拿出来</p>
-<p>ok</p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2014/06/14/git-hotfix/" class="archive-article-date">
-  	<time datetime="2014-06-14T02:07:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2014-06-14</time>
-</a>
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hotfix/">hotfix</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li></ul>
 	</div>
 
-      
+          
 
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2015/02/02/css-布局/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          css 布局
-        
-      </div>
-    </a>
   
   
-    <a href="/2014/02/18/css-bug/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">css常见bug学习</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-
-
-
-<div class="share_jia">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">Share to: &nbsp; </span>
-		<a class="jiathis_button_facebook"></a> 
-	    <a class="jiathis_button_twitter"></a>
-	    <a class="jiathis_button_plus"></a> 
-	    <a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
-</div>
-
-
-
-
-
-
-
+    
 
 
       </div>
@@ -262,9 +212,9 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
