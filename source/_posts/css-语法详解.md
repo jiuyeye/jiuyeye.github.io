@@ -2,6 +2,7 @@ layout: post
 title: css 语法详解
 date: 2011-01-09 00:06:05
 tags: css
+categories: css
 ---
 
 css 语法关键点
