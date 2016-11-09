@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://jiuyeye.github.io/2016/10/18/css伪类可以做什么/index.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="css伪类可以做什么,不考虑低版本浏览器">
-<meta property="og:updated_time" content="2016-10-29T03:30:00.992Z">
+<meta property="og:updated_time" content="2016-11-09T15:04:53.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css伪类可以做什么">
 <meta name="twitter:description" content="css伪类可以做什么,不考虑低版本浏览器">
@@ -53,6 +53,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/archives/">所有文章</a></li>
+	        
+				<li><a href="/tags/css/">css</a></li>
 	        
 			</ul>
 		</nav>
@@ -123,6 +125,8 @@
 		        
 					<li><a href="/archives/">所有文章</a></li>
 		        
+					<li><a href="/tags/css/">css</a></li>
+		        
 				</ul>
 			</nav>
 			<nav class="header-nav">
@@ -164,6 +168,13 @@
         <p>css伪类可以做什么,不考虑低版本浏览器</p>
 <a id="more"></a>
 <p>前几天看了一遍文章，利用css来美化图片加载失败的。</p>
+<ol>
+<li>利用css伪类来美化加载失败的图片</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">img</span><span class="selector-pseudo">:after</span> &#123;  </div><div class="line">  <span class="attribute">content</span>: <span class="string">"f1c5"</span> <span class="string">" "</span> <span class="built_in">attr</span>(alt);</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">  <span class="attribute">font-family</span>: FontAwesome;</div><div class="line">  <span class="attribute">color</span>: <span class="built_in">rgb</span>(100, 100, 100);</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">z-index</span>: <span class="number">2</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#fff</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>利用css伪类来增加动画</li>
+</ol>
 
       
     </div>
@@ -179,6 +190,11 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/css/">css</a>
+	</div>
+
 
       <div class="clearfix"></div>
     </div>
@@ -187,15 +203,6 @@
 
   
 <nav id="article-nav">
-  
-    <a href="/2016/10/30/node-url/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          node-url
-        
-      </div>
-    </a>
   
   
     <a href="/2016/03/15/hexo-error/" id="article-nav-older" class="article-nav-link-wrap">
@@ -292,7 +299,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/JSON-Server/" style="font-size: 10px;">JSON Server</a> <a href="/tags/Mock-Server/" style="font-size: 10px;">Mock Server</a> <a href="/tags/Mock-js/" style="font-size: 10px;">Mock.js</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/hotfix/" style="font-size: 10px;">hotfix</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/伪类/" style="font-size: 10px;">伪类</a> <a href="/tags/函数字面量/" style="font-size: 10px;">函数字面量</a> <a href="/tags/单列模式/" style="font-size: 10px;">单列模式</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/浏览器内核/" style="font-size: 10px;">浏览器内核</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/键盘码/" style="font-size: 10px;">键盘码</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+    				<a href="/tags/JSON-Server/" style="font-size: 10px;">JSON Server</a> <a href="/tags/Mock-Server/" style="font-size: 10px;">Mock Server</a> <a href="/tags/Mock-js/" style="font-size: 10px;">Mock.js</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/hotfix/" style="font-size: 10px;">hotfix</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/伪类/" style="font-size: 10px;">伪类</a> <a href="/tags/函数字面量/" style="font-size: 10px;">函数字面量</a> <a href="/tags/单列模式/" style="font-size: 10px;">单列模式</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/浏览器内核/" style="font-size: 10px;">浏览器内核</a> <a href="/tags/设计模式/" style="font-size: 13.33px;">设计模式</a> <a href="/tags/键盘码/" style="font-size: 10px;">键盘码</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
     			</div>
     	</section>
     
@@ -322,7 +329,7 @@
     
     	<section class="tools-section tools-section-me">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">不知道写点什么</div>
   	  	
     	</section>
     
