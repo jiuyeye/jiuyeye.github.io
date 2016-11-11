@@ -1,7 +1,8 @@
 ---
 title: css 布局
 date: 2015-02-02 23:08:36
-tags: [css,布局]
+tags: 布局
+categories: css
 ---
 
 > css布局的根本离不开以下3个基本概念：定位、浮动、外边距。

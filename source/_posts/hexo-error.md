@@ -1,7 +1,7 @@
 ---
 title: 用Hexo搭建静态博客出现spawn ENOENT的解决办法
 date: 2016-03-15 22:42:30
-tags:
+tags: hexo
 ---
 <!--more-->
 在用Hexo搭建静态博客的时候，deploy时出现如下错误：

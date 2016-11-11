@@ -1,7 +1,7 @@
 ---
 title: css伪类可以做什么
 date: 2016-10-18 22:39:52
-tags: [css,伪类]
+tags: 伪类
 categories: css
 ---
 css伪类可以做什么,不考虑低版本浏览器
@@ -30,4 +30,3 @@ img:after {
 ```
 
 2. 利用css伪类来增加动画
-

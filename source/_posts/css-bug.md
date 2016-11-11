@@ -1,7 +1,7 @@
 ---
 title: css常见bug学习
 date: 2014-02-18 22:48:16
-tags:
+categories: css
 ---
 >从ie6开始吧，常常会用hack来神奇的修复bug，但是要最后的手段。
 

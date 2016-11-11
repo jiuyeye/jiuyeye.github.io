@@ -1,7 +1,8 @@
 ---
 title: js中常用技巧--常用正则验证表达式
 date: 2013-12-17 14:06:51
-tags: js
+tags: 正则
+categories: js
 ---
 
 总结js中常用函数和常用技巧
@@ -39,4 +40,3 @@ if(!String.prototype.trim){
 var str = " \t\n test string ".trim();
 console.log(str == "test string");
 ```
-

@@ -1,7 +1,8 @@
 ---
 title: javascript设计模式-学习一
 date: 2013-10-13 22:57:15
-tags: [js,设计模式] 
+tags: 设计模式
+categories: js
 ---
 
 不要纠结于设计模式，模式其实就是套路。

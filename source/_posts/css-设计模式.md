@@ -1,7 +1,7 @@
 layout: post
 title: css 设计模式
 date: 2013-02-08 22:56:03
-tags: [css,设计模式]
+tags: 设计模式
 categories: css
 ---
 

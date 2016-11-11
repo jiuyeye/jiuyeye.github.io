@@ -1,7 +1,7 @@
 ---
 title: node-querystring
 date: 2015-08-10 20:15:00
-tags: node
+categories: node
 ---
 
 "QueryString" 模块用于实现URL参数字符串与参数对象的互相转换
