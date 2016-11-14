@@ -3,7 +3,6 @@ title: css-定位模型
 date: 2013-03-20 10:03:38
 tags: 定位模型
 categories: css
-toc: true
 ---
 
 定位模型有6种：静态、绝对、固定、相对、浮动和相对浮动。
