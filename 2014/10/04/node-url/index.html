@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives: 2012/4 | 0℃不结冰</title>
+  <title>node-Url模块 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="0℃不结冰">
-<meta property="og:type" content="website">
-<meta property="og:title" content="0℃不结冰">
-<meta property="og:url" content="http://jiuyeye.github.io/archives/2012/04/index.html">
+  <meta name="description" content="nodejs URL模块操作URL相关方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node-Url模块">
+<meta property="og:url" content="http://jiuyeye.github.io/2014/10/04/node-url/index.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="0℃不结冰">
+<meta property="og:description" content="nodejs URL模块操作URL相关方法">
+<meta property="og:updated_time" content="2016-11-15T15:57:35.382Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="0℃不结冰">
-<meta name="twitter:description" content="0℃不结冰">
+<meta name="twitter:title" content="node-Url模块">
+<meta name="twitter:description" content="nodejs URL模块操作URL相关方法">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -150,59 +151,170 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-node-url" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2012" class="archive-year">2012</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2012/04/17/css-image/" class="archive-article-date">
-  	<time datetime="2012-04-16T18:33:23.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-04-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2012/04/17/css-image/">html+css设计模式-图片篇</a>
+    <h1 class="article-title" itemprop="name">
+      node-Url模块
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        <p>nodejs URL模块操作URL相关方法</p>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">url</div><div class="line">&#123; <span class="attr">parse</span>: [<span class="built_in">Function</span>: urlParse],</div><div class="line">  <span class="attr">resolve</span>: [<span class="built_in">Function</span>: urlResolve],</div><div class="line">  <span class="attr">resolveObject</span>: [<span class="built_in">Function</span>: urlResolveObject],</div><div class="line">  <span class="attr">format</span>: [<span class="built_in">Function</span>: urlFormat],</div><div class="line">  <span class="attr">Url</span>: [<span class="built_in">Function</span>: Url]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="1-parse"><a href="#1-parse" class="headerlink" title="1.parse"></a>1.parse</h1><p>将一个URL字符串转换成对象并返回。</p>
+<blockquote>
+<p>url.parse(urlStr, [parseQueryString], [slashesDenoteHost])</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">接收参数</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">urlStr</td>
+<td style="text-align:left">url字符串</td>
+</tr>
+<tr>
+<td style="text-align:left">parseQueryString</td>
+<td style="text-align:left">为true时将使用查询模块分析查询字符串，默认为false</td>
+</tr>
+<tr>
+<td style="text-align:left">slashesDenoteHost</td>
+<td style="text-align:left">默认为false，<code>//foo/bar</code>形式的字符串将被解释成{pathname: ‘//foo/bar’} 如果设置成true，<code>//foo/bar</code> 形式的字符串将被解释成  { host: ‘foo’, pathname: ‘/bar’ }</td>
+</tr>
+</tbody>
+</table>
+<p>//例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">url.parse(<span class="string">'http://localhost:4000/node-url/?search=ddd#hashname'</span>)</div><div class="line">url &#123;</div><div class="line">	<span class="attr">protocol</span>: <span class="string">'http:'</span>,<span class="comment">//请求协议</span></div><div class="line">	slashes: <span class="literal">true</span>,</div><div class="line">	<span class="attr">auth</span>: <span class="literal">null</span>,<span class="comment">//URL中身份验证信息部分</span></div><div class="line">	host: <span class="string">'localhost:4000'</span>, <span class="comment">//URL主机名已全部转换成小写, 包括端口信息</span></div><div class="line">	port: <span class="string">'4000'</span>,<span class="comment">//主机的端口号部分</span></div><div class="line">	hostname: <span class="string">'localhost'</span>,<span class="comment">//主机的主机名部分, 已转换成小写</span></div><div class="line">	hash: <span class="string">'#hashname'</span>,<span class="comment">//URL 的 “#” 后面部分（包括 # 符号）</span></div><div class="line">	search: <span class="string">'?search=ddd'</span>,<span class="comment">//URL 的“查询字符串”部分，包括开头的问号。</span></div><div class="line">	query: <span class="string">'search=ddd'</span>,<span class="comment">//参数部分（问号后面部分字符串）或者使用querystring.parse() 解析后返回的对象。</span></div><div class="line">	pathname: <span class="string">'/node-url/'</span>,<span class="comment">//URL的路径部分,位于主机名之后请求查询之前</span></div><div class="line">	path: <span class="string">'/node-url/?search=ddd'</span>,<span class="comment">//pathname 和 search 连在一起。</span></div><div class="line">	href: <span class="string">'http://localhost:4000/node-url/?search=ddd#hashname'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="2-format方法允许将一个URL对象转换为URL字符串"><a href="#2-format方法允许将一个URL对象转换为URL字符串" class="headerlink" title="2.format方法允许将一个URL对象转换为URL字符串"></a>2.format方法允许将一个URL对象转换为URL字符串</h1><blockquote>
+<p>url.format(urlObj)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">接收参数</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">urlObj</td>
+<td style="text-align:left">表示URL对象</td>
+</tr>
+</tbody>
+</table>
+<p>//例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">url.format(&#123;</div><div class="line">	<span class="attr">protocol</span>:<span class="string">'https:'</span>,</div><div class="line">	<span class="attr">host</span>:<span class="string">'localhost'</span>,</div><div class="line">	<span class="attr">pathname</span>:<span class="string">'node'</span>,</div><div class="line">	<span class="attr">hash</span>:<span class="string">'hashname'</span></div><div class="line">&#125;)</div><div class="line"><span class="string">'https://localhost/node#hashname'</span></div></pre></td></tr></table></figure></p>
+<h1 id="3-resolve方法可以用于拼接URL"><a href="#3-resolve方法可以用于拼接URL" class="headerlink" title="3.resolve方法可以用于拼接URL"></a>3.resolve方法可以用于拼接URL</h1><blockquote>
+<p>url.resolve(from, to)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">接收参数</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">from</td>
+<td style="text-align:left">源地址</td>
+</tr>
+<tr>
+<td style="text-align:left">to</td>
+<td style="text-align:left">需要添加或替换的标签</td>
+</tr>
+</tbody>
+</table>
+<p>//例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">url.resolve(<span class="string">'/web/js'</span>, <span class="string">'node'</span>)</div><div class="line"><span class="string">'/web/node'</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">url.resolve(<span class="string">'https://localhost/js'</span>, <span class="string">'node'</span>)</div><div class="line"><span class="string">'https://localhost/node'</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">url.resolve(<span class="string">'https://localhost'</span>, <span class="string">'node'</span>)</div><div class="line"><span class="string">'https://localhost/node'</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2014/10/04/node-url/" class="archive-article-date">
+  	<time datetime="2014-10-04T02:27:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2014-10-04</time>
+</a>
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模式/">模式</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/css/">css</a>
+	<a class="article-category-link" href="/categories/js/">js</a>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+  
+<nav id="article-nav">
+  
+    <a href="/2014/10/04/node-4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          node学习第四天
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/10/03/node-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">node学习第三天</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
 
 
       </div>
@@ -225,8 +337,8 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
