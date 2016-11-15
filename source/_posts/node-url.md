@@ -1,7 +1,8 @@
 layout: post
 title: node-Url模块
-date: 2015-08-10 23:27:00
-categories: node
+date: 2014-10-04 10:27:00
+tags: node
+categories: js
 ---
 
 nodejs URL模块操作URL相关方法
