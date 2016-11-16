@@ -38,3 +38,4 @@ console.log('Server running an http://127.0.0.1:2000/')
 **node.js中的路由**
 
 路由要借助于[Url模块](https://jiuyeye.github.io/2014/10/04/node-url/)
+
