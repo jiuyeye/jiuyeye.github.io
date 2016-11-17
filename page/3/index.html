@@ -152,6 +152,115 @@
       <div class="body-wrap">
         
   
+    <article id="post-H5-CSS-hack" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/24/H5-CSS-hack/">H5 CSS hack 和浏览器内核</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        <a id="more"></a>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">.color&#123;</div><div class="line"> background-color: #CC00FF; /*所有浏览器都会显示为紫色*/</div><div class="line"> background-color: #FF0000\9; /*IE8及以上的浏览器会显示红色*/</div><div class="line"> background-color: #ff6600\0; /*IE8及以上的浏览器会显示橙色*/</div><div class="line"> *background-color: #0066FF; /*IE6、IE7会变为蓝色*/</div><div class="line"> +background-color: #FFFF00; /*IE6、IE7会变为蓝色*/</div><div class="line"> _background-color: #009933; /*IE6会变为绿色*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="主流浏览器的内核"><a href="#主流浏览器的内核" class="headerlink" title="主流浏览器的内核"></a>主流浏览器的内核</h2><table>
+<thead>
+<tr>
+<th>Trident 内核</th>
+<th style="text-align:left">Webkit 内核</th>
+<th style="text-align:left">Gecko 内核</th>
+<th style="text-align:left">Presto内核</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>俗称IE浏览器的内核</td>
+<td style="text-align:left">俗称谷歌浏览器的内核</td>
+<td style="text-align:left">俗称火狐浏览器的内核</td>
+<td style="text-align:left">俗称欧朋浏览器的内核</td>
+</tr>
+</tbody>
+</table>
+<h3 id="最常用的内核是Trident内核和Webkit内核。手机浏览器的默认内核是Webkit内核。"><a href="#最常用的内核是Trident内核和Webkit内核。手机浏览器的默认内核是Webkit内核。" class="headerlink" title="最常用的内核是Trident内核和Webkit内核。手机浏览器的默认内核是Webkit内核。"></a>最常用的内核是Trident内核和Webkit内核。手机浏览器的默认内核是Webkit内核。</h3><table>
+<thead>
+<tr>
+<th>浏览器</th>
+<th style="text-align:left">介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IE</td>
+<td style="text-align:left">IE6、IE7、IE8（Trident 4.0）、IE9（Trident 5.0）、IE10（Trident 6.0）</td>
+</tr>
+<tr>
+<td>360浏览器</td>
+<td style="text-align:left">360安全浏览器（1.0-5.0为Trident，6.0为Trident+Webkit，7.0为Trident+Blink）,360极速浏览器（7.5之前为Trident+Webkit，7.5为Trident+Blink）</td>
+</tr>
+<tr>
+<td>猎豹浏览器</td>
+<td style="text-align:left">猎豹极轻浏览器（7.5之前为Trident+Webkit，7.5为Trident+Blink）猎豹安全浏览器（1.0-4.2版本为Trident+Webkit，4.3及以后版本为Trident+Blink）猎豹极轻浏览器，傲游浏览器（傲游1.x、2.x为IE内核，3.x为IE与Webkit双核）</td>
+</tr>
+<tr>
+<td>百度浏览器</td>
+<td style="text-align:left">百度浏览器（早期版本）（最初为IE内核，2013年采用Chrome+IE内核）</td>
+</tr>
+<tr>
+<td>世界之窗浏览器</td>
+<td style="text-align:left">最初为IE内核，2013年采用Chrome+IE内核</td>
+</tr>
+<tr>
+<td>傲游浏览器</td>
+<td style="text-align:left">傲游1.x、2.x为IE内核，3.x为IE与Webkit双核</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2014/06/24/H5-CSS-hack/" class="archive-article-date">
+  	<time datetime="2014-06-24T04:59:52.000Z" itemprop="datePublished"><i class="icon-clock"></i>2014-06-24</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/h5/">h5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/浏览器内核/">浏览器内核</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/css/">css</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-git-常用命令" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -729,63 +838,6 @@
 	</div>
 
       
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js-高阶函数" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/12/08/js-高阶函数/">js-高阶函数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>函数不仅可以保存在数据结构中，并以数据的形式来传递，也可以从函数中返回。</p>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2012/12/08/js-高阶函数/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2012/12/08/js-高阶函数/" class="archive-article-date">
-  	<time datetime="2012-12-08T09:18:29.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-12-08</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数/">函数</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
 
       <div class="clearfix"></div>
     </div>

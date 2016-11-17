@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://jiuyeye.github.io/2013/10/13/Design-pattern/index.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="不要纠结于设计模式，模式其实就是套路。">
-<meta property="og:updated_time" content="2016-11-12T14:30:05.861Z">
+<meta property="og:updated_time" content="2016-11-16T15:59:09.587Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript设计模式-学习一">
 <meta name="twitter:description" content="不要纠结于设计模式，模式其实就是套路。">
@@ -172,30 +172,37 @@
         
         <p>不要纠结于设计模式，模式其实就是套路。</p>
 <a id="more"></a>
-<ol>
-<li>单例模式</li>
-<li>构造函数模式</li>
-<li>建造者模式</li>
-<li>工厂模式</li>
-<li>装饰者模式</li>
-<li>外观模式</li>
-<li>代理模式</li>
-<li>观察者模式</li>
-<li>策略模式</li>
-<li>命令模式</li>
-<li>迭代器模式</li>
-<li>中介者模式</li>
-<li>享元模式</li>
-<li>职责链模式</li>
-<li>适配器模式</li>
-<li>组合模式</li>
-<li>原型模式</li>
-<li>状态模式</li>
-<li>桥接模式</li>
-<li>备忘录模式</li>
-<li>模版方法模式</li>
-<li>访问者模式</li>
-</ol>
+<h3 id="1-单例模式"><a href="#1-单例模式" class="headerlink" title="1.单例模式"></a>1.单例模式</h3><p>保证一个类仅有一个实例,并提供一个访问它的全局控制点. </p>
+<h3 id="2-构造函数模式"><a href="#2-构造函数模式" class="headerlink" title="2.构造函数模式"></a>2.构造函数模式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> school=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    <span class="keyword">return</span> <span class="string">"第一小学"</span>;  </div><div class="line">&#125;;  </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    <span class="keyword">this</span>.name=<span class="string">"jack"</span>;  </div><div class="line">    <span class="keyword">this</span>.age=<span class="string">"9"</span>;  </div><div class="line">    <span class="keyword">this</span>.school=school;  </div><div class="line">&#125;;  </div><div class="line">      </div><div class="line"><span class="keyword">var</span>  x = Parent();  </div><div class="line">alert(x.name);  </div><div class="line">alert(x.school());</div></pre></td></tr></table></figure>
+<blockquote>
+<p>与工厂方式相比，使用构造函数方式创建对象，无需再函数内部重建创建对象，而使用this指代，并而函数无需明确return;<br>同工厂模式一样，虽然属性的值可以为方法，扔建议将该方法定义在函数之外;<br>同样的，不推荐使用这种方式创建对象;</p>
+</blockquote>
+<h3 id="3-建造者模式"><a href="#3-建造者模式" class="headerlink" title="3.建造者模式"></a>3.建造者模式</h3><p>将一个复杂对象的构建与它的表示分离. </p>
+<h3 id="4-工厂模式"><a href="#4-工厂模式" class="headerlink" title="4.工厂模式"></a>4.工厂模式</h3><blockquote>
+<p>简单工厂模式是由一个方法来决定到底要创建哪个类的实例, 而这些实例经常都拥有相同的接口.这种模式主要用在所实例化的类型在编译期并不能确定， 而是在执行期决定的情况。</p>
+</blockquote>
+<p>定义一个用以创建对象的接口, 让子类决定实例化哪个类，当遇到需要根据某个前提条件创建不同的类实现时, 会实用工厂模式. </p>
+<p>在函数中定义对象,并定义对象的各种属性,虽然属性可以为方法，但是建议将属性为方法的属性定义到函数之外，这样可以避免重复创建该方法;<br>引用该对象的时候，这里使用的是 var x = Parent()而不是 var x = new Parent();因为后者会可能出现很多问题（前者也成为工厂经典方式,后者称之为混合工厂方式），不推荐使用new的方式使用该对象;<br>在函数的最后返回该对象;<br>不推荐使用这种方式创建对象.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> school=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    <span class="keyword">return</span> <span class="string">"第一小学"</span>;  </div><div class="line">&#125;;  </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    <span class="keyword">var</span>  Child = <span class="keyword">new</span> <span class="built_in">Object</span>();  </div><div class="line">    Child.name=<span class="string">"jack"</span>;  </div><div class="line">    Child.age=<span class="string">"9"</span>;  </div><div class="line">    Child.school=school;  </div><div class="line">    <span class="keyword">return</span> Child;  </div><div class="line">&#125;;  </div><div class="line">      </div><div class="line"><span class="keyword">var</span>  x = Parent();  </div><div class="line">alert(x.name);  </div><div class="line">alert(x.school());</div></pre></td></tr></table></figure>
+<h3 id="5-装饰者模式"><a href="#5-装饰者模式" class="headerlink" title="5.装饰者模式"></a>5.装饰者模式</h3><blockquote>
+<p>动态的给一个对象添加一些额外的职责. </p>
+</blockquote>
+<h3 id="6-外观模式"><a href="#6-外观模式" class="headerlink" title="6.外观模式"></a>6.外观模式</h3><blockquote>
+<p>为子系统中的一组接口提供一个一致的界面.</p>
+</blockquote>
+<h3 id="7-代理模式"><a href="#7-代理模式" class="headerlink" title="7.代理模式"></a>7.代理模式</h3><blockquote>
+<p>为其他对象提供一种代理以控制对这个对象的访问. </p>
+</blockquote>
+<h3 id="8-观察者模式"><a href="#8-观察者模式" class="headerlink" title="8.观察者模式"></a>8.观察者模式</h3><p>定义了一种一对多的依赖关系,让多个观察者对象同时监听某一主题对象,在它的状态发生变化时,会通知所有的观察者.</p>
+<h3 id="9-策略模式"><a href="#9-策略模式" class="headerlink" title="9.策略模式"></a>9.策略模式</h3><blockquote>
+<p>定义了算法家族, 分别封装起来, 让它们之间可以互相替换. </p>
+</blockquote>
+<h3 id="10-命令模式"><a href="#10-命令模式" class="headerlink" title="10.命令模式"></a>10.命令模式</h3><p>将一个请求封装成为一个对象, 使可以用不同的请求对客户进行参数化. </p>
+<p>11.迭代器模式<br>12.中介者模式<br>13.享元模式<br>14.职责链模式<br>15.适配器模式<br>16.组合模式<br>17.原型模式<br>18.状态模式<br>19.桥接模式<br>20.备忘录模式</p>
+<h3 id="21-模版方法模式"><a href="#21-模版方法模式" class="headerlink" title="21.模版方法模式"></a>21.模版方法模式</h3><blockquote>
+<p>定义一个操作中的算法骨架, 而将一些步骤延迟到子类中. </p>
+</blockquote>
+<p>22.访问者模式</p>
 
       
     </div>
