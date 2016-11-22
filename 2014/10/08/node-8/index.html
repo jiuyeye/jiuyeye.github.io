@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>css 布局 | 0℃不结冰</title>
+  <title>node学习第8天 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="css布局的根本离不开以下3个基本概念：定位、浮动、外边距。">
+  <meta name="description" content="调试Node.js应用程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css 布局">
-<meta property="og:url" content="http://jiuyeye.github.io/2015/02/02/css-布局/index.html">
+<meta property="og:title" content="node学习第8天">
+<meta property="og:url" content="http://jiuyeye.github.io/2014/10/08/node-8/index.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="css布局的根本离不开以下3个基本概念：定位、浮动、外边距。">
-<meta property="og:updated_time" content="2016-11-12T14:30:05.865Z">
+<meta property="og:description" content="调试Node.js应用程序">
+<meta property="og:updated_time" content="2016-11-22T16:22:45.797Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css 布局">
-<meta name="twitter:description" content="css布局的根本离不开以下3个基本概念：定位、浮动、外边距。">
+<meta name="twitter:title" content="node学习第8天">
+<meta name="twitter:description" content="调试Node.js应用程序">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -151,7 +151,7 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-css-布局" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-node-8" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -161,7 +161,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      css 布局
+      node学习第8天
     </h1>
   
 
@@ -170,28 +170,31 @@
     <div class="article-entry" itemprop="articleBody">
       
         
-        <blockquote>
-<p>css布局的根本离不开以下3个基本概念：定位、浮动、外边距。</p>
-</blockquote>
+        <p>调试Node.js应用程序</p>
 <a id="more"></a>
-<h3 id="固定布局"><a href="#固定布局" class="headerlink" title="固定布局"></a>固定布局</h3><h3 id="流式布局"><a href="#流式布局" class="headerlink" title="流式布局"></a>流式布局</h3><h3 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h3>
+<blockquote>
+<p>程序避免不了各种各样的bug，有bug就需要调试。nodejs下面可以通过STDIO、调试器、inspector进行调试。</p>
+</blockquote>
+<h3 id="STDIO模块"><a href="#STDIO模块" class="headerlink" title="STDIO模块"></a>STDIO模块</h3><p>STDIO是Node.js核心模块，提供基本的输出功能，是一种轻量级的方法。不需要依赖其他模块，遵循使用控制台对象在浏览器中调试JavaScript的惯例。就像我们经常用到的<code>console</code>。  </p>
+<p><code>console.log([format],...)</code> 向控制台输出日志，可以有多个参数，格式有%s,%d,%j(json格式)<br><code>console.info()</code><br><code>console.err()</code><br><code>console.warn()</code><br><code>console.dir(object)</code>       利用util.inspect()输出对象的分析<br><code>console.time(tag)</code><br><code>console.timeEnd(tag)</code>  配合time() 生成一个测时器，并输出其间隔的时间<br><code>console.assert(expr,msg)</code>  若expr为假，则输出msg<br><code>console.trace(tag)</code>            输出当前的栈信息</p>
+
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2015/02/02/css-布局/" class="archive-article-date">
-  	<time datetime="2015-02-02T15:08:36.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-02-02</time>
+      <a href="/2014/10/08/node-8/" class="archive-article-date">
+  	<time datetime="2014-10-08T14:16:06.000Z" itemprop="datePublished"><i class="icon-clock"></i>2014-10-08</time>
 </a>
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/布局/">布局</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
 	</div>
 
       
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/css/">css</a>
+	<a class="article-category-link" href="/categories/js/">js</a>
 	</div>
 
 
@@ -203,18 +206,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2015/07/01/css3-rotate/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/02/02/css-布局/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CSS3变形
+          css 布局
         
       </div>
     </a>
   
   
-    <a href="/2014/10/08/node-8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">node学习第8天</div>
+    <a href="/2014/10/07/node-7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">node学习第7天</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>css 布局 | 0℃不结冰</title>
+  <title>node学习第7天 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="css布局的根本离不开以下3个基本概念：定位、浮动、外边距。">
+  <meta name="description" content="数据的的读取、写入、存储。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css 布局">
-<meta property="og:url" content="http://jiuyeye.github.io/2015/02/02/css-布局/index.html">
+<meta property="og:title" content="node学习第7天">
+<meta property="og:url" content="http://jiuyeye.github.io/2014/10/07/node-7/index.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="css布局的根本离不开以下3个基本概念：定位、浮动、外边距。">
-<meta property="og:updated_time" content="2016-11-12T14:30:05.865Z">
+<meta property="og:description" content="数据的的读取、写入、存储。">
+<meta property="og:updated_time" content="2016-11-22T16:05:30.641Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css 布局">
-<meta name="twitter:description" content="css布局的根本离不开以下3个基本概念：定位、浮动、外边距。">
+<meta name="twitter:title" content="node学习第7天">
+<meta name="twitter:description" content="数据的的读取、写入、存储。">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -151,7 +151,7 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-css-布局" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-node-7" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -161,7 +161,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      css 布局
+      node学习第7天
     </h1>
   
 
@@ -170,28 +170,34 @@
     <div class="article-entry" itemprop="articleBody">
       
         
-        <blockquote>
-<p>css布局的根本离不开以下3个基本概念：定位、浮动、外边距。</p>
-</blockquote>
+        <p>数据的的读取、写入、存储。</p>
 <a id="more"></a>
-<h3 id="固定布局"><a href="#固定布局" class="headerlink" title="固定布局"></a>固定布局</h3><h3 id="流式布局"><a href="#流式布局" class="headerlink" title="流式布局"></a>流式布局</h3><h3 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h3>
+<p>十一的假期很快结束了，也算是对node入个门了。</p>
+<blockquote>
+<p>应用了存在各种对数据持久化的需求。比如购物车、用户信息、订单等。如何保持数据的持久化，数据的的读取、写入、存储是必不可少的。 </p>
+</blockquote>
+<h3 id="将数据写入文件"><a href="#将数据写入文件" class="headerlink" title="将数据写入文件"></a>将数据写入文件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>),</div><div class="line">	data = <span class="string">"some data"</span>;</div><div class="line">fs.writeFile(<span class="string">'file.txt'</span>,data,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;<span class="comment">//如果file不存在，writeFile创建文件；</span></div><div class="line">	<span class="keyword">if</span>(!err)&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'to file.txt'</span>);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">throw</span> err;</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>),</div><div class="line">	data = <span class="string">"some data"</span>;</div><div class="line">fs.readFile(<span class="string">'file.txt'</span>,<span class="string">'utf8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">data,err</span>)</span>&#123;<span class="comment">//如果file不存在，writeFile创建文件；</span></div><div class="line">	<span class="keyword">if</span>(!err)&#123;</div><div class="line">		<span class="built_in">console</span>.log(data);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">throw</span> err;</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><p>小块信息可以在txt存储，数据量不断增加的时候，就需要数据库得支持。数据库有关系型数据库、还有近几年比较流行的NoSQL数据库。<br>关系型数据库：mysql、sqlserver等；<br>NoSQL：Redis、Hadoop、MongoDB等。<br>nodejs对主流数据库都可以支持；可以在npm找找到链接数据库的库文件。</p>
+<p>MongoDB是nodejs社区一种流行选择，是面向文档的数据库。<br>1.<a href="https://jiuyeye.github.io/2014/09/11/mongodb-setup/">MongoDB的安装</a>；<br>2.链接MongoDB；</p>
+
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2015/02/02/css-布局/" class="archive-article-date">
-  	<time datetime="2015-02-02T15:08:36.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-02-02</time>
+      <a href="/2014/10/07/node-7/" class="archive-article-date">
+  	<time datetime="2014-10-07T09:10:32.000Z" itemprop="datePublished"><i class="icon-clock"></i>2014-10-07</time>
 </a>
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/布局/">布局</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
 	</div>
 
       
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/css/">css</a>
+	<a class="article-category-link" href="/categories/js/">js</a>
 	</div>
 
 
@@ -203,18 +209,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2015/07/01/css3-rotate/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/10/08/node-8/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CSS3变形
+          node学习第8天
         
       </div>
     </a>
   
   
-    <a href="/2014/10/08/node-8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">node学习第8天</div>
+    <a href="/2014/10/06/node-6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">node学习第六天</div>
       <i class="icon-circle-right"></i>
     </a>
   

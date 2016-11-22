@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>css 布局 | 0℃不结冰</title>
+  <title>node学习第六天 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="css布局的根本离不开以下3个基本概念：定位、浮动、外边距。">
+  <meta name="description" content="Express中的路由">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css 布局">
-<meta property="og:url" content="http://jiuyeye.github.io/2015/02/02/css-布局/index.html">
+<meta property="og:title" content="node学习第六天">
+<meta property="og:url" content="http://jiuyeye.github.io/2014/10/06/node-6/index.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="css布局的根本离不开以下3个基本概念：定位、浮动、外边距。">
-<meta property="og:updated_time" content="2016-11-12T14:30:05.865Z">
+<meta property="og:description" content="Express中的路由">
+<meta property="og:updated_time" content="2016-11-22T15:33:39.284Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css 布局">
-<meta name="twitter:description" content="css布局的根本离不开以下3个基本概念：定位、浮动、外边距。">
+<meta name="twitter:title" content="node学习第六天">
+<meta name="twitter:description" content="Express中的路由">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -151,7 +151,7 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-css-布局" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-node-6" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -161,7 +161,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      css 布局
+      node学习第六天
     </h1>
   
 
@@ -170,28 +170,31 @@
     <div class="article-entry" itemprop="articleBody">
       
         
-        <blockquote>
-<p>css布局的根本离不开以下3个基本概念：定位、浮动、外边距。</p>
-</blockquote>
+        <p>Express中的路由</p>
 <a id="more"></a>
-<h3 id="固定布局"><a href="#固定布局" class="headerlink" title="固定布局"></a>固定布局</h3><h3 id="流式布局"><a href="#流式布局" class="headerlink" title="流式布局"></a>流式布局</h3><h3 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h3>
+<h3 id="Express-中路由怎么工作的"><a href="#Express-中路由怎么工作的" class="headerlink" title="Express 中路由怎么工作的"></a>Express 中路由怎么工作的</h3><p>使用<code>HTTP</code><a href="http://www.360doc.com/content/10/0930/17/3668821_57590979.shtml" target="_blank" rel="external">深入理解HTTP</a>来定义路由，并定义请求类型。</p>
+<h5 id="添加get路由"><a href="#添加get路由" class="headerlink" title="添加get路由"></a>添加get路由</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;<span class="comment">//添加get路由，匿名函数，res.rend返回响应。</span></div><div class="line">  res.render(<span class="string">'index'</span>, &#123; <span class="attr">title</span>: <span class="string">'Express'</span> &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h5 id="添加post路由"><a href="#添加post路由" class="headerlink" title="添加post路由"></a>添加post路由</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.post(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;<span class="comment">//添加post路由，匿名函数，res.rend返回响应。</span></div><div class="line">  res.render(req.body);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h5 id="在路由中使用参数"><a href="#在路由中使用参数" class="headerlink" title="在路由中使用参数"></a>在路由中使用参数</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/player/:id'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.render(req.params.id);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h5 id="路由生成器router"><a href="#路由生成器router" class="headerlink" title="路由生成器router"></a>路由生成器router</h5><p>如果使用get或post方法：路由多的时候，很难找到对应的；没有清晰的视图；app.js会很大。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> index = <span class="built_in">require</span>(<span class="string">'./routes/index'</span>);</div><div class="line">app.use(<span class="string">'/'</span>, index);</div></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2015/02/02/css-布局/" class="archive-article-date">
-  	<time datetime="2015-02-02T15:08:36.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-02-02</time>
+      <a href="/2014/10/06/node-6/" class="archive-article-date">
+  	<time datetime="2014-10-06T08:30:15.000Z" itemprop="datePublished"><i class="icon-clock"></i>2014-10-06</time>
 </a>
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/布局/">布局</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
 	</div>
 
       
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/css/">css</a>
+	<a class="article-category-link" href="/categories/js/">js</a>
 	</div>
 
 
@@ -203,18 +206,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2015/07/01/css3-rotate/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/10/07/node-7/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CSS3变形
+          node学习第7天
         
       </div>
     </a>
   
   
-    <a href="/2014/10/08/node-8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">node学习第8天</div>
+    <a href="/2014/10/05/node-5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">node学习第五天</div>
       <i class="icon-circle-right"></i>
     </a>
   
