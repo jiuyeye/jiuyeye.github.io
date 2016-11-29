@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://jiuyeye.github.io/2016/10/18/css伪类可以做什么/index.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="css伪类可以做什么,不考虑低版本浏览器">
-<meta property="og:updated_time" content="2016-11-12T14:30:05.869Z">
+<meta property="og:updated_time" content="2016-11-24T15:10:06.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css伪类可以做什么">
 <meta name="twitter:description" content="css伪类可以做什么,不考虑低版本浏览器">
@@ -178,7 +178,15 @@
 </ol>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">img</span><span class="selector-pseudo">:after</span> &#123;  </div><div class="line">  <span class="attribute">content</span>: <span class="string">"f1c5"</span> <span class="string">" "</span> <span class="built_in">attr</span>(alt);</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">  <span class="attribute">font-family</span>: FontAwesome;</div><div class="line">  <span class="attribute">color</span>: <span class="built_in">rgb</span>(100, 100, 100);</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">z-index</span>: <span class="number">2</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#fff</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ol>
-<li>利用css伪类来增加动画</li>
+<li>做效果</li>
+<li>间隔符用法</li>
+<li>做border三角图标</li>
+<li>字符图标</li>
+<li>webfont的图标</li>
+<li>做单位、标签、表单必填标准</li>
+<li>实现文字图片居中对齐</li>
+<li>清除浮动</li>
+<li>使用pointer-events消除伪元素事件</li>
 </ol>
 
       
@@ -313,7 +321,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/git/" style="font-size: 16.67px;">git</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hotfix/" style="font-size: 10px;">hotfix</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/mock/" style="font-size: 13.33px;">mock</a> <a href="/tags/node/" style="font-size: 20px;">node</a> <a href="/tags/yarn/" style="font-size: 13.33px;">yarn</a> <a href="/tags/伪类/" style="font-size: 10px;">伪类</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/函数字面量/" style="font-size: 10px;">函数字面量</a> <a href="/tags/单列模式/" style="font-size: 10px;">单列模式</a> <a href="/tags/变形/" style="font-size: 10px;">变形</a> <a href="/tags/定位模型/" style="font-size: 10px;">定位模型</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/模式/" style="font-size: 10px;">模式</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/浏览器内核/" style="font-size: 10px;">浏览器内核</a> <a href="/tags/版本号/" style="font-size: 10px;">版本号</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.33px;">设计模式</a> <a href="/tags/键盘码/" style="font-size: 10px;">键盘码</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+    				<a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/git/" style="font-size: 16.67px;">git</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hotfix/" style="font-size: 10px;">hotfix</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/mock/" style="font-size: 13.33px;">mock</a> <a href="/tags/node/" style="font-size: 20px;">node</a> <a href="/tags/yarn/" style="font-size: 13.33px;">yarn</a> <a href="/tags/伪类/" style="font-size: 10px;">伪类</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/函数字面量/" style="font-size: 10px;">函数字面量</a> <a href="/tags/单列模式/" style="font-size: 10px;">单列模式</a> <a href="/tags/变形/" style="font-size: 10px;">变形</a> <a href="/tags/定位模型/" style="font-size: 10px;">定位模型</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/模式/" style="font-size: 10px;">模式</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/浏览器内核/" style="font-size: 10px;">浏览器内核</a> <a href="/tags/版本号/" style="font-size: 10px;">版本号</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a> <a href="/tags/设计模式/" style="font-size: 13.33px;">设计模式</a> <a href="/tags/键盘码/" style="font-size: 10px;">键盘码</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
     			</div>
     	</section>
     
