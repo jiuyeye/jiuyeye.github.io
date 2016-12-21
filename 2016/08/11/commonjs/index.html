@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: js | 0℃不结冰</title>
+  <title>CommonJS规范 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="0℃不结冰">
-<meta property="og:type" content="website">
-<meta property="og:title" content="0℃不结冰">
-<meta property="og:url" content="http://jiuyeye.github.io/tags/js/index.html">
+  <meta name="description" content="CommonJS规范的提出，主要是为了弥补当前JavaScript没有标准的缺陷。涵盖了模块、二进制、Buffer、字符集编码、I\O流、进程环境、文件系统、套接字、单元测试、Web服务器网关接口、包管理等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CommonJS规范">
+<meta property="og:url" content="http://jiuyeye.github.io/2016/08/11/commonjs/index.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="0℃不结冰">
+<meta property="og:description" content="CommonJS规范的提出，主要是为了弥补当前JavaScript没有标准的缺陷。涵盖了模块、二进制、Buffer、字符集编码、I\O流、进程环境、文件系统、套接字、单元测试、Web服务器网关接口、包管理等。">
+<meta property="og:updated_time" content="2016-12-21T15:30:04.715Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="0℃不结冰">
-<meta name="twitter:description" content="0℃不结冰">
+<meta name="twitter:title" content="CommonJS规范">
+<meta name="twitter:description" content="CommonJS规范的提出，主要是为了弥补当前JavaScript没有标准的缺陷。涵盖了模块、二进制、Buffer、字符集编码、I\O流、进程环境、文件系统、套接字、单元测试、Web服务器网关接口、包管理等。">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -150,101 +151,105 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-commonjs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/08/11/commonjs/" class="archive-article-date">
-  	<time datetime="2016-08-11T15:12:23.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-08-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/11/commonjs/">CommonJS规范</a>
+    <h1 class="article-title" itemprop="name">
+      CommonJS规范
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        <p>CommonJS规范的提出，主要是为了弥补当前JavaScript没有标准的缺陷。涵盖了模块、二进制、Buffer、字符集编码、I\O流、进程环境、文件系统、套接字、单元测试、Web服务器网关接口、包管理等。<br><a id="more"></a></p>
+<blockquote>
+<p>CommonJS对模块的定义十分简单，主要分为模块引用、模块定义和模块标识3个部分。</p>
+</blockquote>
+<h3 id="1-模块引用"><a href="#1-模块引用" class="headerlink" title="1.模块引用"></a>1.模块引用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">"gulp"</span>);</div></pre></td></tr></table></figure>
+<p>在CommonJS规范中，存在<code>require()</code>方法，这个可以接受模块标识。</p>
+<h3 id="2-模块定义"><a href="#2-模块定义" class="headerlink" title="2.模块定义"></a>2.模块定义</h3><p>在模块中，上下文提供了<code>require()</code>方法来引入外部模块。对应引入的功能，上下文提供了<code>exprots</code>对象用于导出当前模块的方法或者变量，并且是唯一导出的出口。在模块中，还存在一个<code>module</code>对象，代表模块自身，而exprots是module的属性。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">exprots.add = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> sum = <span class="number">0</span>,</div><div class="line">      i   = <span class="number">0</span>,</div><div class="line">      args= <span class="built_in">arguments</span>,</div><div class="line">      l   = args.length;</div><div class="line">  <span class="keyword">while</span> (i&lt;l)&#123;</div><div class="line">    sum += args[i++];</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> sum;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="3-模块标识"><a href="#3-模块标识" class="headerlink" title="3.模块标识"></a>3.模块标识</h3>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/08/11/commonjs/" class="archive-article-date">
+  	<time datetime="2016-08-11T15:12:23.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-08-11</time>
+</a>
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
 	<a class="article-category-link" href="/categories/commonjs/">commonjs</a>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2013" class="archive-year">2013</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2013/01/12/js为什么要避免双重求值/" class="archive-article-date">
-  	<time datetime="2013-01-12T15:36:50.000Z" itemprop="datePublished"><i class="icon-clock"></i>2013-01-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2013/01/12/js为什么要避免双重求值/">js为什么要避免双重求值</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+  
+<nav id="article-nav">
+  
+    <a href="/2016/10/18/css伪类可以做什么/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          css伪类可以做什么
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/15/hexo-error/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用Hexo搭建静态博客出现spawn ENOENT的解决办法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+
 
 
       </div>
@@ -267,9 +272,9 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
