@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>webpack-1 | 0℃不结冰</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="webpack是较火的一款模块加载器兼打包工具，它能把各种资源，例如JS（含JSX）、coffee、样式（含less/sass）、图片等都作为模块来使用和处理。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack-1">
+<meta property="og:url" content="http://jiuyeye.github.io/2016/09/21/webpack/index.html">
+<meta property="og:site_name" content="0℃不结冰">
+<meta property="og:description" content="webpack是较火的一款模块加载器兼打包工具，它能把各种资源，例如JS（含JSX）、coffee、样式（含less/sass）、图片等都作为模块来使用和处理。">
+<meta property="og:updated_time" content="2016-12-21T15:42:02.815Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack-1">
+<meta name="twitter:description" content="webpack是较火的一款模块加载器兼打包工具，它能把各种资源，例如JS（含JSX）、coffee、样式（含less/sass）、图片等都作为模块来使用和处理。">
+  
+    <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">梁长青</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">0℃不结冰</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/archives/">所有文章</a></li>
+	        
+				<li><a href="/categories/css/">css</a></li>
+	        
+				<li><a href="/categories/js/">js</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="#" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">梁长青</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/avatar.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">梁长青</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">0℃不结冰</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives/">所有文章</a></li>
+		        
+					<li><a href="/categories/css/">css</a></li>
+		        
+					<li><a href="/categories/js/">js</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-webpack" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack-1
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        <p>webpack是较火的一款模块加载器兼打包工具，它能把各种资源，例如JS（含JSX）、coffee、样式（含less/sass）、图片等都作为模块来使用和处理。<br><a id="more"></a></p>
+<blockquote>
+<p>webpack 作为模块化方案，不同于gulp\grunt,后者是一种工具，可以优化工作流程。类似于seajs/requirejs，不同的是预编译模块，而seajs/requirejs是在线编译。</p>
+</blockquote>
+<h3 id="webpack-的优势"><a href="#webpack-的优势" class="headerlink" title="webpack 的优势"></a>webpack 的优势</h3><ol>
+<li>webpack 是以 commonJS 的形式来书写脚本滴，但对 AMD/CMD 的支持也很全面，方便旧项目进行代码迁移。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//以 AMD/CMD 模式来说，鉴于模块是异步加载的，所以常规需要使用 define 函数来回调：</span></div><div class="line">define([<span class="string">'package/lib'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">lib</span>)</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        lib.log(<span class="string">'hello world!'</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">foo</span>: foo</div><div class="line">    &#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//为了可以兼容 commonJS 的写法，也可以将 define 这么写：</span></div><div class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params">require, exports, module</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> someModule = <span class="built_in">require</span>(<span class="string">"someModule"</span>);</div><div class="line">    <span class="keyword">var</span> anotherModule = <span class="built_in">require</span>(<span class="string">"anotherModule"</span>);</div><div class="line"></div><div class="line">    someModule.doTehAwesome();</div><div class="line">    anotherModule.doMoarAwesome();</div><div class="line"></div><div class="line">    exports.asplode = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">        someModule.doTehAwesome();</div><div class="line">        anotherModule.doMoarAwesome();</div><div class="line">    &#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//对 webpack 来说，我们可以直接在上面书写 commonJS 形式的语法，无须任何 define （毕竟最终模块都打包在一起，webpack 也会最终自动加上自己的加载器）：</span></div><div class="line"><span class="keyword">var</span> someModule = <span class="built_in">require</span>(<span class="string">"someModule"</span>);</div><div class="line"><span class="keyword">var</span> anotherModule = <span class="built_in">require</span>(<span class="string">"anotherModule"</span>);</div><div class="line"></div><div class="line">    someModule.doTehAwesome();</div><div class="line">    anotherModule.doMoarAwesome();</div><div class="line"></div><div class="line">    exports.asplode = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">        someModule.doTehAwesome();</div><div class="line">        anotherModule.doMoarAwesome();</div><div class="line"> &#125;;</div></pre></td></tr></table></figure>
+<ol>
+<li>能被模块化的不仅仅是 JS 了。</li>
+<li>开发便捷，能替代部分 grunt/gulp 的工作，比如打包、压缩混淆、图片转base64等。</li>
+<li>扩展性强，插件机制完善。</li>
+</ol>
+<blockquote>
+<p>安装</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install webpack -g</div><div class="line">npm install webpack --save-dev <span class="comment">//依赖写入package.json</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>配置（每个项目下都必须配置有一个<code>webpack.config.js</code>，它的作用如同常规的<code>gulpfile.js</code>/<code>Gruntfile.js</code>）</p>
+</blockquote>
+<p>webpack.config.js实例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">var</span> commonsPlugin = <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(<span class="string">'common.js'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="comment">//插件项</span></div><div class="line">    plugins: [commonsPlugin],</div><div class="line">    <span class="comment">//页面入口文件配置</span></div><div class="line">    entry: &#123;</div><div class="line">        <span class="attr">index</span> : <span class="string">'./src/js/page/index.js'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//入口文件输出配置</span></div><div class="line">    output: &#123;</div><div class="line">        <span class="attr">path</span>: <span class="string">'dist/js/page'</span>,</div><div class="line">        <span class="attr">filename</span>: <span class="string">'[name].js'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">module</span>: &#123;</div><div class="line">        <span class="comment">//加载器配置</span></div><div class="line">        loaders: [</div><div class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">loader</span>: <span class="string">'style-loader!css-loader'</span> &#125;,</div><div class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.js$/</span>, <span class="attr">loader</span>: <span class="string">'jsx-loader?harmony'</span> &#125;,</div><div class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.scss$/</span>, <span class="attr">loader</span>: <span class="string">'style!css!sass?sourceMap'</span>&#125;,</div><div class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.(png|jpg)$/</span>, <span class="attr">loader</span>: <span class="string">'url-loader?limit=8192'</span>&#125;</div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//其它解决方案配置</span></div><div class="line">    resolve: &#123;</div><div class="line">        <span class="attr">root</span>: <span class="string">'E:/github/flux-example/src'</span>, <span class="comment">//绝对路径</span></div><div class="line">        extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'.json'</span>, <span class="string">'.scss'</span>],</div><div class="line">        <span class="attr">alias</span>: &#123;</div><div class="line">            <span class="attr">AppStore</span> : <span class="string">'js/stores/AppStores.js'</span>,</div><div class="line">            <span class="attr">ActionType</span> : <span class="string">'js/actions/ActionType.js'</span>,</div><div class="line">            <span class="attr">AppAction</span> : <span class="string">'js/actions/AppAction.js'</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>⑴ plugins 是插件项，这里我们使用了一个 CommonsChunkPlugin 的插件，它用于提取多个入口文件的公共脚本部分，然后生成一个 common.js 来方便多页面之间进行复用。<br>⑵ entry 是页面入口文件配置，output 是对应输出项配置（即入口文件最终要生成什么名字的文件、存放到哪里），其语法大致为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">entry</span>: &#123;</div><div class="line">        <span class="attr">page1</span>: <span class="string">"./page1"</span>,</div><div class="line">        <span class="comment">//支持数组形式，将加载数组中的所有模块，但以最后一个模块作为输出</span></div><div class="line">        page2: [<span class="string">"./entry1"</span>, <span class="string">"./entry2"</span>]</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">output</span>: &#123;</div><div class="line">        <span class="attr">path</span>: <span class="string">"dist/js/page"</span>,</div><div class="line">        <span class="attr">filename</span>: <span class="string">"[name].bundle.js"</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>⑶ module.loaders 是最关键的一块配置。它告知 webpack 每一种文件都需要使用什么加载器来处理：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: &#123;</div><div class="line">    <span class="comment">//加载器配置</span></div><div class="line">    loaders: [</div><div class="line">        <span class="comment">//.css 文件使用 style-loader 和 css-loader 来处理</span></div><div class="line">        &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">loader</span>: <span class="string">'style-loader!css-loader'</span> &#125;,</div><div class="line">        <span class="comment">//.js 文件使用 jsx-loader 来编译处理</span></div><div class="line">        &#123; <span class="attr">test</span>: <span class="regexp">/\.js$/</span>, <span class="attr">loader</span>: <span class="string">'jsx-loader?harmony'</span> &#125;,</div><div class="line">        <span class="comment">//.scss 文件使用 style-loader、css-loader 和 sass-loader 来编译处理</span></div><div class="line">        &#123; <span class="attr">test</span>: <span class="regexp">/\.scss$/</span>, <span class="attr">loader</span>: <span class="string">'style!css!sass?sourceMap'</span>&#125;,</div><div class="line">        <span class="comment">//图片文件使用 url-loader 来处理，小于8kb的直接转为base64</span></div><div class="line">        &#123; <span class="attr">test</span>: <span class="regexp">/\.(png|jpg)$/</span>, <span class="attr">loader</span>: <span class="string">'url-loader?limit=8192'</span>&#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>⑷ 最后是 resolve 配置</p>
+<blockquote>
+<p>运行 webpack</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">webpack --display-error-details</div></pre></td></tr></table></figure>
+<p>主要参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">webpack –display-error-details</td>
+<td style="text-align:left">出错时能查阅更详尽的信息</td>
+</tr>
+<tr>
+<td style="text-align:left">webpack –config XXX.js</td>
+<td style="text-align:left">使用另一份配置文件（比如webpack.config2.js）来打包</td>
+</tr>
+<tr>
+<td style="text-align:left">webpack -p</td>
+<td style="text-align:left">压缩混淆脚本，这个非常非常重要！</td>
+</tr>
+<tr>
+<td style="text-align:left">webpack -d</td>
+<td style="text-align:left">生成map映射文件，告知哪些模块被最终打包到哪里了</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/09/21/webpack/" class="archive-article-date">
+  	<time datetime="2016-09-21T09:26:13.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-09-21</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/工程化/">工程化</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/10/18/css伪类可以做什么/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          css伪类可以做什么
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/11/commonjs/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CommonJS规范</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 梁长青
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hotfix/" style="font-size: 10px;">hotfix</a> <a href="/tags/jQuery/" style="font-size: 12.5px;">jQuery</a> <a href="/tags/js/" style="font-size: 17.5px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/mock/" style="font-size: 12.5px;">mock</a> <a href="/tags/node/" style="font-size: 20px;">node</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/underscore/" style="font-size: 15px;">underscore</a> <a href="/tags/webapp/" style="font-size: 10px;">webapp</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/yarn/" style="font-size: 12.5px;">yarn</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/伪类/" style="font-size: 10px;">伪类</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/函数字面量/" style="font-size: 10px;">函数字面量</a> <a href="/tags/单列模式/" style="font-size: 10px;">单列模式</a> <a href="/tags/变形/" style="font-size: 10px;">变形</a> <a href="/tags/定位模型/" style="font-size: 10px;">定位模型</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/模式/" style="font-size: 10px;">模式</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/浏览器内核/" style="font-size: 10px;">浏览器内核</a> <a href="/tags/版本号/" style="font-size: 10px;">版本号</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/算法/" style="font-size: 17.5px;">算法</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a> <a href="/tags/设计模式/" style="font-size: 12.5px;">设计模式</a> <a href="/tags/键盘码/" style="font-size: 10px;">键盘码</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接1</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接2</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接3</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接4</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接5</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接6</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">不知道写点什么</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
