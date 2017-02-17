@@ -17,6 +17,8 @@ tags: yarn
 | npm publish | yarn publish | 发布示例 |
 | npm run | yarn run | 自动化任务 |
 | npm cache clean | yarn cache clean | 清理缓存 |
+|  | yarn cache ls | 列出缓存模块 |
+|  | yarn cache dir | 缓存路径 |
 | npm login | yarn login |  |
 | npm test | yarn test |  |
 |  | yarn licenses ls | 允许你检查依赖的许可信息 |
