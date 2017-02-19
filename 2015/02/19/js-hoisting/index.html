@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>css 布局 | 0℃不结冰</title>
+  <title>js的变量提升和函数提升 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="css布局的根本离不开以下3个基本概念：定位、浮动、外边距。">
+  <meta name="description" content="在ES6之前，JavaScript没有块级作用域(一对花括号{}即为一个块级作用域)，只有全局作用域和函数作用域。提升，就是把下面的东西提到上面。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css 布局">
-<meta property="og:url" content="http://jiuyeye.github.io/2015/02/02/css-布局/index.html">
+<meta property="og:title" content="js的变量提升和函数提升">
+<meta property="og:url" content="http://jiuyeye.github.io/2015/02/19/js-hoisting/index.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="css布局的根本离不开以下3个基本概念：定位、浮动、外边距。">
-<meta property="og:updated_time" content="2017-02-13T14:11:00.063Z">
+<meta property="og:description" content="在ES6之前，JavaScript没有块级作用域(一对花括号{}即为一个块级作用域)，只有全局作用域和函数作用域。提升，就是把下面的东西提到上面。">
+<meta property="og:updated_time" content="2017-02-19T13:32:23.367Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css 布局">
-<meta name="twitter:description" content="css布局的根本离不开以下3个基本概念：定位、浮动、外边距。">
+<meta name="twitter:title" content="js的变量提升和函数提升">
+<meta name="twitter:description" content="在ES6之前，JavaScript没有块级作用域(一对花括号{}即为一个块级作用域)，只有全局作用域和函数作用域。提升，就是把下面的东西提到上面。">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -151,7 +151,7 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-css-布局" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-js-hoisting" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -161,7 +161,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      css 布局
+      js的变量提升和函数提升
     </h1>
   
 
@@ -170,28 +170,31 @@
     <div class="article-entry" itemprop="articleBody">
       
         
-        <blockquote>
-<p>css布局的根本离不开以下3个基本概念：定位、浮动、外边距。</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="固定布局"><a href="#固定布局" class="headerlink" title="固定布局"></a>固定布局</h3><h3 id="流式布局"><a href="#流式布局" class="headerlink" title="流式布局"></a>流式布局</h3><h3 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h3>
+        <p>在ES6之前，JavaScript没有块级作用域(一对花括号{}即为一个块级作用域)，只有全局作用域和函数作用域。提升，就是把下面的东西提到上面。<br><a id="more"></a></p>
+<h3 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h3><p>变量提升即将变量声明提升到它所在作用域的最开始的部分。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(global); <span class="comment">// undefined</span></div><div class="line"><span class="keyword">var</span> global = <span class="string">'global'</span>;</div><div class="line"><span class="built_in">console</span>.log(global); <span class="comment">// global</span></div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;</div><div class="line">　　<span class="built_in">console</span>.log(a); <span class="comment">// undefined</span></div><div class="line">　　<span class="keyword">var</span> a = <span class="string">'aaa'</span>;</div><div class="line">　　<span class="built_in">console</span>.log(a); <span class="comment">// aaa</span></div><div class="line">&#125;</div><div class="line">fn();</div></pre></td></tr></table></figure></p>
+<p>之所以会是以上的打印结果，是由于js的变量提升，实际上上面的代码是按照以下来执行的：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> global; <span class="comment">// 变量提升，全局作用域范围内，此时只是声明，并没有赋值</span></div><div class="line"><span class="built_in">console</span>.log(global); <span class="comment">// undefined</span></div><div class="line">global = <span class="string">'global'</span>; <span class="comment">// 此时才赋值</span></div><div class="line"><span class="built_in">console</span>.log(global); <span class="comment">// 打印出global</span></div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;</div><div class="line">　　<span class="keyword">var</span> a; <span class="comment">// 变量提升，函数作用域范围内</span></div><div class="line">　　<span class="built_in">console</span>.log(a);</div><div class="line">　　a = <span class="string">'aaa'</span>;</div><div class="line">　　<span class="built_in">console</span>.log(a);</div><div class="line">&#125;</div><div class="line">fn();</div></pre></td></tr></table></figure></p>
+<h3 id="函数提升"><a href="#函数提升" class="headerlink" title="函数提升"></a>函数提升</h3><p>js中创建函数有两种方式：函数声明式和函数字面量式。只有函数声明才存在函数提升！如:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(f1); <span class="comment">// function f1() &#123;&#125;   </span></div><div class="line"><span class="built_in">console</span>.log(f2); <span class="comment">// undefined  </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div></pre></td></tr></table></figure></p>
+<p>只所以会有以上的打印结果，是由于js中的函数提升导致代码实际上是按照以下来执行的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;&#125; <span class="comment">// 函数提升，整个代码块提升到文件的最开始</span></div><div class="line"><span class="built_in">console</span>.log(f1);   </div><div class="line"><span class="built_in">console</span>.log(f2);   </div><div class="line"><span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div></pre></td></tr></table></figure>
+<p>结语：基本上就是这样，要熟练掌握的话可以多做些练习，test:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(f1()); </div><div class="line"><span class="built_in">console</span>.log(f2);   </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(<span class="string">'aa'</span>)&#125;</div><div class="line"><span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">　　<span class="built_in">console</span>.log(a);</div><div class="line">　　a = <span class="string">'aaa'</span>;</div><div class="line">　　<span class="keyword">var</span> a = <span class="string">'bbb'</span>;</div><div class="line">　　<span class="built_in">console</span>.log(a);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2015/02/02/css-布局/" class="archive-article-date">
-  	<time datetime="2015-02-02T15:08:36.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-02-02</time>
+      <a href="/2015/02/19/js-hoisting/" class="archive-article-date">
+  	<time datetime="2015-02-19T13:11:20.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-02-19</time>
 </a>
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/布局/">布局</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
       
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/css/">css</a>
+	<a class="article-category-link" href="/categories/hoisting/">hoisting</a><a class="article-category-link" href="/categories/hoisting/scoping/">scoping</a>
 	</div>
 
 
@@ -203,18 +206,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2015/02/19/js-hoisting/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/03/29/code-standard/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          js的变量提升和函数提升
+          编码规范-js
         
       </div>
     </a>
   
   
-    <a href="/2014/10/08/node-8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">node学习第8天</div>
+    <a href="/2015/02/02/css-布局/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css 布局</div>
       <i class="icon-circle-right"></i>
     </a>
   
