@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives | 0℃不结冰</title>
+  <title>使用Canvas绘图 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="0℃不结冰">
-<meta property="og:type" content="website">
-<meta property="og:title" content="0℃不结冰">
-<meta property="og:url" content="http://jiuyeye.github.io/archives/page/3/index.html">
+  <meta name="description" content="H5添加的最受欢迎的功能就是canvas元素，它有几组API组成。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Canvas绘图">
+<meta property="og:url" content="http://jiuyeye.github.io/2015/04/24/canvas/index.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="0℃不结冰">
+<meta property="og:description" content="H5添加的最受欢迎的功能就是canvas元素，它有几组API组成。">
+<meta property="og:updated_time" content="2017-02-24T15:01:31.467Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="0℃不结冰">
-<meta name="twitter:description" content="0℃不结冰">
+<meta name="twitter:title" content="使用Canvas绘图">
+<meta name="twitter:description" content="H5添加的最受欢迎的功能就是canvas元素，它有几组API组成。">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -150,371 +151,127 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-canvas" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
+    <h1 class="article-title" itemprop="name">
+      使用Canvas绘图
+    </h1>
   
+
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
       
+        
+        <p>H5添加的最受欢迎的功能就是<code>canvas</code>元素，它有几组API组成。</p>
+<a id="more"></a>
+<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><p>要使用<code>canvas</code>元素，必须设置width和height，指定绘图区域大小。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"mycanvas"</span>&gt;</span>this is canvas<span class="tag">&lt;/<span class="name">canvas</span>&gt;</span>//浏览器不支持canvas就显示里面内容</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mycanvas = <span class="built_in">document</span>.getElementById(<span class="string">"mycanvas"</span>);</div><div class="line"><span class="keyword">if</span>(mycanvas.getContext)&#123;<span class="comment">//检测getContext方法是否存在</span></div><div class="line">  <span class="keyword">var</span> draw = mycanvas.getContext(<span class="string">'2d'</span>);</div><div class="line"></div><div class="line">  <span class="keyword">var</span> imgUrl = mycanvas.toDataURL(<span class="string">"image/png"</span>);<span class="comment">//toDataURL()方法，可以导出canvas元素上绘制的图像。</span></div><div class="line">  <span class="keyword">var</span> image = <span class="built_in">document</span>.createElement(<span class="string">"img"</span>);</div><div class="line">  image.src = imgUrl;</div><div class="line">  <span class="built_in">document</span>.body.appendChild(image);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>默认情况，浏览器会将图像编码为png格式。</p>
+<h3 id="2D上下文"><a href="#2D上下文" class="headerlink" title="2D上下文"></a>2D上下文</h3><ol>
+<li>描边和填充 </li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">draw.strokeStyle = <span class="string">"red"</span>;</div><div class="line">draw.fillStyle = <span class="string">"#dd0033;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>绘制矩形 </li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">draw.strokeStyle = "red";</div><div class="line">draw.fillStyle = "#dd0033;</div><div class="line">draw.fillRect(10,10,50,50);</div><div class="line"></div><div class="line">//再绘制一个</div><div class="line">draw.strokeStyle = "blue";</div><div class="line">draw.fillStyle = "#000;</div><div class="line">draw.fillRect(40,40,50,50);</div><div class="line"></div><div class="line">draw.clearRect(40,40,20,20)//重叠的地方清除小方形</div></pre></td></tr></table></figure>
+<ol>
+<li>绘制路径</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">draw.beginPath();</div><div class="line">draw.arc(<span class="number">100</span>,<span class="number">100</span>,<span class="number">99</span>,<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI,<span class="literal">false</span>);</div><div class="line">draw.stroke;<span class="comment">//描边路径</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>绘制文本</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">draw.font = <span class="string">"Arial"</span>;</div><div class="line">draw.textAlign = <span class="string">"center"</span>;</div><div class="line">draw.textBaseline = <span class="string">"middle"</span>;</div><div class="line">draw.fillText(<span class="string">"12"</span>,<span class="number">10</span>,<span class="number">20</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>变换 </p>
+<p>绘制图像 </p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">draw.drawImage(image,<span class="number">50</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>阴影 </p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">draw.shadowColor = <span class="string">"rgba(0,0,0,0.5)"</span>;</div><div class="line">draw.shadowOffsetX = <span class="number">5</span>;</div><div class="line">draw.shadowOffsetY = <span class="number">5</span>;</div><div class="line">draw.shadowBlur = <span class="number">5</span>;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>使用图像数据 </p>
+</blockquote>
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/10/15/mockjs/" class="archive-article-date">
-  	<time datetime="2015-10-15T14:35:07.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-10-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/15/mockjs/">Mock.js 生成随机数据，拦截 Ajax 请求</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mock/">mock</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/10/15/MockServer/" class="archive-article-date">
-  	<time datetime="2015-10-15T12:26:10.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-10-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/15/MockServer/">构建 Web 前端 Mock Server</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mock/">mock</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/10/10/Json-server/" class="archive-article-date">
-  	<time datetime="2015-10-09T18:35:22.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-10-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/10/Json-server/">JSON Server-快速伪造 REST API</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/08/10/node-querystring/" class="archive-article-date">
-  	<time datetime="2015-08-10T12:15:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-08-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/10/node-querystring/">node-querystring</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/node/">node</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/01/css3-rotate/" class="archive-article-date">
-  	<time datetime="2015-07-01T14:22:14.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-07-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/01/css3-rotate/">CSS3变形</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/变形/">变形</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/css/">css</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/06/12/gulp/" class="archive-article-date">
-  	<time datetime="2015-06-12T15:14:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-06-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/06/12/gulp/">gulp学习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/工程化/">工程化</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/04/24/canvas/" class="archive-article-date">
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/04/24/canvas/" class="archive-article-date">
   	<time datetime="2015-04-24T14:07:15.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-04-24</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/24/canvas/">使用Canvas绘图</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
+      
+      
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
 	<a class="article-category-link" href="/categories/canvas/">canvas</a>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/03/29/code-standard/" class="archive-article-date">
-  	<time datetime="2015-03-29T15:17:20.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-03-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/03/29/code-standard/">编码规范-js</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/规范/">规范</a></li></ul>
+  
+<nav id="article-nav">
+  
+    <a href="/2015/06/12/gulp/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          gulp学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/03/29/code-standard/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">编码规范-js</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/02/19/js-hoisting/" class="archive-article-date">
-  	<time datetime="2015-02-19T13:11:20.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-02-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/02/19/js-hoisting/">js的变量提升和函数提升</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/hoisting/">hoisting</a><a class="article-category-link" href="/categories/hoisting/scoping/">scoping</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/02/02/css-布局/" class="archive-article-date">
-  	<time datetime="2015-02-02T15:08:36.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-02-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/02/02/css-布局/">css 布局</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/布局/">布局</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/css/">css</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="extend next" rel="next" href="/archives/page/4/">Next &raquo;</a>
-    </nav>
-  
 
 
       </div>
@@ -537,8 +294,8 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

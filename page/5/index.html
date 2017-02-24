@@ -152,6 +152,268 @@
       <div class="body-wrap">
         
   
+    <article id="post-H5-CSS-hack" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/24/H5-CSS-hack/">H5 CSS hack 和浏览器内核</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        <a id="more"></a>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">.color&#123;</div><div class="line"> background-color: #CC00FF; /*所有浏览器都会显示为紫色*/</div><div class="line"> background-color: #FF0000\9; /*IE8及以上的浏览器会显示红色*/</div><div class="line"> background-color: #ff6600\0; /*IE8及以上的浏览器会显示橙色*/</div><div class="line"> *background-color: #0066FF; /*IE6、IE7会变为蓝色*/</div><div class="line"> +background-color: #FFFF00; /*IE6、IE7会变为蓝色*/</div><div class="line"> _background-color: #009933; /*IE6会变为绿色*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="主流浏览器的内核"><a href="#主流浏览器的内核" class="headerlink" title="主流浏览器的内核"></a>主流浏览器的内核</h2><table>
+<thead>
+<tr>
+<th>Trident 内核</th>
+<th style="text-align:left">Webkit 内核</th>
+<th style="text-align:left">Gecko 内核</th>
+<th style="text-align:left">Presto内核</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>俗称IE浏览器的内核</td>
+<td style="text-align:left">俗称谷歌浏览器的内核</td>
+<td style="text-align:left">俗称火狐浏览器的内核</td>
+<td style="text-align:left">俗称欧朋浏览器的内核</td>
+</tr>
+</tbody>
+</table>
+<h3 id="最常用的内核是Trident内核和Webkit内核。手机浏览器的默认内核是Webkit内核。"><a href="#最常用的内核是Trident内核和Webkit内核。手机浏览器的默认内核是Webkit内核。" class="headerlink" title="最常用的内核是Trident内核和Webkit内核。手机浏览器的默认内核是Webkit内核。"></a>最常用的内核是Trident内核和Webkit内核。手机浏览器的默认内核是Webkit内核。</h3><table>
+<thead>
+<tr>
+<th>浏览器</th>
+<th style="text-align:left">介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IE</td>
+<td style="text-align:left">IE6、IE7、IE8（Trident 4.0）、IE9（Trident 5.0）、IE10（Trident 6.0）</td>
+</tr>
+<tr>
+<td>360浏览器</td>
+<td style="text-align:left">360安全浏览器（1.0-5.0为Trident，6.0为Trident+Webkit，7.0为Trident+Blink）,360极速浏览器（7.5之前为Trident+Webkit，7.5为Trident+Blink）</td>
+</tr>
+<tr>
+<td>猎豹浏览器</td>
+<td style="text-align:left">猎豹极轻浏览器（7.5之前为Trident+Webkit，7.5为Trident+Blink）猎豹安全浏览器（1.0-4.2版本为Trident+Webkit，4.3及以后版本为Trident+Blink）猎豹极轻浏览器，傲游浏览器（傲游1.x、2.x为IE内核，3.x为IE与Webkit双核）</td>
+</tr>
+<tr>
+<td>百度浏览器</td>
+<td style="text-align:left">百度浏览器（早期版本）（最初为IE内核，2013年采用Chrome+IE内核）</td>
+</tr>
+<tr>
+<td>世界之窗浏览器</td>
+<td style="text-align:left">最初为IE内核，2013年采用Chrome+IE内核</td>
+</tr>
+<tr>
+<td>傲游浏览器</td>
+<td style="text-align:left">傲游1.x、2.x为IE内核，3.x为IE与Webkit双核</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2014/06/24/H5-CSS-hack/" class="archive-article-date">
+  	<time datetime="2014-06-24T04:59:52.000Z" itemprop="datePublished"><i class="icon-clock"></i>2014-06-24</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/h5/">h5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/浏览器内核/">浏览器内核</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/css/">css</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-git-常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/15/git-常用命令/">git学习-常用命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        <a id="more"></a>
+<h1 id="1-新建代码库"><a href="#1-新建代码库" class="headerlink" title="1. 新建代码库"></a>1. 新建代码库</h1><blockquote>
+<p>在当前目录新建一个Git代码库<br>$ git init</p>
+<p>新建一个目录，将其初始化为Git代码库<br>$ git init [project-name]</p>
+<p>下载一个项目和它的整个代码历史<br>$ git clone [url]</p>
+</blockquote>
+<h1 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h1><p>Git的设置文件为<code>.gitconfig</code>，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。</p>
+<blockquote>
+<p>显示当前的Git配置<br>$ git config –list</p>
+<p>编辑Git配置文件<br>$ git config -e [–global]</p>
+<p>设置提交代码时的用户信息<br>$ git config [–global] user.name “[name]”<br>$ git config [–global] user.email “[email address]”</p>
+</blockquote>
+<h1 id="3-增加-删除文件"><a href="#3-增加-删除文件" class="headerlink" title="3. 增加/删除文件"></a>3. 增加/删除文件</h1><blockquote>
+<p>添加指定文件到暂存区<br>$ git add [file1] [file2] …</p>
+<p>添加指定目录到暂存区，包括子目录<br>$ git add [dir]</p>
+<p>添加当前目录的所有文件到暂存区<br>$ git add .</p>
+<p>添加每个变化前，都会要求确认<br>对于同一个文件的多处变化，可以实现分次提交<br>$ git add -p</p>
+<p>删除工作区文件，并且将这次删除放入暂存区<br>$ git rm [file1] [file2] …</p>
+<p>停止追踪指定文件，但该文件会保留在工作区<br>$ git rm –cached [file]</p>
+<p>改名文件，并且将这个改名放入暂存区<br>$ git mv [file-original] [file-renamed]</p>
+</blockquote>
+<h1 id="4-代码提交"><a href="#4-代码提交" class="headerlink" title="4. 代码提交"></a>4. 代码提交</h1><blockquote>
+<p>提交暂存区到仓库区<br>$ git commit -m [message]</p>
+<p>提交暂存区的指定文件到仓库区<br>$ git commit [file1] [file2] … -m [message]</p>
+<p>提交工作区自上次commit之后的变化，直接到仓库区<br>$ git commit -a</p>
+<p>提交时显示所有diff信息<br>$ git commit -v</p>
+<p>使用一次新的commit，替代上一次提交<br>如果代码没有任何新变化，则用来改写上一次commit的提交信息<br>$ git commit –amend -m [message]</p>
+<p>重做上一次commit，并包括指定文件的新变化<br>$ git commit –amend [file1] [file2] …</p>
+</blockquote>
+<h1 id="5-分支"><a href="#5-分支" class="headerlink" title="5. 分支"></a>5. 分支</h1><blockquote>
+<p>列出所有本地分支<br>$ git branch</p>
+<p>列出所有远程分支<br>$ git branch -r</p>
+<p>列出所有本地分支和远程分支<br>$ git branch -a</p>
+<p>新建一个分支，但依然停留在当前分支<br>$ git branch [branch-name]</p>
+<p>新建一个分支，并切换到该分支<br>$ git checkout -b [branch]</p>
+<p>新建一个分支，指向指定commit<br>$ git branch [branch] [commit]</p>
+<p>新建一个分支，与指定的远程分支建立追踪关系<br>$ git branch –track [branch] [remote-branch]</p>
+<p>切换到指定分支，并更新工作区<br>$ git checkout [branch-name]</p>
+<p>切换到上一个分支<br>$ git checkout -</p>
+<p>建立追踪关系，在现有分支与指定的远程分支之间<br>$ git branch –set-upstream [branch] [remote-branch]</p>
+<p>合并指定分支到当前分支<br>$ git merge [branch]</p>
+<p>选择一个commit，合并进当前分支<br>$ git cherry-pick [commit]</p>
+<p>删除分支<br>$ git branch -d [branch-name]</p>
+<p>删除远程分支<br>$ git push origin –delete [branch-name]<br>$ git branch -dr [remote/branch]</p>
+</blockquote>
+<h1 id="6-标签"><a href="#6-标签" class="headerlink" title="6. 标签"></a>6. 标签</h1><blockquote>
+<p>列出所有tag<br>$ git tag</p>
+<p>新建一个tag在当前commit<br>$ git tag [tag]</p>
+<p>新建一个tag在指定commit<br>$ git tag [tag] [commit]</p>
+<p>删除本地tag<br>$ git tag -d [tag]</p>
+<p>删除远程tag<br>$ git push origin :refs/tags/[tagName]</p>
+<p>查看tag信息<br>$ git show [tag]</p>
+<p>提交指定tag<br>$ git push [remote] [tag]</p>
+<p>提交所有tag<br>$ git push [remote] –tags</p>
+<p>新建一个分支，指向某个tag<br>$ git checkout -b [branch] [tag]</p>
+</blockquote>
+<h1 id="7-查看信息"><a href="#7-查看信息" class="headerlink" title="7. 查看信息"></a>7. 查看信息</h1><blockquote>
+<p>显示有变更的文件<br>$ git status</p>
+<p>显示当前分支的版本历史<br>$ git log</p>
+<p>显示commit历史，以及每次commit发生变更的文件<br>$ git log –stat</p>
+<p>搜索提交历史，根据关键词<br>$ git log -S [keyword]</p>
+<p>显示某个commit之后的所有变动，每个commit占据一行<br>$ git log [tag] HEAD –pretty=format:%s</p>
+<p>显示某个commit之后的所有变动，其”提交说明”必须符合搜索条件<br>$ git log [tag] HEAD –grep feature</p>
+<p>显示某个文件的版本历史，包括文件改名<br>$ git log –follow [file]<br>$ git whatchanged [file]</p>
+<p>显示指定文件相关的每一次diff<br>$ git log -p [file]</p>
+<p>显示过去5次提交<br>$ git log -5 –pretty –oneline</p>
+<p>显示所有提交过的用户，按提交次数排序<br>$ git shortlog -sn</p>
+<p>显示指定文件是什么人在什么时间修改过<br>$ git blame [file]</p>
+<p>显示暂存区和工作区的差异<br>$ git diff</p>
+<p>显示暂存区和上一个commit的差异<br>$ git diff –cached [file]</p>
+<p>显示工作区与当前分支最新commit之间的差异<br>$ git diff HEAD</p>
+<p>显示两次提交之间的差异<br>$ git diff [first-branch]…[second-branch]</p>
+<p>显示今天你写了多少行代码<br>$ git diff –shortstat “@{0 day ago}”</p>
+<p>显示某次提交的元数据和内容变化<br>$ git show [commit]</p>
+<p>显示某次提交发生变化的文件<br>$ git show –name-only [commit]</p>
+<p>显示某次提交时，某个文件的内容<br>$ git show [commit]:[filename]</p>
+<p>显示当前分支的最近几次提交<br>$ git reflog</p>
+</blockquote>
+<h1 id="8-远程同步"><a href="#8-远程同步" class="headerlink" title="8. 远程同步"></a>8. 远程同步</h1><blockquote>
+<p>下载远程仓库的所有变动<br>$ git fetch [remote]</p>
+<p>显示所有远程仓库<br>$ git remote -v</p>
+<p>显示某个远程仓库的信息<br>$ git remote show [remote]</p>
+<p>增加一个新的远程仓库，并命名<br>$ git remote add [shortname] [url]</p>
+<p>取回远程仓库的变化，并与本地分支合并<br>$ git pull [remote] [branch]</p>
+<p>上传本地指定分支到远程仓库<br>$ git push [remote] [branch]</p>
+<p>强行推送当前分支到远程仓库，即使有冲突<br>$ git push [remote] –force</p>
+<p>推送所有分支到远程仓库<br>$ git push [remote] –all</p>
+</blockquote>
+<h1 id="10-撤销"><a href="#10-撤销" class="headerlink" title="10. 撤销"></a>10. 撤销</h1><blockquote>
+<p>恢复暂存区的指定文件到工作区<br>$ git checkout [file]</p>
+<p>恢复某个commit的指定文件到暂存区和工作区<br>$ git checkout [commit] [file]</p>
+<p>恢复暂存区的所有文件到工作区<br>$ git checkout .</p>
+<p>重置暂存区的指定文件，与上一次commit保持一致，但工作区不变<br>$ git reset [file]</p>
+<p>重置暂存区与工作区，与上一次commit保持一致<br>$ git reset –hard</p>
+<p>重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变<br>$ git reset [commit]</p>
+<p>重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致<br>$ git reset –hard [commit]</p>
+<p>重置当前HEAD为指定commit，但保持暂存区和工作区不变<br>$ git reset –keep [commit]</p>
+<p>新建一个commit，用来撤销指定commit<br>后者的所有变化都将被前者抵消，并且应用到当前分支<br>$ git revert [commit]</p>
+<p>暂时将未提交的变化移除，稍后再移入<br>$ git stash<br>$ git stash pop</p>
+</blockquote>
+<h1 id="11-其他"><a href="#11-其他" class="headerlink" title="11. 其他"></a>11. 其他</h1><blockquote>
+<p>生成一个可供发布的压缩包<br>$ git archive</p>
+</blockquote>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2014/06/15/git-常用命令/" class="archive-article-date">
+  	<time datetime="2014-06-15T14:30:10.000Z" itemprop="datePublished"><i class="icon-clock"></i>2014-06-15</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-git-hotfix" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -617,129 +879,6 @@
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
 	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-jquery-source-code" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2013/06/15/jquery-source-code/">jquery源码学习</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-        <h3 id="jQuery-闭包结构"><a href="#jQuery-闭包结构" class="headerlink" title="jQuery 闭包结构"></a>jQuery 闭包结构</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">window, undefined</span>) </span>&#123;</div><div class="line">   <span class="comment">// jQuery 代码</span></div><div class="line">&#125;)(<span class="built_in">window</span>);</div><div class="line"><span class="comment">// 用一个函数域包起来，就是所谓的沙箱</span></div><div class="line"><span class="comment">// 在这里边 var 定义的变量，属于这个函数域内的局部变量，避免污染全局</span></div><div class="line"><span class="comment">// 把当前沙箱需要的外部变量通过函数参数引入进来</span></div><div class="line"><span class="comment">// 只要保证参数对内提供的接口的一致性，你还可以随意替换传进来的这个参数</span></div></pre></td></tr></table></figure>
-<p>jQuery 具体的实现，都被包含在了一个立即执行函数构造的闭包里面，为了不污染全局作用域，只在后面暴露 $ 和 jQuery 这 2 个变量给外界，尽量的避开变量冲突。常用的还有另一种写法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">window</span>) </span>&#123;</div><div class="line">   <span class="comment">// JS代码</span></div><div class="line">&#125;)(<span class="built_in">window</span>, <span class="literal">undefined</span>);</div></pre></td></tr></table></figure></p>
-<h3 id="jQuery无new构造"><a href="#jQuery无new构造" class="headerlink" title="jQuery无new构造"></a>jQuery无new构造</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 无 new 构造</span></div><div class="line">$(<span class="string">'#test'</span>).text(<span class="string">'Test'</span>);</div><div class="line"><span class="comment">// 当然也可以使用 new</span></div><div class="line"><span class="keyword">var</span> test = <span class="keyword">new</span> $(<span class="string">'#test'</span>);</div><div class="line">test.text(<span class="string">'Test'</span>);</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">window, undefined</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span></div><div class="line">    <span class="comment">// ...</span></div><div class="line">    jQuery = <span class="function"><span class="keyword">function</span>(<span class="params">selector, context</span>) </span>&#123;</div><div class="line">        <span class="comment">// The jQuery object is actually just the init constructor 'enhanced'</span></div><div class="line">        <span class="comment">// 看这里，实例化方法 jQuery() 实际上是调用了其拓展的原型方法 jQuery.fn.init</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> jQuery.fn.init(selector, context, rootjQuery);</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="comment">// jQuery.prototype 即是 jQuery 的原型，挂载在上面的方法，即可让所有生成的 jQuery 对象使用</span></div><div class="line">    jQuery.fn = jQuery.prototype = &#123;</div><div class="line">        <span class="comment">// 实例化化方法，这个方法可以称作 jQuery 对象构造器</span></div><div class="line">        init: <span class="function"><span class="keyword">function</span>(<span class="params">selector, context, rootjQuery</span>) </span>&#123;</div><div class="line">            <span class="comment">// ...</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 这一句很关键，也很绕</span></div><div class="line">    <span class="comment">// jQuery 没有使用 new 运算符将 jQuery 实例化，而是直接调用其函数</span></div><div class="line">    <span class="comment">// 要实现这样,那么 jQuery 就要看成一个类，且返回一个正确的实例</span></div><div class="line">    <span class="comment">// 且实例还要能正确访问 jQuery 类原型上的属性与方法</span></div><div class="line">    <span class="comment">// jQuery 的方式是通过原型传递解决问题，把 jQuery 的原型传递给jQuery.prototype.init.prototype</span></div><div class="line">    <span class="comment">// 所以通过这个方法生成的实例 this 所指向的仍然是 jQuery.fn，所以能正确访问 jQuery 类原型上的属性与方法</span></div><div class="line">    jQuery.fn.init.prototype = jQuery.fn;</div><div class="line"></div><div class="line">&#125;)(<span class="built_in">window</span>);</div></pre></td></tr></table></figure>
-<p>1）首先要明确，使用 $(‘xxx’) 这种实例化方式，其内部调用的是 return new jQuery.fn.init(selector, context, rootjQuery) 这一句话，也就是构造实例是交给了 jQuery.fn.init() 方法去完成。<br>2）将 jQuery.fn.init 的 prototype 属性设置为 jQuery.fn，那么使用 new jQuery.fn.init() 生成的对象的原型对象就是 jQuery.fn ，所以挂载到 jQuery.fn 上面的函数就相当于挂载到 jQuery.fn.init() 生成的 jQuery 对象上，所有使用 new jQuery.fn.init() 生成的对象也能够访问到 jQuery.fn 上的所有原型方法。<br>3）也就是实例化方法存在这么一个关系链<br>jQuery.fn.init.prototype = jQuery.fn = jQuery.prototype ;<br>new jQuery.fn.init() 相当于 new jQuery() ;<br>jQuery() 返回的是 new jQuery.fn.init()，而 var obj = new jQuery()，所以这 2 者是相当的，所以我们可以无 new 实例化 jQuery 对象。</p>
-<h3 id="jQuery方法的重载"><a href="#jQuery方法的重载" class="headerlink" title="jQuery方法的重载"></a>jQuery方法的重载</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取 title 属性的值</span></div><div class="line">$(<span class="string">'#id'</span>).attr(<span class="string">'title'</span>);</div><div class="line"><span class="comment">// 设置 title 属性的值</span></div><div class="line">$(<span class="string">'#id'</span>).attr(<span class="string">'title'</span>,<span class="string">'jQuery'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 获取 css 某个属性的值</span></div><div class="line">$(<span class="string">'#id'</span>).css(<span class="string">'width'</span>);</div><div class="line"><span class="comment">// 设置 css 某个属性的值</span></div><div class="line">$(<span class="string">'#id'</span>).css(<span class="string">'width'</span>,<span class="string">'200px'</span>);</div></pre></td></tr></table></figure>
-<p>jQuery 9 种不同的方法重载场景：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 接受一个字符串，其中包含了用于匹配元素集合的 CSS 选择器</span></div><div class="line">jQuery([selector,[context]])</div><div class="line"><span class="comment">// 传入单个 DOM</span></div><div class="line">jQuery(element)</div><div class="line"><span class="comment">// 传入 DOM 数组</span></div><div class="line">jQuery(elementArray)</div><div class="line"><span class="comment">// 传入 JS 对象</span></div><div class="line">jQuery(object)</div><div class="line"><span class="comment">// 传入 jQuery 对象</span></div><div class="line">jQuery(jQuery object)</div><div class="line"><span class="comment">// 传入原始 HTML 的字符串来创建 DOM 元素</span></div><div class="line">jQuery(html,[ownerDocument])</div><div class="line">jQuery(html,[attributes])</div><div class="line"><span class="comment">// 传入空参数</span></div><div class="line">jQuery()</div><div class="line"><span class="comment">// 绑定一个在 DOM 文档载入完成后执行的函数</span></div><div class="line">jQuery(callback)</div></pre></td></tr></table></figure></p>
-<h3 id="jQuery-fn-extend-与-jQuery-extend"><a href="#jQuery-fn-extend-与-jQuery-extend" class="headerlink" title="jQuery.fn.extend 与 jQuery.extend"></a>jQuery.fn.extend 与 jQuery.extend</h3><p>1）jQuery.extend(object) 为扩展 jQuery 类本身，为类添加新的静态方法；<br>2）jQuery.fn.extend(object) 给 jQuery 对象添加实例方法，也就是通过这个 extend 添加的新方法，实例化的 jQuery 对象都能使用，因为它是挂载在 jQuery.fn 上的方法（上文有提到，jQuery.fn = jQuery.prototype ）。</p>
-<h3 id="jQuery-的链式调用及回溯"><a href="#jQuery-的链式调用及回溯" class="headerlink" title="jQuery 的链式调用及回溯"></a>jQuery 的链式调用及回溯</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 通过 end() 方法终止在当前链的最新过滤操作，返回上一个对象集合</span></div><div class="line">$(<span class="string">'div'</span>).eq(<span class="number">0</span>).show().end().eq(<span class="number">1</span>).hide();</div></pre></td></tr></table></figure>
-<p>jQuery 完整的链式调用、增栈、回溯通过 return this 、 return this.pushStack() 、return this.prevObject 实现，<code>源码</code>实现：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">jQuery.fn = jQuery.prototype = &#123;</div><div class="line">    <span class="comment">// 将一个 DOM 元素集合加入到 jQuery 栈</span></div><div class="line">    <span class="comment">// 此方法在 jQuery 的 DOM 操作中被频繁的使用, 如在 parent(), find(), filter() 中</span></div><div class="line">    <span class="comment">// pushStack() 方法通过改变一个 jQuery 对象的 prevObject 属性来跟踪链式调用中前一个方法返回的 DOM 结果集合</span></div><div class="line">    <span class="comment">// 当我们在链式调用 end() 方法后, 内部就返回当前 jQuery 对象的 prevObject 属性</span></div><div class="line">    pushStack: <span class="function"><span class="keyword">function</span>(<span class="params">elems</span>) </span>&#123;</div><div class="line">        <span class="comment">// 构建一个新的jQuery对象，无参的 this.constructor()，只是返回引用this</span></div><div class="line">        <span class="comment">// jQuery.merge 把 elems 节点合并到新的 jQuery 对象</span></div><div class="line">        <span class="comment">// this.constructor 就是 jQuery 的构造函数 jQuery.fn.init，所以 this.constructor() 返回一个 jQuery 对象</span></div><div class="line">        <span class="comment">// 由于 jQuery.merge 函数返回的对象是第二个函数附加到第一个上面，所以 ret 也是一个 jQuery 对象，这里可以解释为什么 pushStack 出入的 DOM 对象也可以用 CSS 方法进行操作</span></div><div class="line">        <span class="keyword">var</span> ret = jQuery.merge(<span class="keyword">this</span>.constructor(), elems);</div><div class="line"></div><div class="line">        <span class="comment">// 给返回的新 jQuery 对象添加属性 prevObject</span></div><div class="line">        <span class="comment">// 所以也就是为什么通过 prevObject 能取到上一个合集的引用了</span></div><div class="line">        ret.prevObject = <span class="keyword">this</span>;</div><div class="line">        ret.context = <span class="keyword">this</span>.context;</div><div class="line"></div><div class="line">        <span class="comment">// Return the newly-formed element set</span></div><div class="line">        <span class="keyword">return</span> ret;</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 回溯链式调用的上一个对象</span></div><div class="line">    end: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// 回溯的关键是返回 prevObject 属性</span></div><div class="line">        <span class="comment">// 而 prevObject 属性保存了上一步操作的 jQuery 对象集合</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.prevObject || <span class="keyword">this</span>.constructor(<span class="literal">null</span>);</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 取当前 jQuery 对象的第 i 个</span></div><div class="line">    eq: <span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</div><div class="line">        <span class="comment">// jQuery 对象集合的长度</span></div><div class="line">        <span class="keyword">var</span> len = <span class="keyword">this</span>.length,</div><div class="line">            j = +i + (i &lt; <span class="number">0</span> ? len : <span class="number">0</span>);</div><div class="line"></div><div class="line">        <span class="comment">// 利用 pushStack 返回</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.pushStack(j &gt;= <span class="number">0</span> &amp;&amp; j &lt; len ? [<span class="keyword">this</span>[j]] : []);</div><div class="line">    &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>总的来说，<br>1）end() 方法返回 prevObject 属性，这个属性记录了上一步操作的 jQuery 对象合集；<br>2）而 prevObject 属性由 pushStack() 方法生成，该方法将一个 DOM 元素集合加入到 jQuery 内部管理的一个栈中，通过改变 jQuery 对象的 prevObject 属性来跟踪链式调用中前一个方法返回的 DOM 结果集合<br>3）当我们在链式调用 end() 方法后，内部就返回当前 jQuery 对象的 prevObject 属性，完成回溯。</p>
-<h3 id="jQuery-正则与细节优化"><a href="#jQuery-正则与细节优化" class="headerlink" title="jQuery 正则与细节优化"></a>jQuery 正则与细节优化</h3><h3 id="jQuery-变量冲突处理"><a href="#jQuery-变量冲突处理" class="headerlink" title="jQuery 变量冲突处理"></a>jQuery 变量冲突处理</h3>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2013/06/15/jquery-source-code/" class="archive-article-date">
-  	<time datetime="2013-06-15T11:12:47.000Z" itemprop="datePublished"><i class="icon-clock"></i>2013-06-15</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-css-定位模型" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2013/03/20/css-定位模型/">css-定位模型</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>定位模型有6种：静态、绝对、固定、相对、浮动和相对浮动。</p>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2013/03/20/css-定位模型/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2013/03/20/css-定位模型/" class="archive-article-date">
-  	<time datetime="2013-03-20T02:03:38.000Z" itemprop="datePublished"><i class="icon-clock"></i>2013-03-20</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/定位模型/">定位模型</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/css/">css</a>
 	</div>
 
 

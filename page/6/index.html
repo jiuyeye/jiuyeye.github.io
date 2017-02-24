@@ -152,6 +152,129 @@
       <div class="body-wrap">
         
   
+    <article id="post-jquery-source-code" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/06/15/jquery-source-code/">jquery源码学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        <h3 id="jQuery-闭包结构"><a href="#jQuery-闭包结构" class="headerlink" title="jQuery 闭包结构"></a>jQuery 闭包结构</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">window, undefined</span>) </span>&#123;</div><div class="line">   <span class="comment">// jQuery 代码</span></div><div class="line">&#125;)(<span class="built_in">window</span>);</div><div class="line"><span class="comment">// 用一个函数域包起来，就是所谓的沙箱</span></div><div class="line"><span class="comment">// 在这里边 var 定义的变量，属于这个函数域内的局部变量，避免污染全局</span></div><div class="line"><span class="comment">// 把当前沙箱需要的外部变量通过函数参数引入进来</span></div><div class="line"><span class="comment">// 只要保证参数对内提供的接口的一致性，你还可以随意替换传进来的这个参数</span></div></pre></td></tr></table></figure>
+<p>jQuery 具体的实现，都被包含在了一个立即执行函数构造的闭包里面，为了不污染全局作用域，只在后面暴露 $ 和 jQuery 这 2 个变量给外界，尽量的避开变量冲突。常用的还有另一种写法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">window</span>) </span>&#123;</div><div class="line">   <span class="comment">// JS代码</span></div><div class="line">&#125;)(<span class="built_in">window</span>, <span class="literal">undefined</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="jQuery无new构造"><a href="#jQuery无new构造" class="headerlink" title="jQuery无new构造"></a>jQuery无new构造</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 无 new 构造</span></div><div class="line">$(<span class="string">'#test'</span>).text(<span class="string">'Test'</span>);</div><div class="line"><span class="comment">// 当然也可以使用 new</span></div><div class="line"><span class="keyword">var</span> test = <span class="keyword">new</span> $(<span class="string">'#test'</span>);</div><div class="line">test.text(<span class="string">'Test'</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">window, undefined</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span></div><div class="line">    <span class="comment">// ...</span></div><div class="line">    jQuery = <span class="function"><span class="keyword">function</span>(<span class="params">selector, context</span>) </span>&#123;</div><div class="line">        <span class="comment">// The jQuery object is actually just the init constructor 'enhanced'</span></div><div class="line">        <span class="comment">// 看这里，实例化方法 jQuery() 实际上是调用了其拓展的原型方法 jQuery.fn.init</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> jQuery.fn.init(selector, context, rootjQuery);</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="comment">// jQuery.prototype 即是 jQuery 的原型，挂载在上面的方法，即可让所有生成的 jQuery 对象使用</span></div><div class="line">    jQuery.fn = jQuery.prototype = &#123;</div><div class="line">        <span class="comment">// 实例化化方法，这个方法可以称作 jQuery 对象构造器</span></div><div class="line">        init: <span class="function"><span class="keyword">function</span>(<span class="params">selector, context, rootjQuery</span>) </span>&#123;</div><div class="line">            <span class="comment">// ...</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 这一句很关键，也很绕</span></div><div class="line">    <span class="comment">// jQuery 没有使用 new 运算符将 jQuery 实例化，而是直接调用其函数</span></div><div class="line">    <span class="comment">// 要实现这样,那么 jQuery 就要看成一个类，且返回一个正确的实例</span></div><div class="line">    <span class="comment">// 且实例还要能正确访问 jQuery 类原型上的属性与方法</span></div><div class="line">    <span class="comment">// jQuery 的方式是通过原型传递解决问题，把 jQuery 的原型传递给jQuery.prototype.init.prototype</span></div><div class="line">    <span class="comment">// 所以通过这个方法生成的实例 this 所指向的仍然是 jQuery.fn，所以能正确访问 jQuery 类原型上的属性与方法</span></div><div class="line">    jQuery.fn.init.prototype = jQuery.fn;</div><div class="line"></div><div class="line">&#125;)(<span class="built_in">window</span>);</div></pre></td></tr></table></figure>
+<p>1）首先要明确，使用 $(‘xxx’) 这种实例化方式，其内部调用的是 return new jQuery.fn.init(selector, context, rootjQuery) 这一句话，也就是构造实例是交给了 jQuery.fn.init() 方法去完成。<br>2）将 jQuery.fn.init 的 prototype 属性设置为 jQuery.fn，那么使用 new jQuery.fn.init() 生成的对象的原型对象就是 jQuery.fn ，所以挂载到 jQuery.fn 上面的函数就相当于挂载到 jQuery.fn.init() 生成的 jQuery 对象上，所有使用 new jQuery.fn.init() 生成的对象也能够访问到 jQuery.fn 上的所有原型方法。<br>3）也就是实例化方法存在这么一个关系链<br>jQuery.fn.init.prototype = jQuery.fn = jQuery.prototype ;<br>new jQuery.fn.init() 相当于 new jQuery() ;<br>jQuery() 返回的是 new jQuery.fn.init()，而 var obj = new jQuery()，所以这 2 者是相当的，所以我们可以无 new 实例化 jQuery 对象。</p>
+<h3 id="jQuery方法的重载"><a href="#jQuery方法的重载" class="headerlink" title="jQuery方法的重载"></a>jQuery方法的重载</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取 title 属性的值</span></div><div class="line">$(<span class="string">'#id'</span>).attr(<span class="string">'title'</span>);</div><div class="line"><span class="comment">// 设置 title 属性的值</span></div><div class="line">$(<span class="string">'#id'</span>).attr(<span class="string">'title'</span>,<span class="string">'jQuery'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 获取 css 某个属性的值</span></div><div class="line">$(<span class="string">'#id'</span>).css(<span class="string">'width'</span>);</div><div class="line"><span class="comment">// 设置 css 某个属性的值</span></div><div class="line">$(<span class="string">'#id'</span>).css(<span class="string">'width'</span>,<span class="string">'200px'</span>);</div></pre></td></tr></table></figure>
+<p>jQuery 9 种不同的方法重载场景：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 接受一个字符串，其中包含了用于匹配元素集合的 CSS 选择器</span></div><div class="line">jQuery([selector,[context]])</div><div class="line"><span class="comment">// 传入单个 DOM</span></div><div class="line">jQuery(element)</div><div class="line"><span class="comment">// 传入 DOM 数组</span></div><div class="line">jQuery(elementArray)</div><div class="line"><span class="comment">// 传入 JS 对象</span></div><div class="line">jQuery(object)</div><div class="line"><span class="comment">// 传入 jQuery 对象</span></div><div class="line">jQuery(jQuery object)</div><div class="line"><span class="comment">// 传入原始 HTML 的字符串来创建 DOM 元素</span></div><div class="line">jQuery(html,[ownerDocument])</div><div class="line">jQuery(html,[attributes])</div><div class="line"><span class="comment">// 传入空参数</span></div><div class="line">jQuery()</div><div class="line"><span class="comment">// 绑定一个在 DOM 文档载入完成后执行的函数</span></div><div class="line">jQuery(callback)</div></pre></td></tr></table></figure></p>
+<h3 id="jQuery-fn-extend-与-jQuery-extend"><a href="#jQuery-fn-extend-与-jQuery-extend" class="headerlink" title="jQuery.fn.extend 与 jQuery.extend"></a>jQuery.fn.extend 与 jQuery.extend</h3><p>1）jQuery.extend(object) 为扩展 jQuery 类本身，为类添加新的静态方法；<br>2）jQuery.fn.extend(object) 给 jQuery 对象添加实例方法，也就是通过这个 extend 添加的新方法，实例化的 jQuery 对象都能使用，因为它是挂载在 jQuery.fn 上的方法（上文有提到，jQuery.fn = jQuery.prototype ）。</p>
+<h3 id="jQuery-的链式调用及回溯"><a href="#jQuery-的链式调用及回溯" class="headerlink" title="jQuery 的链式调用及回溯"></a>jQuery 的链式调用及回溯</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 通过 end() 方法终止在当前链的最新过滤操作，返回上一个对象集合</span></div><div class="line">$(<span class="string">'div'</span>).eq(<span class="number">0</span>).show().end().eq(<span class="number">1</span>).hide();</div></pre></td></tr></table></figure>
+<p>jQuery 完整的链式调用、增栈、回溯通过 return this 、 return this.pushStack() 、return this.prevObject 实现，<code>源码</code>实现：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">jQuery.fn = jQuery.prototype = &#123;</div><div class="line">    <span class="comment">// 将一个 DOM 元素集合加入到 jQuery 栈</span></div><div class="line">    <span class="comment">// 此方法在 jQuery 的 DOM 操作中被频繁的使用, 如在 parent(), find(), filter() 中</span></div><div class="line">    <span class="comment">// pushStack() 方法通过改变一个 jQuery 对象的 prevObject 属性来跟踪链式调用中前一个方法返回的 DOM 结果集合</span></div><div class="line">    <span class="comment">// 当我们在链式调用 end() 方法后, 内部就返回当前 jQuery 对象的 prevObject 属性</span></div><div class="line">    pushStack: <span class="function"><span class="keyword">function</span>(<span class="params">elems</span>) </span>&#123;</div><div class="line">        <span class="comment">// 构建一个新的jQuery对象，无参的 this.constructor()，只是返回引用this</span></div><div class="line">        <span class="comment">// jQuery.merge 把 elems 节点合并到新的 jQuery 对象</span></div><div class="line">        <span class="comment">// this.constructor 就是 jQuery 的构造函数 jQuery.fn.init，所以 this.constructor() 返回一个 jQuery 对象</span></div><div class="line">        <span class="comment">// 由于 jQuery.merge 函数返回的对象是第二个函数附加到第一个上面，所以 ret 也是一个 jQuery 对象，这里可以解释为什么 pushStack 出入的 DOM 对象也可以用 CSS 方法进行操作</span></div><div class="line">        <span class="keyword">var</span> ret = jQuery.merge(<span class="keyword">this</span>.constructor(), elems);</div><div class="line"></div><div class="line">        <span class="comment">// 给返回的新 jQuery 对象添加属性 prevObject</span></div><div class="line">        <span class="comment">// 所以也就是为什么通过 prevObject 能取到上一个合集的引用了</span></div><div class="line">        ret.prevObject = <span class="keyword">this</span>;</div><div class="line">        ret.context = <span class="keyword">this</span>.context;</div><div class="line"></div><div class="line">        <span class="comment">// Return the newly-formed element set</span></div><div class="line">        <span class="keyword">return</span> ret;</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 回溯链式调用的上一个对象</span></div><div class="line">    end: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// 回溯的关键是返回 prevObject 属性</span></div><div class="line">        <span class="comment">// 而 prevObject 属性保存了上一步操作的 jQuery 对象集合</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.prevObject || <span class="keyword">this</span>.constructor(<span class="literal">null</span>);</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 取当前 jQuery 对象的第 i 个</span></div><div class="line">    eq: <span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</div><div class="line">        <span class="comment">// jQuery 对象集合的长度</span></div><div class="line">        <span class="keyword">var</span> len = <span class="keyword">this</span>.length,</div><div class="line">            j = +i + (i &lt; <span class="number">0</span> ? len : <span class="number">0</span>);</div><div class="line"></div><div class="line">        <span class="comment">// 利用 pushStack 返回</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.pushStack(j &gt;= <span class="number">0</span> &amp;&amp; j &lt; len ? [<span class="keyword">this</span>[j]] : []);</div><div class="line">    &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>总的来说，<br>1）end() 方法返回 prevObject 属性，这个属性记录了上一步操作的 jQuery 对象合集；<br>2）而 prevObject 属性由 pushStack() 方法生成，该方法将一个 DOM 元素集合加入到 jQuery 内部管理的一个栈中，通过改变 jQuery 对象的 prevObject 属性来跟踪链式调用中前一个方法返回的 DOM 结果集合<br>3）当我们在链式调用 end() 方法后，内部就返回当前 jQuery 对象的 prevObject 属性，完成回溯。</p>
+<h3 id="jQuery-正则与细节优化"><a href="#jQuery-正则与细节优化" class="headerlink" title="jQuery 正则与细节优化"></a>jQuery 正则与细节优化</h3><h3 id="jQuery-变量冲突处理"><a href="#jQuery-变量冲突处理" class="headerlink" title="jQuery 变量冲突处理"></a>jQuery 变量冲突处理</h3>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2013/06/15/jquery-source-code/" class="archive-article-date">
+  	<time datetime="2013-06-15T11:12:47.000Z" itemprop="datePublished"><i class="icon-clock"></i>2013-06-15</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/js/">js</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-css-定位模型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/03/20/css-定位模型/">css-定位模型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>定位模型有6种：静态、绝对、固定、相对、浮动和相对浮动。</p>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2013/03/20/css-定位模型/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2013/03/20/css-定位模型/" class="archive-article-date">
+  	<time datetime="2013-03-20T02:03:38.000Z" itemprop="datePublished"><i class="icon-clock"></i>2013-03-20</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/定位模型/">定位模型</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/css/">css</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-javascript-oo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -572,124 +695,6 @@
       
       <a href="/2012/05/10/chunk/" class="archive-article-date">
   	<time datetime="2012-05-10T11:39:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-05-10</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Check-Palindrom" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/10/Check-Palindrom/">算法-字符串方面</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-        <h3 id="回文检测"><a href="#回文检测" class="headerlink" title="回文检测"></a>回文检测</h3><p>如果一个字符串忽略标点符号、大小写和空格，正着读和反着读一模一样，那么这个字符串就是palindrome(回文)。</p>
-<p>如果给定的字符串是回文，返回true，反之，返回false。</p>
-<p>注意你需要去掉字符串多余的标点符号和空格，然后把字符串转化成小写来验证此字符串是否为回文。</p>
-<p>函数参数的值可以为”racecar”，”RaceCar”和”race CAR”。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">palindrome</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> re = <span class="regexp">/[\W_]/g</span>;<span class="comment">// 或者 var re = /[^A-Za-z0-9]/g;</span></div><div class="line">  str = str.toLowerCase().replace(re,<span class="string">""</span>);</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>,j=str.length<span class="number">-1</span>;i&lt;j;i++,j--)&#123;</div><div class="line">    <span class="keyword">if</span>(str[i] != str[j])&#123;</div><div class="line">       <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">palindrome(<span class="string">"eye"</span>);</div></pre></td></tr></table></figure></p>
-<h3 id="找到提供的句子中最长的单词，并计算它的长度。"><a href="#找到提供的句子中最长的单词，并计算它的长度。" class="headerlink" title="找到提供的句子中最长的单词，并计算它的长度。"></a>找到提供的句子中最长的单词，并计算它的长度。</h3><p>函数的返回值应该是一个数字。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">findLongestWord</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> newArray = str.split(<span class="string">" "</span>).sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a.length-b.length;</div><div class="line">  &#125;).reverse();</div><div class="line">  <span class="keyword">return</span> newArray[<span class="number">0</span>].length;</div><div class="line">&#125;</div><div class="line"></div><div class="line">findLongestWord(<span class="string">"The quick brown fox jumped over the lazy dog"</span>);<span class="comment">//6</span></div></pre></td></tr></table></figure></p>
-<h3 id="将字符串中的每一个单词的首字母变为大写其余均为小写"><a href="#将字符串中的每一个单词的首字母变为大写其余均为小写" class="headerlink" title="将字符串中的每一个单词的首字母变为大写其余均为小写"></a>将字符串中的每一个单词的首字母变为大写其余均为小写</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">titleCase</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  str=str.split(<span class="string">" "</span>);</div><div class="line">  <span class="keyword">var</span> newArr=[];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;str.length;i++)&#123;</div><div class="line">    newArr.push(str[i][<span class="number">0</span>].toLocaleUpperCase()+str[i].substring(<span class="number">1</span>).toLocaleLowerCase());</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> newArr.join(<span class="string">" "</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">titleCase(<span class="string">"I'm a little tea pot"</span>);</div></pre></td></tr></table></figure>
-<h3 id="判断字符串是否指定字符串开始-结尾的方法"><a href="#判断字符串是否指定字符串开始-结尾的方法" class="headerlink" title="判断字符串是否指定字符串开始/结尾的方法"></a>判断字符串是否指定字符串开始/结尾的方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 利用substr</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">confirmEnding</span>(<span class="params">str, target</span>) </span>&#123;</div><div class="line">  <span class="comment">// "Never give up and good luck will find you."</span></div><div class="line">  <span class="comment">// -- Falcor</span></div><div class="line">  <span class="keyword">var</span> len=str.length-target.length;</div><div class="line">  <span class="keyword">return</span> (len &gt;= <span class="number">0</span> &amp;&amp; str.substr(len)==target);<span class="comment">//也可以用return (len&gt;=0&amp;&amp;str.lastIndexOf(target)==len);</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">confirmEnding(<span class="string">"Bastian"</span>, <span class="string">"n"</span>);</div></pre></td></tr></table></figure>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2012/05/10/Check-Palindrom/" class="archive-article-date">
-  	<time datetime="2012-05-10T06:19:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-05-10</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Reverse-a-String" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/10/Reverse-a-String/">算法-翻转字符串</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-        <h3 id="翻转字符串"><a href="#翻转字符串" class="headerlink" title="翻转字符串"></a>翻转字符串</h3><p>先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  str = str.split(<span class="string">""</span>);</div><div class="line">  str = str.reverse();</div><div class="line">  str = str.join(<span class="string">""</span>);</div><div class="line">  <span class="keyword">return</span> str; <span class="comment">//olleh</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">reverseString(<span class="string">"hello"</span>);</div></pre></td></tr></table></figure></p>
-<p>相关知识：<br><code>String 全局对象是用来构造字符串对象或字符序列的构造函数。</code><br><code>split（）方法通过将字符串分成子字符串，从而将一个String对象拆分为一个字符串数组。</code><br><code>Array.reverse() 方法颠倒数组中元素的位置。第一个元素会成为最后一个，最后一个会成为第一个。</code><br><code>Array.join() 方法将数组（或一个类数组对象）的所有元素连接到一个字符串中</code></p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2012/05/10/Reverse-a-String/" class="archive-article-date">
-  	<time datetime="2012-05-10T06:19:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-05-10</time>
 </a>
       
 	<div class="article-tag tagcloud">
