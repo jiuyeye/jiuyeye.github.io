@@ -553,6 +553,58 @@
 
 
   
+    <article id="post-array" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/06/26/array/">Array迭代方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>数组主要有5个迭代方法，每个都是接收两个参数：在每一项上运行的函数和运行该函数的作用域对象–影响this的值。<br>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2012/06/26/array/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2012/06/26/array/" class="archive-article-date">
+  	<time datetime="2012-06-26T13:37:33.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-06-26</time>
+</a>
+      
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/js/">js</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-函数字面量" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -640,61 +692,6 @@
       
       <a href="/2012/05/11/factorialize-number/" class="archive-article-date">
   	<time datetime="2012-05-11T10:19:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-05-11</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-chunk" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/10/chunk/">算法-数据分割</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-        <h3 id="把一个数组arr按照指定的数组大小size分割成若干个数组块。"><a href="#把一个数组arr按照指定的数组大小size分割成若干个数组块。" class="headerlink" title="把一个数组arr按照指定的数组大小size分割成若干个数组块。"></a>把一个数组arr按照指定的数组大小size分割成若干个数组块。</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">chunk</span>(<span class="params">arr, size</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> newArr=[];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i+=size)&#123;</div><div class="line">    newArr.push(arr.slice(i,i+size));</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> newArr;</div><div class="line">&#125;</div><div class="line"></div><div class="line">chunk([<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"d"</span>], <span class="number">2</span>);</div></pre></td></tr></table></figure>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2012/05/10/chunk/" class="archive-article-date">
-  	<time datetime="2012-05-10T11:39:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-05-10</time>
 </a>
       
 	<div class="article-tag tagcloud">

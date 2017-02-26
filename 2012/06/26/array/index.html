@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives: 2012 | 0℃不结冰</title>
+  <title>Array迭代方法 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="0℃不结冰">
-<meta property="og:type" content="website">
-<meta property="og:title" content="0℃不结冰">
-<meta property="og:url" content="http://jiuyeye.github.io/archives/2012/page/2/index.html">
+  <meta name="description" content="数组主要有5个迭代方法，每个都是接收两个参数：在每一项上运行的函数和运行该函数的作用域对象–影响this的值。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Array迭代方法">
+<meta property="og:url" content="http://jiuyeye.github.io/2012/06/26/array/index.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="0℃不结冰">
+<meta property="og:description" content="数组主要有5个迭代方法，每个都是接收两个参数：在每一项上运行的函数和运行该函数的作用域对象–影响this的值。">
+<meta property="og:updated_time" content="2017-02-26T13:51:21.360Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="0℃不结冰">
-<meta name="twitter:description" content="0℃不结冰">
+<meta name="twitter:title" content="Array迭代方法">
+<meta name="twitter:description" content="数组主要有5个迭代方法，每个都是接收两个参数：在每一项上运行的函数和运行该函数的作用域对象–影响this的值。">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -150,132 +151,104 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-array" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2012" class="archive-year">2012</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2012/02/10/javascript-alike/" class="archive-article-date">
-  	<time datetime="2012-02-10T14:57:55.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-02-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2012/02/10/javascript-alike/">javascript中相似的方法</a>
+    <h1 class="article-title" itemprop="name">
+      Array迭代方法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        <p>数组主要有5个迭代方法，每个都是接收两个参数：在每一项上运行的函数和运行该函数的作用域对象–影响this的值。<br><a id="more"></a></p>
+<ol>
+<li>every()：对数组中每项运行给定函数，如果每项都返回true；则返回true。</li>
+<li><p>some()：对数组每项运行给定函数，有一项返回true，则返回true。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> everyarr = arr.every(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,array</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> (item &gt; <span class="number">3</span>);</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(everyarr);</div><div class="line"></div><div class="line"><span class="keyword">var</span> somearr = arr.some(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,array</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> (item &gt;<span class="number">3</span>);</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(somearr);</div></pre></td></tr></table></figure>
+</li>
+<li><p>forEach()：对每项运行给定函数。</p>
+</li>
+<li>map()：对每项运行给定函数，返回每项调用的结果组成的数组。</li>
+<li>filter()：对数组中每项运行给定函数，返回该函数返回true的项组成的函数。</li>
+</ol>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2012/06/26/array/" class="archive-article-date">
+  	<time datetime="2012-06-26T13:37:33.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-06-26</time>
+</a>
+      
+      
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
 	<a class="article-category-link" href="/categories/js/">js</a>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2012/02/08/css-设计模式/" class="archive-article-date">
-  	<time datetime="2012-02-08T14:56:03.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-02-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2012/02/08/css-设计模式/">css 设计模式</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+  
+<nav id="article-nav">
+  
+    <a href="/2012/12/03/闭包学习/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          闭包学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2012/05/31/函数字面量/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">函数字面量</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/css/">css</a>
-	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2012/01/11/javascript-1/" class="archive-article-date">
-  	<time datetime="2012-01-11T13:40:34.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-01-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2012/01/11/javascript-1/">ECMAScript学习(一)--基本概念</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2012/">&laquo; Prev</a><a class="page-number" href="/archives/2012/">1</a><span class="page-number current">2</span>
-    </nav>
-  
+
+
 
 
       </div>
@@ -298,8 +271,8 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
