@@ -4,7 +4,8 @@ date: 2013-10-07 14:14:08
 tags: [css,js]
 categories: js
 ---
-
+IE6浏览器常见的bug及其修复方法
+<!-- more -->
 * IE6不支持min-height，解决办法使用css hack：
 .target { min-height: 100px; height: auto !important; height: 100px; // IE6下内容高度超过会自动扩展高度 }
 

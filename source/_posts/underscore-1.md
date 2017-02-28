@@ -4,6 +4,8 @@ date: 2015-12-08 16:28:14
 tags: underscore
 categories: js
 ---
+Underscore对象
+<!-- more -->
 
 ### Underscore对象封装
 Underscore并没有在原生的JavaScript对象原型中进行扩展，而是像jQuery一样，将数据封装在一个自定义对象中（下文中称“Underscore对象”）。
