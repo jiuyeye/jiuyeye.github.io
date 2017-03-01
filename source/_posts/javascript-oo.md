@@ -1,7 +1,8 @@
 ---
 title: javascript 继承的实现方式
-date: 2013-02-17 14:17:09
+date: 2013-05-17 14:17:09
 tags: js
+categories: js
 ---
 > JS作为面向对象的弱类型语言，继承也是其非常强大的特性之一。
 
