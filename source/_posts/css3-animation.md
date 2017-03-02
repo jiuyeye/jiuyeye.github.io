@@ -2,6 +2,7 @@
 title: css3动画学习
 date: 2017-01-27 10:06:50
 tags: [animation,keyframes]
+categories: css
 ---
 > 使用keyframes, animation属性，例如timing, delay, play state, animation-count, iteration count, direction, fill mode以及will-change等等创造动画
 
