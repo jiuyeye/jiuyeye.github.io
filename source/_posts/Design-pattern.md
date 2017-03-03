@@ -9,52 +9,53 @@ categories: js
 
 <!--more-->
 ### 1.单例模式 ###
-保证一个类仅有一个实例,并提供一个访问它的全局控制点. 
+保证一个类仅有一个实例,并提供一个访问它的全局控制点.
+```javascript
 
+```
 
 ### 2.工厂模式 ###
 > 简单工厂模式是由一个方法来决定到底要创建哪个类的实例, 而这些实例经常都拥有相同的接口.这种模式主要用在所实例化的类型在编译期并不能确定， 而是在执行期决定的情况。
 
-定义一个用以创建对象的接口, 让子类决定实例化哪个类，当遇到需要根据某个前提条件创建不同的类实现时, 会实用工厂模式. 
+定义一个用以创建对象的接口, 让子类决定实例化哪个类，当遇到需要根据某个前提条件创建不同的类实现时, 会实用工厂模式.
 
 在函数中定义对象,并定义对象的各种属性,虽然属性可以为方法，但是建议将属性为方法的属性定义到函数之外，这样可以避免重复创建该方法;
-引用该对象的时候，这里使用的是 var x = Parent()而不是 var x = new Parent();因为后者会可能出现很多问题（前者也成为工厂经典方式,后者称之为混合工厂方式），不推荐使用new的方式使用该对象;  
-在函数的最后返回该对象;  
+引用该对象的时候，这里使用的是 var x = Parent()而不是 var x = new Parent();因为后者会可能出现很多问题（前者也成为工厂经典方式,后者称之为混合工厂方式），不推荐使用new的方式使用该对象;
+在函数的最后返回该对象;
 不推荐使用这种方式创建对象.
 
 ```javascript
+var school=function(){
+    return "第一小学";
+};
+function Parent(){
+    var  Child = new Object();
+    Child.name="jack";
+    Child.age="9";
+    Child.school=school;
+    return Child;
+};
 
-var school=function(){  
-    return "第一小学";  
-};  
-function Parent(){  
-    var  Child = new Object();  
-    Child.name="jack";  
-    Child.age="9";  
-    Child.school=school;  
-    return Child;  
-};  
-      
-var  x = Parent();  
-alert(x.name);  
-alert(x.school()); 
+var  x = Parent();
+alert(x.name);
+alert(x.school());
 ```
 
 ### 3.构造函数模式
 
 ```javascript
-var school=function(){  
-    return "第一小学";  
-};  
-function Parent(){  
-    this.name="jack";  
-    this.age="9";  
-    this.school=school;  
-};  
-      
-var  x = Parent();  
-alert(x.name);  
-alert(x.school()); 
+var school=function(){
+    return "第一小学";
+};
+function Parent(){
+    this.name="jack";
+    this.age="9";
+    this.school=school;
+};
+
+var  x = Parent();
+alert(x.name);
+alert(x.school());
 ```
 >与工厂方式相比，使用构造函数方式创建对象，无需再函数内部重建创建对象，而使用this指代，并而函数无需明确return;
 同工厂模式一样，虽然属性的值可以为方法，扔建议将该方法定义在函数之外;
@@ -62,32 +63,32 @@ alert(x.school());
 
 ### 4.原型模式
 ```javascript
-function Parent(){}; 
-Parent.prototype.name="jack";  
-Parent.prototype.age="9";  
+function Parent(){};
+Parent.prototype.name="jack";
+Parent.prototype.age="9";
 Parent.prototype.school=school;
 ```
 ### 5.建造者模式 ###
-将一个复杂对象的构建与它的表示分离. 
+将一个复杂对象的构建与它的表示分离.
 
 
 ### 6.装饰者模式 ###
-> 动态的给一个对象添加一些额外的职责. 
+> 动态的给一个对象添加一些额外的职责.
 
 ### 7.外观模式 ###
 > 为子系统中的一组接口提供一个一致的界面.
 
 ### 8.代理模式 ###
-> 为其他对象提供一种代理以控制对这个对象的访问. 
+> 为其他对象提供一种代理以控制对这个对象的访问.
 
 ### 8.观察者模式 ###
 定义了一种一对多的依赖关系,让多个观察者对象同时监听某一主题对象,在它的状态发生变化时,会通知所有的观察者.
 
 ### 9.策略模式 ###
-> 定义了算法家族, 分别封装起来, 让它们之间可以互相替换. 
+> 定义了算法家族, 分别封装起来, 让它们之间可以互相替换.
 
 ### 10.命令模式 ###
-将一个请求封装成为一个对象, 使可以用不同的请求对客户进行参数化. 
+将一个请求封装成为一个对象, 使可以用不同的请求对客户进行参数化.
 
 11.迭代器模式
 12.中介者模式
@@ -99,6 +100,6 @@ Parent.prototype.school=school;
 18.桥接模式
 19.备忘录模式
 ### 20.模版方法模式 ###
-> 定义一个操作中的算法骨架, 而将一些步骤延迟到子类中. 
+> 定义一个操作中的算法骨架, 而将一些步骤延迟到子类中.
 
 22.访问者模式
