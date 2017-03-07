@@ -16,7 +16,7 @@ script:
 after_script:
   - cd ./public
   - git init
-  - git config user.name "lcq"
+  - git config user.name "lcq0202"
   - git config user.email "lcq0202@163.com"
   - git add .
   - git commit -m "Update docs"
