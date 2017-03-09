@@ -49,5 +49,7 @@ console.log(person.name);//jack
 `[[Set]]`：在写入属性时调用的函数。默认值：undefined。
 
 ### 定义多个属性
+通过Object.defineProperties()方法，可以一次定义多个属性。
 
 ### 读取属性的特性
+Object.getOwnPropertyDescriptor()方法，可以取得给定属性的描述符。接收两个参数：属性所在的对象和要读取其描述符的属性名称。
