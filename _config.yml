@@ -6,14 +6,14 @@
 title: 0℃不结冰
 subtitle:  0℃不结冰
 description:  0℃不结冰
-author: 梁长青
+author: 不结冰
 email: lcq0202@163.com
 language: zh-CN
-timezone: Asia/Shanghai
+timezone: Asia/shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://jiuyeye.github.io
+url: http://water-ice.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -70,5 +70,5 @@ theme: yilia
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@github.com:jiuyeye/jiuyeye.github.io.git
+  repository: git@github.com:water-ice/water-ice.github.io.git
   branch: master
