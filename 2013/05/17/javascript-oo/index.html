@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>javascript 继承的实现方式 | 0℃不结冰</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JS作为面向对象的弱类型语言，继承也是其非常强大的特性之一。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript 继承的实现方式">
+<meta property="og:url" content="http://water-ice.github.io/2013/05/17/javascript-oo/index.html">
+<meta property="og:site_name" content="0℃不结冰">
+<meta property="og:description" content="JS作为面向对象的弱类型语言，继承也是其非常强大的特性之一。">
+<meta property="og:updated_time" content="2017-03-01T14:21:46.388Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript 继承的实现方式">
+<meta name="twitter:description" content="JS作为面向对象的弱类型语言，继承也是其非常强大的特性之一。">
+  
+    <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">不结冰</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">0℃不结冰</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/archives/">所有文章</a></li>
+	        
+				<li><a href="/categories/css/">css</a></li>
+	        
+				<li><a href="/categories/js/">js</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="#" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">不结冰</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/avatar.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">不结冰</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">0℃不结冰</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives/">所有文章</a></li>
+		        
+					<li><a href="/categories/css/">css</a></li>
+		        
+					<li><a href="/categories/js/">js</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-javascript-oo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javascript 继承的实现方式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        <blockquote>
+<p>JS作为面向对象的弱类型语言，继承也是其非常强大的特性之一。</p>
+</blockquote>
+<a id="more"></a>
+<p>首先我们定义一个父类</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 定义一个动物类</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span> (<span class="params">name</span>) </span>&#123;</div><div class="line">  <span class="comment">// 属性</span></div><div class="line">  <span class="keyword">this</span>.name = name || <span class="string">'Animal'</span>;</div><div class="line">  <span class="comment">// 实例方法</span></div><div class="line">  <span class="keyword">this</span>.sleep = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">'正在睡觉！'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 原型方法</span></div><div class="line">Animal.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params">food</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">'正在吃：'</span> + food);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h3><p>基本思想：利用原型让一个引用类型继承另外一个引用类型的属性和方法。<br>构造函数，原型，实例之间的关系：每个构造函数都有一个原型对象，原型对象包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params"></span>)</span>&#123;</div><div class="line">&#125;</div><div class="line">Cat.prototype = <span class="keyword">new</span> Animal();</div><div class="line">Cat.prototype.name = <span class="string">'cat'</span>;</div><div class="line"></div><div class="line"><span class="comment">//　Test Code</span></div><div class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</div><div class="line"><span class="built_in">console</span>.log(cat.name);</div><div class="line"><span class="built_in">console</span>.log(cat.eat(<span class="string">'fish'</span>));</div><div class="line"><span class="built_in">console</span>.log(cat.sleep());</div><div class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">//true</span></div><div class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<p><strong> 特点：</strong><br>非常纯粹的继承关系，实例是子类的实例，也是父类的实例<br>父类新增原型方法/原型属性，子类都能访问到<br>简单，易于实现<br><strong> 缺点：</strong><br>要想为子类新增属性和方法，必须要在new Animal()这样的语句之后执行，不能放到构造器中<br>无法实现多继承<br>来自原型对象的引用属性是所有实例共享的（详细请看附录代码： 示例1）<br>创建子类实例时，无法向父类构造函数传参</p>
+<h3 id="构造函数继承"><a href="#构造函数继承" class="headerlink" title="构造函数继承"></a>构造函数继承</h3><p>核心：使用父类的构造函数来增强子类实例，等于是复制父类的实例属性给子类（没用到原型）<br>基本思想：在子类型构造函数的内部调用超类构造函数，通过使用call()和apply()方法可以在新创建的对象上执行构造函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  Animal.call(<span class="keyword">this</span>);</div><div class="line">  <span class="keyword">this</span>.name = name || <span class="string">'Tom'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Test Code</span></div><div class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</div><div class="line"><span class="built_in">console</span>.log(cat.name);</div><div class="line"><span class="built_in">console</span>.log(cat.sleep());</div><div class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p><strong> 特点：</strong><br>解决了1中，子类实例共享父类引用属性的问题<br>创建子类实例时，可以向父类传递参数<br>可以实现多继承（call多个父类对象）<br><strong> 缺点：</strong><br>实例并不是父类的实例，只是子类的实例<br>只能继承父类的实例属性和方法，不能继承原型属性/方法<br>无法实现函数复用，每个子类都有父类实例函数的副本，影响性能</p>
+<h3 id="实例继承"><a href="#实例继承" class="headerlink" title="实例继承"></a>实例继承</h3><p>核心：为父类实例添加新特性，作为子类实例返回<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> instance = <span class="keyword">new</span> Animal();</div><div class="line">  instance.name = name || <span class="string">'Tom'</span>;</div><div class="line">  <span class="keyword">return</span> instance;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Test Code</span></div><div class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</div><div class="line"><span class="built_in">console</span>.log(cat.name);</div><div class="line"><span class="built_in">console</span>.log(cat.sleep());</div><div class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
+<p><strong> 特点：</strong><br> 不限制调用方式，不管是new 子类()还是子类(),返回的对象具有相同的效果<br><strong> 缺点：</strong><br> 实例是父类的实例，不是子类的实例<br> 不支持多继承</p>
+<h3 id="拷贝继承"><a href="#拷贝继承" class="headerlink" title="拷贝继承"></a>拷贝继承</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> animal = <span class="keyword">new</span> Animal();</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> p <span class="keyword">in</span> animal)&#123;</div><div class="line">    Cat.prototype[p] = animal[p];</div><div class="line">  &#125;</div><div class="line">  Cat.prototype.name = name || <span class="string">'Tom'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Test Code</span></div><div class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</div><div class="line"><span class="built_in">console</span>.log(cat.name);</div><div class="line"><span class="built_in">console</span>.log(cat.sleep());</div><div class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<p><strong> 特点：</strong><br>支持多继承<br><strong> 缺点：</strong><br>效率较低，内存占用高（因为要拷贝父类的属性）<br>无法获取父类不可枚举的方法（不可枚举方法，不能使用for in 访问到）</p>
+<h3 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h3><p>核心：通过调用父类构造，继承父类的属性并保留传参的优点，然后通过将父类实例作为子类原型，实现函数复用<br>基本思想：将原型链和借用构造函数的技术组合在一块，从而发挥两者之长的一种继承模式。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  Animal.call(<span class="keyword">this</span>);</div><div class="line">  <span class="keyword">this</span>.name = name || <span class="string">'Tom'</span>;</div><div class="line">&#125;</div><div class="line">Cat.prototype = <span class="keyword">new</span> Animal();</div><div class="line"></div><div class="line"><span class="comment">// Test Code</span></div><div class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</div><div class="line"><span class="built_in">console</span>.log(cat.name);</div><div class="line"><span class="built_in">console</span>.log(cat.sleep());</div><div class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p><strong> 特点：</strong><br>弥补了方式2的缺陷，可以继承实例属性/方法，也可以继承原型属性/方法<br>既是子类的实例，也是父类的实例<br>不存在引用属性共享问题<br>可传参<br>函数可复用<br><strong> 缺点：</strong><br>调用了两次父类构造函数，生成了两份实例（子类实例将子类原型上的那份屏蔽了）</p>
+<h3 id="寄生组合继承"><a href="#寄生组合继承" class="headerlink" title="寄生组合继承"></a>寄生组合继承</h3><p>核心：通过寄生方式，砍掉父类的实例属性，这样，在调用两次父类的构造的时候，就不会初始化两次实例方法/属性，避免的组合继承的缺点<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  Animal.call(<span class="keyword">this</span>);</div><div class="line">  <span class="keyword">this</span>.name = name || <span class="string">'Tom'</span>;</div><div class="line">&#125;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// 创建一个没有实例方法的类</span></div><div class="line">  <span class="keyword">var</span> Super = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">  Super.prototype = Animal.prototype;</div><div class="line">  <span class="comment">//将实例作为子类的原型</span></div><div class="line">  Cat.prototype = <span class="keyword">new</span> Super();</div><div class="line">&#125;)();</div><div class="line"></div><div class="line"><span class="comment">// Test Code</span></div><div class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</div><div class="line"><span class="built_in">console</span>.log(cat.name);</div><div class="line"><span class="built_in">console</span>.log(cat.sleep());</div><div class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<p><strong> 特点：</strong><br>堪称完美<br><strong> 缺点：</strong><br>实现较为复杂</p>
+<h3 id="附录代码："><a href="#附录代码：" class="headerlink" title="附录代码："></a>附录代码：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span> (<span class="params">name</span>) </span>&#123;</div><div class="line">  <span class="comment">// 属性</span></div><div class="line">  <span class="keyword">this</span>.name = name || <span class="string">'Animal'</span>;</div><div class="line">  <span class="comment">// 实例方法</span></div><div class="line">  <span class="keyword">this</span>.sleep = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">'正在睡觉！'</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//实例引用属性</span></div><div class="line">  <span class="keyword">this</span>.features = [];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">&#125;</div><div class="line">Cat.prototype = <span class="keyword">new</span> Animal();</div><div class="line"></div><div class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> Cat(<span class="string">'Tom'</span>);</div><div class="line"><span class="keyword">var</span> kissy = <span class="keyword">new</span> Cat(<span class="string">'Kissy'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(tom.name); <span class="comment">// "Animal"</span></div><div class="line"><span class="built_in">console</span>.log(kissy.name); <span class="comment">// "Animal"</span></div><div class="line"><span class="built_in">console</span>.log(tom.features); <span class="comment">// []</span></div><div class="line"><span class="built_in">console</span>.log(kissy.features); <span class="comment">// []</span></div><div class="line"></div><div class="line">tom.name = <span class="string">'Tom-New Name'</span>;</div><div class="line">tom.features.push(<span class="string">'eat'</span>);</div><div class="line"></div><div class="line"><span class="comment">//针对父类实例值类型成员的更改，不影响</span></div><div class="line"><span class="built_in">console</span>.log(tom.name); <span class="comment">// "Tom-New Name"</span></div><div class="line"><span class="built_in">console</span>.log(kissy.name); <span class="comment">// "Animal"</span></div><div class="line"><span class="comment">//针对父类实例引用类型成员的更改，会通过影响其他子类实例</span></div><div class="line"><span class="built_in">console</span>.log(tom.features); <span class="comment">// ['eat']</span></div><div class="line"><span class="built_in">console</span>.log(kissy.features); <span class="comment">// ['eat']</span></div></pre></td></tr></table></figure>
+<p>原因分析：<br>关键点：属性查找过程<br>执行tom.features.push，首先找tom对象的实例属性（找不到），<br>那么去原型对象中找，也就是Animal的实例。发现有，那么就直接在这个对象的<br>features属性中插入值。<br>在console.log(kissy.features); 的时候。同上，kissy实例上没有，那么去原型上找。<br>刚好原型上有，就直接返回，但是注意，这个原型对象中features属性值已经变化了。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2013/05/17/javascript-oo/" class="archive-article-date">
+  	<time datetime="2013-05-17T06:17:09.000Z" itemprop="datePublished"><i class="icon-clock"></i>2013-05-17</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/js/">js</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2013/06/15/jquery-source-code/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          jquery源码学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/05/01/javascript-oo-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript面向对象</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 不结冰
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/JavaScript/" style="font-size: 11.67px;">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/asyn/" style="font-size: 10px;">asyn</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hotfix/" style="font-size: 10px;">hotfix</a> <a href="/tags/jQuery/" style="font-size: 11.67px;">jQuery</a> <a href="/tags/js/" style="font-size: 18.33px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/keyframes/" style="font-size: 10px;">keyframes</a> <a href="/tags/mock/" style="font-size: 11.67px;">mock</a> <a href="/tags/node/" style="font-size: 20px;">node</a> <a href="/tags/react/" style="font-size: 13.33px;">react</a> <a href="/tags/underscore/" style="font-size: 13.33px;">underscore</a> <a href="/tags/webapp/" style="font-size: 10px;">webapp</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/yarn/" style="font-size: 13.33px;">yarn</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/伪类/" style="font-size: 10px;">伪类</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/函数字面量/" style="font-size: 10px;">函数字面量</a> <a href="/tags/单列模式/" style="font-size: 10px;">单列模式</a> <a href="/tags/变形/" style="font-size: 10px;">变形</a> <a href="/tags/定位模型/" style="font-size: 10px;">定位模型</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/模式/" style="font-size: 10px;">模式</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/浏览器内核/" style="font-size: 10px;">浏览器内核</a> <a href="/tags/版本号/" style="font-size: 10px;">版本号</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/算法/" style="font-size: 16.67px;">算法</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a> <a href="/tags/设计模式/" style="font-size: 13.33px;">设计模式</a> <a href="/tags/键盘码/" style="font-size: 10px;">键盘码</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面向对象/" style="font-size: 11.67px;">面向对象</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接1</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接2</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接3</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接4</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接5</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接6</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">不知道写点什么</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
