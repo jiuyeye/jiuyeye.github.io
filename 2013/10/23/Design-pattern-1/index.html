@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://water-ice.github.io/2013/10/23/Design-pattern-1/index.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="不要纠结于设计模式，模式其实就是套路。">
-<meta property="og:updated_time" content="2017-03-16T15:08:34.080Z">
+<meta property="og:updated_time" content="2017-03-16T15:13:22.757Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript设计模式-学习三">
 <meta name="twitter:description" content="不要纠结于设计模式，模式其实就是套路。">
@@ -174,6 +174,7 @@
 <a id="more"></a>
 <h3 id="1-命令模式"><a href="#1-命令模式" class="headerlink" title="1.命令模式"></a>1.命令模式</h3><p>用来对方法调用进行参数化处理和传送，经过这样处理过的方法调用可以在任何需要的时候执行，也就是说该模式旨在将函数的调用、请求和操作封装成一个单一对象，然后对这个对象进项一系列的处理.它也可以用来消除调用操作的对象和实现对象之间的耦合。这位各种具体的类更换带来了极大的灵活性。</p>
 <p>作用：<br>1.将函数的封装、请求、调用结合为一体；<br>2.调用具体的函数解耦命令对象与接收对象。<br>3.提高程序模块化的灵活性；<br>注意：<br>1.不需要接口一致，直接调用函数即可，以免造成浪费。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> lian=&#123;&#125;;</div><div class="line">lian.paobing=<span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(num);</div><div class="line">&#125;;</div><div class="line">lian.bubing=<span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(num);</div><div class="line">&#125;;</div><div class="line">lian.lianzhang=<span class="function"><span class="keyword">function</span>(<span class="params">mingling</span>)</span>&#123;</div><div class="line">    lian[mingling.type](mingling.num);</div><div class="line">&#125;;</div><div class="line">lian.lianzhang(&#123;</div><div class="line">    <span class="attr">type</span>:<span class="string">"bubing"</span>,</div><div class="line">    <span class="attr">num</span>:<span class="number">100</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="2-职责链模式"><a href="#2-职责链模式" class="headerlink" title="2.职责链模式"></a>2.职责链模式</h3><p>是使多个对象都有机会处理请求，</p>
 
       
     </div>
