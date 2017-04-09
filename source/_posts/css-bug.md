@@ -1,4 +1,4 @@
----
+layout: post
 title: css常见bug学习
 date: 2014-02-18 22:48:16
 categories: css

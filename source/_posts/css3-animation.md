@@ -1,4 +1,4 @@
----
+layout: post
 title: css3动画学习
 date: 2017-01-27 10:06:50
 tags: [animation,keyframes]

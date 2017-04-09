@@ -1,4 +1,4 @@
----
+layout: post
 title:  Atom编辑器-React开发的插件
 date: 2016-12-28 14:09:55
 tags: react

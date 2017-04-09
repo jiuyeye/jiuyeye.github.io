@@ -1,4 +1,4 @@
----
+layout: post
 title: Array迭代方法
 date: 2012-06-26 21:37:33
 categories: js

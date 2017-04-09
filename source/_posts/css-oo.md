@@ -1,4 +1,4 @@
----
+layout: post
 title: css面向对象
 date: 2015-03-02 17:18:32
 tags: 面向对象

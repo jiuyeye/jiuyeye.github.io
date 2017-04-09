@@ -1,4 +1,4 @@
----
+layout: post
 title: 使用Canvas绘图
 date: 2015-04-24 22:07:15
 categories: canvas

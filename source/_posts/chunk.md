@@ -1,4 +1,4 @@
----
+layout: post
 title: 算法-数据分割
 date: 2012-05-10 19:39:40
 tags: 算法
