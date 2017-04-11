@@ -1,4 +1,4 @@
----
+layout: post
 title: JavaScript 异步编程
 date: 2015-05-01 18:10:12
 tags: asyn

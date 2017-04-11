@@ -1,4 +1,4 @@
----
+layout: post
 title: 语义化的软件版本号规则
 date: 2014-01-01
 tags: 版本号

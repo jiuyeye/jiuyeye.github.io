@@ -1,4 +1,4 @@
----
+layout: post
 title: jQuery-2-奇技淫巧学习
 date: 2013-06-20 16:23:43
 tags: jQuery

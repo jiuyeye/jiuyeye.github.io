@@ -1,4 +1,4 @@
----
+layout: post
 title: javascript中相似的方法
 date: 2012-02-10 22:57:55
 categories: js
