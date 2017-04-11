@@ -23,12 +23,18 @@ function Dictionary(){
     }
     return false;
   };
-  this.has = function(){};
+  this.has = function(key){
+    return key in items;
+  };
   this.get = function(key){
    return this.has(key)? items[key] : undefined;
   };
-  this.clear = function(){};
-  this.size = function(){};
+  this.clear = function(){
+    items={};
+  };
+  this.size = function(){
+    return Object.keys(items).length;
+  };
   this.keys = function(key){
     return key in items;
   };
@@ -45,4 +51,10 @@ function Dictionary(){
     return items;
   }
 }
+```
+### 使用Dictionary类
+
+```javascript
+var dictionary = new Dictionary();
+dictionary.set('Gantor','gantor@mail.com');
 ```
