@@ -152,6 +152,63 @@
       <div class="body-wrap">
         
   
+    <article id="post-函数字面量" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/05/31/函数字面量/">函数字面量</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>函数对象通过函数字面量来创建</p>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2012/05/31/函数字面量/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2012/05/31/函数字面量/" class="archive-article-date">
+  	<time datetime="2012-05-31T05:14:48.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-05-31</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数字面量/">函数字面量</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/js/">js</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-javascript-array" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -316,7 +373,7 @@
 
 
   
-    <article id="post-Reverse-a-String" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Check-Palindrom" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -326,7 +383,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/10/Reverse-a-String/">算法-翻转字符串</a>
+      <a class="article-title" href="/2012/05/10/Check-Palindrom/">算法-字符串方面</a>
     </h1>
   
 
@@ -334,15 +391,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-        <h3 id="翻转字符串"><a href="#翻转字符串" class="headerlink" title="翻转字符串"></a>翻转字符串</h3><p>先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  str = str.split(<span class="string">""</span>);</div><div class="line">  str = str.reverse();</div><div class="line">  str = str.join(<span class="string">""</span>);</div><div class="line">  <span class="keyword">return</span> str; <span class="comment">//olleh</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">reverseString(<span class="string">"hello"</span>);</div></pre></td></tr></table></figure></p>
-<p>相关知识：<br><code>String 全局对象是用来构造字符串对象或字符序列的构造函数。</code><br><code>split（）方法通过将字符串分成子字符串，从而将一个String对象拆分为一个字符串数组。</code><br><code>Array.reverse() 方法颠倒数组中元素的位置。第一个元素会成为最后一个，最后一个会成为第一个。</code><br><code>Array.join() 方法将数组（或一个类数组对象）的所有元素连接到一个字符串中</code></p>
-
+        <p>如果一个字符串忽略标点符号、大小写和空格，正着读和反着读一模一样，那么这个字符串就是palindrome(回文)。<br>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2012/05/10/Check-Palindrom/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2012/05/10/Reverse-a-String/" class="archive-article-date">
+      <a href="/2012/05/10/Check-Palindrom/" class="archive-article-date">
   	<time datetime="2012-05-10T06:19:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-05-10</time>
 </a>
       
@@ -373,7 +430,7 @@
 
 
   
-    <article id="post-Check-Palindrom" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Reverse-a-String" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -383,7 +440,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/10/Check-Palindrom/">算法-字符串方面</a>
+      <a class="article-title" href="/2012/05/10/Reverse-a-String/">算法-翻转字符串</a>
     </h1>
   
 
@@ -391,15 +448,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>如果一个字符串忽略标点符号、大小写和空格，正着读和反着读一模一样，那么这个字符串就是palindrome(回文)。<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2012/05/10/Check-Palindrom/#more">more >></a>
-        </p>
+        
+        <h3 id="翻转字符串"><a href="#翻转字符串" class="headerlink" title="翻转字符串"></a>翻转字符串</h3><p>先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  str = str.split(<span class="string">""</span>);</div><div class="line">  str = str.reverse();</div><div class="line">  str = str.join(<span class="string">""</span>);</div><div class="line">  <span class="keyword">return</span> str; <span class="comment">//olleh</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">reverseString(<span class="string">"hello"</span>);</div></pre></td></tr></table></figure></p>
+<p>相关知识：<br><code>String 全局对象是用来构造字符串对象或字符序列的构造函数。</code><br><code>split（）方法通过将字符串分成子字符串，从而将一个String对象拆分为一个字符串数组。</code><br><code>Array.reverse() 方法颠倒数组中元素的位置。第一个元素会成为最后一个，最后一个会成为第一个。</code><br><code>Array.join() 方法将数组（或一个类数组对象）的所有元素连接到一个字符串中</code></p>
+
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2012/05/10/Check-Palindrom/" class="archive-article-date">
+      <a href="/2012/05/10/Reverse-a-String/" class="archive-article-date">
   	<time datetime="2012-05-10T06:19:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-05-10</time>
 </a>
       
@@ -661,63 +718,6 @@
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
 	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-css-设计模式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/02/08/css-设计模式/">css 设计模式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>设计模式，无疑就是一种套路、规则。</p>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2012/02/08/css-设计模式/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2012/02/08/css-设计模式/" class="archive-article-date">
-  	<time datetime="2012-02-08T14:56:03.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-02-08</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/css/">css</a>
 	</div>
 
 
