@@ -1,4 +1,4 @@
----
+layout: post
 title: 算法-整数的阶乘
 date: 2012-05-11 18:19:40
 tags: 算法

@@ -1,4 +1,4 @@
----
+layout: post
 title: JSX解释器
 date: 2017-02-01 17:50:58
 tags: jsx

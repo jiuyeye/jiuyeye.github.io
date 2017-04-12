@@ -1,4 +1,4 @@
----
+layout: post
 title: js的变量提升和函数提升
 date: 2015-02-19 21:11:20
 tags: js

@@ -1,4 +1,4 @@
----
+layout: post
 title: js-高阶函数
 date: 2012-12-08 17:18:29
 tags: 函数

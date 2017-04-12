@@ -1,4 +1,4 @@
----
+layout: post
 title: javascript事件
 date: 2014-03-07 16:42:23
 categories: js

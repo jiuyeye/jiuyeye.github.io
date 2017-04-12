@@ -1,4 +1,4 @@
----
+layout: post
 title: JavaScript中的Truthy和Falsy介绍
 date: 2013-02-03 16:19:47
 tags: JavaScript

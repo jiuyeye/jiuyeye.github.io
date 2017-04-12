@@ -1,4 +1,4 @@
----
+layout: post
 title: Windows下Git多账号配置，同一电脑多个ssh-key的管理
 date: 2016-03-05 20:00:04
 tags: git

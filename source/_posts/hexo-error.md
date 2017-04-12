@@ -1,4 +1,4 @@
----
+layout: post
 title: 用Hexo搭建静态博客出现spawn ENOENT的解决办法
 date: 2016-03-15 22:42:30
 tags: hexo

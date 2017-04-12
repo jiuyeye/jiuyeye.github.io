@@ -1,4 +1,4 @@
----
+layout: post
 title: es6模块化
 date: 2016-10-26 20:38:43
 tags: es6

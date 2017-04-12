@@ -1,4 +1,4 @@
----
+layout: post
 title: js 浏览器缩放
 date: 2016-12-30 14:04:58
 tags: js

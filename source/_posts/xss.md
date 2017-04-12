@@ -1,4 +1,4 @@
----
+layout: post
 title: xss学习
 date: 2015-07-28 14:06:27
 tags: xss

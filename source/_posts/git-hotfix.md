@@ -1,4 +1,4 @@
----
+layout: post
 title: hotfix 修复流程  
 date: 2014-06-14 10:07:00
 tags: [git,hotfix] 

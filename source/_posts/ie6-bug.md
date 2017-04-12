@@ -1,4 +1,4 @@
----
+layout: post
 title: IE6浏览器常见的bug及其修复方法
 date: 2013-10-07 14:14:08
 tags: [css,js]

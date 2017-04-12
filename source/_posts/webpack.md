@@ -1,4 +1,4 @@
----
+layout: post
 title: webpack-1
 date: 2016-09-21 17:26:13
 tags: webpack

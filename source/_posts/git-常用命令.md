@@ -1,4 +1,4 @@
----
+layout: post
 title: git学习-常用命令
 date: 2014-06-15 22:30:10
 tags: git

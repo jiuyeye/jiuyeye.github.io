@@ -1,4 +1,4 @@
----
+layout: post
 title: JavaScript 设计模式之模板方法
 date: 2013-10-32 19:41:28
 tags: 设计模式

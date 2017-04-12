@@ -1,4 +1,4 @@
----
+layout: post
 title: 数据结构--树
 date: 2014-02-27 22:53:02
 tags: 算法

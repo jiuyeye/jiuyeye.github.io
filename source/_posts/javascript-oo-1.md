@@ -1,4 +1,4 @@
----
+layout: post
 title: javascript面向对象
 date: 2013-05-01 22:15:34
 tags: 面向对象

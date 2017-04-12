@@ -1,4 +1,4 @@
----
+layout: post
 title: JavaScript数组方法学习
 date: 2012-05-21 22:37:08
 categories: js

@@ -1,4 +1,4 @@
----
+layout: post
 title: js为什么要避免双重求值
 date: 2013-01-12 23:36:50
 tags: js

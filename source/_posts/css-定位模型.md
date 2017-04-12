@@ -1,4 +1,4 @@
----
+layout: post
 title: css-定位模型
 date: 2013-03-20 10:03:38
 tags: 定位模型

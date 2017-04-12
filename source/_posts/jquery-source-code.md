@@ -1,4 +1,4 @@
----
+layout: post
 title: jquery源码学习
 date: 2013-06-15 19:12:47
 tags: jQuery

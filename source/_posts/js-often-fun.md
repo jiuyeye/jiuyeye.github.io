@@ -1,4 +1,4 @@
----
+layout: post
 title: js中常用技巧--常用正则验证表达式
 date: 2013-12-17 14:06:51
 tags: 正则

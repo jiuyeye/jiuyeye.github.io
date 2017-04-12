@@ -1,4 +1,4 @@
----
+layout: post
 title: yarn学习-命令
 date: 2016-11-12 18:43:42
 tags: yarn

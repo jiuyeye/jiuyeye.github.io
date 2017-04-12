@@ -1,4 +1,4 @@
----
+layout: post
 title: javascript-各类事件详解
 date: 2016-11-14 13:54:03
 tags: 事件

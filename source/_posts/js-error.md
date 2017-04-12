@@ -1,4 +1,4 @@
----
+layout: post
 title: JavaScript易错知识点整理-转
 date: 2016-12-15 15:20:52
 tags: js

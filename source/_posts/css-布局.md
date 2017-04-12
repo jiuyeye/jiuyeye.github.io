@@ -1,4 +1,4 @@
----
+layout: post
 title: css 布局
 date: 2015-02-02 23:08:36
 tags: 布局

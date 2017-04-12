@@ -1,4 +1,4 @@
----
+layout: post
 title: js函数调用模式
 date: 2012-03-11 10:23:12
 categories: js

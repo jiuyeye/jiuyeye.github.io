@@ -1,4 +1,4 @@
----
+layout: post
 title: js 键盘码  
 date: 2010-12-13 03:23:20
 tags: 键盘码 

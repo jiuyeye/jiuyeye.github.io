@@ -1,4 +1,4 @@
----
+layout: post
 title: javascript设计模式-学习一
 date: 2013-10-13 22:57:15
 tags: 设计模式

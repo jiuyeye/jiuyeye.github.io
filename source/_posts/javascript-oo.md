@@ -1,4 +1,4 @@
----
+layout: post
 title: javascript 继承的实现方式
 date: 2013-05-17 14:17:09
 tags: js

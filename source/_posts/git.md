@@ -1,4 +1,4 @@
----
+layout: post
 title: 使用 Git 进行问题定位以及代码查找
 date: 2015-03-02 20:46:09
 tags: git

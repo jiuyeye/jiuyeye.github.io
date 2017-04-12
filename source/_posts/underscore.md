@@ -1,4 +1,4 @@
----
+layout: post
 title: underscore 学习
 date: 2015-12-07 10:28:14
 tags: underscore

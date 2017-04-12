@@ -1,4 +1,4 @@
----
+layout: post
 title: node-querystring
 date: 2015-08-10 20:15:00
 categories: node

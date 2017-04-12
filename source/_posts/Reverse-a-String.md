@@ -1,4 +1,4 @@
----
+layout: post
 title: 算法-翻转字符串
 date: 2012-05-10 14:19:40
 tags: 算法
