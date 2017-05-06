@@ -190,6 +190,116 @@ form input.st-default-search-input {
       <div class="body-wrap">
         
   
+    <article id="post-javascript-truthy-falsy" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/02/03/javascript-truthy-falsy/">JavaScript中的Truthy和Falsy介绍</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>JavaScript中存在boolean类型，以供逻辑判断使用。不过，和很多其它编程语言不一样的是，JavaScript中存在Truthy值和Falsy值的概念 — 除了boolean值true、false外，所有类型的JavaScript值均可用于逻辑判断<br>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2013/02/03/javascript-truthy-falsy/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2013/02/03/javascript-truthy-falsy/" class="archive-article-date">
+  	<time datetime="2013-02-03T08:19:47.000Z" itemprop="datePublished"><i class="icon-clock"></i>2013-02-03</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/js/">js</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-js为什么要避免双重求值" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/01/12/js为什么要避免双重求值/">js为什么要避免双重求值</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>js 动态执行包含代码的字符串，有四种标准方法：evaluation()、Function()、构造函数、setTimeout()和setInterval()，但是都会导致双重求值得性能消耗。</p>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2013/01/12/js为什么要避免双重求值/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2013/01/12/js为什么要避免双重求值/" class="archive-article-date">
+  	<time datetime="2013-01-12T15:36:50.000Z" itemprop="datePublished"><i class="icon-clock"></i>2013-01-12</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-js-高阶函数" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -576,62 +686,6 @@ form input.st-default-search-input {
 
 
   
-    <article id="post-Reverse-a-String" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/10/Reverse-a-String/">算法-翻转字符串</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="翻转字符串"><a href="#翻转字符串" class="headerlink" title="翻转字符串"></a>翻转字符串</h3><p>先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  str = str.split(<span class="string">""</span>);</div><div class="line">  str = str.reverse();</div><div class="line">  str = str.join(<span class="string">""</span>);</div><div class="line">  <span class="keyword">return</span> str; <span class="comment">//olleh</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">reverseString(<span class="string">"hello"</span>);</div></pre></td></tr></table></figure></p>
-<p>相关知识：<br><code>String 全局对象是用来构造字符串对象或字符序列的构造函数。</code><br><code>split（）方法通过将字符串分成子字符串，从而将一个String对象拆分为一个字符串数组。</code><br><code>Array.reverse() 方法颠倒数组中元素的位置。第一个元素会成为最后一个，最后一个会成为第一个。</code><br><code>Array.join() 方法将数组（或一个类数组对象）的所有元素连接到一个字符串中</code></p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2012/05/10/Reverse-a-String/" class="archive-article-date">
-  	<time datetime="2012-05-10T06:19:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-05-10</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
     <article id="post-Check-Palindrom" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -671,63 +725,6 @@ form input.st-default-search-input {
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
 	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-css-image" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/04/17/css-image/">html+css设计模式-图片篇</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用<img>可以在文档中插入图片，src属性可以指定图片的url。</p>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2012/04/17/css-image/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2012/04/17/css-image/" class="archive-article-date">
-  	<time datetime="2012-04-16T18:33:23.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-04-17</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模式/">模式</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/css/">css</a>
 	</div>
 
 
