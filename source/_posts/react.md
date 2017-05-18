@@ -1,8 +1,7 @@
 layout: post
 title: react学习-第一天
 date: 2016-10-01 19:36:19
-tags: react
-categories: js
+categories: react
 ---
 
 react是什么？
