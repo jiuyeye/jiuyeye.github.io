@@ -1,7 +1,8 @@
 layout: post
 title: React组件
 date: 2017-02-06 23:17:39
-tags: react
+categories: react
+tags: 组件
 ---
 带有业务含义和数据的UI组件组合。
 <!-- more -->
