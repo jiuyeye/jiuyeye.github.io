@@ -155,3 +155,4 @@ var foo = new Foo();
 foo.classMethod()
 // TypeError: foo.classMethod is not a function
 ```
+### Class 的静态属性和实例属性
