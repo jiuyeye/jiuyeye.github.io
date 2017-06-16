@@ -29,7 +29,15 @@ Docker使用沙箱机制，独立于硬件、语言、打包系统、框架等�
 
 ### Docker常用命令
 ```javascript
+//检查Docker的安装是否正确
+docker info
+//查看Docker命令
 docker -h
 //获取镜像
 sudo docker pull NAME[:TAG]
+//获取镜像
+sudo docker run [OPTIONS] IMAGE [COMMAND] [ARG]
 ```
+
+### Docker 架构
+Docker 使用客户端-服务器 (C/S) 架构模式，使用远程API来管理和创建Docker容器。Docker 容器通过 Docker 镜像来创建。容器与镜像的关系类似于面向对象编程中的对象与类。
