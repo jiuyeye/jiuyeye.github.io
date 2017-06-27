@@ -190,6 +190,86 @@ form input.st-default-search-input {
       <div class="body-wrap">
         
   
+    <article id="post-javascript-alike" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/02/javascript-alike.html">javascript中相似的方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="substring与substr"><a href="#substring与substr" class="headerlink" title="substring与substr"></a>substring与substr</h3><table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">substring</th>
+<th style="text-align:left">substr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">概述</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">语法</td>
+<td style="text-align:left">str.substring(start,stop)</td>
+<td style="text-align:left">str.substr(start,length)</td>
+</tr>
+<tr>
+<td style="text-align:left">参数</td>
+<td style="text-align:left">indexStart：一个 0 到字符串长度之间的整数<br>indexEnd：可选，一个 0 到字符串长度之间的整数</td>
+<td style="text-align:left">start：开始提取字符的位置，可为负值<br>length：可选。提取的字符数</td>
+</tr>
+<tr>
+<td style="text-align:left">描述</td>
+<td style="text-align:left">1. indexStart = indexEnd，返回一个空字符串<br>2. indexStart &gt; indexEnd，则效果是两个参数调换了一样<br>3. 省略 indexEnd，提取字符一直到字符串末尾<br>4. 任一参数 &lt; 0 或为 NaN，则被当作 0<br>5. 任一参数 &gt; strLength（字符串长度），则被当作strLength</td>
+<td style="text-align:left">1. start &lt; 0，则被看作 strLength + start（从字符串倒数算起）<br>2. start &lt; 0 &amp;&amp; abs(start) &gt; strLength，则start = 0<br>3. start &gt;= strLength，返回一个空字符串<br>4. 任意参数为 NaN，则被当作 0<br>5. length &lt;= 0，返回一个空字符串</td>
+</tr>
+</tbody>
+</table>
+<h3 id="slice与splice"><a href="#slice与splice" class="headerlink" title="slice与splice"></a>slice与splice</h3>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2012/02/javascript-alike.html" class="archive-article-date">
+  	<time datetime="2012-02-10T14:57:55.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-02-10</time>
+</a>
+      
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/js/">js</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-css-设计模式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -200,7 +280,7 @@ form input.st-default-search-input {
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2012/02/08/css-设计模式/">css 设计模式</a>
+      <a class="article-title" href="/2012/02/css-设计模式.html">css 设计模式</a>
     </h1>
   
 
@@ -210,13 +290,13 @@ form input.st-default-search-input {
       
         <p>设计模式，无疑就是一种套路、规则。</p>
         <p class="article-more-link">
-          <a class="article-more-a"  href="/2012/02/08/css-设计模式/#more">more >></a>
+          <a class="article-more-a"  href="/2012/02/css-设计模式.html#more">more >></a>
         </p>
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2012/02/08/css-设计模式/" class="archive-article-date">
+      <a href="/2012/02/css-设计模式.html" class="archive-article-date">
   	<time datetime="2012-02-08T14:56:03.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-02-08</time>
 </a>
       
@@ -257,7 +337,7 @@ form input.st-default-search-input {
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2012/01/11/javascript-1/">ECMAScript学习(一)--基本概念</a>
+      <a class="article-title" href="/2012/01/javascript-1.html">ECMAScript学习(一)--基本概念</a>
     </h1>
   
 
@@ -267,13 +347,13 @@ form input.st-default-search-input {
       
         <p>ECMAScript大量借鉴C及其他类C语言的语法。<br>
         <p class="article-more-link">
-          <a class="article-more-a"  href="/2012/01/11/javascript-1/#more">more >></a>
+          <a class="article-more-a"  href="/2012/01/javascript-1.html#more">more >></a>
         </p>
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2012/01/11/javascript-1/" class="archive-article-date">
+      <a href="/2012/01/javascript-1.html" class="archive-article-date">
   	<time datetime="2012-01-11T13:40:34.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-01-11</time>
 </a>
       
@@ -314,7 +394,7 @@ form input.st-default-search-input {
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2011/01/09/css-语法详解/">css 语法详解</a>
+      <a class="article-title" href="/2011/01/css-语法详解.html">css 语法详解</a>
     </h1>
   
 
@@ -324,13 +404,13 @@ form input.st-default-search-input {
       
         <p>css 语法关键点</p>
         <p class="article-more-link">
-          <a class="article-more-a"  href="/2011/01/09/css-语法详解/#more">more >></a>
+          <a class="article-more-a"  href="/2011/01/css-语法详解.html#more">more >></a>
         </p>
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2011/01/09/css-语法详解/" class="archive-article-date">
+      <a href="/2011/01/css-语法详解.html" class="archive-article-date">
   	<time datetime="2011-01-08T16:06:05.000Z" itemprop="datePublished"><i class="icon-clock"></i>2011-01-09</time>
 </a>
       
@@ -366,7 +446,7 @@ form input.st-default-search-input {
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2010/12/13/key-code/">js 键盘码</a>
+      <a class="article-title" href="/2010/12/key-code.html">js 键盘码</a>
     </h1>
   
 
@@ -376,13 +456,13 @@ form input.st-default-search-input {
       
         <p>键盘各按键对应的数字<br>
         <p class="article-more-link">
-          <a class="article-more-a"  href="/2010/12/13/key-code/#more">more >></a>
+          <a class="article-more-a"  href="/2010/12/key-code.html#more">more >></a>
         </p>
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2010/12/13/key-code/" class="archive-article-date">
+      <a href="/2010/12/key-code.html" class="archive-article-date">
   	<time datetime="2010-12-12T19:23:20.000Z" itemprop="datePublished"><i class="icon-clock"></i>2010-12-13</time>
 </a>
       
