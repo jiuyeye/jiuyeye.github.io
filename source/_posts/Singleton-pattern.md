@@ -1,7 +1,7 @@
-layout: post
-title: 单列模式学习--Singleton pattern
+﻿layout: post
+title: JavaScript 单列模式学习
 date: 2013-10-20 12:03:38
-tags: 单列模式
+tags: 设计模式
 categories: js
 ---
 
