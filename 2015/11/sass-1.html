@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: css | 0℃不结冰</title>
+  <title>sass的@规则 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="0℃不结冰">
-<meta property="og:type" content="website">
-<meta property="og:title" content="0℃不结冰">
-<meta property="og:url" content="http://water-ice.github.io/tags/css/index.html">
+  <meta name="description" content="Sass 支持所有 CSS3 的 @ 规则， 以及一些 Sass 专属的规则，也被称为“指令（directives）”。 这些规则在 Sass 中具有不同的功效，详细解释如下。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sass的@规则">
+<meta property="og:url" content="http://water-ice.github.io/2015/11/sass-1.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="0℃不结冰">
+<meta property="og:description" content="Sass 支持所有 CSS3 的 @ 规则， 以及一些 Sass 专属的规则，也被称为“指令（directives）”。 这些规则在 Sass 中具有不同的功效，详细解释如下。">
+<meta property="og:updated_time" content="2017-07-13T09:57:48.057Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="0℃不结冰">
-<meta name="twitter:description" content="0℃不结冰">
+<meta name="twitter:title" content="sass的@规则">
+<meta name="twitter:description" content="Sass 支持所有 CSS3 的 @ 规则， 以及一些 Sass 专属的规则，也被称为“指令（directives）”。 这些规则在 Sass 中具有不同的功效，详细解释如下。">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -188,59 +189,104 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
+        <article id="post-sass-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2013" class="archive-year">2013</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2013/10/ie6-bug.html" class="archive-article-date">
-  	<time datetime="2013-10-07T06:14:08.000Z" itemprop="datePublished"><i class="icon-clock"></i>2013-10-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2013/10/ie6-bug.html">IE6浏览器常见的bug及其修复方法</a>
+    <h1 class="article-title" itemprop="name">
+      sass的@规则
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Sass 支持所有 CSS3 的 @ 规则， 以及一些 Sass 专属的规则，也被称为“指令（directives）”。 这些规则在 Sass 中具有不同的功效，详细解释如下。<br><a id="more"></a></p>
+<h3 id="import"><a href="#import" class="headerlink" title="@import"></a>@import</h3><blockquote>
+<p>Sass 扩展了 CSS 的 @import 规则，让它能够引入 SCSS 和 Sass 文件。 所有引入的 SCSS 和 Sass 文件都会被合并并输出一个单一的 CSS 文件。 另外，被导入的文件中所定义的变量或 mixins 都可以在主文件中使用。</p>
+</blockquote>
+<p>@import 根据文件名引入。 默认情况下，它会寻找 Sass 文件并直接引入， 但是，在少数几种情况下，它会被编译成 CSS 的 @import 规则：</p>
+<p>如果文件的扩展名是 .css。<br>如果文件名以 http:// 开头。<br>如果文件名是 url()。<br>如果 @import 包含了任何媒体查询（media queries）。</p>
+<p>如果你有一个 SCSS 或 Sass 文件需要引入， 但是你又不希望它被编译为一个 CSS 文件， 这时，你就可以在文件名前面加一个下划线，就能避免被编译。 这将告诉 Sass 不要把它编译成 CSS 文件。 然后，你就可以像往常一样引入这个文件了，而且还可以省略掉文件名前面的下划线。</p>
+<h3 id="media"><a href="#media" class="headerlink" title="@media"></a>@media</h3><h3 id="extend"><a href="#extend" class="headerlink" title="@extend"></a>@extend</h3><h3 id="at-root"><a href="#at-root" class="headerlink" title="@at-root"></a>@at-root</h3><h3 id="debug"><a href="#debug" class="headerlink" title="@debug"></a>@debug</h3><h3 id="warn"><a href="#warn" class="headerlink" title="@warn"></a>@warn</h3><h3 id="error"><a href="#error" class="headerlink" title="@error"></a>@error</h3>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2015/11/sass-1.html" class="archive-article-date">
+  	<time datetime="2015-11-22T14:57:11.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-11-22</time>
+</a>
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sass/">sass</a></li></ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
+	<a class="article-category-link" href="/categories/css/">css</a>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+  
+<nav id="article-nav">
+  
+    <a href="/2015/12/underscore.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          underscore 学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/sass.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Sass的控制命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
 
 
       </div>
@@ -271,9 +317,9 @@ _st('install','Fa45VMD_fAJD9EBem4Jc','2.0.0');
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
