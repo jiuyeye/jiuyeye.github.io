@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>0℃不结冰</title>
+  <title>JavaScript中的Reflect对象详解 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="0℃不结冰">
-<meta property="og:type" content="website">
-<meta property="og:title" content="0℃不结冰">
-<meta property="og:url" content="http://water-ice.github.io/page/6/index.html">
+  <meta name="description" content="Reflect 是一个内置的对象，它提供可拦截JavaScript操作的方法。方法与代理处理程序的方法相同。Reflect 不是一个函数对象，因此它是不可构造的。与大多数全局对象不同，Reflect没有构造函数。您不能将其与一个new运算符一起使用，或者将Reflect对象作为一个函数来调用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript中的Reflect对象详解">
+<meta property="og:url" content="http://water-ice.github.io/2016/11/js-reflect.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="0℃不结冰">
+<meta property="og:description" content="Reflect 是一个内置的对象，它提供可拦截JavaScript操作的方法。方法与代理处理程序的方法相同。Reflect 不是一个函数对象，因此它是不可构造的。与大多数全局对象不同，Reflect没有构造函数。您不能将其与一个new运算符一起使用，或者将Reflect对象作为一个函数来调用。">
+<meta property="og:updated_time" content="2017-08-08T10:23:37.802Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="0℃不结冰">
-<meta name="twitter:description" content="0℃不结冰">
+<meta name="twitter:title" content="JavaScript中的Reflect对象详解">
+<meta name="twitter:description" content="Reflect 是一个内置的对象，它提供可拦截JavaScript操作的方法。方法与代理处理程序的方法相同。Reflect 不是一个函数对象，因此它是不可构造的。与大多数全局对象不同，Reflect没有构造函数。您不能将其与一个new运算符一起使用，或者将Reflect对象作为一个函数来调用。">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -188,9 +189,7 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        
-  
-    <article id="post-node-querystring" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-js-reflect" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -199,8 +198,8 @@ form input.st-default-search-input {
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/node-querystring.html">node-querystring</a>
+    <h1 class="article-title" itemprop="name">
+      JavaScript中的Reflect对象详解
     </h1>
   
 
@@ -208,239 +207,27 @@ form input.st-default-search-input {
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>“QueryString” 模块用于实现URL参数字符串与参数对象的互相转换</p>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2015/08/node-querystring.html#more">more >></a>
-        </p>
+        <p>Reflect 是一个内置的对象，它提供可拦截JavaScript操作的方法。方法与代理处理程序的方法相同。Reflect 不是一个函数对象，因此它是不可构造的。<br>与大多数全局对象不同，Reflect没有构造函数。您不能将其与一个new运算符一起使用，或者将Reflect对象作为一个函数来调用。<br><a id="more"></a></p>
+<h3 id="什么要使用Reflect"><a href="#什么要使用Reflect" class="headerlink" title="什么要使用Reflect"></a>什么要使用Reflect</h3><p>1：更加有用的返回值：Reflect有一些方法和ES5中Object方法一样样的， 比如： Reflect.getOwnPropertyDescriptor和Reflect.defineProperty, 不过, Object.defineProperty(obj, name, desc)执行成功会返回obj， 以及其它原因导致的错误， Reflect.defineProperty只会返回false或者true来表示对象的属性是否设置上了， 如下代码可以重构：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">  <span class="built_in">Object</span>.defineProperty(obj, name, desc);</div><div class="line">  <span class="comment">// property defined successfully</span></div><div class="line">&#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">  <span class="comment">// possible failure (and might accidentally catch the wrong exception)</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//重构</span></div><div class="line"><span class="keyword">if</span> (<span class="built_in">Reflect</span>.defineProperty(obj, name, desc)) &#123;</div><div class="line">  <span class="comment">// success</span></div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="comment">// failure</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其余的方法， 比如Relect.set ， Reflect.deleteProperty, Reflect.preventExtensions, Reflect.setPrototypeOf， 都可以进行重构；</p>
+<p>2：函数操作， 如果要判断一个obj有定义或者继承了属性name， 在ES5中这样判断：name in obj ；<br>或者删除一个属性 ：delete obj[name], 虽然这些很好用， 很简短， 很明确， 但是要使用的时候也要封装成一个类；<br>有了Reflect， 它帮你封装好了， Reflect.has(obj, name), Reflect.deleteProperty(obj, name);</p>
+<p>3：更加可靠的函数式执行方式： 在ES中， 要执行一个函数f，并给它传一组参数args， 还要绑定this的话， 要这么写：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">f.apply(obj, args)</div><div class="line"></div><div class="line"><span class="comment">//但是f的apply可能被重新定义成用户自己的apply了，所以还是这样写比较靠谱：</span></div><div class="line"><span class="built_in">Function</span>.prototype.apply.call(f, obj, args)</div><div class="line"></div><div class="line"><span class="comment">//上面这段代码太长了， 而且不好懂， 有了Reflect， 我们可以更短更简洁明了：</span></div><div class="line"><span class="built_in">Reflect</span>.apply(f, obj, args)</div></pre></td></tr></table></figure></p>
+<p>4：可变参数形式的构造函数： 想象一下， 你想通过不确定长度的参数实例化一个构造函数， 在ES5中， 我们可以使用扩展符号， 可以这么写：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> F(...args)</div><div class="line"><span class="comment">//ES5中能够这么写：</span></div><div class="line"><span class="keyword">var</span> obj = <span class="built_in">Reflect</span>.construct(F, args)</div></pre></td></tr></table></figure></p>
+<p>5：控制访问器或者读取器的this： 在ES5中， 想要读取一个元素的属性或者设置属性要这样：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = ... <span class="comment">// get property name as a string</span></div><div class="line">obj[name] <span class="comment">// generic property lookup</span></div><div class="line">obj[name] = value <span class="comment">// generic property</span></div><div class="line"></div><div class="line"><span class="comment">//updateReflect.get和Reflect.set方法允许我们做同样的事情</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> name = ... <span class="comment">// get property name as a string</span></div><div class="line"><span class="built_in">Reflect</span>.get(obj, name, wrapper) <span class="comment">// if obj[name] is an accessor, it gets run with `this === wrapper`</span></div><div class="line"><span class="built_in">Reflect</span>.set(obj, name, value, wrapper)访问器中不想使用自己的方法，而是想要重定向<span class="keyword">this</span>到wrapper：</div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  set foo(value) &#123; <span class="keyword">return</span> <span class="keyword">this</span>.bar(); &#125;,</div><div class="line">  <span class="attr">bar</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="number">1</span>);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> wrapper = &#123;</div><div class="line">  <span class="attr">bar</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"wrapper"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">Reflect</span>.set(obj, <span class="string">"foo"</span>, <span class="string">"value"</span>, wrapper);</div></pre></td></tr></table></figure></p>
+<p>6：避免直接访问 <strong>proto</strong> ：</p>
+<p>ES5提供了 Object.getPrototypeOf(obj)，去访问对象的原型， ES6提供也提供了<br>Reflect.getPrototypeOf(obj) 和 Reflect.setPrototypeOf(obj, newProto)， 这个是新的方法去访问和设置对象的原型：<br>Reflect.apply的使用<br>Reflect.apply其实就是ES5中的 Function.prototype.apply() 替身， 执行Reflect.apply需要三个参数<br>第一个参数为： 需要执行的函数；<br>第二个参数为： 需要执行函数的上下文this；<br>第三个参数为： 是一个数组或者伪数组， 会作为执行函数的参数；</p>
+
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2015/08/node-querystring.html" class="archive-article-date">
-  	<time datetime="2015-08-10T12:15:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-08-10</time>
-</a>
-      
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/node/">node</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-xss" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/xss.html">xss学习</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>跨站脚本攻击(XSS)<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2015/07/xss.html#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2015/07/xss.html" class="archive-article-date">
-  	<time datetime="2015-07-28T06:06:27.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-07-28</time>
+      <a href="/2016/11/js-reflect.html" class="archive-article-date">
+  	<time datetime="2016-11-06T10:04:07.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-06</time>
 </a>
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xss/">xss</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-css3-rotate" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/css3-rotate.html">CSS3变形</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>CSS3变形<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2015/07/css3-rotate.html#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2015/07/css3-rotate.html" class="archive-article-date">
-  	<time datetime="2015-07-01T14:22:14.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-07-01</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/变形/">变形</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/css/">css</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-gulp" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/gulp.html">gulp学习</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>gulp是基于Nodejs的自动任务运行器， 她能自动化地完成 javascript/coffee/sass/less/html/image/css/jade/ejs 等文件的的测试、检查、合并、压缩、格式化、浏览器自动刷新、部署文件生成，并监听文件在改动后重复指定的这些步骤。在实现上，她借鉴了Unix操作系统的管道（pipe）思想，前一级的输出，直接变成后一级的输入，使得在操作上非常简单。<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2015/06/gulp.html#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2015/06/gulp.html" class="archive-article-date">
-  	<time datetime="2015-06-12T15:14:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-06-12</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/工程化/">工程化</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-javascript-asynchronous" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/javascript-asynchronous.html">JavaScript 异步编程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>JavaScript 中的异步编程概念、由来，以及和同步编程的区别。</p>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2015/05/javascript-asynchronous.html#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2015/05/javascript-asynchronous.html" class="archive-article-date">
-  	<time datetime="2015-05-01T10:10:12.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-05-01</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/asyn/">asyn</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
 	</div>
 
       
@@ -455,114 +242,46 @@ form input.st-default-search-input {
   </div>
 </article>
 
-
-
-
-
-
-
-
-
-
   
-    <article id="post-canvas" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+<nav id="article-nav">
+  
+    <a href="/2016/11/Yarn-学习.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/canvas.html">使用Canvas绘图</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>H5添加的最受欢迎的功能就是<code>canvas</code>元素，它有几组API组成。</p>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2015/04/canvas.html#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2015/04/canvas.html" class="archive-article-date">
-  	<time datetime="2015-04-24T14:07:15.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-04-24</time>
-</a>
-      
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/canvas/">canvas</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-code-standard" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+          Yarn 学习
         
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/code-standard.html">编码规范-js</a>
-    </h1>
   
+    <a href="/2016/11/es6-async.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ES6-async 函数</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>由于JavaScript的灵活性，造成需要程序猿自律才能编写出易读、易维护的代码；编码规范一定程度也是为了约束程序猿，减少低级错误。<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2015/03/code-standard.html#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2015/03/code-standard.html" class="archive-article-date">
-  	<time datetime="2015-03-29T15:17:20.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-03-29</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/规范/">规范</a></li></ul>
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
@@ -570,181 +289,6 @@ form input.st-default-search-input {
 
 
 
-
-
-
-  
-    <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/git.html">使用 Git 进行问题定位以及代码查找</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>通过 Git 来对代码的历史版本进行分析可能更加的效率。<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2015/03/git.html#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2015/03/git.html" class="archive-article-date">
-  	<time datetime="2015-03-02T12:46:09.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-03-02</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-css-oo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/css-oo.html">css面向对象</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>OO CSS将页面给中可重用元素抽成一个类，用class描述，与其对应的html既可以看成一个类。<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2015/03/css-oo.html#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2015/03/css-oo.html" class="archive-article-date">
-  	<time datetime="2015-03-02T09:18:32.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-03-02</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/css/">css</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js-hoisting" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/02/js-hoisting.html">js的变量提升和函数提升</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在ES6之前，JavaScript没有块级作用域(一对花括号{}即为一个块级作用域)，只有全局作用域和函数作用域。提升，就是把下面的东西提到上面。<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2015/02/js-hoisting.html#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2015/02/js-hoisting.html" class="archive-article-date">
-  	<time datetime="2015-02-19T13:11:20.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-02-19</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/hoisting/">hoisting</a><a class="article-category-link" href="/categories/hoisting/scoping/">scoping</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
-    </nav>
-  
 
 
       </div>
@@ -774,8 +318,8 @@ _st('install','Fa45VMD_fAJD9EBem4Jc','2.0.0');
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
