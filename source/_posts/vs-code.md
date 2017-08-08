@@ -16,3 +16,4 @@ VScode是才开始用的编辑器，常用的几个插件。
 9. vetur 目前比较好的Vue语法高亮
 10. Document This : JSDOC注解调用，值得易用
 11. Gulp Snippets，写gulp时用到
+12.
