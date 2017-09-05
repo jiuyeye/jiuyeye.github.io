@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>CSS3高级属性 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="-webkit-tap-highlight-color">
+  <meta name="description" content="CSS3高级属性">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS3高级属性">
 <meta property="og:url" content="http://water-ice.github.io/2017/04/css3-properties.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="-webkit-tap-highlight-color">
-<meta property="og:updated_time" content="2017-09-04T10:55:23.274Z">
+<meta property="og:description" content="CSS3高级属性">
+<meta property="og:updated_time" content="2017-09-05T09:46:53.787Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3高级属性">
-<meta name="twitter:description" content="-webkit-tap-highlight-color">
+<meta name="twitter:description" content="CSS3高级属性">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -207,8 +207,39 @@ form input.st-default-search-input {
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<h3 id="webkit-tap-highlight-color"><a href="#webkit-tap-highlight-color" class="headerlink" title="-webkit-tap-highlight-color"></a>-webkit-tap-highlight-color</h3>
+        <p>CSS3高级属性<br><a id="more"></a></p>
+<h2 id="WebKit特有属性"><a href="#WebKit特有属性" class="headerlink" title="WebKit特有属性"></a>WebKit特有属性</h2><ol>
+<li><p>-webkit-tap-highlight-color</p>
+<blockquote>
+<p>当你点击一个链接或者通过Javascript定义的可点击元素的时候，就会出现一个半透明的灰色背景。要重设这个表现，设置-webkit-tap-highlight-color为任何颜色。<strong>只用于iOS (iPhone和iPad)</strong>…</p>
+</blockquote>
+</li>
+<li><p>-webkit-text-size-adjust</p>
+<blockquote>
+<p>1、当样式表里font-size&lt;12px时，中文版chrome浏览器里字体显示仍为12px，这时可以用 html{-webkit-text-size-adjust:none;}<br>2、-webkit-text-size-adjust放在body上会导致页面缩放失效<br>3、body会继承定义在html的样式<br>4、用-webkit-text-size-adjust不要定义成可继承的或全局的</p>
+</blockquote>
+</li>
+<li>webkit-appearance<blockquote>
+<p>-webkit-appearance: none;   //消除输入框和按钮的原生外观，在iOS上加上这个属性才能给按钮和输入框自定义样式 。   注意：不同type的input使用这个属性之后表现不一。text、button无样式，radio、checkbox直接消失</p>
+</blockquote>
+</li>
+<li>-webkit-user-select<blockquote>
+<p>-webkit-user-select: none; // 禁止页面文字选择 ，此属性不继承，一般加在body上规定整个body的文字都不会自动调整</p>
+</blockquote>
+</li>
+<li>-webkit-touch-callout<blockquote>
+<p>-webkit-touch-callout:none;  // 禁用长按页面时的弹出菜单(iOS下有效) ,img和a标签都要加</p>
+</blockquote>
+</li>
+<li>-webkit-mask<blockquote>
+<p>-webkit-mask让为一个元素添加蒙板成为可能，从而你可以创建任意形状的花样。蒙板可以是CSS3渐变或者半透明的PNG图片。蒙板元素的alpha值为0的时候会覆盖下面的元素，为1的时候会完全显示下面的内容。相关的属性有-webkit-mask-clip、 -webkit-mask-position 和-webkit-mask-repeat等，严重依赖来自于background中的语法。</p>
+</blockquote>
+</li>
+<li>-webkit-text-stroke</li>
+<li>-webkit-nbsp-mode</li>
+<li>-webkit-tap-highlight-color<h3 id="zoom-reset"><a href="#zoom-reset" class="headerlink" title="zoom: reset"></a>zoom: reset</h3><h3 id="webkit-margin-collapse"><a href="#webkit-margin-collapse" class="headerlink" title="-webkit-margin-collapse"></a>-webkit-margin-collapse</h3><h3 id="webkit-box-reflect"><a href="#webkit-box-reflect" class="headerlink" title="-webkit-box-reflect"></a>-webkit-box-reflect</h3><h3 id="webkit-marquee"><a href="#webkit-marquee" class="headerlink" title="-webkit-marquee"></a>-webkit-marquee</h3><h2 id="Gecko特有属性"><a href="#Gecko特有属性" class="headerlink" title="Gecko特有属性"></a>Gecko特有属性</h2><h2 id="混合属性"><a href="#混合属性" class="headerlink" title="混合属性"></a>混合属性</h2></li>
+</ol>
+
       
     </div>
     <div class="article-info article-info-index">
