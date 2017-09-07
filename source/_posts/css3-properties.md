@@ -36,4 +36,4 @@ CSS3高级属性
 > 设定指定元素的文字大小(font-size)应该相对于小写字母的高度(x-height)而不是大写字母的高度(cap height)
 ##  混合属性
 1. -webkit-user-select 和 -moz-user-select
-> 或许你常常不希望用户在你的网站上选择文本，无论是否是出于版权的原因。将-webkit-user-select 和-moz-user-select 的值设为none。
+> 网站上选择文本，将-webkit-user-select 和-moz-user-select 的值设为none。
