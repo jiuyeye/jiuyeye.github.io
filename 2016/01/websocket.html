@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>WebSocket开发 | 0℃不结冰</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="WebSocket与TCP、HTTP的关系WebSocket与http协议一样都是基于TCP的，所以他们都是可靠的协议，Web开发者调用的WebSocket的send函数在browser的实现中最终都是通过TCP的系统接口进行传输的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebSocket开发">
+<meta property="og:url" content="http://water-ice.github.io/2016/01/websocket.html">
+<meta property="og:site_name" content="0℃不结冰">
+<meta property="og:description" content="WebSocket与TCP、HTTP的关系WebSocket与http协议一样都是基于TCP的，所以他们都是可靠的协议，Web开发者调用的WebSocket的send函数在browser的实现中最终都是通过TCP的系统接口进行传输的。">
+<meta property="og:updated_time" content="2017-10-30T06:08:30.269Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WebSocket开发">
+<meta name="twitter:description" content="WebSocket与TCP、HTTP的关系WebSocket与http协议一样都是基于TCP的，所以他们都是可靠的协议，Web开发者调用的WebSocket的send函数在browser的实现中最终都是通过TCP的系统接口进行传输的。">
+  
+    <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+  <style>
+  .search{padding:.5em 0;position:relative;}
+.search input{
+    line-height:0.2;
+    border:1px solid white;
+    color:white;
+    background:transparent;
+    padding-left:4em;
+}
+.search label{
+    display:none;
+}
+
+form input.st-default-search-input {
+    font-size: 12px;
+    padding: 4px 9px 4px 27px;
+    height:20px;
+    width: 190px;
+    color: #666;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.17);
+    -moz-box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.17);
+    box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.17);
+    outline: none;
+    background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
+}</style>
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">不结冰</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">0℃不结冰</p>
+		
+
+		
+		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+			<label>搜索</label>
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+		</form>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/archives/">所有文章</a></li>
+	        
+				<li><a href="/categories/css/">CSS</a></li>
+	        
+				<li><a href="/categories/js/">js</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="#" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">不结冰</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/avatar.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">不结冰</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">0℃不结冰</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives/">所有文章</a></li>
+		        
+					<li><a href="/categories/css/">CSS</a></li>
+		        
+					<li><a href="/categories/js/">js</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-websocket" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      WebSocket开发
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>WebSocket与TCP、HTTP的关系WebSocket与http协议一样都是基于TCP的，所以他们都是可靠的协议，Web开发者调用的WebSocket的send函数在browser的实现中最终都是通过TCP的系统接口进行传输的。<br><a id="more"></a></p>
+<blockquote>
+<p>WebSocket和Http协议一样都属于应用层的协议，那么他们之间有没有什么关系呢?答案是肯定的，WebSocket在建立握手连接时，数据是通过http协议传输的，但是在建立连接之后，真正的数据传输阶段是不需要http协议参与的。</p>
+</blockquote>
+<h3 id="一个-websocket-连接的建立过程如下"><a href="#一个-websocket-连接的建立过程如下" class="headerlink" title="一个 websocket 连接的建立过程如下:"></a>一个 websocket 连接的建立过程如下:</h3><table>
+<thead>
+<tr>
+<th>分步</th>
+<th style="text-align:left">客户端</th>
+<th style="text-align:left">服务端</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:left">客户端建立到服务器的 TCP 连接</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:left">客户端请求将当前 TCP 连接用作 websocket</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">服务器收到请求, 同意并确认将此 TCP 连接用作 websocket</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:left">客户端收到确认, HTTP 协议通信结束</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align:left">双方使用 websocket 协议自由双向通信</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>1.申请一个WebSocket对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> wsUri =<span class="string">"ws://echo.websocket.org/"</span>;</div><div class="line">websocket = <span class="keyword">new</span> WebSocket(wsUri);</div><div class="line"><span class="comment">//参数是需要连接的服务器端的地址，同http协议使用http://开头一样，WebSocket协议的URL使用ws://开头，另外安全的WebSocket协议使用wss://开头。</span></div></pre></td></tr></table></figure></p>
+<p>2.WebSocket对象一共支持四个消息 onopen, onmessage, onclose和onerror<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//当Browser和WebSocketServer连接成功后，会触发onopen消息;</span></div><div class="line"><span class="comment">//如果连接失败，发送、接收数据失败或者处理数据出现错误，browser会触发onerror消息;</span></div><div class="line"><span class="comment">//当Browser接收到WebSocketServer发送过来的数据时，就会触发onmessage消息，参数evt中包含server传输过来的数据;</span></div><div class="line"><span class="comment">//当Browser接收到WebSocketServer端发送的关闭连接请求时，就会触发onclose消息。</span></div></pre></td></tr></table></figure></p>
+<h3 id="WebSocket通讯详细解读："><a href="#WebSocket通讯详细解读：" class="headerlink" title="WebSocket通讯详细解读："></a>WebSocket通讯详细解读：</h3><p>1.打开握手<br>2.数据传递<br>3.关闭握手</p>
+<h3 id="WebSocket的优点"><a href="#WebSocket的优点" class="headerlink" title="WebSocket的优点"></a>WebSocket的优点</h3><p>a)、服务器与客户端之间交换的标头信息很小，大概只有2字节;<br>b)、客户端与服务器都可以主动传送数据给对方;<br>c)、不用频率创建TCP请求及销毁请求，减少网络带宽资源的占用，同时也节省服务器资源;</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/01/websocket.html" class="archive-article-date">
+  	<time datetime="2016-01-22T14:57:11.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-01-22</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebSocket/">WebSocket</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/WebSocket/">WebSocket</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/03/git-user.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Windows下Git多账号配置，同一电脑多个ssh-key的管理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/前端测试框架.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端测试框架学习</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 不结冰
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+<script type="text/javascript">
+(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+_st('install','Fa45VMD_fAJD9EBem4Jc','2.0.0');
+</script>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/JavaScript/" style="font-size: 11.43px;">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/WebSocket/" style="font-size: 10px;">WebSocket</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/asyn/" style="font-size: 10px;">asyn</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/css/" style="font-size: 11.43px;">css</a> <a href="/tags/dom/" style="font-size: 10px;">dom</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/es6/" style="font-size: 20px;">es6</a> <a href="/tags/git/" style="font-size: 14.29px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hotfix/" style="font-size: 10px;">hotfix</a> <a href="/tags/jQuery/" style="font-size: 11.43px;">jQuery</a> <a href="/tags/js/" style="font-size: 17.14px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/jsx/" style="font-size: 11.43px;">jsx</a> <a href="/tags/keyframes/" style="font-size: 10px;">keyframes</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/linkedlist/" style="font-size: 10px;">linkedlist</a> <a href="/tags/mock/" style="font-size: 11.43px;">mock</a> <a href="/tags/node/" style="font-size: 18.57px;">node</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/react/" style="font-size: 11.43px;">react</a> <a href="/tags/sass/" style="font-size: 11.43px;">sass</a> <a href="/tags/underscore/" style="font-size: 12.86px;">underscore</a> <a href="/tags/webapp/" style="font-size: 10px;">webapp</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/xss/" style="font-size: 10px;">xss</a> <a href="/tags/yarn/" style="font-size: 12.86px;">yarn</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/伪类/" style="font-size: 10px;">伪类</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/函数字面量/" style="font-size: 10px;">函数字面量</a> <a href="/tags/变形/" style="font-size: 10px;">变形</a> <a href="/tags/字典/" style="font-size: 10px;">字典</a> <a href="/tags/定位模型/" style="font-size: 10px;">定位模型</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/开发环境/" style="font-size: 10px;">开发环境</a> <a href="/tags/散列表/" style="font-size: 10px;">散列表</a> <a href="/tags/数据流/" style="font-size: 10px;">数据流</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/模式/" style="font-size: 10px;">模式</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/浏览器内核/" style="font-size: 10px;">浏览器内核</a> <a href="/tags/版本号/" style="font-size: 10px;">版本号</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/算法/" style="font-size: 15.71px;">算法</a> <a href="/tags/组件/" style="font-size: 11.43px;">组件</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a> <a href="/tags/设计模式/" style="font-size: 15.71px;">设计模式</a> <a href="/tags/键盘码/" style="font-size: 10px;">键盘码</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/集合/" style="font-size: 10px;">集合</a> <a href="/tags/面向对象/" style="font-size: 11.43px;">面向对象</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://relign.github.io/">relign</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接2</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接3</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接4</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接5</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接6</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
