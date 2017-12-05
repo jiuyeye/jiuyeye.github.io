@@ -190,6 +190,63 @@ form input.st-default-search-input {
       <div class="body-wrap">
         
   
+    <article id="post-node-5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/node-5.html">node学习第五天</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Express是一个Node.js的、轻量级的web框架。</p>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2014/10/node-5.html#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2014/10/node-5.html" class="archive-article-date">
+  	<time datetime="2014-10-05T13:30:20.000Z" itemprop="datePublished"><i class="icon-clock"></i>2014-10-05</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/js/">js</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-node-4" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -691,58 +748,6 @@ form input.st-default-search-input {
 
 
   
-    <article id="post-js-arraylist" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/05/js-arraylist.html">排序算法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <a id="more"></a>
-<h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ArrayList</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> array = [];</div><div class="line">  <span class="keyword">this</span>.insert = <span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</div><div class="line">    array.push(item);</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> array.join();</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> swap = <span class="function"><span class="keyword">function</span>(<span class="params">index1,index2</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> aux = array[index1];</div><div class="line">  array[index1] = array[index2];</div><div class="line">  array[index2] = aux;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">this</span>.bubbleSort = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//冒泡算法</span></div><div class="line">  <span class="keyword">var</span> length = array.length;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;length<span class="number">-1</span>;j++)&#123;</div><div class="line">      <span class="keyword">if</span>(array[j] &lt; array[j+<span class="number">1</span>])&#123;</div><div class="line">        swap(j,j+<span class="number">1</span>);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">this</span>.modifiedBubbleSort = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> length = array.lenght;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;length<span class="number">-1</span>-i;j++)&#123;</div><div class="line">      <span class="keyword">if</span>(array[j] &gt; array[j+<span class="number">1</span>])&#123;</div><div class="line">        sqap(j,j+<span class="number">1</span>);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><h3 id="顺序搜索"><a href="#顺序搜索" class="headerlink" title="顺序搜索"></a>顺序搜索</h3><h3 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h3>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2014/05/js-arraylist.html" class="archive-article-date">
-  	<time datetime="2014-05-15T11:20:52.000Z" itemprop="datePublished"><i class="icon-clock"></i>2014-05-15</time>
-</a>
-      
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
@@ -837,7 +842,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/JavaScript/" style="font-size: 11.43px;">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/WebSocket/" style="font-size: 10px;">WebSocket</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/asyn/" style="font-size: 10px;">asyn</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/css/" style="font-size: 11.43px;">css</a> <a href="/tags/dom/" style="font-size: 10px;">dom</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/es6/" style="font-size: 20px;">es6</a> <a href="/tags/git/" style="font-size: 14.29px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hotfix/" style="font-size: 10px;">hotfix</a> <a href="/tags/jQuery/" style="font-size: 11.43px;">jQuery</a> <a href="/tags/js/" style="font-size: 17.14px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/jsx/" style="font-size: 11.43px;">jsx</a> <a href="/tags/keyframes/" style="font-size: 10px;">keyframes</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/linkedlist/" style="font-size: 10px;">linkedlist</a> <a href="/tags/mock/" style="font-size: 11.43px;">mock</a> <a href="/tags/node/" style="font-size: 18.57px;">node</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/react/" style="font-size: 11.43px;">react</a> <a href="/tags/sass/" style="font-size: 11.43px;">sass</a> <a href="/tags/underscore/" style="font-size: 12.86px;">underscore</a> <a href="/tags/webapp/" style="font-size: 10px;">webapp</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/xss/" style="font-size: 10px;">xss</a> <a href="/tags/yarn/" style="font-size: 12.86px;">yarn</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/伪类/" style="font-size: 10px;">伪类</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/函数字面量/" style="font-size: 10px;">函数字面量</a> <a href="/tags/变形/" style="font-size: 10px;">变形</a> <a href="/tags/字典/" style="font-size: 10px;">字典</a> <a href="/tags/定位模型/" style="font-size: 10px;">定位模型</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/开发环境/" style="font-size: 10px;">开发环境</a> <a href="/tags/散列表/" style="font-size: 10px;">散列表</a> <a href="/tags/数据流/" style="font-size: 10px;">数据流</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/模式/" style="font-size: 10px;">模式</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/浏览器内核/" style="font-size: 10px;">浏览器内核</a> <a href="/tags/版本号/" style="font-size: 10px;">版本号</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/算法/" style="font-size: 15.71px;">算法</a> <a href="/tags/组件/" style="font-size: 11.43px;">组件</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a> <a href="/tags/设计模式/" style="font-size: 15.71px;">设计模式</a> <a href="/tags/键盘码/" style="font-size: 10px;">键盘码</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/集合/" style="font-size: 10px;">集合</a> <a href="/tags/面向对象/" style="font-size: 11.43px;">面向对象</a>
+    				<a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/JavaScript/" style="font-size: 11.43px;">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/WebSocket/" style="font-size: 10px;">WebSocket</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/asyn/" style="font-size: 10px;">asyn</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/css/" style="font-size: 11.43px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/dom/" style="font-size: 10px;">dom</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/es6/" style="font-size: 20px;">es6</a> <a href="/tags/git/" style="font-size: 14.29px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hotfix/" style="font-size: 10px;">hotfix</a> <a href="/tags/jQuery/" style="font-size: 11.43px;">jQuery</a> <a href="/tags/js/" style="font-size: 17.14px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/jsx/" style="font-size: 11.43px;">jsx</a> <a href="/tags/keyframes/" style="font-size: 10px;">keyframes</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/linkedlist/" style="font-size: 10px;">linkedlist</a> <a href="/tags/mock/" style="font-size: 11.43px;">mock</a> <a href="/tags/node/" style="font-size: 18.57px;">node</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/react/" style="font-size: 11.43px;">react</a> <a href="/tags/sass/" style="font-size: 11.43px;">sass</a> <a href="/tags/underscore/" style="font-size: 12.86px;">underscore</a> <a href="/tags/webapp/" style="font-size: 10px;">webapp</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/xss/" style="font-size: 10px;">xss</a> <a href="/tags/yarn/" style="font-size: 12.86px;">yarn</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/伪类/" style="font-size: 10px;">伪类</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/函数字面量/" style="font-size: 10px;">函数字面量</a> <a href="/tags/变形/" style="font-size: 10px;">变形</a> <a href="/tags/字典/" style="font-size: 10px;">字典</a> <a href="/tags/定位模型/" style="font-size: 10px;">定位模型</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/开发环境/" style="font-size: 10px;">开发环境</a> <a href="/tags/散列表/" style="font-size: 10px;">散列表</a> <a href="/tags/数据流/" style="font-size: 10px;">数据流</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/模式/" style="font-size: 10px;">模式</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/浏览器内核/" style="font-size: 10px;">浏览器内核</a> <a href="/tags/版本号/" style="font-size: 10px;">版本号</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/算法/" style="font-size: 15.71px;">算法</a> <a href="/tags/组件/" style="font-size: 11.43px;">组件</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a> <a href="/tags/设计模式/" style="font-size: 15.71px;">设计模式</a> <a href="/tags/键盘码/" style="font-size: 10px;">键盘码</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/集合/" style="font-size: 10px;">集合</a> <a href="/tags/面向对象/" style="font-size: 11.43px;">面向对象</a>
     			</div>
     	</section>
     
