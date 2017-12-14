@@ -5,8 +5,10 @@ categories: js
 ---
 数组主要有5个迭代方法，每个都是接收两个参数：在每一项上运行的函数和运行该函数的作用域对象--影响this的值。
 <!-- more -->
-1. every()：对数组中每项运行给定函数，如果每项都返回true；则返回true。
-2. some()：对数组每项运行给定函数，有一项返回true，则返回true。
+### every()：对数组中每项运行给定函数，如果每项都返回true；则返回true。
+**注意：**every() 不会对空数组进行检测。
+**注意：**every() 不会改变原始数组。
+### some()：对数组每项运行给定函数，有一项返回true，则返回true。
 ```javascript
 var arr = [1,3,4,6,3,2];
 var everyarr = arr.every(function(item,index,array){
@@ -19,7 +21,7 @@ var somearr = arr.some(function(item,index,array){
 });
 console.log(somearr);
 ```
-3. forEach()：对每项运行给定函数。
-4. map()：对每项运行给定函数，返回每项调用的结果组成的数组。
-5. filter()：对数组中每项运行给定函数，返回该函数返回true的项组成的函数。
+### forEach()：对每项运行给定函数。
+### map()：对每项运行给定函数，返回每项调用的结果组成的数组。
+### filter()：对数组中每项运行给定函数，返回该函数返回true的项组成的函数。
 

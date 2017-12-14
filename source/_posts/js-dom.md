@@ -40,3 +40,8 @@ p.appendChild(text);//将文本节点添加到子节点末尾
 document.getElementById('box').setAttribute('align','center');
 document.getElementById('box').removeAttribute('style');
 ```
+### 文本操作
+```javascript
+var box = document.getElementById('box');
+box.innerHTML();//获取
+```
