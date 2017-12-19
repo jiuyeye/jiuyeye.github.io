@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives | 0℃不结冰</title>
+  <title>ES6实现深度克隆 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="0℃不结冰">
-<meta property="og:type" content="website">
-<meta property="og:title" content="0℃不结冰">
-<meta property="og:url" content="http://water-ice.github.io/archives/page/6/index.html">
+  <meta name="description" content="深度克隆就是：把一个对象里面的东西一模一样地复制到另一个对象，并且这两个对象分别放在内存的不同地方。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6实现深度克隆">
+<meta property="og:url" content="http://water-ice.github.io/2016/08/es6-clone.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="0℃不结冰">
+<meta property="og:description" content="深度克隆就是：把一个对象里面的东西一模一样地复制到另一个对象，并且这两个对象分别放在内存的不同地方。">
+<meta property="og:updated_time" content="2017-12-19T03:57:01.612Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="0℃不结冰">
-<meta name="twitter:description" content="0℃不结冰">
+<meta name="twitter:title" content="ES6实现深度克隆">
+<meta name="twitter:description" content="深度克隆就是：把一个对象里面的东西一模一样地复制到另一个对象，并且这两个对象分别放在内存的不同地方。">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -192,386 +193,94 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
+        <article id="post-es6-clone" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/websocket.html" class="archive-article-date">
-  	<time datetime="2016-01-22T14:57:11.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-01-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/websocket.html">WebSocket开发</a>
+    <h1 class="article-title" itemprop="name">
+      ES6实现深度克隆
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebSocket/">WebSocket</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/WebSocket/">WebSocket</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
       
-        </div></section>
+        <p>深度克隆就是：把一个对象里面的东西一模一样地复制到另一个对象，并且这两个对象分别放在内存的不同地方。<br><a id="more"></a></p>
+<h3 id="通过Object-assigin实现"><a href="#通过Object-assigin实现" class="headerlink" title="通过Object.assigin实现"></a>通过Object.assigin实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> deepClone=<span class="function">(<span class="params">obj</span>)=&gt;</span>&#123;</div><div class="line">   <span class="keyword">var</span> proto=<span class="built_in">Object</span>.getPrototypeOf(obj);</div><div class="line">   <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;,<span class="built_in">Object</span>.create(proto),obj);</div><div class="line">&#125;</div><div class="line"><span class="comment">//通过Object.getPrototypeOf函数得到obj被克隆函数的原型上的属性，然后通过Object.assign实现深度克隆。</span></div></pre></td></tr></table></figure>
+<h3 id="通过proto来实现（仅适合浏览器端）"><a href="#通过proto来实现（仅适合浏览器端）" class="headerlink" title="通过proto来实现（仅适合浏览器端）"></a>通过proto来实现（仅适合浏览器端）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> deepClone=<span class="function">(<span class="params">obj</span>)=&gt;</span>(&#123;</div><div class="line">  <span class="attr">__proto__</span>: <span class="built_in">Object</span>.getPrototypeOf(obj),</div><div class="line">  ...obj</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
       
+    </div>
+    <div class="article-info article-info-index">
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/12/前端测试框架.html" class="archive-article-date">
-  	<time datetime="2015-12-11T03:10:11.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-12-11</time>
+      <a href="/2016/08/es6-clone.html" class="archive-article-date">
+  	<time datetime="2016-08-11T15:12:23.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-08-11</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/前端测试框架.html">前端测试框架学习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/12/underscore-2.html" class="archive-article-date">
-  	<time datetime="2015-12-09T11:28:14.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-12-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/underscore-2.html">underscore 学习3</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/underscore/">underscore</a></li></ul>
-	</div>
-
-          
+      
+      
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
 	<a class="article-category-link" href="/categories/js/">js</a>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/12/underscore-1.html" class="archive-article-date">
-  	<time datetime="2015-12-08T08:28:14.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-12-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/underscore-1.html">underscore 学习2</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/underscore/">underscore</a></li></ul>
+  
+<nav id="article-nav">
+  
+    <a href="/2016/09/webpack.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          webpack-1
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/commonjs.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CommonJS规范</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/12/underscore.html" class="archive-article-date">
-  	<time datetime="2015-12-07T02:28:14.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-12-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/underscore.html">underscore 学习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/underscore/">underscore</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/11/sass-1.html" class="archive-article-date">
-  	<time datetime="2015-11-22T14:57:11.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-11-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/sass-1.html">sass的@规则</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sass/">sass</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/css/">css</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/11/sass.html" class="archive-article-date">
-  	<time datetime="2015-11-20T13:57:11.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-11-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/sass.html">Sass的控制命令</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sass/">sass</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/css/">css</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/10/mockjs.html" class="archive-article-date">
-  	<time datetime="2015-10-15T14:35:07.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-10-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/mockjs.html">Mock.js 生成随机数据，拦截 Ajax 请求</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mock/">mock</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/10/MockServer.html" class="archive-article-date">
-  	<time datetime="2015-10-15T12:26:10.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-10-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/MockServer.html">构建 Web 前端 Mock Server</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mock/">mock</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/10/Json-server.html" class="archive-article-date">
-  	<time datetime="2015-10-09T18:35:22.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-10-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/Json-server.html">JSON Server-快速伪造 REST API</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/5/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="extend next" rel="next" href="/archives/page/7/">Next &raquo;</a>
-    </nav>
-  
 
 
       </div>
@@ -602,8 +311,8 @@ _st('install','Fa45VMD_fAJD9EBem4Jc','2.0.0');
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
