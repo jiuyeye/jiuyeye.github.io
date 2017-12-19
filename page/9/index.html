@@ -95,6 +95,8 @@ form input.st-default-search-input {
 	        
 				<li><a href="/categories/js/">js</a></li>
 	        
+				<li><a href="/categories/node/">node</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -168,6 +170,8 @@ form input.st-default-search-input {
 		        
 					<li><a href="/categories/js/">js</a></li>
 		        
+					<li><a href="/categories/node/">node</a></li>
+		        
 				</ul>
 			</nav>
 			<nav class="header-nav">
@@ -189,6 +193,64 @@ form input.st-default-search-input {
 
       <div class="body-wrap">
         
+  
+    <article id="post-js-clone" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/js-clone.html">js中的几种克隆方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h3 id="克隆对象是基本类型-直接复制"><a href="#克隆对象是基本类型-直接复制" class="headerlink" title="克隆对象是基本类型,直接复制"></a>克隆对象是基本类型,直接复制</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> yourName = <span class="string">"jim"</span>;</div><div class="line"><span class="keyword">var</span> hisName = yourName;</div><div class="line"><span class="built_in">console</span>.log(hisName);<span class="comment">//输出jim</span></div><div class="line">yourName = <span class="string">"abc"</span>;</div><div class="line"><span class="built_in">console</span>.log(hisName);<span class="comment">//输出jim;</span></div></pre></td></tr></table></figure>
+<h3 id="不是基本类型-不可以直接复制"><a href="#不是基本类型-不可以直接复制" class="headerlink" title="不是基本类型,不可以直接复制"></a>不是基本类型,不可以直接复制</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">var a=[1,2,3,4];</div><div class="line">var b= a;</div><div class="line">var c=b;</div><div class="line">c.pop();</div><div class="line"></div><div class="line">console.log(a)  //[1,2,3]</div><div class="line">console.log(b)  //[1,2,3]</div><div class="line">console.log(c)  //[1,2,3]</div><div class="line"></div><div class="line">//遍历数组赋值</div><div class="line">var a = [1,2,3,4];</div><div class="line">var b = [];</div><div class="line">for(var i = 0; i &lt; a.length; i++)&#123;</div><div class="line">    b.push(a[i])</div><div class="line">&#125;</div><div class="line">console.log(b)     //[1,2,3,4]</div><div class="line">​//数组名.slice（begin，end）从一个数组中截取出新的数组</div><div class="line">var arr1 = [1, 2, 3, 4];</div><div class="line">var arr2 = arr1.slice(0);</div><div class="line">console.log(arr2); //[1,2,3,4]</div><div class="line">arr1 = [4, 3, 2, 1];</div><div class="line">console.log(arr2); //[1,2,3,4]</div><div class="line">//concat方法 拼接数组</div><div class="line">var arr1 = [1,2,3,4];</div><div class="line">var arr2 = arr1.concat();</div><div class="line">    arr2[1] = 9;</div><div class="line">    console.log(arr1, arr2); //[1,2,3,4], [1,9,3,4]</div></pre></td></tr></table></figure>
+<h3 id="函数的克隆"><a href="#函数的克隆" class="headerlink" title="函数的克隆"></a>函数的克隆</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="number">1</span>);&#125;;</div><div class="line"><span class="keyword">var</span> y = x;</div><div class="line">y = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="number">2</span>);&#125;;</div><div class="line">x();  <span class="comment">//1</span></div><div class="line">y();  <span class="comment">//2</span></div></pre></td></tr></table></figure>
+<h3 id="节点克隆"><a href="#节点克隆" class="headerlink" title="节点克隆"></a>节点克隆</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> p = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>)[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> cP = p.cloneNode();<span class="comment">//克隆p节点</span></div><div class="line"><span class="keyword">var</span> cP = p.cloneNode(<span class="literal">true</span>);<span class="comment">//克隆p节点，深度克隆，克隆节点以及节点下面的子内容。</span></div></pre></td></tr></table></figure>
+<p>JavaScript中并没有直接提供对象复制(Object Clone)的方法。因此下面的代码中改变对象b的时候，也就改变了对象a。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = &#123;<span class="attr">k1</span>:<span class="number">1</span>, <span class="attr">k2</span>:<span class="number">2</span>, <span class="attr">k3</span>:<span class="number">3</span>&#125;;</div><div class="line">b = a;</div><div class="line">b.k2 = <span class="number">4</span>;</div></pre></td></tr></table></figure></p>
+<p>如果只想改变b而保持a不变，就需要对对象a进行复制。</p>
+<p><strong>用jQuery进行对象复制</strong><br>在可以使用jQuery的情况下，jQuery自带的extend方法可以用来实现对象的复制。<br>a = {k1:1, k2:2, k3:3};<br>b = {};<br>$.extend(b,a);</p>
+<p><strong>自定义clone()方法来实现对象复制</strong><br>下面的方法，是对象复制的基本想法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.prototype.clone = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> copy = (<span class="keyword">this</span> <span class="keyword">instanceof</span> <span class="built_in">Array</span>) ? [] : &#123;&#125;;</div><div class="line">  <span class="keyword">for</span> (attr <span class="keyword">in</span> <span class="keyword">this</span>) &#123;</div><div class="line">    <span class="keyword">if</span> (!obj.hasOwnProperty(attr)) <span class="keyword">continue</span>;</div><div class="line">    copy[attr] = (<span class="keyword">typeof</span> <span class="keyword">this</span>[i] == <span class="string">"object"</span>)?obj[attr].clone():obj[attr];</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> copy;</div><div class="line">&#125;;</div><div class="line">a = &#123;<span class="attr">k1</span>:<span class="number">1</span>, <span class="attr">k2</span>:<span class="number">2</span>, <span class="attr">k3</span>:<span class="number">3</span>&#125;;</div><div class="line">b = a.clone();</div></pre></td></tr></table></figure></p>
+<h3 id="深度复制"><a href="#深度复制" class="headerlink" title="深度复制"></a>深度复制</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="literal">null</span> == obj || <span class="string">"object"</span> != <span class="keyword">typeof</span> obj) <span class="keyword">return</span> obj;</div><div class="line">    <span class="keyword">if</span>(obj <span class="keyword">instanceof</span> <span class="built_in">Date</span>)&#123;</div><div class="line">        <span class="keyword">var</span> copy = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">        copy.setTime(obj.getTime());</div><div class="line">        <span class="keyword">return</span> copy;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(obj <span class="keyword">instanceof</span> <span class="built_in">Array</span>)&#123;</div><div class="line">        <span class="keyword">var</span> copy = [];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>,len=obj.length;i&lt;len;i++)&#123;</div><div class="line">            copy[i] = clone(obj[i]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> copy;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(obj <span class="keyword">instanceof</span> <span class="built_in">Object</span>)&#123;</div><div class="line">        <span class="keyword">var</span> copy = &#123;&#125;;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> attr <span class="keyword">in</span> obj)&#123;</div><div class="line">            <span class="keyword">if</span>(obj.hasOwnProperty(attr)) copy[attr] = clone(obj[attr]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> copy;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Unable to copy obj! Its type isn't supported."</span>);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2014/08/js-clone.html" class="archive-article-date">
+  	<time datetime="2014-08-11T15:12:23.000Z" itemprop="datePublished"><i class="icon-clock"></i>2014-08-11</time>
+</a>
+      
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/js/">js</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-H5-CSS-hack" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -686,65 +748,6 @@ form input.st-default-search-input {
 
 
   
-    <article id="post-js-set" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/04/js-set.html">数据结构-集合</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>集合是由一组无序且唯一（即不能重复）的项组成。这个数据结构使用了与有限数据集合相同的数学概念。</p>
-</blockquote>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2014/04/js-set.html#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2014/04/js-set.html" class="archive-article-date">
-  	<time datetime="2014-04-05T10:56:38.000Z" itemprop="datePublished"><i class="icon-clock"></i>2014-04-05</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/集合/">集合</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
@@ -839,7 +842,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/GraphQL/" style="font-size: 10px;">GraphQL</a> <a href="/tags/JavaScript/" style="font-size: 11.25px;">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/WebSocket/" style="font-size: 10px;">WebSocket</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/asyn/" style="font-size: 10px;">asyn</a> <a href="/tags/babel/" style="font-size: 10px;">babel</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/css/" style="font-size: 11.25px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/dom/" style="font-size: 10px;">dom</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/es6/" style="font-size: 20px;">es6</a> <a href="/tags/git/" style="font-size: 13.75px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hotfix/" style="font-size: 10px;">hotfix</a> <a href="/tags/jQuery/" style="font-size: 17.5px;">jQuery</a> <a href="/tags/js/" style="font-size: 16.25px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/jsx/" style="font-size: 11.25px;">jsx</a> <a href="/tags/keycode/" style="font-size: 10px;">keycode</a> <a href="/tags/keyframes/" style="font-size: 10px;">keyframes</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/linkedlist/" style="font-size: 10px;">linkedlist</a> <a href="/tags/mock/" style="font-size: 11.25px;">mock</a> <a href="/tags/node/" style="font-size: 18.75px;">node</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/react/" style="font-size: 11.25px;">react</a> <a href="/tags/sass/" style="font-size: 11.25px;">sass</a> <a href="/tags/underscore/" style="font-size: 12.5px;">underscore</a> <a href="/tags/webapp/" style="font-size: 10px;">webapp</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/xss/" style="font-size: 10px;">xss</a> <a href="/tags/yarn/" style="font-size: 12.5px;">yarn</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/伪类/" style="font-size: 10px;">伪类</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/函数字面量/" style="font-size: 10px;">函数字面量</a> <a href="/tags/变形/" style="font-size: 10px;">变形</a> <a href="/tags/字典/" style="font-size: 10px;">字典</a> <a href="/tags/定位模型/" style="font-size: 10px;">定位模型</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/开发环境/" style="font-size: 10px;">开发环境</a> <a href="/tags/散列表/" style="font-size: 10px;">散列表</a> <a href="/tags/数据流/" style="font-size: 10px;">数据流</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/模式/" style="font-size: 10px;">模式</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/浏览器内核/" style="font-size: 10px;">浏览器内核</a> <a href="/tags/版本号/" style="font-size: 10px;">版本号</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/组件/" style="font-size: 11.25px;">组件</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a> <a href="/tags/设计模式/" style="font-size: 15px;">设计模式</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/集合/" style="font-size: 10px;">集合</a> <a href="/tags/面向对象/" style="font-size: 11.25px;">面向对象</a>
+    				<a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/GraphQL/" style="font-size: 10px;">GraphQL</a> <a href="/tags/JavaScript/" style="font-size: 11.25px;">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/WebSocket/" style="font-size: 10px;">WebSocket</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/asyn/" style="font-size: 10px;">asyn</a> <a href="/tags/babel/" style="font-size: 10px;">babel</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/css/" style="font-size: 11.25px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/dom/" style="font-size: 10px;">dom</a> <a href="/tags/es6/" style="font-size: 20px;">es6</a> <a href="/tags/git/" style="font-size: 13.75px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hotfix/" style="font-size: 10px;">hotfix</a> <a href="/tags/jQuery/" style="font-size: 17.5px;">jQuery</a> <a href="/tags/js/" style="font-size: 16.25px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/jsx/" style="font-size: 11.25px;">jsx</a> <a href="/tags/keycode/" style="font-size: 10px;">keycode</a> <a href="/tags/keyframes/" style="font-size: 10px;">keyframes</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/linkedlist/" style="font-size: 10px;">linkedlist</a> <a href="/tags/mock/" style="font-size: 11.25px;">mock</a> <a href="/tags/node/" style="font-size: 18.75px;">node</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/react/" style="font-size: 11.25px;">react</a> <a href="/tags/sass/" style="font-size: 11.25px;">sass</a> <a href="/tags/underscore/" style="font-size: 12.5px;">underscore</a> <a href="/tags/webapp/" style="font-size: 10px;">webapp</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/xss/" style="font-size: 10px;">xss</a> <a href="/tags/yarn/" style="font-size: 12.5px;">yarn</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/伪类/" style="font-size: 10px;">伪类</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/函数字面量/" style="font-size: 10px;">函数字面量</a> <a href="/tags/变形/" style="font-size: 10px;">变形</a> <a href="/tags/字典/" style="font-size: 10px;">字典</a> <a href="/tags/定位模型/" style="font-size: 10px;">定位模型</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/开发环境/" style="font-size: 10px;">开发环境</a> <a href="/tags/散列表/" style="font-size: 10px;">散列表</a> <a href="/tags/数据流/" style="font-size: 10px;">数据流</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/模式/" style="font-size: 10px;">模式</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/浏览器内核/" style="font-size: 10px;">浏览器内核</a> <a href="/tags/版本号/" style="font-size: 10px;">版本号</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/组件/" style="font-size: 11.25px;">组件</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a> <a href="/tags/设计模式/" style="font-size: 15px;">设计模式</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/集合/" style="font-size: 10px;">集合</a> <a href="/tags/面向对象/" style="font-size: 11.25px;">面向对象</a>
     			</div>
     	</section>
     

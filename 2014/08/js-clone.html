@@ -4,17 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives: 2015/3 | 0℃不结冰</title>
+  <title>js中的几种克隆方法 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="0℃不结冰">
-<meta property="og:type" content="website">
-<meta property="og:title" content="0℃不结冰">
-<meta property="og:url" content="http://water-ice.github.io/archives/2015/03/index.html">
+  <meta name="description" content="克隆对象是基本类型,直接复制12345var yourName = &quot;jim&quot;;var hisName = yourName;console.log(hisName);//输出jimyourName = &quot;abc&quot;;console.log(hisName);//输出jim;
+不是基本类型,不可以直接复制123456789101112131415161718192021222324252627va">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js中的几种克隆方法">
+<meta property="og:url" content="http://water-ice.github.io/2014/08/js-clone.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="0℃不结冰">
+<meta property="og:description" content="克隆对象是基本类型,直接复制12345var yourName = &quot;jim&quot;;var hisName = yourName;console.log(hisName);//输出jimyourName = &quot;abc&quot;;console.log(hisName);//输出jim;
+不是基本类型,不可以直接复制123456789101112131415161718192021222324252627va">
+<meta property="og:updated_time" content="2017-12-19T02:55:11.652Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="0℃不结冰">
-<meta name="twitter:description" content="0℃不结冰">
+<meta name="twitter:title" content="js中的几种克隆方法">
+<meta name="twitter:description" content="克隆对象是基本类型,直接复制12345var yourName = &quot;jim&quot;;var hisName = yourName;console.log(hisName);//输出jimyourName = &quot;abc&quot;;console.log(hisName);//输出jim;
+不是基本类型,不可以直接复制123456789101112131415161718192021222324252627va">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -192,128 +196,101 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
+        <article id="post-js-clone" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/03/code-standard.html" class="archive-article-date">
-  	<time datetime="2015-03-29T15:17:20.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-03-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/03/code-standard.html">编码规范-js</a>
+    <h1 class="article-title" itemprop="name">
+      js中的几种克隆方法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/规范/">规范</a></li></ul>
-	</div>
-
-          
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h3 id="克隆对象是基本类型-直接复制"><a href="#克隆对象是基本类型-直接复制" class="headerlink" title="克隆对象是基本类型,直接复制"></a>克隆对象是基本类型,直接复制</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> yourName = <span class="string">"jim"</span>;</div><div class="line"><span class="keyword">var</span> hisName = yourName;</div><div class="line"><span class="built_in">console</span>.log(hisName);<span class="comment">//输出jim</span></div><div class="line">yourName = <span class="string">"abc"</span>;</div><div class="line"><span class="built_in">console</span>.log(hisName);<span class="comment">//输出jim;</span></div></pre></td></tr></table></figure>
+<h3 id="不是基本类型-不可以直接复制"><a href="#不是基本类型-不可以直接复制" class="headerlink" title="不是基本类型,不可以直接复制"></a>不是基本类型,不可以直接复制</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">var a=[1,2,3,4];</div><div class="line">var b= a;</div><div class="line">var c=b;</div><div class="line">c.pop();</div><div class="line"></div><div class="line">console.log(a)  //[1,2,3]</div><div class="line">console.log(b)  //[1,2,3]</div><div class="line">console.log(c)  //[1,2,3]</div><div class="line"></div><div class="line">//遍历数组赋值</div><div class="line">var a = [1,2,3,4];</div><div class="line">var b = [];</div><div class="line">for(var i = 0; i &lt; a.length; i++)&#123;</div><div class="line">    b.push(a[i])</div><div class="line">&#125;</div><div class="line">console.log(b)     //[1,2,3,4]</div><div class="line">​//数组名.slice（begin，end）从一个数组中截取出新的数组</div><div class="line">var arr1 = [1, 2, 3, 4];</div><div class="line">var arr2 = arr1.slice(0);</div><div class="line">console.log(arr2); //[1,2,3,4]</div><div class="line">arr1 = [4, 3, 2, 1];</div><div class="line">console.log(arr2); //[1,2,3,4]</div><div class="line">//concat方法 拼接数组</div><div class="line">var arr1 = [1,2,3,4];</div><div class="line">var arr2 = arr1.concat();</div><div class="line">    arr2[1] = 9;</div><div class="line">    console.log(arr1, arr2); //[1,2,3,4], [1,9,3,4]</div></pre></td></tr></table></figure>
+<h3 id="函数的克隆"><a href="#函数的克隆" class="headerlink" title="函数的克隆"></a>函数的克隆</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="number">1</span>);&#125;;</div><div class="line"><span class="keyword">var</span> y = x;</div><div class="line">y = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="number">2</span>);&#125;;</div><div class="line">x();  <span class="comment">//1</span></div><div class="line">y();  <span class="comment">//2</span></div></pre></td></tr></table></figure>
+<h3 id="节点克隆"><a href="#节点克隆" class="headerlink" title="节点克隆"></a>节点克隆</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> p = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>)[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> cP = p.cloneNode();<span class="comment">//克隆p节点</span></div><div class="line"><span class="keyword">var</span> cP = p.cloneNode(<span class="literal">true</span>);<span class="comment">//克隆p节点，深度克隆，克隆节点以及节点下面的子内容。</span></div></pre></td></tr></table></figure>
+<p>JavaScript中并没有直接提供对象复制(Object Clone)的方法。因此下面的代码中改变对象b的时候，也就改变了对象a。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = &#123;<span class="attr">k1</span>:<span class="number">1</span>, <span class="attr">k2</span>:<span class="number">2</span>, <span class="attr">k3</span>:<span class="number">3</span>&#125;;</div><div class="line">b = a;</div><div class="line">b.k2 = <span class="number">4</span>;</div></pre></td></tr></table></figure></p>
+<p>如果只想改变b而保持a不变，就需要对对象a进行复制。</p>
+<p><strong>用jQuery进行对象复制</strong><br>在可以使用jQuery的情况下，jQuery自带的extend方法可以用来实现对象的复制。<br>a = {k1:1, k2:2, k3:3};<br>b = {};<br>$.extend(b,a);</p>
+<p><strong>自定义clone()方法来实现对象复制</strong><br>下面的方法，是对象复制的基本想法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.prototype.clone = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> copy = (<span class="keyword">this</span> <span class="keyword">instanceof</span> <span class="built_in">Array</span>) ? [] : &#123;&#125;;</div><div class="line">  <span class="keyword">for</span> (attr <span class="keyword">in</span> <span class="keyword">this</span>) &#123;</div><div class="line">    <span class="keyword">if</span> (!obj.hasOwnProperty(attr)) <span class="keyword">continue</span>;</div><div class="line">    copy[attr] = (<span class="keyword">typeof</span> <span class="keyword">this</span>[i] == <span class="string">"object"</span>)?obj[attr].clone():obj[attr];</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> copy;</div><div class="line">&#125;;</div><div class="line">a = &#123;<span class="attr">k1</span>:<span class="number">1</span>, <span class="attr">k2</span>:<span class="number">2</span>, <span class="attr">k3</span>:<span class="number">3</span>&#125;;</div><div class="line">b = a.clone();</div></pre></td></tr></table></figure></p>
+<h3 id="深度复制"><a href="#深度复制" class="headerlink" title="深度复制"></a>深度复制</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="literal">null</span> == obj || <span class="string">"object"</span> != <span class="keyword">typeof</span> obj) <span class="keyword">return</span> obj;</div><div class="line">    <span class="keyword">if</span>(obj <span class="keyword">instanceof</span> <span class="built_in">Date</span>)&#123;</div><div class="line">        <span class="keyword">var</span> copy = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">        copy.setTime(obj.getTime());</div><div class="line">        <span class="keyword">return</span> copy;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(obj <span class="keyword">instanceof</span> <span class="built_in">Array</span>)&#123;</div><div class="line">        <span class="keyword">var</span> copy = [];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>,len=obj.length;i&lt;len;i++)&#123;</div><div class="line">            copy[i] = clone(obj[i]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> copy;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(obj <span class="keyword">instanceof</span> <span class="built_in">Object</span>)&#123;</div><div class="line">        <span class="keyword">var</span> copy = &#123;&#125;;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> attr <span class="keyword">in</span> obj)&#123;</div><div class="line">            <span class="keyword">if</span>(obj.hasOwnProperty(attr)) copy[attr] = clone(obj[attr]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> copy;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Unable to copy obj! Its type isn't supported."</span>);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2014/08/js-clone.html" class="archive-article-date">
+  	<time datetime="2014-08-11T15:12:23.000Z" itemprop="datePublished"><i class="icon-clock"></i>2014-08-11</time>
+</a>
+      
+      
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
 	<a class="article-category-link" href="/categories/js/">js</a>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/03/git.html" class="archive-article-date">
-  	<time datetime="2015-03-02T12:46:09.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-03-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/03/git.html">使用 Git 进行问题定位以及代码查找</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+  
+<nav id="article-nav">
+  
+    <a href="/2014/09/mongodb-setup.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          【MongoDB数据库学习】安装、配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/06/H5-CSS-hack.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">H5 CSS hack 和浏览器内核</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/03/css-oo.html" class="archive-article-date">
-  	<time datetime="2015-03-02T09:18:32.000Z" itemprop="datePublished"><i class="icon-clock"></i>2015-03-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/03/css-oo.html">css面向对象</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/css/">css</a>
-	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+
 
 
       </div>
@@ -344,8 +321,8 @@ _st('install','Fa45VMD_fAJD9EBem4Jc','2.0.0');
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
