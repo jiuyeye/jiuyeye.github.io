@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://water-ice.github.io/2014/12/jquery-extend.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="通常使用jquery的extend时，大都是为了实现默认字段的覆盖(若传入某个字段的值，则使用传入值，否则使用默认值)。">
-<meta property="og:updated_time" content="2017-12-26T12:01:43.567Z">
+<meta property="og:updated_time" content="2017-12-26T12:04:08.196Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery中的extend()方法">
 <meta name="twitter:description" content="通常使用jquery的extend时，大都是为了实现默认字段的覆盖(若传入某个字段的值，则使用传入值，否则使用默认值)。">
@@ -227,7 +227,7 @@ form input.st-default-search-input {
 <blockquote>
 <p>深度拷贝和浅度拷贝</p>
 </blockquote>
-<p>jQuery.extend( [deep ], target, object1 [, objectN ] )</p>
+<p>jQuery.extend([deep],target,object1 [,objectN])<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>:<span class="string">'wenzi'</span>, <span class="attr">score</span>:<span class="number">80</span>&#125;;</div><div class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">score</span>:&#123;<span class="attr">english</span>:<span class="number">80</span>, <span class="attr">math</span>:<span class="number">90</span>&#125;&#125;</div><div class="line">$.extend(<span class="literal">true</span>, obj, obj1);</div><div class="line">obj.score.english = <span class="number">10</span>;</div><div class="line"><span class="built_in">console</span>.log(obj.score.english);   <span class="comment">// 10</span></div><div class="line"><span class="built_in">console</span>.log(obj1.score.english);  <span class="comment">// 80</span></div></pre></td></tr></table></figure></p>
 <h3 id="extend实现原理"><a href="#extend实现原理" class="headerlink" title="extend实现原理"></a>extend实现原理</h3>
       
     </div>
