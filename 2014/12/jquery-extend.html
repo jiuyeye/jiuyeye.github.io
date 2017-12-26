@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Category: js | 0℃不结冰</title>
+  <title>jQuery中的extend()方法 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="0℃不结冰">
-<meta property="og:type" content="website">
-<meta property="og:title" content="0℃不结冰">
-<meta property="og:url" content="http://water-ice.github.io/categories/js/index.html">
+  <meta name="description" content="通常使用jquery的extend时，大都是为了实现默认字段的覆盖(若传入某个字段的值，则使用传入值，否则使用默认值)。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery中的extend()方法">
+<meta property="og:url" content="http://water-ice.github.io/2014/12/jquery-extend.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="0℃不结冰">
+<meta property="og:description" content="通常使用jquery的extend时，大都是为了实现默认字段的覆盖(若传入某个字段的值，则使用传入值，否则使用默认值)。">
+<meta property="og:updated_time" content="2017-12-26T12:01:43.567Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="0℃不结冰">
-<meta name="twitter:description" content="0℃不结冰">
+<meta name="twitter:title" content="jQuery中的extend()方法">
+<meta name="twitter:description" content="通常使用jquery的extend时，大都是为了实现默认字段的覆盖(若传入某个字段的值，则使用传入值，否则使用默认值)。">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -192,401 +193,109 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
+        <article id="post-jquery-extend" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
+    <h1 class="article-title" itemprop="name">
+      jQuery中的extend()方法
+    </h1>
   
+
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>通常使用jquery的extend时，大都是为了实现默认字段的覆盖(若传入某个字段的值，则使用传入值，否则使用默认值)。</p>
+</blockquote>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getList</span>(<span class="params">option</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> _default = &#123;</div><div class="line">        <span class="attr">name</span>:<span class="string">"jack"</span>,</div><div class="line">        <span class="attr">age</span>:<span class="string">"30"</span>,</div><div class="line">        <span class="attr">sex</span>:<span class="string">"man"</span></div><div class="line">    &#125;</div><div class="line">    $.extend(_default,option);</div><div class="line">    <span class="keyword">return</span> _default;</div><div class="line">&#125;</div><div class="line">getList();  <span class="comment">// &#123;name: "jack", age: "30", sex: "man"&#125;</span></div><div class="line">getList(&#123;<span class="attr">name</span>:<span class="string">'bing'</span>&#125;); <span class="comment">// &#123;name: "bing", age: "30", sex: "man"&#125;</span></div><div class="line">getList(&#123;<span class="attr">name</span>:<span class="string">'bing'</span>, <span class="attr">age</span>:<span class="number">36</span>, <span class="attr">sex</span>:<span class="string">'female'</span>&#125;);  <span class="comment">// &#123;name: "bing", age: 36, sex: "female"&#125;</span></div></pre></td></tr></table></figure>
+<h3 id="extend能实现哪些功能"><a href="#extend能实现哪些功能" class="headerlink" title="extend能实现哪些功能"></a>extend能实现哪些功能</h3><blockquote>
+<p>将两个或更多对象的内容合并到第一个对象，</p>
+</blockquote>
+<p><code>jQuery.extend(target [,object1 ] [,objectN])</code>；extend方法需要至少传入一个参数，第一个必需，后面的都是可选参数。若传两个或两个以上的参数都是对象类型，那么就会把后面所有对象的内容合并给<code>target</code>(第一个对象)上。</p>
+<blockquote>
+<p>为JQUERY扩展方法或属性</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$.extend(&#123;</div><div class="line">    <span class="attr">_name</span> : <span class="string">'wenzi'</span>,</div><div class="line">    <span class="attr">_getName</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>._name;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">$._name; <span class="comment">// wenzi</span></div><div class="line">$._getName(); <span class="comment">// wenzi</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>深度拷贝和浅度拷贝</p>
+</blockquote>
+<p>jQuery.extend( [deep ], target, object1 [, objectN ] )</p>
+<h3 id="extend实现原理"><a href="#extend实现原理" class="headerlink" title="extend实现原理"></a>extend实现原理</h3>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2014/12/jquery-extend.html" class="archive-article-date">
+  	<time datetime="2014-12-26T11:37:59.000Z" itemprop="datePublished"><i class="icon-clock"></i>2014-12-26</time>
+</a>
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/es-shorthand.html" class="archive-article-date">
-  	<time datetime="2017-03-26T14:44:18.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-03-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/es-shorthand.html">ES6中快捷语法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
-	</div>
-
-          
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
 	<a class="article-category-link" href="/categories/js/">js</a>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/web-app.html" class="archive-article-date">
-  	<time datetime="2017-01-12T12:36:24.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-01-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/web-app.html">WebApp前端性能优化</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webapp/">webapp</a></li></ul>
+  
+<nav id="article-nav">
+  
+    <a href="/2015/02/css-布局.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          css 布局
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/10/node-8.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">node学习第8天</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/js-browser-zoom.html" class="archive-article-date">
-  	<time datetime="2016-12-30T06:04:58.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/js-browser-zoom.html">js 浏览器缩放</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/atom-react.html" class="archive-article-date">
-  	<time datetime="2016-12-28T06:09:55.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/atom-react.html">Atom编辑器-React开发的插件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/js-error.html" class="archive-article-date">
-  	<time datetime="2016-12-15T07:20:52.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/js-error.html">JavaScript易错知识点整理-转</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/es-promise.html" class="archive-article-date">
-  	<time datetime="2016-11-25T14:37:11.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/es-promise.html">ES6-Promise</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/js-mob.html" class="archive-article-date">
-  	<time datetime="2016-11-24T15:19:39.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/js-mob.html">js移动端开发</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/es6-proxy.html" class="archive-article-date">
-  	<time datetime="2016-11-20T13:57:11.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/es6-proxy.html">ES6-Proxy</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/js-event.html" class="archive-article-date">
-  	<time datetime="2016-11-14T05:54:03.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/js-event.html">javascript-各类事件详解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事件/">事件</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/js-常用算法.html" class="archive-article-date">
-  	<time datetime="2016-11-13T15:41:26.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/js-常用算法.html">js-常用算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/categories/js/page/2/">2</a><a class="page-number" href="/categories/js/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/categories/js/page/8/">8</a><a class="extend next" rel="next" href="/categories/js/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
       </div>
@@ -617,10 +326,10 @@ _st('install','Fa45VMD_fAJD9EBem4Jc','2.0.0');
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		root: "/",
 		innerArchive: true

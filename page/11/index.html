@@ -194,6 +194,56 @@ form input.st-default-search-input {
       <div class="body-wrap">
         
   
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/01/hello-world.html">语义化的软件版本号规则</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>当以不向后兼容的方式，变更API时，递增主版本号。<br>当以向后兼容的方式，增加功能时，递增副版本号。<br>当以向后兼容的方式，修正BUG时，递增补丁版本号。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2014/01/hello-world.html" class="archive-article-date">
+  	<time datetime="2013-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2014-01-01</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本号/">版本号</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-js-often-fun" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -692,64 +742,6 @@ form input.st-default-search-input {
 	<a class="article-category-link" href="/categories/js/">js</a>
 	</div>
 
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-jquery-fx" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2013/09/jquery-fx.html">jQuery.fx.interval 和jQuery.fx.off</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <a id="more"></a>
-<h3 id="jQuery-fx-interval"><a href="#jQuery-fx-interval" class="headerlink" title="jQuery.fx.interval"></a>jQuery.fx.interval</h3><blockquote>
-<p>jQuery.fx.interval 属性用于改变以毫秒计的动画运行速率。可操作该属性来调整动画运行的每秒帧数。</p>
-</blockquote>
-<p>默认值是 13 毫秒。该属性常用于修改动画运行的每秒帧数。<br>降低这个值能够使动画在更快的浏览器中运行得更流畅，但这么做也行会影响性能。<br><strong>提示：</strong>由于 jQuery 使用一个全局的间隔时间，为了使该属性生效，动画应该不在运行或者首先停止所有动画。<br><strong>注释：</strong>该属性在支持 requestAnimationFrame 属性的浏览器中无效，比如 Google Chrome 11。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jQuery.fx.interval = milliseconds;</div></pre></td></tr></table></figure></p>
-<h3 id="jQuery-fx-off"><a href="#jQuery-fx-off" class="headerlink" title="jQuery.fx.off"></a>jQuery.fx.off</h3><blockquote>
-<p>jQuery.fx.off 属性用于对所有动画进行全局禁用或启用。</p>
-</blockquote>
-<p>默认值是 false，它允许动画正常运行。当设置为 true 时，将禁用所有动画方法，这样会把元素设置为其最后的状态，而不是显示效果。<br><strong>提示：</strong>如需简化代码，可以使用 $.fx.off 来代替 jQuery.fx.off。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jQuery.fx.off = <span class="literal">true</span>|<span class="literal">false</span>;</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2013/09/jquery-fx.html" class="archive-article-date">
-  	<time datetime="2013-09-12T11:30:27.000Z" itemprop="datePublished"><i class="icon-clock"></i>2013-09-12</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
-	</div>
-
-      
 
       <div class="clearfix"></div>
     </div>
