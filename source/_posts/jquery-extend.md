@@ -53,3 +53,15 @@ console.log(obj1.score.english);  // 80
 ```
 
 ### extend实现原理
+
+### jQuery.fn.extend
+
+> 对jQuery元素的扩展，只能用在jQuery元素上，可以理解为普通方法。定义插件时需要返回this，以支持jQuery的链式操作。
+```javascript
+jQuery.fn.extend({
+    red: function() {
+        return $(this).css('color', '#ff0000');
+    }
+});
+$('#test').red();
+```
