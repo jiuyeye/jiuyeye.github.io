@@ -4,18 +4,17 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>jQuery animate() - 使用队列功能 | 0℃不结冰</title>
+  <title>Archives: 2013 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="默认地，jQuery 提供针对动画的队列功能。编写多个 animate() 调用，jQuery 会创建包含这些方法调用的“内部”队列。然后逐一运行这些 animate 调用。1234567$(&quot;button&quot;).click(function()&amp;#123;  var div=$(&quot;div&quot;);  div.animate(&amp;#123;height:&apos;300px&apos;,opacity:&apos;0.4&apos;&amp;#12">
-<meta property="og:type" content="article">
-<meta property="og:title" content="jQuery animate() - 使用队列功能">
-<meta property="og:url" content="http://water-ice.github.io/2013/07/jquery-animate-queue.html">
+  <meta name="description" content="0℃不结冰">
+<meta property="og:type" content="website">
+<meta property="og:title" content="0℃不结冰">
+<meta property="og:url" content="http://water-ice.github.io/archives/2013/page/3/index.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="默认地，jQuery 提供针对动画的队列功能。编写多个 animate() 调用，jQuery 会创建包含这些方法调用的“内部”队列。然后逐一运行这些 animate 调用。1234567$(&quot;button&quot;).click(function()&amp;#123;  var div=$(&quot;div&quot;);  div.animate(&amp;#123;height:&apos;300px&apos;,opacity:&apos;0.4&apos;&amp;#12">
-<meta property="og:updated_time" content="2017-12-15T03:39:05.748Z">
+<meta property="og:description" content="0℃不结冰">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery animate() - 使用队列功能">
-<meta name="twitter:description" content="默认地，jQuery 提供针对动画的队列功能。编写多个 animate() 调用，jQuery 会创建包含这些方法调用的“内部”队列。然后逐一运行这些 animate 调用。1234567$(&quot;button&quot;).click(function()&amp;#123;  var div=$(&quot;div&quot;);  div.animate(&amp;#123;height:&apos;300px&apos;,opacity:&apos;0.4&apos;&amp;#12">
+<meta name="twitter:title" content="0℃不结冰">
+<meta name="twitter:description" content="0℃不结冰">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -193,94 +192,58 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-jquery-animate-queue" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      jQuery animate() - 使用队列功能
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2013" class="archive-year">2013</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2013/01/js-pre-compiles.html" class="archive-article-date">
+  	<time datetime="2013-01-04T11:18:13.000Z" itemprop="datePublished"><i class="icon-clock"></i>2013-01-04</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2013/01/js-pre-compiles.html">js预解析</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <a id="more"></a>
-<p>默认地，jQuery 提供针对动画的队列功能。<br>编写多个 animate() 调用，jQuery 会创建包含这些方法调用的“内部”队列。然后逐一运行这些 animate 调用。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> div=$(<span class="string">"div"</span>);</div><div class="line">  div.animate(&#123;<span class="attr">height</span>:<span class="string">'300px'</span>,<span class="attr">opacity</span>:<span class="string">'0.4'</span>&#125;,<span class="string">"slow"</span>);</div><div class="line">  div.animate(&#123;<span class="attr">width</span>:<span class="string">'300px'</span>,<span class="attr">opacity</span>:<span class="string">'0.8'</span>&#125;,<span class="string">"slow"</span>);</div><div class="line">  div.animate(&#123;<span class="attr">height</span>:<span class="string">'100px'</span>,<span class="attr">opacity</span>:<span class="string">'0.4'</span>&#125;,<span class="string">"slow"</span>);</div><div class="line">  div.animate(&#123;<span class="attr">width</span>:<span class="string">'100px'</span>,<span class="attr">opacity</span>:<span class="string">'0.8'</span>&#125;,<span class="string">"slow"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2013/07/jquery-animate-queue.html" class="archive-article-date">
-  	<time datetime="2013-07-06T11:55:13.000Z" itemprop="datePublished"><i class="icon-clock"></i>2013-07-06</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+        <div class="article-info info-on-right">
+          
+          
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/js/">js</a>
 	</div>
 
-      
 
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2013/07/jquery-animate-stop.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          jQuery 停止动画
-        
-      </div>
-    </a>
   
   
-    <a href="/2013/06/jquery-source-code-1.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">jQuery-2-奇技淫巧学习</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-
-
-
-<div class="share_jia">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">Share to: &nbsp; </span>
-		<a class="jiathis_button_facebook"></a> 
-	    <a class="jiathis_button_twitter"></a>
-	    <a class="jiathis_button_plus"></a> 
-	    <a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
-</div>
-
-
-
-
-
-
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2013/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/2013/">1</a><a class="page-number" href="/archives/2013/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
+  
 
 
       </div>
@@ -311,8 +274,8 @@ _st('install','Fa45VMD_fAJD9EBem4Jc','2.0.0');
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
