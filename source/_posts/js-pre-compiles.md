@@ -5,6 +5,18 @@ categories: js
 ---
 JavaScript是解释型语言，但又不是在运行时自上往下一句一句地解析。
 <!-- more -->
+先来几个例子
+```javascript
+console.log(a);
+var a=1;
+console.log(a);
+function a(){console.log(2);}
+var a=3;
+console.log(a);
+function a(){console.log(4);}
+console.log(a);
+a();
+```
 ### 变量和函数在内存中的展示
 ```javascript
 var a;                 // 首先提前`变量`当前值 为：undefind。
@@ -27,3 +39,6 @@ function a(){          // 这个函数现在就没用了。
 js解析器在运行js代码的时候 分为两步：
 1. 第一步 把所有的 变量、函数、参数 提前到当前作用域的顶部。
 2. 第二步 逐行解读代码 从左到右、从上至下。
+
+#### var声明的变量和function声明的函数在预解析的区别
+var声明的变量和function声明的函数在预解析的时候有区别，var声明的变量在预解析的时候只是提前的声明，function声明的函数在预解析的时候会提前声明并且会同时定义。也就是说var声明的变量和function声明的函数的区别是在声明的同时有没同时进行定义。
