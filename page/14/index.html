@@ -194,7 +194,7 @@ form input.st-default-search-input {
       <div class="body-wrap">
         
   
-    <article id="post-chunk" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-factorialize-number" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -204,7 +204,7 @@ form input.st-default-search-input {
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/chunk.html">算法-数据分割</a>
+      <a class="article-title" href="/2012/05/factorialize-number.html">算法-整数的阶乘</a>
     </h1>
   
 
@@ -212,13 +212,16 @@ form input.st-default-search-input {
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="把一个数组arr按照指定的数组大小size分割成若干个数组块。"><a href="#把一个数组arr按照指定的数组大小size分割成若干个数组块。" class="headerlink" title="把一个数组arr按照指定的数组大小size分割成若干个数组块。"></a>把一个数组arr按照指定的数组大小size分割成若干个数组块。</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">chunk</span>(<span class="params">arr, size</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> newArr=[];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i+=size)&#123;</div><div class="line">    newArr.push(arr.slice(i,i+size));</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> newArr;</div><div class="line">&#125;</div><div class="line"></div><div class="line">chunk([<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"d"</span>], <span class="number">2</span>);</div></pre></td></tr></table></figure>
+        <p>如果用字母n来代表一个整数，阶乘代表着所有小于或等于n的整数的乘积。</p>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2012/05/factorialize-number.html#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2012/05/chunk.html" class="archive-article-date">
-  	<time datetime="2012-05-10T11:39:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-05-10</time>
+      <a href="/2012/05/factorialize-number.html" class="archive-article-date">
+  	<time datetime="2012-05-11T10:19:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-05-11</time>
 </a>
       
 	<div class="article-tag tagcloud">
@@ -248,7 +251,7 @@ form input.st-default-search-input {
 
 
   
-    <article id="post-Reverse-a-String" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-chunk" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -258,7 +261,7 @@ form input.st-default-search-input {
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2012/05/Reverse-a-String.html">算法-翻转字符串</a>
+      <a class="article-title" href="/2012/05/chunk.html">算法-数据分割</a>
     </h1>
   
 
@@ -266,15 +269,13 @@ form input.st-default-search-input {
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="翻转字符串"><a href="#翻转字符串" class="headerlink" title="翻转字符串"></a>翻转字符串</h3><p>先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  str = str.split(<span class="string">""</span>);</div><div class="line">  str = str.reverse();</div><div class="line">  str = str.join(<span class="string">""</span>);</div><div class="line">  <span class="keyword">return</span> str; <span class="comment">//olleh</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">reverseString(<span class="string">"hello"</span>);</div></pre></td></tr></table></figure></p>
-<p>相关知识：<br><code>String 全局对象是用来构造字符串对象或字符序列的构造函数。</code><br><code>split（）方法通过将字符串分成子字符串，从而将一个String对象拆分为一个字符串数组。</code><br><code>Array.reverse() 方法颠倒数组中元素的位置。第一个元素会成为最后一个，最后一个会成为第一个。</code><br><code>Array.join() 方法将数组（或一个类数组对象）的所有元素连接到一个字符串中</code></p>
-
+        <h3 id="把一个数组arr按照指定的数组大小size分割成若干个数组块。"><a href="#把一个数组arr按照指定的数组大小size分割成若干个数组块。" class="headerlink" title="把一个数组arr按照指定的数组大小size分割成若干个数组块。"></a>把一个数组arr按照指定的数组大小size分割成若干个数组块。</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">chunk</span>(<span class="params">arr, size</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> newArr=[];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i+=size)&#123;</div><div class="line">    newArr.push(arr.slice(i,i+size));</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> newArr;</div><div class="line">&#125;</div><div class="line"></div><div class="line">chunk([<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"d"</span>], <span class="number">2</span>);</div></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2012/05/Reverse-a-String.html" class="archive-article-date">
-  	<time datetime="2012-05-10T06:19:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-05-10</time>
+      <a href="/2012/05/chunk.html" class="archive-article-date">
+  	<time datetime="2012-05-10T11:39:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-05-10</time>
 </a>
       
 	<div class="article-tag tagcloud">
@@ -331,6 +332,62 @@ form input.st-default-search-input {
     <div class="article-info article-info-index">
       
       <a href="/2012/05/Check-Palindrom.html" class="archive-article-date">
+  	<time datetime="2012-05-10T06:19:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-05-10</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/js/">js</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Reverse-a-String" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/05/Reverse-a-String.html">算法-翻转字符串</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="翻转字符串"><a href="#翻转字符串" class="headerlink" title="翻转字符串"></a>翻转字符串</h3><p>先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  str = str.split(<span class="string">""</span>);</div><div class="line">  str = str.reverse();</div><div class="line">  str = str.join(<span class="string">""</span>);</div><div class="line">  <span class="keyword">return</span> str; <span class="comment">//olleh</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">reverseString(<span class="string">"hello"</span>);</div></pre></td></tr></table></figure></p>
+<p>相关知识：<br><code>String 全局对象是用来构造字符串对象或字符序列的构造函数。</code><br><code>split（）方法通过将字符串分成子字符串，从而将一个String对象拆分为一个字符串数组。</code><br><code>Array.reverse() 方法颠倒数组中元素的位置。第一个元素会成为最后一个，最后一个会成为第一个。</code><br><code>Array.join() 方法将数组（或一个类数组对象）的所有元素连接到一个字符串中</code></p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2012/05/Reverse-a-String.html" class="archive-article-date">
   	<time datetime="2012-05-10T06:19:40.000Z" itemprop="datePublished"><i class="icon-clock"></i>2012-05-10</time>
 </a>
       
@@ -754,58 +811,6 @@ form input.st-default-search-input {
 
 
   
-    <article id="post-css-语法详解" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2011/01/css-语法详解.html">css 语法详解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>css 语法关键点</p>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2011/01/css-语法详解.html#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2011/01/css-语法详解.html" class="archive-article-date">
-  	<time datetime="2011-01-08T16:06:05.000Z" itemprop="datePublished"><i class="icon-clock"></i>2011-01-09</time>
-</a>
-      
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/css/">css</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/13/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/15/">Next &raquo;</a>
@@ -900,7 +905,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/GraphQL/" style="font-size: 10px;">GraphQL</a> <a href="/tags/JavaScript/" style="font-size: 11.43px;">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Parcel/" style="font-size: 10px;">Parcel</a> <a href="/tags/WebSocket/" style="font-size: 10px;">WebSocket</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/asyn/" style="font-size: 10px;">asyn</a> <a href="/tags/babel/" style="font-size: 10px;">babel</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/css/" style="font-size: 11.43px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/dom/" style="font-size: 10px;">dom</a> <a href="/tags/es6/" style="font-size: 20px;">es6</a> <a href="/tags/git/" style="font-size: 14.29px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/hasownproperty/" style="font-size: 10px;">hasownproperty</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hotfix/" style="font-size: 10px;">hotfix</a> <a href="/tags/jQuery/" style="font-size: 17.14px;">jQuery</a> <a href="/tags/js/" style="font-size: 15.71px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/jsx/" style="font-size: 11.43px;">jsx</a> <a href="/tags/keycode/" style="font-size: 10px;">keycode</a> <a href="/tags/keyframes/" style="font-size: 10px;">keyframes</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/linkedlist/" style="font-size: 10px;">linkedlist</a> <a href="/tags/mock/" style="font-size: 11.43px;">mock</a> <a href="/tags/node/" style="font-size: 18.57px;">node</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/react/" style="font-size: 11.43px;">react</a> <a href="/tags/sass/" style="font-size: 11.43px;">sass</a> <a href="/tags/underscore/" style="font-size: 12.86px;">underscore</a> <a href="/tags/webapp/" style="font-size: 10px;">webapp</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/xss/" style="font-size: 10px;">xss</a> <a href="/tags/yarn/" style="font-size: 12.86px;">yarn</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/伪类/" style="font-size: 10px;">伪类</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/函数字面量/" style="font-size: 10px;">函数字面量</a> <a href="/tags/变形/" style="font-size: 10px;">变形</a> <a href="/tags/字典/" style="font-size: 10px;">字典</a> <a href="/tags/定位模型/" style="font-size: 10px;">定位模型</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/开发环境/" style="font-size: 10px;">开发环境</a> <a href="/tags/散列表/" style="font-size: 10px;">散列表</a> <a href="/tags/数据流/" style="font-size: 10px;">数据流</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/模式/" style="font-size: 10px;">模式</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/浏览器内核/" style="font-size: 10px;">浏览器内核</a> <a href="/tags/版本号/" style="font-size: 10px;">版本号</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/算法/" style="font-size: 15.71px;">算法</a> <a href="/tags/组件/" style="font-size: 11.43px;">组件</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a> <a href="/tags/设计模式/" style="font-size: 15.71px;">设计模式</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/集合/" style="font-size: 10px;">集合</a> <a href="/tags/面向对象/" style="font-size: 11.43px;">面向对象</a>
+    				<a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/ESlint/" style="font-size: 10px;">ESlint</a> <a href="/tags/GraphQL/" style="font-size: 10px;">GraphQL</a> <a href="/tags/JavaScript/" style="font-size: 11.43px;">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Parcel/" style="font-size: 10px;">Parcel</a> <a href="/tags/WebSocket/" style="font-size: 10px;">WebSocket</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/asyn/" style="font-size: 10px;">asyn</a> <a href="/tags/babel/" style="font-size: 10px;">babel</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/css/" style="font-size: 11.43px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/dom/" style="font-size: 10px;">dom</a> <a href="/tags/es6/" style="font-size: 20px;">es6</a> <a href="/tags/git/" style="font-size: 14.29px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/h5/" style="font-size: 10px;">h5</a> <a href="/tags/hasownproperty/" style="font-size: 10px;">hasownproperty</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hotfix/" style="font-size: 10px;">hotfix</a> <a href="/tags/jQuery/" style="font-size: 17.14px;">jQuery</a> <a href="/tags/js/" style="font-size: 15.71px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/jsx/" style="font-size: 11.43px;">jsx</a> <a href="/tags/keycode/" style="font-size: 10px;">keycode</a> <a href="/tags/keyframes/" style="font-size: 10px;">keyframes</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/linkedlist/" style="font-size: 10px;">linkedlist</a> <a href="/tags/mock/" style="font-size: 11.43px;">mock</a> <a href="/tags/node/" style="font-size: 18.57px;">node</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/react/" style="font-size: 11.43px;">react</a> <a href="/tags/sass/" style="font-size: 11.43px;">sass</a> <a href="/tags/underscore/" style="font-size: 12.86px;">underscore</a> <a href="/tags/webapp/" style="font-size: 10px;">webapp</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/xss/" style="font-size: 10px;">xss</a> <a href="/tags/yarn/" style="font-size: 12.86px;">yarn</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/伪类/" style="font-size: 10px;">伪类</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/函数字面量/" style="font-size: 10px;">函数字面量</a> <a href="/tags/变形/" style="font-size: 10px;">变形</a> <a href="/tags/字典/" style="font-size: 10px;">字典</a> <a href="/tags/定位模型/" style="font-size: 10px;">定位模型</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/开发环境/" style="font-size: 10px;">开发环境</a> <a href="/tags/散列表/" style="font-size: 10px;">散列表</a> <a href="/tags/数据流/" style="font-size: 10px;">数据流</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/模式/" style="font-size: 10px;">模式</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/浏览器内核/" style="font-size: 10px;">浏览器内核</a> <a href="/tags/版本号/" style="font-size: 10px;">版本号</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/算法/" style="font-size: 15.71px;">算法</a> <a href="/tags/组件/" style="font-size: 11.43px;">组件</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a> <a href="/tags/设计模式/" style="font-size: 15.71px;">设计模式</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/集合/" style="font-size: 10px;">集合</a> <a href="/tags/面向对象/" style="font-size: 11.43px;">面向对象</a>
     			</div>
     	</section>
     
