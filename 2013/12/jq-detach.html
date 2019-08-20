@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>jQuery 文档操作 - detach() 方法 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="detach()方法移除被选元素，包括所有文本和子节点。">
+<meta name="keywords" content="jQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery 文档操作 - detach() 方法">
 <meta property="og:url" content="http://water-ice.github.io/2013/12/jq-detach.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="detach()方法移除被选元素，包括所有文本和子节点。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.746Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery 文档操作 - detach() 方法">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-jq-detach" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-jq-detach" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -215,7 +217,7 @@ form input.st-default-search-input {
 <blockquote>
 <p>会保留 jQuery 对象中的匹配的元素，因而可以在将来再使用这些匹配的元素。<br>detach() 会保留所有绑定的事件、附加的数据，这一点与 remove() 不同。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">"body"</span>).append($(<span class="string">"p"</span>).detach());</div><div class="line">&#125;);</div><div class="line">$(<span class="string">"p"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="keyword">this</span>).animate(&#123;<span class="attr">fontSize</span>:<span class="string">"+=1px"</span>&#125;)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"body"</span>).append($(<span class="string">"p"</span>).detach());</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">"p"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>).animate(&#123;<span class="attr">fontSize</span>:<span class="string">"+=1px"</span>&#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
@@ -290,7 +292,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

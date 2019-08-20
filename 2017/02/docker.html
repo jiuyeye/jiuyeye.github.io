@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Docker学习 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。">
+<meta name="keywords" content="Docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker学习">
 <meta property="og:url" content="http://water-ice.github.io/2017/02/docker.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.728Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker学习">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-docker" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-docker" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -218,7 +220,7 @@ form input.st-default-search-input {
 <p>Docker2013年开始进入业界，2014年下半年火热起来。<br>Docker使用沙箱机制，独立于硬件、语言、打包系统、框架等，相互之间没有任何接口。没有任何性能开销，更不依赖于其他。</p>
 <p><strong>Docker通常用于如下场景</strong>：<br>1.web应用的自动化打包和发布；<br>2.自动化测试和持续集成、发布；<br>3.在服务型环境中部署和调整数据库或其他的后台应用；<br>4.从头编译或者扩展现有的OpenShift或Cloud Foundry平台来搭建自己的PaaS环境。</p>
 <p><strong>Docker局限</strong>：<br>1.Docker是基于Linux 64bit的，无法在32bit的linux/Windows/unix环境下使用<br>2.LXC是基于cgroup等linux kernel功能的，因此container的guest系统只能是linux base的<br>3.隔离性相比KVM之类的虚拟化方案还是有些欠缺，所有container公用一部分的运行库<br>4.网络管理相对简单，主要是基于namespace隔离<br>5.cgroup的cpu和cpuset提供的cpu功能相比KVM的等虚拟化方案相比难以度量(所以dotcloud主要是按内存收费)<br>6.docker对disk的管理比较有限<br>7.container随着用户进程的停止而销毁，container中的log等用户数据不便收集</p>
-<h3 id="Docker常用命令"><a href="#Docker常用命令" class="headerlink" title="Docker常用命令"></a>Docker常用命令</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//检查Docker的安装是否正确</span></div><div class="line">docker info</div><div class="line"><span class="comment">//查看Docker命令</span></div><div class="line">docker -h</div><div class="line"><span class="comment">//获取镜像</span></div><div class="line">sudo docker pull NAME[:TAG]</div><div class="line"><span class="comment">//获取镜像</span></div><div class="line">sudo docker run [OPTIONS] IMAGE [COMMAND] [ARG]</div></pre></td></tr></table></figure>
+<h3 id="Docker常用命令"><a href="#Docker常用命令" class="headerlink" title="Docker常用命令"></a>Docker常用命令</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检查Docker的安装是否正确</span></span><br><span class="line">docker info</span><br><span class="line"><span class="comment">//查看Docker命令</span></span><br><span class="line">docker -h</span><br><span class="line"><span class="comment">//获取镜像</span></span><br><span class="line">sudo docker pull NAME[:TAG]</span><br><span class="line"><span class="comment">//获取镜像</span></span><br><span class="line">sudo docker run [OPTIONS] IMAGE [COMMAND] [ARG]</span><br></pre></td></tr></table></figure>
 <h3 id="Docker-架构"><a href="#Docker-架构" class="headerlink" title="Docker 架构"></a>Docker 架构</h3><p>Docker 使用客户端-服务器 (C/S) 架构模式，使用远程API来管理和创建Docker容器。Docker 容器通过 Docker 镜像来创建。容器与镜像的关系类似于面向对象编程中的对象与类。</p>
 
       
@@ -295,7 +297,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

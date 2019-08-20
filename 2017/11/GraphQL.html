@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>GraphQL 学习 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="GraphQL 使用 Schema 来描述数据，并通过制定和实现 GraphQL 规范定义了支持 Schema 查询的 DSQL （Domain Specific Query Language，领域特定查询语言）。">
+<meta name="keywords" content="GraphQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GraphQL 学习">
 <meta property="og:url" content="http://water-ice.github.io/2017/11/GraphQL.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="GraphQL 使用 Schema 来描述数据，并通过制定和实现 GraphQL 规范定义了支持 Schema 查询的 DSQL （Domain Specific Query Language，领域特定查询语言）。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.714Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GraphQL 学习">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-GraphQL" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-GraphQL" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -212,9 +214,9 @@ form input.st-default-search-input {
     <div class="article-entry" itemprop="articleBody">
       
         <p>GraphQL 使用 Schema 来描述数据，并通过制定和实现 GraphQL 规范定义了支持 Schema 查询的 DSQL （Domain Specific Query Language，领域特定查询语言）。<br><a id="more"></a></p>
-<h2 id="GraphQL组件构成构成"><a href="#GraphQL组件构成构成" class="headerlink" title="GraphQL组件构成构成"></a>GraphQL组件构成构成</h2><h4 id="类型系统（Type-System）"><a href="#类型系统（Type-System）" class="headerlink" title="类型系统（Type System）"></a>类型系统（Type System）</h4><p>可以将 GraphQL 的类型系统分为标量类型（Scalar Types，标量类型）和其他高级数据类型，标量类型即可以表示最细粒度数据结构的数据类型，可以和 JavaScript 的原始类型对应。GraphQL 规范目前规定支持的标量类型有：<br>1、Int：整数，对应 JavaScript 的 Number<br>2、Float：浮点数，对应 JavaScript 的 Number<br>3、String：字符串，对应 JavaScript 的 String<br>4、Boolean：布尔值，对应 JavaScript 的 Boolean<br>5、ID：ID 值，是一个序列化后值唯一的字符串，可以视作对应 ES 2015 新增的 Symbol<br>6、Object：对象<br>用于描述层级或者树形数据结构。对于树形数据结构来说，叶子字段的类型都是标量数据类型。几乎所有 GraphQL 类型都是对象类型。Object 类型有一个 name 字段，以及一个很重要的 fields 字段。fields 字段可以描述出一个完整的数据结构。例如一个表示地址数据结构的 GraphQL 对象为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">const AddressType = new GraphQLObjectType(&#123;</div><div class="line">  name: &apos;Address&apos;,</div><div class="line">  fields: &#123;</div><div class="line">    street: &#123; type: GraphQLString &#125;,</div><div class="line">    number: &#123; type: GraphQLInt &#125;,</div><div class="line">    formatted: &#123;</div><div class="line">      type: GraphQLString,</div><div class="line">      resolve(obj) &#123;</div><div class="line">        return obj.number + &apos; &apos; + obj.street</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="GraphQL组件构成构成"><a href="#GraphQL组件构成构成" class="headerlink" title="GraphQL组件构成构成"></a>GraphQL组件构成构成</h2><h4 id="类型系统（Type-System）"><a href="#类型系统（Type-System）" class="headerlink" title="类型系统（Type System）"></a>类型系统（Type System）</h4><p>可以将 GraphQL 的类型系统分为标量类型（Scalar Types，标量类型）和其他高级数据类型，标量类型即可以表示最细粒度数据结构的数据类型，可以和 JavaScript 的原始类型对应。GraphQL 规范目前规定支持的标量类型有：<br>1、Int：整数，对应 JavaScript 的 Number<br>2、Float：浮点数，对应 JavaScript 的 Number<br>3、String：字符串，对应 JavaScript 的 String<br>4、Boolean：布尔值，对应 JavaScript 的 Boolean<br>5、ID：ID 值，是一个序列化后值唯一的字符串，可以视作对应 ES 2015 新增的 Symbol<br>6、Object：对象<br>用于描述层级或者树形数据结构。对于树形数据结构来说，叶子字段的类型都是标量数据类型。几乎所有 GraphQL 类型都是对象类型。Object 类型有一个 name 字段，以及一个很重要的 fields 字段。fields 字段可以描述出一个完整的数据结构。例如一个表示地址数据结构的 GraphQL 对象为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const AddressType = new GraphQLObjectType(&#123;</span><br><span class="line">  name: &apos;Address&apos;,</span><br><span class="line">  fields: &#123;</span><br><span class="line">    street: &#123; type: GraphQLString &#125;,</span><br><span class="line">    number: &#123; type: GraphQLInt &#125;,</span><br><span class="line">    formatted: &#123;</span><br><span class="line">      type: GraphQLString,</span><br><span class="line">      resolve(obj) &#123;</span><br><span class="line">        return obj.number + &apos; &apos; + obj.street</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>7、Interface：接口<br>8、Union：联合<br>9、Enum：枚举<br>10、Input Object：输入对象<br>11、List：列表<br>12、Non-Null：不能为 Null<br>Non-Null 强制类型的值不能为 null，并且在请求出错时一定会报错。可以用于必须保证值不能为 null 的字段。例如数据库的行的 id 字段不能为 null：</p>
-<h4 id="查询语言（Query-Language）"><a href="#查询语言（Query-Language）" class="headerlink" title="查询语言（Query Language）"></a>查询语言（Query Language）</h4><h4 id="执行语义（Execution-Semantics）"><a href="#执行语义（Execution-Semantics）" class="headerlink" title="执行语义（Execution Semantics）"></a>执行语义（Execution Semantics）</h4><h4 id="静态验证（Static-Validation）"><a href="#静态验证（Static-Validation）" class="headerlink" title="静态验证（Static Validation）"></a>静态验证（Static Validation）</h4><h4 id="类型检查（Type-Introspection）"><a href="#类型检查（Type-Introspection）" class="headerlink" title="类型检查（Type Introspection）"></a>类型检查（Type Introspection）</h4><p><a href="https://yq.aliyun.com/articles/8183" target="_blank" rel="external">摘自:云栖社区</a></p>
+<h4 id="查询语言（Query-Language）"><a href="#查询语言（Query-Language）" class="headerlink" title="查询语言（Query Language）"></a>查询语言（Query Language）</h4><h4 id="执行语义（Execution-Semantics）"><a href="#执行语义（Execution-Semantics）" class="headerlink" title="执行语义（Execution Semantics）"></a>执行语义（Execution Semantics）</h4><h4 id="静态验证（Static-Validation）"><a href="#静态验证（Static-Validation）" class="headerlink" title="静态验证（Static Validation）"></a>静态验证（Static Validation）</h4><h4 id="类型检查（Type-Introspection）"><a href="#类型检查（Type-Introspection）" class="headerlink" title="类型检查（Type Introspection）"></a>类型检查（Type Introspection）</h4><p><a href="https://yq.aliyun.com/articles/8183" target="_blank" rel="noopener">摘自:云栖社区</a></p>
 
       
     </div>
@@ -290,7 +292,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

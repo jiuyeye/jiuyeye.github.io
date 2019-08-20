@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Windows 下安装 nvm 管理 nodejs 版本 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Node Version Manager（Node版本管理器），用它可以方便的在机器上安装并维护多个Node的版本">
+<meta name="keywords" content="nodejs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows 下安装 nvm 管理 nodejs 版本">
 <meta property="og:url" content="http://water-ice.github.io/2017/11/nvm.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="Node Version Manager（Node版本管理器），用它可以方便的在机器上安装并维护多个Node的版本">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.766Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows 下安装 nvm 管理 nodejs 版本">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-nvm" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-nvm" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -211,11 +213,11 @@ form input.st-default-search-input {
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Node Version Manager（Node版本管理器），用它可以方便的在机器上安装并维护多个Node的版本<br><a id="more"></a><br>1.下载地址： <a href="https://github.com/coreybutler/nvm-windows/releases" title="nvm下载" target="_blank" rel="external">nvm-setup.zip</a>;</p>
+        <p>Node Version Manager（Node版本管理器），用它可以方便的在机器上安装并维护多个Node的版本<br><a id="more"></a><br>1.下载地址： <a href="https://github.com/coreybutler/nvm-windows/releases" title="nvm下载" target="_blank" rel="noopener">nvm-setup.zip</a>;</p>
 <p>2.程序安装过程中，在 Set Node.js Symlink 这一步目录设置，<br>是待会 nvm use 存放你的 nodejs 程序的目录 [C:\nodejs]。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">nvm -v // 查看版本 Running version 1.1.6.</div><div class="line">nvm install latest // 下载最新的 node 版本 v9.2.0</div><div class="line">nvm install 8.4.4 // 安装不同版本</div><div class="line">nvm install 6.2.0 32 // 默认是64位，32位需指定</div><div class="line">nvm uninstall 6.2.0 #卸载对应的版本</div><div class="line"></div><div class="line">nvm list // 查看已安装的 node 版本</div><div class="line">  * 9.2.0 (Currently using 64-bit executable)</div><div class="line">    6.0.0</div><div class="line"></div><div class="line">nvm use [9.2.0]://使用特定版本的node，需本地已经安装。</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">nvm -v <span class="comment">// 查看版本 Running version 1.1.6.</span></span><br><span class="line">nvm install latest <span class="comment">// 下载最新的 node 版本 v9.2.0</span></span><br><span class="line">nvm install <span class="number">8.4</span><span class="number">.4</span> <span class="comment">// 安装不同版本</span></span><br><span class="line">nvm install <span class="number">6.2</span><span class="number">.0</span> <span class="number">32</span> <span class="comment">// 默认是64位，32位需指定</span></span><br><span class="line">nvm uninstall 6.2.0 #卸载对应的版本</span><br><span class="line"></span><br><span class="line">nvm list <span class="comment">// 查看已安装的 node 版本</span></span><br><span class="line">  * <span class="number">9.2</span><span class="number">.0</span> (Currently using <span class="number">64</span>-bit executable)</span><br><span class="line">    <span class="number">6.0</span><span class="number">.0</span></span><br><span class="line"></span><br><span class="line">nvm use [<span class="number">9.2</span><span class="number">.0</span>]:<span class="comment">//使用特定版本的node，需本地已经安装。</span></span><br></pre></td></tr></table></figure>
 <p>配置node的下载路径<br>在nvm的安装路径下，找到settings.txt打开，在后面加加上</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node_mirror: https:<span class="comment">//npm.taobao.org/mirrors/node/</span></div><div class="line">npm_mirror: https:<span class="comment">//npm.taobao.org/mirrors/npm/</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node_mirror: https:<span class="comment">//npm.taobao.org/mirrors/node/</span></span><br><span class="line">npm_mirror: https:<span class="comment">//npm.taobao.org/mirrors/npm/</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
@@ -295,7 +297,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

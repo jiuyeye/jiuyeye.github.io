@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>H5 CSS hack 和浏览器内核 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="CSS hack 和浏览器内核">
+<meta name="keywords" content="h5,浏览器内核">
 <meta property="og:type" content="article">
 <meta property="og:title" content="H5 CSS hack 和浏览器内核">
 <meta property="og:url" content="http://water-ice.github.io/2014/06/H5-CSS-hack.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="CSS hack 和浏览器内核">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.715Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="H5 CSS hack 和浏览器内核">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-H5-CSS-hack" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-H5-CSS-hack" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -213,7 +215,7 @@ form input.st-default-search-input {
       
         <p>CSS hack 和浏览器内核</p>
 <a id="more"></a>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">.color&#123;</div><div class="line"> background-color: #CC00FF; /*所有浏览器都会显示为紫色*/</div><div class="line"> background-color: #FF0000\9; /*IE8及以上的浏览器会显示红色*/</div><div class="line"> background-color: #ff6600\0; /*IE8及以上的浏览器会显示橙色*/</div><div class="line"> *background-color: #0066FF; /*IE6、IE7会变为蓝色*/</div><div class="line"> +background-color: #FFFF00; /*IE6、IE7会变为蓝色*/</div><div class="line"> _background-color: #009933; /*IE6会变为绿色*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="selector-class">.color</span>&#123;</span><br><span class="line"> <span class="attribute">background-color</span>: <span class="number">#CC00FF</span>; <span class="comment">/*所有浏览器都会显示为紫色*/</span></span><br><span class="line"> <span class="attribute">background-color</span>: <span class="number">#FF0000</span>\<span class="number">9</span>; <span class="comment">/*IE8及以上的浏览器会显示红色*/</span></span><br><span class="line"> <span class="attribute">background-color</span>: <span class="number">#ff6600</span>\<span class="number">0</span>; <span class="comment">/*IE8及以上的浏览器会显示橙色*/</span></span><br><span class="line"> *background-color: #0066FF; /*IE6、IE7会变为蓝色*/</span><br><span class="line"> +<span class="selector-tag">background-color</span>: <span class="selector-id">#FFFF00</span>; <span class="comment">/*IE6、IE7会变为蓝色*/</span></span><br><span class="line"> _<span class="selector-tag">background-color</span>: <span class="selector-id">#009933</span>; <span class="comment">/*IE6会变为绿色*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="主流浏览器的内核"><a href="#主流浏览器的内核" class="headerlink" title="主流浏览器的内核"></a>主流浏览器的内核</h2><table>
 <thead>
 <tr>
@@ -346,7 +348,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

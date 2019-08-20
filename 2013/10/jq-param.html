@@ -1,33 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>jQuery ajax-param()和serializeArray() | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="param()
-param() 方法创建数组或对象的序列化表示。该序列化值可在进行 AJAX 请求时在 URL 查询字符串中使用。
-
-序列化一个 key/value 对象：
-1234var params = &amp;#123; width:1900, height:1200 &amp;#125;;var str = jQuery.param(params);$(&quot;#results&quot;).text(str);//">
+  <meta name="description" content="param() param() 方法创建数组或对象的序列化表示。该序列化值可在进行 AJAX 请求时在 URL 查询字符串中使用。  序列化一个 key/value 对象： 1234var params = &amp;#123; width:1900, height:1200 &amp;#125;;var str = jQuery.param(params);$(&quot;#results&quot;).text(str);//">
+<meta name="keywords" content="jQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery ajax-param()和serializeArray()">
 <meta property="og:url" content="http://water-ice.github.io/2013/10/jq-param.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="param()
-param() 方法创建数组或对象的序列化表示。该序列化值可在进行 AJAX 请求时在 URL 查询字符串中使用。
-
-序列化一个 key/value 对象：
-1234var params = &amp;#123; width:1900, height:1200 &amp;#125;;var str = jQuery.param(params);$(&quot;#results&quot;).text(str);//">
+<meta property="og:description" content="param() param() 方法创建数组或对象的序列化表示。该序列化值可在进行 AJAX 请求时在 URL 查询字符串中使用。  序列化一个 key/value 对象： 1234var params = &amp;#123; width:1900, height:1200 &amp;#125;;var str = jQuery.param(params);$(&quot;#results&quot;).text(str);//">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.747Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery ajax-param()和serializeArray()">
-<meta name="twitter:description" content="param()
-param() 方法创建数组或对象的序列化表示。该序列化值可在进行 AJAX 请求时在 URL 查询字符串中使用。
-
-序列化一个 key/value 对象：
-1234var params = &amp;#123; width:1900, height:1200 &amp;#125;;var str = jQuery.param(params);$(&quot;#results&quot;).text(str);//">
+<meta name="twitter:description" content="param() param() 方法创建数组或对象的序列化表示。该序列化值可在进行 AJAX 请求时在 URL 查询字符串中使用。  序列化一个 key/value 对象： 1234var params = &amp;#123; width:1900, height:1200 &amp;#125;;var str = jQuery.param(params);$(&quot;#results&quot;).text(str);//">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -69,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -93,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -205,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-jq-param" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-jq-param" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -228,8 +218,8 @@ form input.st-default-search-input {
 <p>param() 方法创建数组或对象的序列化表示。<br>该序列化值可在进行 AJAX 请求时在 URL 查询字符串中使用。</p>
 </blockquote>
 <p>序列化一个 key/value 对象：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> params = &#123; <span class="attr">width</span>:<span class="number">1900</span>, <span class="attr">height</span>:<span class="number">1200</span> &#125;;</div><div class="line"><span class="keyword">var</span> str = jQuery.param(params);</div><div class="line">$(<span class="string">"#results"</span>).text(str);</div><div class="line"><span class="comment">//width=1900&amp;height=1200</span></div></pre></td></tr></table></figure>
-<p><em>如果被传递的对象在数组中，则必须是以 .serializeArray() 的返回值为格式的对象数组：</em><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[&#123;<span class="attr">name</span>:<span class="string">"first"</span>,<span class="attr">value</span>:<span class="string">"Rick"</span>&#125;,</div><div class="line">&#123;<span class="attr">name</span>:<span class="string">"last"</span>,<span class="attr">value</span>:<span class="string">"Astley"</span>&#125;,</div><div class="line">&#123;<span class="attr">name</span>:<span class="string">"job"</span>,<span class="attr">value</span>:<span class="string">"Rock Star"</span>&#125;]</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> params = &#123; <span class="attr">width</span>:<span class="number">1900</span>, <span class="attr">height</span>:<span class="number">1200</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> str = jQuery.param(params);</span><br><span class="line">$(<span class="string">"#results"</span>).text(str);</span><br><span class="line"><span class="comment">//width=1900&amp;height=1200</span></span><br></pre></td></tr></table></figure>
+<p><em>如果被传递的对象在数组中，则必须是以 .serializeArray() 的返回值为格式的对象数组：</em><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[&#123;<span class="attr">name</span>:<span class="string">"first"</span>,<span class="attr">value</span>:<span class="string">"Rick"</span>&#125;,</span><br><span class="line">&#123;<span class="attr">name</span>:<span class="string">"last"</span>,<span class="attr">value</span>:<span class="string">"Astley"</span>&#125;,</span><br><span class="line">&#123;<span class="attr">name</span>:<span class="string">"job"</span>,<span class="attr">value</span>:<span class="string">"Rock Star"</span>&#125;]</span><br></pre></td></tr></table></figure></p>
 <h3 id="serializeArray"><a href="#serializeArray" class="headerlink" title="serializeArray()"></a>serializeArray()</h3><blockquote>
 <p>serializeArray() 方法通过序列化表单值来创建对象数组（名称和值）。<br>您可以选择一个或多个表单元素（比如 input 及/或 textarea），或者 form 元素本身。</p>
 </blockquote>
@@ -308,7 +298,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

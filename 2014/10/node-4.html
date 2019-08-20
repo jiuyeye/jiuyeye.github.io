@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>node学习第四天 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="node.js的API系列http模块">
+<meta name="keywords" content="node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node学习第四天">
 <meta property="og:url" content="http://water-ice.github.io/2014/10/node-4.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="node.js的API系列http模块">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node学习第四天">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-node-4" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-node-4" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -217,11 +219,11 @@ form input.st-default-search-input {
 <blockquote>
 <p>http就是我们基本每天都在使用的超文本传输协议，定义了服务器和客户端怎么发送数据、怎么接收数据。</p>
 </blockquote>
-<p>第一天中用到的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http=<span class="built_in">require</span>(<span class="string">'http'</span>);<span class="comment">//请求http变量并赋予一个变量</span></div><div class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;<span class="comment">//使用http.createServer创建web服务器对象</span></div><div class="line">	res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/plain'</span>&#125;);<span class="comment">//给服务器增加头</span></div><div class="line">	res.end(<span class="string">'Hello Wdddorld\n'</span>);</div><div class="line">&#125;).listen(<span class="number">3300</span>,<span class="string">"127.0.0.1"</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'Server running an http://127.0.0.1:3300/'</span>)</div></pre></td></tr></table></figure></p>
-<p><a href="https://github.com/jiuyeye/helloworld/tree/master" target="_blank" rel="external">代码</a><br><em>每次修改代码后都要重新启动服务器</em></p>
-<p><strong>node.js中的重定向</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http=<span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">    res.writeHead(<span class="number">301</span>,&#123;</div><div class="line">    <span class="string">'Location'</span>:<span class="string">'http://www.baidu.com'</span></div><div class="line">    &#125;);</div><div class="line">    res.end();</div><div class="line">&#125;).listen(<span class="number">2000</span>,<span class="string">"127.0.0.1"</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'Server running an http://127.0.0.1:2000/'</span>)</div></pre></td></tr></table></figure></p>
+<p>第一天中用到的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http=<span class="built_in">require</span>(<span class="string">'http'</span>);<span class="comment">//请求http变量并赋予一个变量</span></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;<span class="comment">//使用http.createServer创建web服务器对象</span></span><br><span class="line">	res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/plain'</span>&#125;);<span class="comment">//给服务器增加头</span></span><br><span class="line">	res.end(<span class="string">'Hello Wdddorld\n'</span>);</span><br><span class="line">&#125;).listen(<span class="number">3300</span>,<span class="string">"127.0.0.1"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Server running an http://127.0.0.1:3300/'</span>)</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://github.com/jiuyeye/helloworld/tree/master" target="_blank" rel="noopener">代码</a><br><em>每次修改代码后都要重新启动服务器</em></p>
+<p><strong>node.js中的重定向</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http=<span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    res.writeHead(<span class="number">301</span>,&#123;</span><br><span class="line">    <span class="string">'Location'</span>:<span class="string">'http://www.baidu.com'</span></span><br><span class="line">    &#125;);</span><br><span class="line">    res.end();</span><br><span class="line">&#125;).listen(<span class="number">2000</span>,<span class="string">"127.0.0.1"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Server running an http://127.0.0.1:2000/'</span>)</span><br></pre></td></tr></table></figure></p>
 <p><strong>node.js中的路由</strong></p>
-<p>路由要借助于<a href="https://jiuyeye.github.io/2014/10/04/node-url/" target="_blank" rel="external">Url模块</a></p>
+<p>路由要借助于<a href="https://jiuyeye.github.io/2014/10/04/node-url/" target="_blank" rel="noopener">Url模块</a></p>
 
       
     </div>
@@ -302,7 +304,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

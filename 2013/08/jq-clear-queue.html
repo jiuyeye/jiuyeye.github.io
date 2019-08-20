@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>jQuery clearQueue() 方法 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="clearQueue() 方法停止队列中所有仍未执行的函数。">
+<meta name="keywords" content="jQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery clearQueue() 方法">
 <meta property="og:url" content="http://water-ice.github.io/2013/08/jq-clear-queue.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="clearQueue() 方法停止队列中所有仍未执行的函数。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.746Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery clearQueue() 方法">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-jq-clear-queue" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-jq-clear-queue" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -212,7 +214,7 @@ form input.st-default-search-input {
     <div class="article-entry" itemprop="articleBody">
       
         <p>clearQueue() 方法停止队列中所有仍未执行的函数。<br><a id="more"></a><br>clearQueue() 方法停止队列中所有仍未执行的函数。<br><em>与 stop() 方法不同，（只适用于动画），clearQueue() 能够清除任何排队的函数（通过 .queue() 方法添加到通用 jQuery 队列的任何函数）。</em></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"#start"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">"#box"</span>).animate(&#123;<span class="attr">height</span>:<span class="number">300</span>&#125;,<span class="string">"slow"</span>);</div><div class="line">    $(<span class="string">"#box"</span>).animate(&#123;<span class="attr">width</span>:<span class="number">300</span>&#125;,<span class="string">"slow"</span>);</div><div class="line">    $(<span class="string">"#box"</span>).queue(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      $(<span class="keyword">this</span>).css(<span class="string">"background-color"</span>,<span class="string">"red"</span>);</div><div class="line">      $(<span class="keyword">this</span>).dequeue();</div><div class="line">    &#125;);</div><div class="line">    $(<span class="string">"#box"</span>).animate(&#123;<span class="attr">height</span>:<span class="number">100</span>&#125;,<span class="string">"slow"</span>);</div><div class="line">    $(<span class="string">"#box"</span>).animate(&#123;<span class="attr">width</span>:<span class="number">100</span>&#125;,<span class="string">"slow"</span>);</div><div class="line">  &#125;);</div><div class="line">  $(<span class="string">"#stop"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">"#box"</span>).clearQueue();</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">"#start"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"#box"</span>).animate(&#123;<span class="attr">height</span>:<span class="number">300</span>&#125;,<span class="string">"slow"</span>);</span><br><span class="line">    $(<span class="string">"#box"</span>).animate(&#123;<span class="attr">width</span>:<span class="number">300</span>&#125;,<span class="string">"slow"</span>);</span><br><span class="line">    $(<span class="string">"#box"</span>).queue(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      $(<span class="keyword">this</span>).css(<span class="string">"background-color"</span>,<span class="string">"red"</span>);</span><br><span class="line">      $(<span class="keyword">this</span>).dequeue();</span><br><span class="line">    &#125;);</span><br><span class="line">    $(<span class="string">"#box"</span>).animate(&#123;<span class="attr">height</span>:<span class="number">100</span>&#125;,<span class="string">"slow"</span>);</span><br><span class="line">    $(<span class="string">"#box"</span>).animate(&#123;<span class="attr">width</span>:<span class="number">100</span>&#125;,<span class="string">"slow"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  $(<span class="string">"#stop"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"#box"</span>).clearQueue();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
@@ -287,7 +289,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Sass的控制命令 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="@if
-@if 指令是一个 SassScript，它可以根据条件来处理样式块，如果条件为 true 返回一个样式块，反之 false 返回另一个样式块。在 Sass 中除了 @if 之，还可以配合 @else if 和 @else 一起使用。
-
-123456789101112131415161718@mixin blockOrHidden($boolean:true) &amp;#123;  @if $b">
+  <meta name="description" content="@if @if 指令是一个 SassScript，它可以根据条件来处理样式块，如果条件为 true 返回一个样式块，反之 false 返回另一个样式块。在 Sass 中除了 @if 之，还可以配合 @else if 和 @else 一起使用。  123456789101112131415161718@mixin blockOrHidden($boolean:true) &amp;#123;  @if $b">
+<meta name="keywords" content="sass">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sass的控制命令">
 <meta property="og:url" content="http://water-ice.github.io/2015/11/sass.html">
 <meta property="og:site_name" content="0℃不结冰">
-<meta property="og:description" content="@if
-@if 指令是一个 SassScript，它可以根据条件来处理样式块，如果条件为 true 返回一个样式块，反之 false 返回另一个样式块。在 Sass 中除了 @if 之，还可以配合 @else if 和 @else 一起使用。
-
-123456789101112131415161718@mixin blockOrHidden($boolean:true) &amp;#123;  @if $b">
+<meta property="og:description" content="@if @if 指令是一个 SassScript，它可以根据条件来处理样式块，如果条件为 true 返回一个样式块，反之 false 返回另一个样式块。在 Sass 中除了 @if 之，还可以配合 @else if 和 @else 一起使用。  123456789101112131415161718@mixin blockOrHidden($boolean:true) &amp;#123;  @if $b">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.771Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sass的控制命令">
-<meta name="twitter:description" content="@if
-@if 指令是一个 SassScript，它可以根据条件来处理样式块，如果条件为 true 返回一个样式块，反之 false 返回另一个样式块。在 Sass 中除了 @if 之，还可以配合 @else if 和 @else 一起使用。
-
-123456789101112131415161718@mixin blockOrHidden($boolean:true) &amp;#123;  @if $b">
+<meta name="twitter:description" content="@if @if 指令是一个 SassScript，它可以根据条件来处理样式块，如果条件为 true 返回一个样式块，反之 false 返回另一个样式块。在 Sass 中除了 @if 之，还可以配合 @else if 和 @else 一起使用。  123456789101112131415161718@mixin blockOrHidden($boolean:true) &amp;#123;  @if $b">
   
     <link rel="alternative" href="/atom.xml" title="0℃不结冰" type="application/atom+xml">
   
@@ -66,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -90,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -202,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-sass" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-sass" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -223,13 +216,13 @@ form input.st-default-search-input {
         <h3 id="if"><a href="#if" class="headerlink" title="@if"></a>@if</h3><blockquote>
 <p>@if 指令是一个 SassScript，它可以根据条件来处理样式块，如果条件为 true 返回一个样式块，反之 false 返回另一个样式块。在 Sass 中除了 @if 之，还可以配合 @else if 和 @else 一起使用。</p>
 </blockquote>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> blockOrHidden(<span class="variable">$boolean</span>:true) &#123;</div><div class="line">  @<span class="keyword">if</span> <span class="variable">$boolean</span> &#123;</div><div class="line">      @<span class="keyword">debug</span> <span class="string">"$boolean is #&#123;$boolean&#125;"</span>;</div><div class="line">      <span class="attribute">display</span>: block;</div><div class="line">    &#125;</div><div class="line">  @<span class="keyword">else</span> &#123;</div><div class="line">      @<span class="keyword">debug</span> <span class="string">"$boolean is #&#123;$boolean&#125;"</span>;</div><div class="line">      <span class="attribute">display</span>: none;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.block</span> &#123;</div><div class="line">  @<span class="keyword">include</span> blockOrHidden;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.hidden</span>&#123;</div><div class="line">  @<span class="keyword">include</span> blockOrHidden(false);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>编译出来的CSS:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.block</span> &#123;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.hidden</span> &#123;</div><div class="line">  <span class="attribute">display</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="for循环"><a href="#for循环" class="headerlink" title="@for循环"></a>@for循环</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//through</span></div><div class="line">@<span class="keyword">for</span> <span class="variable">$i</span> from 1 through 3 &#123;</div><div class="line">  <span class="selector-class">.item-</span>#&#123;<span class="variable">$i</span>&#125; &#123; <span class="attribute">width</span>: <span class="number">2em</span> * <span class="variable">$i</span>; &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//to</span></div><div class="line">@<span class="keyword">for</span> <span class="variable">$i</span> from 1 to 3 &#123;</div><div class="line">  <span class="selector-class">.p</span>#&#123;<span class="variable">$i</span>&#125; &#123; <span class="attribute">width</span>: <span class="number">2em</span> * <span class="variable">$i</span>; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">mixin</span> blockOrHidden(<span class="variable">$boolean</span>:true) &#123;</span><br><span class="line">  @<span class="keyword">if</span> <span class="variable">$boolean</span> &#123;</span><br><span class="line">      @<span class="keyword">debug</span> <span class="string">"$boolean is #&#123;$boolean&#125;"</span>;</span><br><span class="line">      <span class="attribute">display</span>: block;</span><br><span class="line">    &#125;</span><br><span class="line">  @<span class="keyword">else</span> &#123;</span><br><span class="line">      @<span class="keyword">debug</span> <span class="string">"$boolean is #&#123;$boolean&#125;"</span>;</span><br><span class="line">      <span class="attribute">display</span>: none;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.block</span> &#123;</span><br><span class="line">  @<span class="keyword">include</span> blockOrHidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.hidden</span>&#123;</span><br><span class="line">  @<span class="keyword">include</span> blockOrHidden(false);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译出来的CSS:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.block</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.hidden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="for循环"><a href="#for循环" class="headerlink" title="@for循环"></a>@for循环</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//through</span></span><br><span class="line">@<span class="keyword">for</span> <span class="variable">$i</span> from 1 through 3 &#123;</span><br><span class="line">  <span class="selector-class">.item-</span>#&#123;<span class="variable">$i</span>&#125; &#123; <span class="attribute">width</span>: <span class="number">2em</span> * <span class="variable">$i</span>; &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//to</span></span><br><span class="line">@<span class="keyword">for</span> <span class="variable">$i</span> from 1 to 3 &#123;</span><br><span class="line">  <span class="selector-class">.p</span>#&#123;<span class="variable">$i</span>&#125; &#123; <span class="attribute">width</span>: <span class="number">2em</span> * <span class="variable">$i</span>; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="while循环"><a href="#while循环" class="headerlink" title="@while循环"></a>@while循环</h3><blockquote>
 <p>@while 指令也需要 SassScript 表达式（像其他指令一样），并且会生成不同的样式块，直到表达式值为 false 时停止循环。这个和 @for 指令很相似，只要 @while 后面的条件为 true 就会执行</p>
 </blockquote>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$types</span>: <span class="number">4</span>;</div><div class="line"><span class="variable">$type-width</span>: <span class="number">20px</span>;</div><div class="line">@<span class="keyword">while</span> <span class="variable">$types</span> &gt; 0 &#123;</div><div class="line">    <span class="selector-class">.while-</span>#&#123;<span class="variable">$types</span>&#125; &#123;</div><div class="line">        <span class="attribute">width</span>: <span class="variable">$type-width</span> + <span class="variable">$types</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="variable">$types</span>: <span class="variable">$types</span> - <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$types</span>: <span class="number">4</span>;</span><br><span class="line"><span class="variable">$type-width</span>: <span class="number">20px</span>;</span><br><span class="line">@<span class="keyword">while</span> <span class="variable">$types</span> &gt; 0 &#123;</span><br><span class="line">    <span class="selector-class">.while-</span>#&#123;<span class="variable">$types</span>&#125; &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="variable">$type-width</span> + <span class="variable">$types</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable">$types</span>: <span class="variable">$types</span> - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="each循环"><a href="#each循环" class="headerlink" title="@each循环"></a>@each循环</h3><blockquote>
 <p>@each 循环就是去遍历一个列表，然后从列表中取出对应的值。</p>
 </blockquote>
@@ -313,7 +306,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

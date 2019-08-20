@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>ES6实现深度克隆 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="深度克隆就是：把一个对象里面的东西一模一样地复制到另一个对象，并且这两个对象分别放在内存的不同地方。">
@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://water-ice.github.io/2016/08/es6-clone.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="深度克隆就是：把一个对象里面的东西一模一样地复制到另一个对象，并且这两个对象分别放在内存的不同地方。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-19T03:57:01.612Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6实现深度克隆">
@@ -57,7 +58,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +82,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +194,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-es6-clone" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-es6-clone" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -212,8 +213,8 @@ form input.st-default-search-input {
     <div class="article-entry" itemprop="articleBody">
       
         <p>深度克隆就是：把一个对象里面的东西一模一样地复制到另一个对象，并且这两个对象分别放在内存的不同地方。<br><a id="more"></a></p>
-<h3 id="通过Object-assigin实现"><a href="#通过Object-assigin实现" class="headerlink" title="通过Object.assigin实现"></a>通过Object.assigin实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> deepClone=<span class="function">(<span class="params">obj</span>)=&gt;</span>&#123;</div><div class="line">   <span class="keyword">var</span> proto=<span class="built_in">Object</span>.getPrototypeOf(obj);</div><div class="line">   <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;,<span class="built_in">Object</span>.create(proto),obj);</div><div class="line">&#125;</div><div class="line"><span class="comment">//通过Object.getPrototypeOf函数得到obj被克隆函数的原型上的属性，然后通过Object.assign实现深度克隆。</span></div></pre></td></tr></table></figure>
-<h3 id="通过proto来实现（仅适合浏览器端）"><a href="#通过proto来实现（仅适合浏览器端）" class="headerlink" title="通过proto来实现（仅适合浏览器端）"></a>通过proto来实现（仅适合浏览器端）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> deepClone=<span class="function">(<span class="params">obj</span>)=&gt;</span>(&#123;</div><div class="line">  <span class="attr">__proto__</span>: <span class="built_in">Object</span>.getPrototypeOf(obj),</div><div class="line">  ...obj</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="通过Object-assigin实现"><a href="#通过Object-assigin实现" class="headerlink" title="通过Object.assigin实现"></a>通过Object.assigin实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> deepClone=<span class="function">(<span class="params">obj</span>)=&gt;</span>&#123;</span><br><span class="line">   <span class="keyword">var</span> proto=<span class="built_in">Object</span>.getPrototypeOf(obj);</span><br><span class="line">   <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;,<span class="built_in">Object</span>.create(proto),obj);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//通过Object.getPrototypeOf函数得到obj被克隆函数的原型上的属性，然后通过Object.assign实现深度克隆。</span></span><br></pre></td></tr></table></figure>
+<h3 id="通过proto来实现（仅适合浏览器端）"><a href="#通过proto来实现（仅适合浏览器端）" class="headerlink" title="通过proto来实现（仅适合浏览器端）"></a>通过proto来实现（仅适合浏览器端）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> deepClone=<span class="function">(<span class="params">obj</span>)=&gt;</span>(&#123;</span><br><span class="line">  __proto__: <span class="built_in">Object</span>.getPrototypeOf(obj),</span><br><span class="line">  ...obj</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
@@ -237,18 +238,18 @@ form input.st-default-search-input {
   
 <nav id="article-nav">
   
-    <a href="/2016/08/commonjs.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/09/webpack.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CommonJS规范
+          webpack-1
         
       </div>
     </a>
   
   
-    <a href="/2016/03/hexo-error.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">用Hexo搭建静态博客出现spawn ENOENT的解决办法</div>
+    <a href="/2016/08/commonjs.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CommonJS规范</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -288,7 +289,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

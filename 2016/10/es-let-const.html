@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>ECMA-let和const学习 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="ES6新增的两个关键词：let和const,es6一共有6种声明变量的方法：var、function、let、const、import、class。">
+<meta name="keywords" content="es6,const,let">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMA-let和const学习">
 <meta property="og:url" content="http://water-ice.github.io/2016/10/es-let-const.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="ES6新增的两个关键词：let和const,es6一共有6种声明变量的方法：var、function、let、const、import、class。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.733Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMA-let和const学习">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-es-let-const" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-es-let-const" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -215,18 +217,18 @@ form input.st-default-search-input {
 <p>ES6新增的两个关键词：let和const,es6一共有6种声明变量的方法：var、function、let、const、import、class。</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h3><p>类似于var，但是只在let所在代码块内有效。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="keyword">var</span> a=<span class="number">1</span>;</div><div class="line">  <span class="keyword">let</span> b=<span class="number">2</span>;</div><div class="line">&#125;</div><div class="line">a;<span class="comment">//1</span></div><div class="line">b;<span class="comment">//b is not defined;</span></div></pre></td></tr></table></figure></p>
+<h3 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h3><p>类似于var，但是只在let所在代码块内有效。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">let</span> b=<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">a;<span class="comment">//1</span></span><br><span class="line">b;<span class="comment">//b is not defined;</span></span><br></pre></td></tr></table></figure></p>
 <ol>
 <li>不存在变量提升</li>
 <li><p>暂时性死区:在代码块内，使用let命令声明变量之前，该变量都是不可用的。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> tmp=<span class="number">123</span>;</div><div class="line">&#123;</div><div class="line">  tmp=<span class="string">'abc'</span>;<span class="comment">//error</span></div><div class="line">  <span class="keyword">let</span> tmp;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//比较隐蔽的‘死区’</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">x=y,y=<span class="number">2</span></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span>[x,y];</div><div class="line">&#125;</div><div class="line">bar();<span class="comment">//报错</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">x=<span class="number">2</span>,y=x</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span>[x,y];</div><div class="line">&#125;</div><div class="line">bar();<span class="comment">//[2,2]</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tmp=<span class="number">123</span>;</span><br><span class="line">&#123;</span><br><span class="line">  tmp=<span class="string">'abc'</span>;<span class="comment">//error</span></span><br><span class="line">  <span class="keyword">let</span> tmp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//比较隐蔽的‘死区’</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">x=y,y=<span class="number">2</span></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span>[x,y];</span><br><span class="line">&#125;</span><br><span class="line">bar();<span class="comment">//报错</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">x=<span class="number">2</span>,y=x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span>[x,y];</span><br><span class="line">&#125;</span><br><span class="line">bar();<span class="comment">//[2,2]</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>不允许重复声明</p>
 </li>
 </ol>
-<h3 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h3><p>const用来声明常量，一旦声明，其值就不能改变。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> PI=<span class="number">3.14</span>;<span class="comment">//const一旦声明，必须立即初始化。</span></div><div class="line">PI=<span class="number">3</span>;<span class="comment">//error:"PI" is read-only</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo=[];</div><div class="line">foo.prop=<span class="number">123</span>;</div><div class="line">foo=&#123;&#125;;<span class="comment">//error:"foo" is read-only;</span></div></pre></td></tr></table></figure>
-<p><strong>跨模块常量</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//constants.js 模块</span></div><div class="line">exprot <span class="keyword">const</span> A=<span class="number">1</span>;</div><div class="line">exprot <span class="keyword">const</span> B=<span class="number">2</span>;</div><div class="line"></div><div class="line"><span class="comment">//test.js 模块</span></div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> constans <span class="keyword">from</span> <span class="string">'./constants'</span>;</div><div class="line"><span class="built_in">console</span>.log(constans.A)<span class="comment">//1</span></div><div class="line"></div><div class="line"><span class="comment">//test2.js 模块</span></div><div class="line"><span class="keyword">import</span> &#123;A,B&#125; <span class="keyword">from</span> <span class="string">'./constants'</span>;</div><div class="line"><span class="built_in">console</span>.log(A)<span class="comment">//1</span></div><div class="line"><span class="built_in">console</span>.log(B)<span class="comment">//2</span></div></pre></td></tr></table></figure></p>
+<h3 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h3><p>const用来声明常量，一旦声明，其值就不能改变。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> PI=<span class="number">3.14</span>;<span class="comment">//const一旦声明，必须立即初始化。</span></span><br><span class="line">PI=<span class="number">3</span>;<span class="comment">//error:"PI" is read-only</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo=[];</span><br><span class="line">foo.prop=<span class="number">123</span>;</span><br><span class="line">foo=&#123;&#125;;<span class="comment">//error:"foo" is read-only;</span></span><br></pre></td></tr></table></figure>
+<p><strong>跨模块常量</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//constants.js 模块</span></span><br><span class="line">exprot <span class="keyword">const</span> A=<span class="number">1</span>;</span><br><span class="line">exprot <span class="keyword">const</span> B=<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//test.js 模块</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> constans <span class="keyword">from</span> <span class="string">'./constants'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(constans.A)<span class="comment">//1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//test2.js 模块</span></span><br><span class="line"><span class="keyword">import</span> &#123;A,B&#125; <span class="keyword">from</span> <span class="string">'./constants'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(A)<span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(B)<span class="comment">//2</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -307,7 +309,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Windows下Git多账号配置，同一电脑多个ssh-key的管理 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="多个git账户生成多份rsa秘钥实现多个账户同时使用配置">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows下Git多账号配置，同一电脑多个ssh-key的管理">
 <meta property="og:url" content="http://water-ice.github.io/2016/03/git-user.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="多个git账户生成多份rsa秘钥实现多个账户同时使用配置">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.739Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows下Git多账号配置，同一电脑多个ssh-key的管理">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-git-user" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-git-user" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -213,15 +215,15 @@ form input.st-default-search-input {
       
         <p>多个git账户生成多份rsa秘钥实现多个账户同时使用配置</p>
 <a id="more"></a>
-<h3 id="1-生成github-com对应的私钥公钥（本文中文件地址C-Users-Administrator-ssh）"><a href="#1-生成github-com对应的私钥公钥（本文中文件地址C-Users-Administrator-ssh）" class="headerlink" title="1.生成github.com对应的私钥公钥（本文中文件地址C:/Users/Administrator/.ssh）"></a>1.生成github.com对应的私钥公钥（本文中文件地址C:/Users/Administrator/.ssh）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C myself@email.com <span class="comment">//创建github对应的sshkey，命名为id_rsa_self</span></div><div class="line"></div><div class="line"><span class="comment">//设置名称为id_rsa_self</span></div><div class="line">Enter file <span class="keyword">in</span> which to save the key (<span class="regexp">/c/</span>Users/Administrator/.ssh/id_rsa):id_rsa_self</div></pre></td></tr></table></figure>
+<h3 id="1-生成github-com对应的私钥公钥（本文中文件地址C-Users-Administrator-ssh）"><a href="#1-生成github-com对应的私钥公钥（本文中文件地址C-Users-Administrator-ssh）" class="headerlink" title="1.生成github.com对应的私钥公钥（本文中文件地址C:/Users/Administrator/.ssh）"></a>1.生成github.com对应的私钥公钥（本文中文件地址C:/Users/Administrator/.ssh）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C myself@email.com <span class="comment">//创建github对应的sshkey，命名为id_rsa_self</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//设置名称为id_rsa_self</span></span><br><span class="line">Enter file <span class="keyword">in</span> which to save the key (<span class="regexp">/c/</span>Users/Administrator/.ssh/id_rsa):id_rsa_self</span><br></pre></td></tr></table></figure>
 <p>生成的~/.ssh/id_rsa_self.pub文件，将里面的内容添加到GitHub后台</p>
-<h3 id="2-同样的方式生成mywork-email-com的私钥公钥"><a href="#2-同样的方式生成mywork-email-com的私钥公钥" class="headerlink" title="2.同样的方式生成mywork@email.com的私钥公钥"></a>2.同样的方式生成mywork@email.com的私钥公钥</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C mywork@email.com <span class="comment">//创建github对应的sshkey，命名为id_rsa_work</span></div><div class="line"></div><div class="line"><span class="comment">//设置名称为id_rsa_work</span></div><div class="line">Enter file <span class="keyword">in</span> which to save the key (<span class="regexp">/c/</span>Users/Administrator/.ssh/id_rsa):id_rsa_self</div></pre></td></tr></table></figure>
+<h3 id="2-同样的方式生成mywork-email-com的私钥公钥"><a href="#2-同样的方式生成mywork-email-com的私钥公钥" class="headerlink" title="2.同样的方式生成mywork@email.com的私钥公钥"></a>2.同样的方式生成<a href="mailto:mywork@email.com" target="_blank" rel="noopener">mywork@email.com</a>的私钥公钥</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C mywork@email.com <span class="comment">//创建github对应的sshkey，命名为id_rsa_work</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//设置名称为id_rsa_work</span></span><br><span class="line">Enter file <span class="keyword">in</span> which to save the key (<span class="regexp">/c/</span>Users/Administrator/.ssh/id_rsa):id_rsa_self</span><br></pre></td></tr></table></figure>
 <p>生成的~/.ssh/id_rsa_work.pub文件，将里面的内容添加到GitHub后台</p>
-<h3 id="3-新密钥添加到SSH-agent中"><a href="#3-新密钥添加到SSH-agent中" class="headerlink" title="3.新密钥添加到SSH agent中"></a>3.新密钥添加到SSH agent中</h3><p>因为默认只读取id_rsa，为了让SSH识别新的私钥，需将其添加到SSH agent中：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ssh-agent bash</div><div class="line">ssh-add ~<span class="regexp">/.ssh/i</span>d_rsa_self</div><div class="line">ssh-add ~<span class="regexp">/.ssh/i</span>d_rsa_work</div></pre></td></tr></table></figure></p>
-<h3 id="4-修改config"><a href="#4-修改config" class="headerlink" title="4.修改config"></a>4.修改config</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">touch config <span class="comment">//创建config</span></div><div class="line"></div><div class="line"><span class="comment">//该文件用于配置私钥对应的服务器</span></div><div class="line"><span class="comment">//Default github user(first@mail.com)</span></div><div class="line">Host github.com</div><div class="line">HostName github.com</div><div class="line">User git</div><div class="line">IdentityFile C:<span class="regexp">/Users/</span>Administrator/.ssh/id_rsa_self</div><div class="line"></div><div class="line"><span class="comment">//second user(second@mail.com)</span></div><div class="line"><span class="comment">//建一个github别名，新建的帐号使用这个别名做克隆和更新</span></div><div class="line">Host github2</div><div class="line">HostName github.com</div><div class="line">User git</div><div class="line">IdentityFile C:<span class="regexp">/Users/</span>Administrator/.ssh/id_rsa_work</div></pre></td></tr></table></figure>
-<h3 id="5-测试："><a href="#5-测试：" class="headerlink" title="5.测试："></a>5.测试：</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div><div class="line">Hi jiuyeye! You've successfully authenticated, but GitHub does not provide shel</div><div class="line">l access.</div><div class="line"></div><div class="line">$ ssh -T github2</div><div class="line">Hi jiuyeye! You've successfully authenticated, but GitHub does not provide shell</div><div class="line"> access.</div></pre></td></tr></table></figure>
-<h3 id="6-clone"><a href="#6-clone" class="headerlink" title="6.clone"></a>6.clone</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">d:/work</div><div class="line">$ git clone git@github.com:jiuyeye/jiuyeye.github.io.git</div><div class="line">Cloning into 'blog'...</div><div class="line">remote: Counting objects: 3, done.</div><div class="line">remote: Total 3 (delta 0), reused 0 (delta 0)</div><div class="line">Receiving objects: 100% (3/3), done.</div><div class="line">Checking connectivity... done</div></pre></td></tr></table></figure>
-<h3 id="7-push的时候需要设置"><a href="#7-push的时候需要设置" class="headerlink" title="7.push的时候需要设置"></a>7.push的时候需要设置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"myself"</span></div><div class="line">git config --global user.email <span class="string">"myself@email.com"</span></div></pre></td></tr></table></figure>
+<h3 id="3-新密钥添加到SSH-agent中"><a href="#3-新密钥添加到SSH-agent中" class="headerlink" title="3.新密钥添加到SSH agent中"></a>3.新密钥添加到SSH agent中</h3><p>因为默认只读取id_rsa，为了让SSH识别新的私钥，需将其添加到SSH agent中：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent bash</span><br><span class="line">ssh-add ~<span class="regexp">/.ssh/i</span>d_rsa_self</span><br><span class="line">ssh-add ~<span class="regexp">/.ssh/i</span>d_rsa_work</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-修改config"><a href="#4-修改config" class="headerlink" title="4.修改config"></a>4.修改config</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">touch config <span class="comment">//创建config</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//该文件用于配置私钥对应的服务器</span></span><br><span class="line"><span class="comment">//Default github user(first@mail.com)</span></span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line">IdentityFile C:<span class="regexp">/Users/</span>Administrator/.ssh/id_rsa_self</span><br><span class="line"></span><br><span class="line"><span class="comment">//second user(second@mail.com)</span></span><br><span class="line"><span class="comment">//建一个github别名，新建的帐号使用这个别名做克隆和更新</span></span><br><span class="line">Host github2</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line">IdentityFile C:<span class="regexp">/Users/</span>Administrator/.ssh/id_rsa_work</span><br></pre></td></tr></table></figure>
+<h3 id="5-测试："><a href="#5-测试：" class="headerlink" title="5.测试："></a>5.测试：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi jiuyeye! You<span class="string">'ve successfully authenticated, but GitHub does not provide shel</span></span><br><span class="line"><span class="string">l access.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">$ ssh -T github2</span></span><br><span class="line"><span class="string">Hi jiuyeye! You'</span>ve successfully authenticated, but GitHub does not provide shell</span><br><span class="line"> access.</span><br></pre></td></tr></table></figure>
+<h3 id="6-clone"><a href="#6-clone" class="headerlink" title="6.clone"></a>6.clone</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">d:<span class="regexp">/work</span></span><br><span class="line"><span class="regexp">$ git clone git@github.com:jiuyeye/</span>jiuyeye.github.io.git</span><br><span class="line">Cloning into <span class="string">'blog'</span>...</span><br><span class="line">remote: Counting objects: <span class="number">3</span>, done.</span><br><span class="line">remote: Total <span class="number">3</span> (delta <span class="number">0</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)</span><br><span class="line">Receiving objects: <span class="number">100</span>% (<span class="number">3</span>/<span class="number">3</span>), done.</span><br><span class="line">Checking connectivity... done</span><br></pre></td></tr></table></figure>
+<h3 id="7-push的时候需要设置"><a href="#7-push的时候需要设置" class="headerlink" title="7.push的时候需要设置"></a>7.push的时候需要设置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"myself"</span></span><br><span class="line">git config --global user.email <span class="string">"myself@email.com"</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -297,7 +299,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

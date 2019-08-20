@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>css3动画学习 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="使用keyframes, animation属性，例如timing, delay, play state, animation-count, iteration count, direction, fill mode以及will-change等等创造动画">
+<meta name="keywords" content="animation,keyframes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css3动画学习">
 <meta property="og:url" content="http://water-ice.github.io/2017/01/css3-animation.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="使用keyframes, animation属性，例如timing, delay, play state, animation-count, iteration count, direction, fill mode以及will-change等等创造动画">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.726Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css3动画学习">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-css3-animation" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-css3-animation" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -215,16 +217,16 @@ form input.st-default-search-input {
 <p>使用keyframes, animation属性，例如timing, delay, play state, animation-count, iteration count, direction, fill mode以及will-change等等创造动画</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="keyframes-规则"><a href="#keyframes-规则" class="headerlink" title="@keyframes 规则"></a>@keyframes 规则</h3><p>通过逐渐改变对象的运动状态的方式，我们可以将动画应用到到页面上的任何对象上。然而利用keyframes特性，我们便可以控制动画对象每一阶段的状态。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">keyframes</span> mykeyframes &#123;</div><div class="line">  0% &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">scale3d</span>(1, 1, 1);</div><div class="line">  &#125;</div><div class="line">  50%&#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">scale3d</span>(1.1, 1.1, 1.1);</div><div class="line">  &#125;</div><div class="line">  100% &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">scale3d</span>(1, 1, 1);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 1.动画名（Animation name): mykeyframes */</span></div><div class="line"><span class="comment">/* 2.3个步骤：0%（state time), 50%（x time）, 100% （end time）*/</span></div><div class="line"><span class="comment">/* 3.CSS值：scale3d(x, y, z) */</span></div></pre></td></tr></table></figure></p>
+<h3 id="keyframes-规则"><a href="#keyframes-规则" class="headerlink" title="@keyframes 规则"></a>@keyframes 规则</h3><p>通过逐渐改变对象的运动状态的方式，我们可以将动画应用到到页面上的任何对象上。然而利用keyframes特性，我们便可以控制动画对象每一阶段的状态。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">keyframes</span> mykeyframes &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale3d</span>(1, 1, 1);</span><br><span class="line">  &#125;</span><br><span class="line">  50%&#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale3d</span>(1.1, 1.1, 1.1);</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale3d</span>(1, 1, 1);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 1.动画名（Animation name): mykeyframes */</span></span><br><span class="line"><span class="comment">/* 2.3个步骤：0%（state time), 50%（x time）, 100% （end time）*/</span></span><br><span class="line"><span class="comment">/* 3.CSS值：scale3d(x, y, z) */</span></span><br></pre></td></tr></table></figure></p>
 <p>当动画已经在(@keyframes)中定义好后，我们可以控制以下几样东西：</p>
 <ol>
 <li>动画的持续时间</li>
 <li>延迟多久动画开始</li>
 <li>动画的重复频率</li>
-<li>动画的方向<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">button &#123;</div><div class="line">   animation-duration: 1s;//持续时长(duration)为1秒</div><div class="line">   animation-name: mykeyframes;//添加了动画mykeyframes</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>动画的方向<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">button</span> &#123;</span><br><span class="line">   animation-duration: 1s;//持续时长(duration)为1秒</span><br><span class="line">   animation-name: mykeyframes;//添加了动画mykeyframes</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p><a href="http://codepen.io/lcq0202/pen/wJagdZ" target="_blank" rel="external">demo</a></p>
+<p><a href="http://codepen.io/lcq0202/pen/wJagdZ" target="_blank" rel="noopener">demo</a></p>
 <h3 id="动画时间（Animation-Timing"><a href="#动画时间（Animation-Timing" class="headerlink" title="动画时间（Animation Timing)"></a>动画时间（Animation Timing)</h3><p>动画时间函数是用于决定我们希望动画在移动周期内要进行加速和减速效果的时间。所以，为了实现这个效果，我们需要定义动画将要移动的速度。这里有一些我们常见的动画时间属性的选项值，例如：initial, inherit, ease, ease-in, ease-out, 还有linear等等。</p>
 <p>animation-timing-function: value;</p>
 <ol>
@@ -233,7 +235,7 @@ form input.st-default-search-input {
 <li>ease-in 动画以低速开始。</li>
 <li>ease-out 动画以低速结束。</li>
 <li>ease-in-out 动画以低速开始和结束。</li>
-<li>cubic-bezier(n,n,n,n) 在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值。<br><a href="http://codepen.io/lcq0202/pen/zZGNLz" target="_blank" rel="external">demo</a></li>
+<li>cubic-bezier(n,n,n,n) 在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值。<br><a href="http://codepen.io/lcq0202/pen/zZGNLz" target="_blank" rel="noopener">demo</a></li>
 </ol>
 <h3 id="动画延时（Animation-Delay）"><a href="#动画延时（Animation-Delay）" class="headerlink" title="动画延时（Animation Delay）"></a>动画延时（Animation Delay）</h3><p>动画延时常常应用于当我们需要对动画进行的延时操作的时候。即当某个动画被触发了，然后延时1S后开始执行。<br>动画延时：以秒或毫秒计</p>
 <h3 id="动画播放状态（Animation-Play-State）"><a href="#动画播放状态（Animation-Play-State）" class="headerlink" title="动画播放状态（Animation Play State）"></a>动画播放状态（Animation Play State）</h3><p>动画播放状态常常用来控制动画是否需要暂停或者继续。</p>
@@ -338,7 +340,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

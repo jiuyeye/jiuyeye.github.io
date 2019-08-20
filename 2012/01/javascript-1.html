@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>ECMAScript学习(一)--基本概念 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="ECMAScript大量借鉴C及其他类C语言的语法。">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMAScript学习(一)--基本概念">
 <meta property="og:url" content="http://water-ice.github.io/2012/01/javascript-1.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="ECMAScript大量借鉴C及其他类C语言的语法。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.742Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMAScript学习(一)--基本概念">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-javascript-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-javascript-1" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -218,12 +220,12 @@ form input.st-default-search-input {
 <li>注释<br>单行注释<code>//</code><br>多行注释<code>/*   */</code></li>
 <li>严格模式<br><code>&quot;use strict&quot;</code></li>
 </ol>
-<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>松散型。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> msg; <span class="comment">//未赋值，会保存特殊值undefined；</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> message=<span class="string">"1"</span>;<span class="comment">//省略var操作符，会创建一个全局变量</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>松散型。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> msg; <span class="comment">//未赋值，会保存特殊值undefined；</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> message=<span class="string">"1"</span>;<span class="comment">//省略var操作符，会创建一个全局变量</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><blockquote>
 <p>基本数据类型：undefined、null、boolean、number、string；<br>复杂数据类型：object；</p>
 </blockquote>
 <ol>
-<li>typeof操作符<br><code>undefined</code>–值未定义；<br><code>boolean</code>–值是布尔值；<br><code>string</code>–值是字符串；<br><code>number</code>–值是数值；<br><code>object</code>–值是对象或null；<br><code>function</code>–值是函数；<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> abc);  <span class="comment">//undefined</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">true</span>); <span class="comment">// boolean</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="number">1</span>);    <span class="comment">//number</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"abc"</span>);<span class="comment">//string</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">null</span>); <span class="comment">//object</span></div></pre></td></tr></table></figure>
+<li>typeof操作符<br><code>undefined</code>–值未定义；<br><code>boolean</code>–值是布尔值；<br><code>string</code>–值是字符串；<br><code>number</code>–值是数值；<br><code>object</code>–值是对象或null；<br><code>function</code>–值是函数；<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> abc);  <span class="comment">//undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">true</span>); <span class="comment">// boolean</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="number">1</span>);    <span class="comment">//number</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"abc"</span>);<span class="comment">//string</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">null</span>); <span class="comment">//object</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p><code>isFinite()</code> – 检测数值是否有穷（是不是位于最大和最小的数值之间）;</p>
@@ -307,7 +309,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

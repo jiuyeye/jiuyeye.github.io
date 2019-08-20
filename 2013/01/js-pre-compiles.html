@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>js预解析 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="JavaScript是解释型语言，但又不是在运行时自上往下一句一句地解析。">
@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://water-ice.github.io/2013/01/js-pre-compiles.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="JavaScript是解释型语言，但又不是在运行时自上往下一句一句地解析。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-01-05T03:22:19.720Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js预解析">
@@ -57,7 +58,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +82,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +194,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-js-pre-compiles" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-js-pre-compiles" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -211,8 +212,8 @@ form input.st-default-search-input {
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>JavaScript是解释型语言，但又不是在运行时自上往下一句一句地解析。<br><a id="more"></a><br>先来几个例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a);</div><div class="line"><span class="keyword">var</span> a=<span class="number">1</span>;</div><div class="line"><span class="built_in">console</span>.log(a);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="number">2</span>);&#125;</div><div class="line"><span class="keyword">var</span> a=<span class="number">3</span>;</div><div class="line"><span class="built_in">console</span>.log(a);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="number">4</span>);&#125;</div><div class="line"><span class="built_in">console</span>.log(a);</div><div class="line">a();</div></pre></td></tr></table></figure></p>
-<h3 id="变量和函数在内存中的展示"><a href="#变量和函数在内存中的展示" class="headerlink" title="变量和函数在内存中的展示"></a>变量和函数在内存中的展示</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a;                 <span class="comment">// 首先提前`变量`当前值 为：undefind。</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;;                     <span class="comment">// 遇到函数 提前函数 注意：当前函数命 和 上面的变量名 一样 竟然一样怎么办呢？</span></div><div class="line">                    <span class="comment">// 不要急 js解析器已经做了处理 同名的函数会替换掉 同名的 变量 现在就只剩下 a 函数块 自己了。</span></div><div class="line"></div><div class="line"></div><div class="line">alert(a);              <span class="comment">// 因为 上面 只剩下 a 函数了 所以现在就弹出 a函数的整个函数块。</span></div><div class="line">a = <span class="number">1</span>;                 <span class="comment">// a = 1 表达式赋值 所以就又把 a 函数给替换成了 变量 值为：1。</span></div><div class="line">alert(a);              <span class="comment">// 现在 弹出 的值就是被改变过的 a 值为 1；</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;          <span class="comment">// 这个函数现在就没用了。</span></div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+        <p>JavaScript是解释型语言，但又不是在运行时自上往下一句一句地解析。<br><a id="more"></a><br>先来几个例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="number">2</span>);&#125;</span><br><span class="line"><span class="keyword">var</span> a=<span class="number">3</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="number">4</span>);&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line">a();</span><br></pre></td></tr></table></figure></p>
+<h3 id="变量和函数在内存中的展示"><a href="#变量和函数在内存中的展示" class="headerlink" title="变量和函数在内存中的展示"></a>变量和函数在内存中的展示</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;                 <span class="comment">// 首先提前`变量`当前值 为：undefind。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;;                     <span class="comment">// 遇到函数 提前函数 注意：当前函数命 和 上面的变量名 一样 竟然一样怎么办呢？</span></span><br><span class="line">                    <span class="comment">// 不要急 js解析器已经做了处理 同名的函数会替换掉 同名的 变量 现在就只剩下 a 函数块 自己了。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">alert(a);              <span class="comment">// 因为 上面 只剩下 a 函数了 所以现在就弹出 a函数的整个函数块。</span></span><br><span class="line">a = <span class="number">1</span>;                 <span class="comment">// a = 1 表达式赋值 所以就又把 a 函数给替换成了 变量 值为：1。</span></span><br><span class="line">alert(a);              <span class="comment">// 现在 弹出 的值就是被改变过的 a 值为 1；</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;          <span class="comment">// 这个函数现在就没用了。</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="预解析"><a href="#预解析" class="headerlink" title="预解析"></a>预解析</h3><blockquote>
 <p>预解析就是：在当前作用域中，JavaScript代码执行之前，浏览器首先会默认的把所有带var和function声明的变量进行提前的声明或者定义。</p>
 </blockquote>
@@ -297,7 +298,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

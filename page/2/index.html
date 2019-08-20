@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="0℃不结冰">
@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://water-ice.github.io/page/2/index.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="0℃不结冰">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="0℃不结冰">
 <meta name="twitter:description" content="0℃不结冰">
@@ -56,7 +57,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -80,7 +81,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -194,10 +195,10 @@ form input.st-default-search-input {
       <div class="body-wrap">
         
   
-    <article id="post-es-shorthand" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-es-shorthand" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -213,11 +214,11 @@ form input.st-default-search-input {
     <div class="article-entry" itemprop="articleBody">
       
         <a id="more"></a>
-<h3 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//传统写法</span></div><div class="line"><span class="keyword">const</span> x = <span class="number">20</span>;</div><div class="line"><span class="keyword">let</span> answer;</div><div class="line"><span class="keyword">if</span> (x &gt; <span class="number">10</span>) &#123;</div><div class="line"> answer = <span class="string">'is greater'</span>;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line"> answer = <span class="string">'is lesser'</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//快捷语法</span></div><div class="line"><span class="keyword">const</span> answer = x &gt; <span class="number">10</span> ? <span class="string">'is greater'</span> : <span class="string">'is lesser'</span>;</div><div class="line"><span class="comment">//也可以嵌套使用</span></div><div class="line"><span class="keyword">const</span> big = x &gt; <span class="number">10</span> ? <span class="string">" greater 10"</span> : x</div></pre></td></tr></table></figure>
-<h3 id="空值判定"><a href="#空值判定" class="headerlink" title="空值判定"></a>空值判定</h3><p>当需要一个不为空的值时，常常使用很啰嗦的判定，如<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (variable1 !== <span class="literal">null</span> || variable1 !== <span class="literal">undefined</span> || variable1 !== <span class="string">''</span>) &#123;</div><div class="line"> <span class="keyword">let</span> variable2 = variable1;</div><div class="line">&#125;</div><div class="line"><span class="comment">//快捷语法</span></div><div class="line"><span class="keyword">const</span> variable2 = variable1 || <span class="string">'new'</span>;</div></pre></td></tr></table></figure></p>
-<h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//传统写法</span></div><div class="line"><span class="keyword">let</span> x;</div><div class="line"><span class="keyword">let</span> y;</div><div class="line"><span class="keyword">let</span> z = <span class="number">3</span>;</div><div class="line"><span class="comment">//快捷语法</span></div><div class="line"><span class="keyword">let</span> x, y, z=<span class="number">3</span>;</div></pre></td></tr></table></figure>
-<h3 id="如果-true"><a href="#如果-true" class="headerlink" title="如果 true"></a>如果 true</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//传统写法</span></div><div class="line"><span class="keyword">if</span> (likeJavaScript === <span class="literal">true</span>)</div><div class="line"><span class="comment">//快捷语法</span></div><div class="line"><span class="keyword">if</span> (likeJavaScript)</div></pre></td></tr></table></figure>
-<h3 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; allImgs.length; i++)</div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> index <span class="keyword">in</span> allImgs)</div></pre></td></tr></table></figure>
+<h3 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传统写法</span></span><br><span class="line"><span class="keyword">const</span> x = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">let</span> answer;</span><br><span class="line"><span class="keyword">if</span> (x &gt; <span class="number">10</span>) &#123;</span><br><span class="line"> answer = <span class="string">'is greater'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"> answer = <span class="string">'is lesser'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//快捷语法</span></span><br><span class="line"><span class="keyword">const</span> answer = x &gt; <span class="number">10</span> ? <span class="string">'is greater'</span> : <span class="string">'is lesser'</span>;</span><br><span class="line"><span class="comment">//也可以嵌套使用</span></span><br><span class="line"><span class="keyword">const</span> big = x &gt; <span class="number">10</span> ? <span class="string">" greater 10"</span> : x</span><br></pre></td></tr></table></figure>
+<h3 id="空值判定"><a href="#空值判定" class="headerlink" title="空值判定"></a>空值判定</h3><p>当需要一个不为空的值时，常常使用很啰嗦的判定，如<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (variable1 !== <span class="literal">null</span> || variable1 !== <span class="literal">undefined</span> || variable1 !== <span class="string">''</span>) &#123;</span><br><span class="line"> <span class="keyword">let</span> variable2 = variable1;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//快捷语法</span></span><br><span class="line"><span class="keyword">const</span> variable2 = variable1 || <span class="string">'new'</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传统写法</span></span><br><span class="line"><span class="keyword">let</span> x;</span><br><span class="line"><span class="keyword">let</span> y;</span><br><span class="line"><span class="keyword">let</span> z = <span class="number">3</span>;</span><br><span class="line"><span class="comment">//快捷语法</span></span><br><span class="line"><span class="keyword">let</span> x, y, z=<span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="如果-true"><a href="#如果-true" class="headerlink" title="如果 true"></a>如果 true</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传统写法</span></span><br><span class="line"><span class="keyword">if</span> (likeJavaScript === <span class="literal">true</span>)</span><br><span class="line"><span class="comment">//快捷语法</span></span><br><span class="line"><span class="keyword">if</span> (likeJavaScript)</span><br></pre></td></tr></table></figure>
+<h3 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; allImgs.length; i++)</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> index <span class="keyword">in</span> allImgs)</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
@@ -253,10 +254,10 @@ form input.st-default-search-input {
 
 
   
-    <article id="post-react-source-code" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-react-source-code" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -272,8 +273,8 @@ form input.st-default-search-input {
     <div class="article-entry" itemprop="articleBody">
       
         <p>学习React15.0的源码。主要包括addons、isomorphic、renderers、shared、core、test几部分。<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2017/03/react-source-code.html#more">more >></a>
+        </p><p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/react-source-code.html#more">more >></a>
         </p>
       
     </div>
@@ -305,10 +306,10 @@ form input.st-default-search-input {
 
 
   
-    <article id="post-docker" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-docker" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -324,8 +325,8 @@ form input.st-default-search-input {
     <div class="article-entry" itemprop="articleBody">
       
         <p>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2017/02/docker.html#more">more >></a>
+        </p><p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/docker.html#more">more >></a>
         </p>
       
     </div>
@@ -357,10 +358,10 @@ form input.st-default-search-input {
 
 
   
-    <article id="post-react-datastream" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-react-datastream" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -411,10 +412,10 @@ form input.st-default-search-input {
 
 
   
-    <article id="post-react-life-cycle" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-react-life-cycle" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -430,8 +431,8 @@ form input.st-default-search-input {
     <div class="article-entry" itemprop="articleBody">
       
         <p>React组件的生命周期，可以分为挂载、渲染和卸载这几个阶段。<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2017/02/react-life-cycle.html#more">more >></a>
+        </p><p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/react-life-cycle.html#more">more >></a>
         </p>
       
     </div>
@@ -463,10 +464,10 @@ form input.st-default-search-input {
 
 
   
-    <article id="post-react-component" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-react-component" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -482,8 +483,8 @@ form input.st-default-search-input {
     <div class="article-entry" itemprop="articleBody">
       
         <p>带有业务含义和数据的UI组件组合。<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2017/02/react-component.html#more">more >></a>
+        </p><p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/react-component.html#more">more >></a>
         </p>
       
     </div>
@@ -520,10 +521,10 @@ form input.st-default-search-input {
 
 
   
-    <article id="post-JSX-source" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-JSX-source" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -542,7 +543,7 @@ form input.st-default-search-input {
 <p>JSX解释器</p>
 </blockquote>
         <p class="article-more-link">
-          <a class="article-more-a"  href="/2017/02/JSX-source.html#more">more >></a>
+          <a class="article-more-a" href="/2017/02/JSX-source.html#more">more >></a>
         </p>
       
     </div>
@@ -579,10 +580,10 @@ form input.st-default-search-input {
 
 
   
-    <article id="post-react-jsx" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-react-jsx" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -601,7 +602,7 @@ form input.st-default-search-input {
 <p>JSX——Javascript XML。基于ECMAScript的一种新特性，定义带属性树结构的语法。</p>
 </blockquote>
         <p class="article-more-link">
-          <a class="article-more-a"  href="/2017/01/react-jsx.html#more">more >></a>
+          <a class="article-more-a" href="/2017/01/react-jsx.html#more">more >></a>
         </p>
       
     </div>
@@ -638,10 +639,10 @@ form input.st-default-search-input {
 
 
   
-    <article id="post-css3-animation" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-css3-animation" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -660,7 +661,7 @@ form input.st-default-search-input {
 <p>使用keyframes, animation属性，例如timing, delay, play state, animation-count, iteration count, direction, fill mode以及will-change等等创造动画</p>
 </blockquote>
         <p class="article-more-link">
-          <a class="article-more-a"  href="/2017/01/css3-animation.html#more">more >></a>
+          <a class="article-more-a" href="/2017/01/css3-animation.html#more">more >></a>
         </p>
       
     </div>
@@ -697,10 +698,10 @@ form input.st-default-search-input {
 
 
   
-    <article id="post-web-app" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-web-app" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -716,8 +717,8 @@ form input.st-default-search-input {
     <div class="article-entry" itemprop="articleBody">
       
         <p>移动端页面加载慢，图片加载不出来，怎么办？怎么优化？<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2017/01/web-app.html#more">more >></a>
+        </p><p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/web-app.html#more">more >></a>
         </p>
       
     </div>
@@ -766,7 +767,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

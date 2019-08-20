@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>js函数调用模式 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="js 调动模式共有4种：方法调用模式、函数调用模式、构造器调用模式和apply调用模式。">
@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://water-ice.github.io/2012/03/js函数调用模式.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="js 调动模式共有4种：方法调用模式、函数调用模式、构造器调用模式和apply调用模式。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js函数调用模式">
@@ -57,7 +58,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +82,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +194,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-js函数调用模式" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-js函数调用模式" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -217,11 +218,11 @@ form input.st-default-search-input {
 <p>js的函数调用会免费奉送两个而外的参数就是 this 和 arguments 。arguments是参数组，他并不是一个真实的数组，但是可以使用.length方法获得长度。</p>
 </blockquote>
 <h2 id="方法调用模式"><a href="#方法调用模式" class="headerlink" title="方法调用模式"></a>方法调用模式</h2><p>请注意this此时指向myobject。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myobject=&#123;</div><div class="line">    <span class="attr">value</span>:<span class="number">0</span>,</div><div class="line">    <span class="attr">inc</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="keyword">this</span>.value)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">myobject.inc()</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myobject=&#123;</span><br><span class="line">    value:<span class="number">0</span>,</span><br><span class="line">    inc:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.value)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">myobject.inc()</span><br></pre></td></tr></table></figure>
 <h2 id="函数调用模式"><a href="#函数调用模式" class="headerlink" title="函数调用模式"></a>函数调用模式</h2><p>请注意this此时指向window</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> add=<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    alert(<span class="keyword">this</span>)<span class="comment">//this被绑顶到window</span></div><div class="line">    <span class="keyword">return</span> a+b;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> sum=add(<span class="number">3</span>,<span class="number">4</span>);</div><div class="line">alert(sum)</div></pre></td></tr></table></figure>
-<h2 id="构造器调用模式"><a href="#构造器调用模式" class="headerlink" title="构造器调用模式"></a>构造器调用模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> quo=<span class="function"><span class="keyword">function</span>(<span class="params">string</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.status=string;</div><div class="line">&#125;</div><div class="line">quo.prototype.get_status=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.status;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> qq=<span class="keyword">new</span> quo(<span class="string">"aaa"</span>);</div><div class="line">alert(qq.get_status());</div></pre></td></tr></table></figure>
-<h2 id="apply、call调用模式"><a href="#apply、call调用模式" class="headerlink" title="apply、call调用模式"></a>apply、call调用模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myobject=&#123;&#125;;</div><div class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">　　<span class="keyword">return</span> a+b;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> sum2 = sum.call(myobject,<span class="number">10</span>,<span class="number">30</span>); <span class="comment">//var sum2 = sum.apply(myobject,[10,30]); </span></div><div class="line">alert(sum2);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> add=<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>)<span class="comment">//this被绑顶到window</span></span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> sum=add(<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">alert(sum)</span><br></pre></td></tr></table></figure>
+<h2 id="构造器调用模式"><a href="#构造器调用模式" class="headerlink" title="构造器调用模式"></a>构造器调用模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> quo=<span class="function"><span class="keyword">function</span>(<span class="params">string</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.status=string;</span><br><span class="line">&#125;</span><br><span class="line">quo.prototype.get_status=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.status;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> qq=<span class="keyword">new</span> quo(<span class="string">"aaa"</span>);</span><br><span class="line">alert(qq.get_status());</span><br></pre></td></tr></table></figure>
+<h2 id="apply、call调用模式"><a href="#apply、call调用模式" class="headerlink" title="apply、call调用模式"></a>apply、call调用模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myobject=&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">　　<span class="keyword">return</span> a+b;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> sum2 = sum.call(myobject,<span class="number">10</span>,<span class="number">30</span>); <span class="comment">//var sum2 = sum.apply(myobject,[10,30]); </span></span><br><span class="line">alert(sum2);</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
@@ -296,7 +297,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

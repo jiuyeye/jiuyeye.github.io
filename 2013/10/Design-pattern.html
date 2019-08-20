@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>javascript设计模式-学习一 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="不要纠结于设计模式，模式其实就是套路。">
+<meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript设计模式-学习一">
 <meta property="og:url" content="http://water-ice.github.io/2013/10/Design-pattern.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="不要纠结于设计模式，模式其实就是套路。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.713Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript设计模式-学习一">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-Design-pattern" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Design-pattern" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -213,18 +215,18 @@ form input.st-default-search-input {
       
         <p>不要纠结于设计模式，模式其实就是套路。</p>
 <a id="more"></a>
-<h3 id="1-单例模式"><a href="#1-单例模式" class="headerlink" title="1.单例模式"></a>1.单例模式</h3><p>保证一个类仅有一个实例,并提供一个访问它的全局控制点.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
+<h3 id="1-单例模式"><a href="#1-单例模式" class="headerlink" title="1.单例模式"></a>1.单例模式</h3><p>保证一个类仅有一个实例,并提供一个访问它的全局控制点.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 <h3 id="2-工厂模式"><a href="#2-工厂模式" class="headerlink" title="2.工厂模式"></a>2.工厂模式</h3><blockquote>
 <p>简单工厂模式是由一个方法来决定到底要创建哪个类的实例, 而这些实例经常都拥有相同的接口.这种模式主要用在所实例化的类型在编译期并不能确定， 而是在执行期决定的情况。</p>
 </blockquote>
 <p>定义一个用以创建对象的接口, 让子类决定实例化哪个类，当遇到需要根据某个前提条件创建不同的类实现时, 会实用工厂模式.</p>
 <p>在函数中定义对象,并定义对象的各种属性,虽然属性可以为方法，但是建议将属性为方法的属性定义到函数之外，这样可以避免重复创建该方法;<br>引用该对象的时候，这里使用的是 var x = Parent()而不是 var x = new Parent();因为后者会可能出现很多问题（前者也成为工厂经典方式,后者称之为混合工厂方式），不推荐使用new的方式使用该对象;<br>在函数的最后返回该对象;<br>不推荐使用这种方式创建对象.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> school=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"第一小学"</span>;</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span>  Child = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">    Child.name=<span class="string">"jack"</span>;</div><div class="line">    Child.age=<span class="string">"9"</span>;</div><div class="line">    Child.school=school;</div><div class="line">    <span class="keyword">return</span> Child;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span>  x = Parent();</div><div class="line">alert(x.name);</div><div class="line">alert(x.school());</div></pre></td></tr></table></figure>
-<h3 id="3-构造函数模式"><a href="#3-构造函数模式" class="headerlink" title="3.构造函数模式"></a>3.构造函数模式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> school=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"第一小学"</span>;</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name=<span class="string">"jack"</span>;</div><div class="line">    <span class="keyword">this</span>.age=<span class="string">"9"</span>;</div><div class="line">    <span class="keyword">this</span>.school=school;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span>  x = Parent();</div><div class="line">alert(x.name);</div><div class="line">alert(x.school());</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> school=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"第一小学"</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span>  Child = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    Child.name=<span class="string">"jack"</span>;</span><br><span class="line">    Child.age=<span class="string">"9"</span>;</span><br><span class="line">    Child.school=school;</span><br><span class="line">    <span class="keyword">return</span> Child;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span>  x = Parent();</span><br><span class="line">alert(x.name);</span><br><span class="line">alert(x.school());</span><br></pre></td></tr></table></figure>
+<h3 id="3-构造函数模式"><a href="#3-构造函数模式" class="headerlink" title="3.构造函数模式"></a>3.构造函数模式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> school=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"第一小学"</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name=<span class="string">"jack"</span>;</span><br><span class="line">    <span class="keyword">this</span>.age=<span class="string">"9"</span>;</span><br><span class="line">    <span class="keyword">this</span>.school=school;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span>  x = Parent();</span><br><span class="line">alert(x.name);</span><br><span class="line">alert(x.school());</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>与工厂方式相比，使用构造函数方式创建对象，无需再函数内部重建创建对象，而使用this指代，并而函数无需明确return;<br>同工厂模式一样，虽然属性的值可以为方法，扔建议将该方法定义在函数之外;<br>同样的，不推荐使用这种方式创建对象;</p>
 </blockquote>
-<h3 id="4-原型模式"><a href="#4-原型模式" class="headerlink" title="4.原型模式"></a>4.原型模式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Parent.prototype.name=<span class="string">"jack"</span>;</div><div class="line">Parent.prototype.age=<span class="string">"9"</span>;</div><div class="line">Parent.prototype.school=school;</div></pre></td></tr></table></figure>
+<h3 id="4-原型模式"><a href="#4-原型模式" class="headerlink" title="4.原型模式"></a>4.原型模式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">Parent.prototype.name=<span class="string">"jack"</span>;</span><br><span class="line">Parent.prototype.age=<span class="string">"9"</span>;</span><br><span class="line">Parent.prototype.school=school;</span><br></pre></td></tr></table></figure>
 <h3 id="5-建造者模式"><a href="#5-建造者模式" class="headerlink" title="5.建造者模式"></a>5.建造者模式</h3><p>将一个复杂对象的构建与它的表示分离.</p>
 <h3 id="6-装饰者模式"><a href="#6-装饰者模式" class="headerlink" title="6.装饰者模式"></a>6.装饰者模式</h3><blockquote>
 <p>动态的给一个对象添加一些额外的职责.</p>
@@ -325,7 +327,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

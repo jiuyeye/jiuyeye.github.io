@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>xss学习 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="跨站脚本攻击(XSS)">
+<meta name="keywords" content="xss">
 <meta property="og:type" content="article">
 <meta property="og:title" content="xss学习">
 <meta property="og:url" content="http://water-ice.github.io/2015/07/xss.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="跨站脚本攻击(XSS)">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.776Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xss学习">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-xss" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-xss" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -214,10 +216,12 @@ form input.st-default-search-input {
         <p>跨站脚本攻击(XSS)<br><a id="more"></a></p>
 <h3 id="什么是跨站脚本攻击"><a href="#什么是跨站脚本攻击" class="headerlink" title="什么是跨站脚本攻击"></a>什么是跨站脚本攻击</h3><p>xss表示Cross Site Scripting(跨站脚本攻击)，它与SQL注入攻击类似，SQL注入攻击中以SQL语句作为用户输入，从而达到查询/修改/删除数据的目的，而在xss攻击中，通过插入恶意脚本，实现对用户游览器的控制。</p>
 <p><strong> xss构成原因：</strong><br>1.对用户输入没有严格限制直接输出到页面；<br>2.对非预期输入的信任；</p>
-<p><strong> Payload(有效荷载) </strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">0</span> <span class="attr">onerror</span>=<span class="string">alert(0)</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><strong> Payload(有效荷载) </strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">0</span> <span class="attr">onerror</span>=<span class="string">alert(0)</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p><strong> Poc</strong><br><strong> Exp</strong></p>
 <h3 id="xss攻击可以分成两种类型："><a href="#xss攻击可以分成两种类型：" class="headerlink" title="xss攻击可以分成两种类型："></a>xss攻击可以分成两种类型：</h3><blockquote>
 <p><code>非持久型攻击</code>,是一次性的，仅对当次的页面访问产生影响。非持久型xss攻击要求用户访问一个被攻击者篡改后的链接，用户访问该链接时，被植入的攻击脚本被用户游览器执行，从而达到攻击目的。</p>
+</blockquote>
+<blockquote>
 <p><code>持久型xss攻击</code>,会把攻击者的数据存储在服务器端，攻击行为将伴随着攻击数据一直存在。</p>
 </blockquote>
 <h3 id="xss漏洞的危害"><a href="#xss漏洞的危害" class="headerlink" title="xss漏洞的危害"></a>xss漏洞的危害</h3><h3 id="xss实例"><a href="#xss实例" class="headerlink" title="xss实例"></a>xss实例</h3>
@@ -295,7 +299,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

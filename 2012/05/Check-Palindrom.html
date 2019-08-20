@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>算法-字符串方面 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="如果一个字符串忽略标点符号、大小写和空格，正着读和反着读一模一样，那么这个字符串就是palindrome(回文)。">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法-字符串方面">
 <meta property="og:url" content="http://water-ice.github.io/2012/05/Check-Palindrom.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="如果一个字符串忽略标点符号、大小写和空格，正着读和反着读一模一样，那么这个字符串就是palindrome(回文)。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.711Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法-字符串方面">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-Check-Palindrom" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Check-Palindrom" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -214,10 +216,10 @@ form input.st-default-search-input {
         <p>如果一个字符串忽略标点符号、大小写和空格，正着读和反着读一模一样，那么这个字符串就是palindrome(回文)。<br><a id="more"></a></p>
 <h3 id="回文检测"><a href="#回文检测" class="headerlink" title="回文检测"></a>回文检测</h3><p>如果给定的字符串是回文，返回true，反之，返回false。</p>
 <p>注意你需要去掉字符串多余的标点符号和空格，然后把字符串转化成小写来验证此字符串是否为回文。</p>
-<p>函数参数的值可以为”racecar”，”RaceCar”和”race CAR”。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">palindrome</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> re = <span class="regexp">/[\W_]/g</span>;<span class="comment">// 或者 var re = /[^A-Za-z0-9]/g;</span></div><div class="line">  str = str.toLowerCase().replace(re,<span class="string">""</span>);</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>,j=str.length<span class="number">-1</span>;i&lt;j;i++,j--)&#123;</div><div class="line">    <span class="keyword">if</span>(str[i] != str[j])&#123;</div><div class="line">       <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">palindrome(<span class="string">"eye"</span>);</div></pre></td></tr></table></figure></p>
-<h3 id="找到提供的句子中最长的单词，并计算它的长度。"><a href="#找到提供的句子中最长的单词，并计算它的长度。" class="headerlink" title="找到提供的句子中最长的单词，并计算它的长度。"></a>找到提供的句子中最长的单词，并计算它的长度。</h3><p>函数的返回值应该是一个数字。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">findLongestWord</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> newArray = str.split(<span class="string">" "</span>).sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a.length-b.length;</div><div class="line">  &#125;).reverse();</div><div class="line">  <span class="keyword">return</span> newArray[<span class="number">0</span>].length;</div><div class="line">&#125;</div><div class="line"></div><div class="line">findLongestWord(<span class="string">"The quick brown fox jumped over the lazy dog"</span>);<span class="comment">//6</span></div></pre></td></tr></table></figure></p>
-<h3 id="将字符串中的每一个单词的首字母变为大写其余均为小写"><a href="#将字符串中的每一个单词的首字母变为大写其余均为小写" class="headerlink" title="将字符串中的每一个单词的首字母变为大写其余均为小写"></a>将字符串中的每一个单词的首字母变为大写其余均为小写</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">titleCase</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  str=str.split(<span class="string">" "</span>);</div><div class="line">  <span class="keyword">var</span> newArr=[];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;str.length;i++)&#123;</div><div class="line">    newArr.push(str[i][<span class="number">0</span>].toLocaleUpperCase()+str[i].substring(<span class="number">1</span>).toLocaleLowerCase());</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> newArr.join(<span class="string">" "</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">titleCase(<span class="string">"I'm a little tea pot"</span>);</div></pre></td></tr></table></figure>
-<h3 id="判断字符串是否指定字符串开始-结尾的方法"><a href="#判断字符串是否指定字符串开始-结尾的方法" class="headerlink" title="判断字符串是否指定字符串开始/结尾的方法"></a>判断字符串是否指定字符串开始/结尾的方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 利用substr</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">confirmEnding</span>(<span class="params">str, target</span>) </span>&#123;</div><div class="line">  <span class="comment">// "Never give up and good luck will find you."</span></div><div class="line">  <span class="comment">// -- Falcor</span></div><div class="line">  <span class="keyword">var</span> len=str.length-target.length;</div><div class="line">  <span class="keyword">return</span> (len &gt;= <span class="number">0</span> &amp;&amp; str.substr(len)==target);<span class="comment">//也可以用return (len&gt;=0&amp;&amp;str.lastIndexOf(target)==len);</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">confirmEnding(<span class="string">"Bastian"</span>, <span class="string">"n"</span>);</div></pre></td></tr></table></figure>
+<p>函数参数的值可以为”racecar”，”RaceCar”和”race CAR”。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">palindrome</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> re = <span class="regexp">/[\W_]/g</span>;<span class="comment">// 或者 var re = /[^A-Za-z0-9]/g;</span></span><br><span class="line">  str = str.toLowerCase().replace(re,<span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>,j=str.length<span class="number">-1</span>;i&lt;j;i++,j--)&#123;</span><br><span class="line">    <span class="keyword">if</span>(str[i] != str[j])&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">palindrome(<span class="string">"eye"</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="找到提供的句子中最长的单词，并计算它的长度。"><a href="#找到提供的句子中最长的单词，并计算它的长度。" class="headerlink" title="找到提供的句子中最长的单词，并计算它的长度。"></a>找到提供的句子中最长的单词，并计算它的长度。</h3><p>函数的返回值应该是一个数字。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findLongestWord</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> newArray = str.split(<span class="string">" "</span>).sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.length-b.length;</span><br><span class="line">  &#125;).reverse();</span><br><span class="line">  <span class="keyword">return</span> newArray[<span class="number">0</span>].length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">findLongestWord(<span class="string">"The quick brown fox jumped over the lazy dog"</span>);<span class="comment">//6</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="将字符串中的每一个单词的首字母变为大写其余均为小写"><a href="#将字符串中的每一个单词的首字母变为大写其余均为小写" class="headerlink" title="将字符串中的每一个单词的首字母变为大写其余均为小写"></a>将字符串中的每一个单词的首字母变为大写其余均为小写</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">titleCase</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  str=str.split(<span class="string">" "</span>);</span><br><span class="line">  <span class="keyword">var</span> newArr=[];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;str.length;i++)&#123;</span><br><span class="line">    newArr.push(str[i][<span class="number">0</span>].toLocaleUpperCase()+str[i].substring(<span class="number">1</span>).toLocaleLowerCase());</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> newArr.join(<span class="string">" "</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">titleCase(<span class="string">"I'm a little tea pot"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="判断字符串是否指定字符串开始-结尾的方法"><a href="#判断字符串是否指定字符串开始-结尾的方法" class="headerlink" title="判断字符串是否指定字符串开始/结尾的方法"></a>判断字符串是否指定字符串开始/结尾的方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 利用substr</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">confirmEnding</span>(<span class="params">str, target</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// "Never give up and good luck will find you."</span></span><br><span class="line">  <span class="comment">// -- Falcor</span></span><br><span class="line">  <span class="keyword">var</span> len=str.length-target.length;</span><br><span class="line">  <span class="keyword">return</span> (len &gt;= <span class="number">0</span> &amp;&amp; str.substr(len)==target);<span class="comment">//也可以用return (len&gt;=0&amp;&amp;str.lastIndexOf(target)==len);</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">confirmEnding(<span class="string">"Bastian"</span>, <span class="string">"n"</span>);</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
@@ -297,7 +299,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>数据结构-图 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="图是网络结构的抽象模型，是由一组由边连接的节点。任何二元关系可以用图来表示。">
@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://water-ice.github.io/2014/04/js-graph.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="图是网络结构的抽象模型，是由一组由边连接的节点。任何二元关系可以用图来表示。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.753Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-图">
@@ -57,7 +58,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +82,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +194,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-js-graph" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-js-graph" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -216,7 +217,7 @@ form input.st-default-search-input {
 </blockquote>
 <a id="more"></a>
 <h3 id="图的表示"><a href="#图的表示" class="headerlink" title="图的表示"></a>图的表示</h3><p>1.邻接矩阵，每个节点都和一个整数相关联，该整数将作为数组的索引。<br>2.邻接表，由图中每个顶点的相邻点列表所组成。<br>3.关联矩阵，矩阵的行表示顶点，列表示边。</p>
-<h3 id="创建图类"><a href="#创建图类" class="headerlink" title="创建图类"></a>创建图类</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Graph</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> vertices = [];</div><div class="line">  <span class="keyword">var</span> adjList = <span class="keyword">new</span> Dictionary();</div><div class="line">  <span class="keyword">this</span>.addVertex = <span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;<span class="comment">//添加新顶点</span></div><div class="line">    vertices.push(v);</div><div class="line">    adjList.set(v,[]);</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.addEdge = <span class="function"><span class="keyword">function</span>(<span class="params">v,w</span>)</span>&#123;</div><div class="line">    adjList.get(v).push(w);</div><div class="line">    adjList.get(w).push(v);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">this</span>.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> s=<span class="string">''</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;vertices.length;i++)&#123;</div><div class="line">      s += vertices[i] + <span class="string">'-&gt;'</span>;</div><div class="line">      <span class="keyword">var</span> neighbors = adjList.get(vertices[i]);</div><div class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> <span class="keyword">var</span> j=<span class="number">0</span>;j&lt;neighbors.length;j++)&#123;</div><div class="line">        s += neighbors[j] + <span class="string">' '</span>;</div><div class="line">      &#125;</div><div class="line">      s += <span class="string">'\n'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> s;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="创建图类"><a href="#创建图类" class="headerlink" title="创建图类"></a>创建图类</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Graph</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> vertices = [];</span><br><span class="line">  <span class="keyword">var</span> adjList = <span class="keyword">new</span> Dictionary();</span><br><span class="line">  <span class="keyword">this</span>.addVertex = <span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;<span class="comment">//添加新顶点</span></span><br><span class="line">    vertices.push(v);</span><br><span class="line">    adjList.set(v,[]);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">this</span>.addEdge = <span class="function"><span class="keyword">function</span>(<span class="params">v,w</span>)</span>&#123;</span><br><span class="line">    adjList.get(v).push(w);</span><br><span class="line">    adjList.get(w).push(v);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> s=<span class="string">''</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;vertices.length;i++)&#123;</span><br><span class="line">      s += vertices[i] + <span class="string">'-&gt;'</span>;</span><br><span class="line">      <span class="keyword">var</span> neighbors = adjList.get(vertices[i]);</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> <span class="keyword">var</span> j=<span class="number">0</span>;j&lt;neighbors.length;j++)&#123;</span><br><span class="line">        s += neighbors[j] + <span class="string">' '</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      s += <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h3>
       
     </div>
@@ -292,7 +293,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

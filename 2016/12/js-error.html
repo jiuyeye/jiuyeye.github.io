@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>JavaScript易错知识点整理-转 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="主要从变量作用域，类型比较，this指向，函数参数，闭包问题及对象拷贝与赋值这6个方面进行由浅入深的介绍和讲解，其中也涉及了一些ES6的知识点。">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript易错知识点整理-转">
 <meta property="og:url" content="http://water-ice.github.io/2016/12/js-error.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="主要从变量作用域，类型比较，this指向，函数参数，闭包问题及对象拷贝与赋值这6个方面进行由浅入深的介绍和讲解，其中也涉及了一些ES6的知识点。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript易错知识点整理-转">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-js-error" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-js-error" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -216,7 +218,7 @@ form input.st-default-search-input {
 <h3 id="作用域Scoping"><a href="#作用域Scoping" class="headerlink" title="作用域Scoping"></a>作用域Scoping</h3><blockquote>
 <p>变量提升，就是把变量提升提到函数的top的地方。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1.-----------------</span></div><div class="line"><span class="keyword">var</span> v=<span class="string">'Hello World'</span>;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(v); <span class="comment">//Hello Word</span></div><div class="line">&#125;)();</div><div class="line"></div><div class="line"><span class="comment">//2.-----------------</span></div><div class="line"><span class="keyword">var</span> v=<span class="string">'Hello World'</span>;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(v); <span class="comment">// v is not defined</span></div><div class="line">  <span class="keyword">var</span> v=<span class="string">'I love you'</span>;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line"><span class="comment">//3.-----------------</span></div><div class="line"><span class="keyword">var</span> v=<span class="string">'Hello World'</span>;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(v); <span class="comment">// Hello World</span></div><div class="line">  v=<span class="string">'I love you'</span>;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line"><span class="comment">//4.-----------------</span></div><div class="line"><span class="keyword">var</span> v=<span class="string">'Hello World'</span>;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> v=<span class="string">'I love you'</span>;</div><div class="line">  <span class="built_in">console</span>.log(v); <span class="comment">// I love you</span></div><div class="line">&#125;)();</div><div class="line"></div><div class="line"><span class="comment">//5.-----------------</span></div><div class="line"><span class="keyword">let</span> v=<span class="string">'Hello World'</span>;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(v); <span class="comment">// v is not defined</span></div><div class="line">  <span class="keyword">let</span> v=<span class="string">'I love you'</span>;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line"><span class="comment">//6.-----------------</span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> v=<span class="string">'Hello World'</span>;</div><div class="line">  &#123;</div><div class="line">    <span class="keyword">let</span> v=<span class="string">'I love you'</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(v); <span class="comment">// Hello World</span></div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.-----------------</span></span><br><span class="line"><span class="keyword">var</span> v=<span class="string">'Hello World'</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v); <span class="comment">//Hello Word</span></span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.-----------------</span></span><br><span class="line"><span class="keyword">var</span> v=<span class="string">'Hello World'</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v); <span class="comment">// v is not defined</span></span><br><span class="line">  <span class="keyword">var</span> v=<span class="string">'I love you'</span>;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.-----------------</span></span><br><span class="line"><span class="keyword">var</span> v=<span class="string">'Hello World'</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v); <span class="comment">// Hello World</span></span><br><span class="line">  v=<span class="string">'I love you'</span>;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">//4.-----------------</span></span><br><span class="line"><span class="keyword">var</span> v=<span class="string">'Hello World'</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> v=<span class="string">'I love you'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(v); <span class="comment">// I love you</span></span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">//5.-----------------</span></span><br><span class="line"><span class="keyword">let</span> v=<span class="string">'Hello World'</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v); <span class="comment">// v is not defined</span></span><br><span class="line">  <span class="keyword">let</span> v=<span class="string">'I love you'</span>;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">//6.-----------------</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> v=<span class="string">'Hello World'</span>;</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">let</span> v=<span class="string">'I love you'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(v); <span class="comment">// Hello World</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 <h3 id="函数提升"><a href="#函数提升" class="headerlink" title="函数提升"></a>函数提升</h3><h3 id="类型比较"><a href="#类型比较" class="headerlink" title="类型比较"></a>类型比较</h3><h3 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h3><h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><h3 id="闭包问题"><a href="#闭包问题" class="headerlink" title="闭包问题"></a>闭包问题</h3><h3 id="对象拷贝与赋值"><a href="#对象拷贝与赋值" class="headerlink" title="对象拷贝与赋值"></a>对象拷贝与赋值</h3>
       
     </div>
@@ -297,7 +299,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

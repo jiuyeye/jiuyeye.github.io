@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>js 浏览器缩放 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="由于浏览器缩放会破坏布局。为了防止用户无意识的缩放，此时就需要提醒用户应该将浏览器的缩放级别重置成默认的比例。">
@@ -12,6 +12,7 @@
 <meta property="og:url" content="http://water-ice.github.io/2016/12/js-browser-zoom.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="由于浏览器缩放会破坏布局。为了防止用户无意识的缩放，此时就需要提醒用户应该将浏览器的缩放级别重置成默认的比例。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-19T11:43:26.265Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js 浏览器缩放">
@@ -57,7 +58,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +82,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +194,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-js-browser-zoom" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-js-browser-zoom" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -219,7 +220,7 @@ form input.st-default-search-input {
 </ol>
 <p>类似的，无视网膜设备devicePixelRatio值为1，视网膜设备为2. 因为实际的像素个数是双倍。不过，iphone似乎不愿意改变大家都熟知习惯的320像素宽度布局，没有把设备宽度一下子变成640像素，因此，dips宽度依然是320, 于是devicePixelRatio就是640/320 = 2.</p>
 <p>iOS上的情况要相对简单些，除了1就是2. 在其他平台也基本上很简单，因为一般分辨率都比较挫，devicePixelRatio都是1.</p>
-<ol>
+<ol start="2">
 <li>Android</li>
 </ol>
 <p>Nexus One分辨率是480*800, 为了最优的页面浏览，Android WebKit团队决定纵向手持时候的宽度依然是320像素，因此，devicePixelRatio值为480/320 = 1.5.<br>在同一手机上，Opera Mobile有相同的结论，dips为320宽，devicePixelRatio也是1.5 。</p>
@@ -228,13 +229,13 @@ form input.st-default-search-input {
 <p>然而，Opera，坚持自我，dips宽度为320px, 于是devicePixelRatio为720/320 = 2.25. 不过似乎还与zoom缩放层级有关。</p>
 <p>Galaxy Note物理像素为800×1200. 这里所有浏览器都决定使用与Galaxy Nexus一样的比率：Android WebKit, Chrome, 以及QQ都是2，也就意味着其dips宽度为400px. 然而，Opera依然一意孤行2.25, 于是其dips宽度值有些怪怪的: 356px.</p>
 <p>Android标准似乎不严格，于是自家人玩自家人的游戏，对于开发者而言，可能又会面临苦逼~~</p>
-<ol>
+<ol start="3">
 <li>视网膜MacBook</li>
 </ol>
 <p>新的MacBook采用视网膜显示屏，其devicePixelRatio是2. 视网膜MacBook的物理像素是2800×1800，而显示出分辨率为1400×900，如果把分辨率作为dips层，则devicePixelRatio为2应该是无误的。</p>
 <p>需要指出的是，如果你把分辨率改成1920×1200，devicePixelRatio依然是2. 严格来讲，这是不准确的，应该是1.5, 然而你也可以说MacBook的分辨率不同于dips层，这种情况下devicePixelRatio在台式机/笔记本下的定义就不一样（哪一个？不知道。）。</p>
 <p>在任何情况下，根据苹果的规范做法，devicePixelRatio值只可能是1或者2. 如果你看到2，你要提供视网膜优化显示图片，如果是1，使用正常的图片。</p>
-<h3 id="实现检测代码"><a href="#实现检测代码" class="headerlink" title="实现检测代码"></a>实现检测代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">detectZoom</span>(<span class="params"></span>)</span>&#123; <span class="comment">//检查是否缩放</span></div><div class="line">    <span class="keyword">var</span> ratio = <span class="number">0</span>,</div><div class="line">    screen = <span class="built_in">window</span>.screen,</div><div class="line">    ua = navigator.userAgent.toLowerCase();</div><div class="line"></div><div class="line">    <span class="keyword">if</span>( ua.indexOf(<span class="string">'firefox'</span>) &gt; <span class="number">0</span> )&#123; <span class="comment">//火狐浏览器</span></div><div class="line">        <span class="keyword">if</span>( <span class="built_in">window</span>.devicePixelRatio !== <span class="literal">undefined</span> )&#123;</div><div class="line">            ratio = <span class="built_in">window</span>.devicePixelRatio;</div><div class="line">        &#125;</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>( ua.indexOf(<span class="string">'msie'</span>) &gt; <span class="number">0</span> )&#123;  <span class="comment">//IE浏览器</span></div><div class="line">        <span class="keyword">if</span>( screen.deviceXDPI &amp;&amp; screen.logicalXDPI )&#123;</div><div class="line">            ratio = screen.deviceXDPI / screen.logicalXDPI;</div><div class="line">        &#125;</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>( <span class="built_in">window</span>.outerWidth !== <span class="literal">undefined</span> &amp;&amp; <span class="built_in">window</span>.innerWidth !== <span class="literal">undefined</span> )&#123;</div><div class="line">        ratio = <span class="built_in">window</span>.outerWidth / <span class="built_in">window</span>.innerWidth;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>( ratio )&#123;</div><div class="line">        ratio = <span class="built_in">Math</span>.round( ratio * <span class="number">100</span> );</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 360安全浏览器下浏览器最大化时诡异的outerWidth和innerWidth不相等</span></div><div class="line">    <span class="keyword">if</span>( ratio === <span class="number">99</span> || ratio === <span class="number">101</span> )&#123;</div><div class="line">        ratio = <span class="number">100</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//return screen.deviceXDPI;</span></div><div class="line">    <span class="keyword">return</span> ratio;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="实现检测代码"><a href="#实现检测代码" class="headerlink" title="实现检测代码"></a>实现检测代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">detectZoom</span>(<span class="params"></span>)</span>&#123; <span class="comment">//检查是否缩放</span></span><br><span class="line">    <span class="keyword">var</span> ratio = <span class="number">0</span>,</span><br><span class="line">    screen = <span class="built_in">window</span>.screen,</span><br><span class="line">    ua = navigator.userAgent.toLowerCase();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>( ua.indexOf(<span class="string">'firefox'</span>) &gt; <span class="number">0</span> )&#123; <span class="comment">//火狐浏览器</span></span><br><span class="line">        <span class="keyword">if</span>( <span class="built_in">window</span>.devicePixelRatio !== <span class="literal">undefined</span> )&#123;</span><br><span class="line">            ratio = <span class="built_in">window</span>.devicePixelRatio;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>( ua.indexOf(<span class="string">'msie'</span>) &gt; <span class="number">0</span> )&#123;  <span class="comment">//IE浏览器</span></span><br><span class="line">        <span class="keyword">if</span>( screen.deviceXDPI &amp;&amp; screen.logicalXDPI )&#123;</span><br><span class="line">            ratio = screen.deviceXDPI / screen.logicalXDPI;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>( <span class="built_in">window</span>.outerWidth !== <span class="literal">undefined</span> &amp;&amp; <span class="built_in">window</span>.innerWidth !== <span class="literal">undefined</span> )&#123;</span><br><span class="line">        ratio = <span class="built_in">window</span>.outerWidth / <span class="built_in">window</span>.innerWidth;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>( ratio )&#123;</span><br><span class="line">        ratio = <span class="built_in">Math</span>.round( ratio * <span class="number">100</span> );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 360安全浏览器下浏览器最大化时诡异的outerWidth和innerWidth不相等</span></span><br><span class="line">    <span class="keyword">if</span>( ratio === <span class="number">99</span> || ratio === <span class="number">101</span> )&#123;</span><br><span class="line">        ratio = <span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//return screen.deviceXDPI;</span></span><br><span class="line">    <span class="keyword">return</span> ratio;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
@@ -309,7 +310,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

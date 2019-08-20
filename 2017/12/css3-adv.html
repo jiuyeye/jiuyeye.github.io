@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>CSS高级使用技巧 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="CSS3高级技巧">
+<meta name="keywords" content="css3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS高级使用技巧">
 <meta property="og:url" content="http://water-ice.github.io/2017/12/css3-adv.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="CSS3高级技巧">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.725Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS高级使用技巧">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-css3-adv" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-css3-adv" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -215,22 +217,22 @@ form input.st-default-search-input {
 <h3 id="黑白图片"><a href="#黑白图片" class="headerlink" title="黑白图片"></a>黑白图片</h3><blockquote>
 <p>filter属性，在webkit中，-webkit-filter专门为元素的渲染提供一些效果，比如灰度，亮度，模糊等。使用灰度控制grayscale属性，就可以很容易的将图片置为黑白色。</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">img</span>&#123;</div><div class="line">    <span class="attribute">-webkit-filter</span>:<span class="built_in">grayscale</span>(100%);</div><div class="line">    <span class="attribute">-moz-filter</span>:<span class="built_in">grayscale</span>(100%);</div><div class="line">    <span class="attribute">-ms-filter</span>:<span class="built_in">grayscale</span>(100%);</div><div class="line">    <span class="attribute">-o-filter</span>:<span class="built_in">grayscale</span>(100%);</div><div class="line">    <span class="attribute">filter</span>:<span class="built_in">grayscale</span>(100%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span>&#123;</span><br><span class="line">    <span class="attribute">-webkit-filter</span>:<span class="built_in">grayscale</span>(100%);</span><br><span class="line">    <span class="attribute">-moz-filter</span>:<span class="built_in">grayscale</span>(100%);</span><br><span class="line">    <span class="attribute">-ms-filter</span>:<span class="built_in">grayscale</span>(100%);</span><br><span class="line">    <span class="attribute">-o-filter</span>:<span class="built_in">grayscale</span>(100%);</span><br><span class="line">    <span class="attribute">filter</span>:<span class="built_in">grayscale</span>(100%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="整个页面添加顶部阴影"><a href="#整个页面添加顶部阴影" class="headerlink" title="整个页面添加顶部阴影"></a>整个页面添加顶部阴影</h3><blockquote>
 <p>利用body的伪元素:before，可以减少额外的元素;在顶部增加一个div，设置一个高度，宽度为100%;将其position设置为fixed，然后设置偏移量为设定的高度值;设置box-shadow属性，值等于设定的高度值。</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span><span class="selector-pseudo">:before</span>&#123;</div><div class="line">    <span class="attribute">content</span>:<span class="string">''</span>;</div><div class="line">    <span class="attribute">position</span>:fixed;</div><div class="line">    <span class="attribute">top</span>:-<span class="number">10px</span>;</div><div class="line">    <span class="attribute">left</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">10px</span>;</div><div class="line">    <span class="attribute">-webkit-box-shadow</span>:<span class="number">0px</span> <span class="number">0px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(0,0,0,.8);</div><div class="line">    <span class="attribute">-moz-box-shadow</span>:<span class="number">0px</span> <span class="number">0px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(0,0,0,.8);</div><div class="line">    <span class="attribute">box-shadow</span>:<span class="number">0px</span> <span class="number">0px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(0,0,0,.8);</div><div class="line">    <span class="attribute">z-index</span>:<span class="number">100</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">    <span class="attribute">position</span>:fixed;</span><br><span class="line">    <span class="attribute">top</span>:-<span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">-webkit-box-shadow</span>:<span class="number">0px</span> <span class="number">0px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(0,0,0,.8);</span><br><span class="line">    <span class="attribute">-moz-box-shadow</span>:<span class="number">0px</span> <span class="number">0px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(0,0,0,.8);</span><br><span class="line">    <span class="attribute">box-shadow</span>:<span class="number">0px</span> <span class="number">0px</span> <span class="number">10px</span> <span class="built_in">rgba</span>(0,0,0,.8);</span><br><span class="line">    <span class="attribute">z-index</span>:<span class="number">100</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="所有元素垂直居中"><a href="#所有元素垂直居中" class="headerlink" title="所有元素垂直居中"></a>所有元素垂直居中</h3><blockquote>
 <p>将与align有关的属性设置为center;displag设置为flex。</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span>,<span class="selector-tag">body</span>&#123;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100%</span>;</div><div class="line">    <span class="attribute">padding</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">margin</span>:<span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">    <span class="attribute">-webkit-flex-align</span>:center;</div><div class="line">    <span class="attribute">-ms-flex-align</span>:center;</div><div class="line">    <span class="attribute">align-items</span>:center;</div><div class="line">    <span class="attribute">display</span>:webkit-flex;</div><div class="line">    <span class="attribute">display</span>:flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>,<span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">padding</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">-webkit-flex-align</span>:center;</span><br><span class="line">    <span class="attribute">-ms-flex-align</span>:center;</span><br><span class="line">    <span class="attribute">align-items</span>:center;</span><br><span class="line">    <span class="attribute">display</span>:webkit-flex;</span><br><span class="line">    <span class="attribute">display</span>:flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="负数的nth-child选择器"><a href="#负数的nth-child选择器" class="headerlink" title="负数的nth-child选择器"></a>负数的nth-child选择器</h3><p>:nth-child(-n+3)，就代表选择从第一个到第三个元素。</p>
-<h3 id="表格列等宽"><a href="#表格列等宽" class="headerlink" title="表格列等宽"></a>表格列等宽</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">table</span>&#123;</div><div class="line">    <span class="attribute">table-layout</span>:fixed;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="表格列等宽"><a href="#表格列等宽" class="headerlink" title="表格列等宽"></a>表格列等宽</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">table</span>&#123;</span><br><span class="line">    <span class="attribute">table-layout</span>:fixed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="CSS3中的calc"><a href="#CSS3中的calc" class="headerlink" title="CSS3中的calc()"></a>CSS3中的calc()</h3><blockquote>
 <p>用于动态的计算值，不管是数值还是百分比，都可以参与计算。</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.simpleblock</span>&#123;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">width</span>:<span class="built_in">calc</span>(100%-10px);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.complexblock</span>&#123;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">width</span>:<span class="built_in">calc</span>(100%-50%/3);</div><div class="line">    <span class="attribute">padding</span>:<span class="number">5px</span> <span class="built_in">calc</span>(3%-2px);</div><div class="line">    <span class="attribute">margin-left</span>:<span class="built_in">calc</span>(10%+10px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="模糊文本"><a href="#模糊文本" class="headerlink" title="模糊文本"></a>模糊文本</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.text</span>&#123;</div><div class="line">    <span class="attribute">color</span>:transparent;</div><div class="line">    <span class="attribute">text-shadow</span>:<span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(0,0,0,.5);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.simpleblock</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="built_in">calc</span>(100%-10px);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.complexblock</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="built_in">calc</span>(100%-50%/3);</span><br><span class="line">    <span class="attribute">padding</span>:<span class="number">5px</span> <span class="built_in">calc</span>(3%-2px);</span><br><span class="line">    <span class="attribute">margin-left</span>:<span class="built_in">calc</span>(10%+10px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="模糊文本"><a href="#模糊文本" class="headerlink" title="模糊文本"></a>模糊文本</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.text</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>:transparent;</span><br><span class="line">    <span class="attribute">text-shadow</span>:<span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(0,0,0,.5);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
@@ -305,7 +307,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

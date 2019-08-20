@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>数据结构-栈 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="栈是一种遵从后进先出(LIFO)原则的有序集合。新添加的或待删除的元素都保存在栈的末尾，称作栈顶。另一端叫栈底。">
+<meta name="keywords" content="栈">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构-栈">
 <meta property="og:url" content="http://water-ice.github.io/2014/04/js-stack.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="栈是一种遵从后进先出(LIFO)原则的有序集合。新添加的或待删除的元素都保存在栈的末尾，称作栈顶。另一端叫栈底。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.757Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-栈">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-js-stack" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-js-stack" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -215,8 +217,8 @@ form input.st-default-search-input {
 <p>栈是一种遵从后进先出(LIFO)原则的有序集合。新添加的或待删除的元素都保存在栈的末尾，称作栈顶。另一端叫栈底。</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="创建栈"><a href="#创建栈" class="headerlink" title="创建栈"></a>创建栈</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Stack</span>(<span class="params"></span>)</span>&#123;<span class="comment">//创建栈</span></div><div class="line">  <span class="comment">//各种属性和方法</span></div><div class="line">  <span class="keyword">var</span> items = [];</div><div class="line">  <span class="keyword">this</span>.push = <span class="function"><span class="keyword">function</span>(<span class="params">element</span>)</span>&#123;</div><div class="line">  	items.push(element);</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.pop = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  	items.pop();</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.peek = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  	<span class="keyword">return</span> items[items.length<span class="number">-1</span>];</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.isEmpty = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  	<span class="keyword">return</span> items.length == <span class="number">0</span>;</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.size = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  	<span class="keyword">return</span> items.length;</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.clear = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  	items=[];</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">this</span>.print = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  	<span class="built_in">console</span>.log(items.toString());</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="十进制转二进制"><a href="#十进制转二进制" class="headerlink" title="十进制转二进制"></a>十进制转二进制</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">divideBy2</span>(<span class="params">decNumber</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> remStack=<span class="keyword">new</span> Stack(),</div><div class="line">  rem,</div><div class="line">  binaryString=<span class="string">''</span>;</div><div class="line">  <span class="keyword">while</span>(decNumber&gt;<span class="number">0</span>)&#123;</div><div class="line">    rem = <span class="built_in">Math</span>.floor(decNumber % <span class="number">2</span>);</div><div class="line">    remStack.push(rem);</div><div class="line">    decNumber = <span class="built_in">Math</span>.floor(decNumber/<span class="number">2</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">while</span>(!remStack.isEmpty())&#123;</div><div class="line">    binaryString += remStack.pop().tostring();</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> binaryString;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="创建栈"><a href="#创建栈" class="headerlink" title="创建栈"></a>创建栈</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Stack</span>(<span class="params"></span>)</span>&#123;<span class="comment">//创建栈</span></span><br><span class="line">  <span class="comment">//各种属性和方法</span></span><br><span class="line">  <span class="keyword">var</span> items = [];</span><br><span class="line">  <span class="keyword">this</span>.push = <span class="function"><span class="keyword">function</span>(<span class="params">element</span>)</span>&#123;</span><br><span class="line">  	items.push(element);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">this</span>.pop = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  	items.pop();</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">this</span>.peek = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  	<span class="keyword">return</span> items[items.length<span class="number">-1</span>];</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">this</span>.isEmpty = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  	<span class="keyword">return</span> items.length == <span class="number">0</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">this</span>.size = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  	<span class="keyword">return</span> items.length;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">this</span>.clear = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  	items=[];</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">this</span>.print = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  	<span class="built_in">console</span>.log(items.toString());</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="十进制转二进制"><a href="#十进制转二进制" class="headerlink" title="十进制转二进制"></a>十进制转二进制</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">divideBy2</span>(<span class="params">decNumber</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> remStack=<span class="keyword">new</span> Stack(),</span><br><span class="line">  rem,</span><br><span class="line">  binaryString=<span class="string">''</span>;</span><br><span class="line">  <span class="keyword">while</span>(decNumber&gt;<span class="number">0</span>)&#123;</span><br><span class="line">    rem = <span class="built_in">Math</span>.floor(decNumber % <span class="number">2</span>);</span><br><span class="line">    remStack.push(rem);</span><br><span class="line">    decNumber = <span class="built_in">Math</span>.floor(decNumber/<span class="number">2</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span>(!remStack.isEmpty())&#123;</span><br><span class="line">    binaryString += remStack.pop().tostring();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> binaryString;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
@@ -296,7 +298,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

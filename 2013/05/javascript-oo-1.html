@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>javascript面向对象 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="面向对象的语言都有一个标志，就是有类的概念，可以通过类创建任意多个具有相同属性和方法的对象。但是ECMAScript没有类的概念。">
+<meta name="keywords" content="面向对象">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript面向对象">
 <meta property="og:url" content="http://water-ice.github.io/2013/05/javascript-oo-1.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="面向对象的语言都有一个标志，就是有类的概念，可以通过类创建任意多个具有相同属性和方法的对象。但是ECMAScript没有类的概念。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.744Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript面向对象">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-javascript-oo-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-javascript-oo-1" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -217,16 +219,16 @@ form input.st-default-search-input {
 <li>对象具有封装和继承特性；</li>
 <li>信息隐藏；</li>
 </ol>
-<p>创建自定义对象的最简单方式就是创建一个Object的实例，然后再为她添加属性和方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();<span class="comment">//创建person对象，并添加三个属性一个方法</span></div><div class="line">person.name = <span class="string">"Jack"</span>;</div><div class="line">person.age = <span class="number">18</span>;</div><div class="line">person.job = <span class="string">"software"</span>;</div><div class="line">person.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>创建自定义对象的最简单方式就是创建一个Object的实例，然后再为她添加属性和方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();<span class="comment">//创建person对象，并添加三个属性一个方法</span></span><br><span class="line">person.name = <span class="string">"Jack"</span>;</span><br><span class="line">person.age = <span class="number">18</span>;</span><br><span class="line">person.job = <span class="string">"software"</span>;</span><br><span class="line">person.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="属性类型"><a href="#属性类型" class="headerlink" title="属性类型"></a>属性类型</h3><blockquote>
 <p>ECMAScript中有两种属性：数据属性和访问器属性 </p>
 </blockquote>
 <ol>
-<li>数据属性：<br><code>[[Configurable]]</code>：表示能否通过delete删除属性从而重新定义，能否修改属性的特性、或者能否把属性修改为访问器属性。默认值：true。<br><code>[[Enumerable]]</code>：表示能否通过for-in循环返回属性，默认值：true。<br><code>[[Writable]]</code>：表示能否修改属性的值，默认值：true。<br><code>[[Value]]</code>：包含这个属性的数据值。默认值：undefined。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = &#123;&#125;;</div><div class="line"><span class="built_in">Object</span>.defineProperty(person,<span class="string">"name"</span>,&#123;</div><div class="line">	<span class="attr">writable</span>:<span class="literal">false</span>,</div><div class="line">	<span class="attr">value</span>:<span class="string">"jack"</span></div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(person.name);<span class="comment">//jack</span></div><div class="line">person.name = <span class="string">"jim"</span>;</div><div class="line"><span class="built_in">console</span>.log(person.name);<span class="comment">//jack</span></div></pre></td></tr></table></figure>
+<li>数据属性：<br><code>[[Configurable]]</code>：表示能否通过delete删除属性从而重新定义，能否修改属性的特性、或者能否把属性修改为访问器属性。默认值：true。<br><code>[[Enumerable]]</code>：表示能否通过for-in循环返回属性，默认值：true。<br><code>[[Writable]]</code>：表示能否修改属性的值，默认值：true。<br><code>[[Value]]</code>：包含这个属性的数据值。默认值：undefined。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(person,<span class="string">"name"</span>,&#123;</span><br><span class="line">	writable:<span class="literal">false</span>,</span><br><span class="line">	value:<span class="string">"jack"</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(person.name);<span class="comment">//jack</span></span><br><span class="line">person.name = <span class="string">"jim"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(person.name);<span class="comment">//jack</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>可以多次调用Object.defineProperty()方法修改同一个属性，但在configurable设置为false就会有限制了。</p>
-<ol>
+<ol start="2">
 <li>访问器属性：<br><code>[[Configurable]]</code>：表示能否通过delete删除属性从而重新定义，能否修改属性的特性、或者能否把属性修改为访问器属性。默认值：true。<br><code>[[Enumerable]]</code>：表示能否通过for-in循环返回属性，默认值：true。<br><code>[[Get]]</code>：在读取属性时调用的函数，默认值：undefined。<br><code>[[Set]]</code>：在写入属性时调用的函数。默认值：undefined。</li>
 </ol>
 <h3 id="定义多个属性"><a href="#定义多个属性" class="headerlink" title="定义多个属性"></a>定义多个属性</h3><p>通过Object.defineProperties()方法，可以一次定义多个属性。</p>
@@ -311,7 +313,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

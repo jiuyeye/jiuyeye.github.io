@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>使用 Git 进行问题定位以及代码查找 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="通过 Git 来对代码的历史版本进行分析可能更加的效率。">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 Git 进行问题定位以及代码查找">
 <meta property="og:url" content="http://water-ice.github.io/2015/03/git.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="通过 Git 来对代码的历史版本进行分析可能更加的效率。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.740Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 Git 进行问题定位以及代码查找">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-git" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -212,10 +214,10 @@ form input.st-default-search-input {
     <div class="article-entry" itemprop="articleBody">
       
         <p>通过 Git 来对代码的历史版本进行分析可能更加的效率。<br><a id="more"></a></p>
-<h3 id="git-blame定位代码责任人"><a href="#git-blame定位代码责任人" class="headerlink" title="git blame定位代码责任人"></a>git blame定位代码责任人</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git blame -L <span class="number">10</span>,<span class="number">30</span> file.txt<span class="comment">//文件10行到30行的修改记录</span></div><div class="line">git blame -L <span class="number">10</span>,+<span class="number">20</span> file.txt<span class="comment">//文件10行开始，偏移20行的修改记录</span></div></pre></td></tr></table></figure>
-<h3 id="git-bisect-二分查找-查找问题引入版本"><a href="#git-bisect-二分查找-查找问题引入版本" class="headerlink" title="git bisect(二分查找)查找问题引入版本"></a>git bisect(二分查找)查找问题引入版本</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git bisect start</div><div class="line">git bisect bad  <span class="number">079944e6</span></div><div class="line">git bisect good  <span class="number">03</span>rfr44e6</div><div class="line">git bisect reset</div></pre></td></tr></table></figure>
-<h3 id="git-grep查找指定内容的位置"><a href="#git-grep查找指定内容的位置" class="headerlink" title="git grep查找指定内容的位置"></a>git grep查找指定内容的位置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git grep -n xxx<span class="comment">//-n显示行数</span></div><div class="line">git grep -e xxx<span class="comment">//正则查找</span></div><div class="line">git grep -e xxx --or -e yyy<span class="comment">//正则查找</span></div><div class="line">git grep -e xxx -e yyy</div><div class="line">git grep -e xxx --and \(-e xxx --or --not -e yyy\)</div></pre></td></tr></table></figure>
-<h3 id="git-log查找指定内容的历史记录"><a href="#git-log查找指定内容的历史记录" class="headerlink" title="git log查找指定内容的历史记录"></a>git log查找指定内容的历史记录</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git log --GLOG_BUF_MAX --oneline</div><div class="line">git log --SLOG_BUG_MAX --oneline</div></pre></td></tr></table></figure>
+<h3 id="git-blame定位代码责任人"><a href="#git-blame定位代码责任人" class="headerlink" title="git blame定位代码责任人"></a>git blame定位代码责任人</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git blame -L <span class="number">10</span>,<span class="number">30</span> file.txt<span class="comment">//文件10行到30行的修改记录</span></span><br><span class="line">git blame -L <span class="number">10</span>,+<span class="number">20</span> file.txt<span class="comment">//文件10行开始，偏移20行的修改记录</span></span><br></pre></td></tr></table></figure>
+<h3 id="git-bisect-二分查找-查找问题引入版本"><a href="#git-bisect-二分查找-查找问题引入版本" class="headerlink" title="git bisect(二分查找)查找问题引入版本"></a>git bisect(二分查找)查找问题引入版本</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git bisect start</span><br><span class="line">git bisect bad  <span class="number">079944e6</span></span><br><span class="line">git bisect good  <span class="number">03</span>rfr44e6</span><br><span class="line">git bisect reset</span><br></pre></td></tr></table></figure>
+<h3 id="git-grep查找指定内容的位置"><a href="#git-grep查找指定内容的位置" class="headerlink" title="git grep查找指定内容的位置"></a>git grep查找指定内容的位置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git grep -n xxx<span class="comment">//-n显示行数</span></span><br><span class="line">git grep -e xxx<span class="comment">//正则查找</span></span><br><span class="line">git grep -e xxx --or -e yyy<span class="comment">//正则查找</span></span><br><span class="line">git grep -e xxx -e yyy</span><br><span class="line">git grep -e xxx --and \(-e xxx --or --not -e yyy\)</span><br></pre></td></tr></table></figure>
+<h3 id="git-log查找指定内容的历史记录"><a href="#git-log查找指定内容的历史记录" class="headerlink" title="git log查找指定内容的历史记录"></a>git log查找指定内容的历史记录</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log --GLOG_BUF_MAX --oneline</span><br><span class="line">git log --SLOG_BUG_MAX --oneline</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
@@ -290,7 +292,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>js移动端开发 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="触摸事件介绍">
+<meta name="keywords" content="移动端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js移动端开发">
 <meta property="og:url" content="http://water-ice.github.io/2016/11/js-mob.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="触摸事件介绍">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.755Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js移动端开发">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-js-mob" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-js-mob" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -213,9 +215,9 @@ form input.st-default-search-input {
       
         <p>触摸事件介绍</p>
 <a id="more"></a>
-<h2 id="基础事件"><a href="#基础事件" class="headerlink" title="基础事件"></a>基础事件</h2><p>touchstart:当手指触摸屏幕时候触发，即使已经有一个手指放在屏幕上也会触发。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ddddd</div></pre></td></tr></table></figure></p>
-<p>touchmove:当手指在屏幕上滑动的时候连续地触发。在这个事件发生期间，调用preventDefault()事件可以阻止滚动。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
-<p>touchend:当手指从屏幕上离开的时候触发。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
+<h2 id="基础事件"><a href="#基础事件" class="headerlink" title="基础事件"></a>基础事件</h2><p>touchstart:当手指触摸屏幕时候触发，即使已经有一个手指放在屏幕上也会触发。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ddddd</span><br></pre></td></tr></table></figure></p>
+<p>touchmove:当手指在屏幕上滑动的时候连续地触发。在这个事件发生期间，调用preventDefault()事件可以阻止滚动。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>touchend:当手指从屏幕上离开的时候触发。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 <p>touchcancel事件:当系统停止跟踪触摸的时候触发。关于这个事件的确切出发时间，文档中并没有具体说明，咱们只能去猜测了。</p>
 <h2 id="event对象"><a href="#event对象" class="headerlink" title="event对象"></a>event对象</h2><h2 id="触摸事件-touchEvent"><a href="#触摸事件-touchEvent" class="headerlink" title="触摸事件(touchEvent)"></a>触摸事件(touchEvent)</h2><h2 id="2D变换-transform2D"><a href="#2D变换-transform2D" class="headerlink" title="2D变换(transform2D)"></a>2D变换(transform2D)</h2><h2 id="动画-transition"><a href="#动画-transition" class="headerlink" title="动画(transition)"></a>动画(transition)</h2><h2 id="3D动画-transform3D"><a href="#3D动画-transform3D" class="headerlink" title="3D动画(transform3D)"></a>3D动画(transform3D)</h2><h2 id="3D桌面切换"><a href="#3D桌面切换" class="headerlink" title="3D桌面切换"></a>3D桌面切换</h2><h2 id="自定义滚动条"><a href="#自定义滚动条" class="headerlink" title="自定义滚动条"></a>自定义滚动条</h2><h2 id="多指触控事件"><a href="#多指触控事件" class="headerlink" title="多指触控事件"></a>多指触控事件</h2><h2 id="移动端手势js框架介绍"><a href="#移动端手势js框架介绍" class="headerlink" title="移动端手势js框架介绍"></a>移动端手势js框架介绍</h2><p><strong>Hammer.js</strong><br><code>Hammer.js</code>是一个专门用于控制、定制手势的轻量级JavaScript框架，可以识别出常见的触摸、拖动、长按、缩放等手势。支持Android、BlackBerry、iOS及Windows触屏设备。</p>
 <p><strong>jQueryUI</strong><br><code>jQueryUI</code>是一套jQuery JS库的页面UI插件，包含多种常用的页面空间，比如Tabs、拉帘效果、对话框、拖放效果、日期选择、颜色选择、数据排序、窗体大小调整等。能够让开发者轻而易举地制作出一个高度交互的Web应用。</p>
@@ -307,7 +309,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

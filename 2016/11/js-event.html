@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>javascript-各类事件详解 | 0℃不结冰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="事件是一种异步编程的实现方式，本质上是程序各个组成部分之间的通信。DOM支持大量的事件">
+<meta name="keywords" content="事件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript-各类事件详解">
 <meta property="og:url" content="http://water-ice.github.io/2016/11/js-event.html">
 <meta property="og:site_name" content="0℃不结冰">
 <meta property="og:description" content="事件是一种异步编程的实现方式，本质上是程序各个组成部分之间的通信。DOM支持大量的事件">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-15T03:39:05.758Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-各类事件详解">
@@ -57,7 +59,7 @@ form input.st-default-search-input {
     background: #fcfcfc url(/img/search.png) no-repeat 5px 7px;
 }</style>
 </head>
-
+</html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -81,7 +83,7 @@ form input.st-default-search-input {
 		
 		<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 			<label>搜索</label>
-			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search" />
+			<input type="text" id="st-search-input" class="st-default-search-input" maxlength="30" placeholder="Search">
 		</form>
 		
 
@@ -193,10 +195,10 @@ form input.st-default-search-input {
 </nav>
 
       <div class="body-wrap">
-        <article id="post-js-event" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-js-event" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -213,27 +215,33 @@ form input.st-default-search-input {
       
         <p>事件是一种异步编程的实现方式，本质上是程序各个组成部分之间的通信。DOM支持大量的事件<br><a id="more"></a></p>
 <blockquote>
-<p>JavaScript事件详解01<br><a href="http://blog.csdn.net/BaiHuaXiu123/article/details/53148789" target="_blank" rel="external">http://blog.csdn.net/BaiHuaXiu123/article/details/53148789</a>  </p>
+<p>JavaScript事件详解01<br><a href="http://blog.csdn.net/BaiHuaXiu123/article/details/53148789" target="_blank" rel="noopener">http://blog.csdn.net/BaiHuaXiu123/article/details/53148789</a>  </p>
 </blockquote>
-<p>以下写法的this对象都指向Element节点。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// JavaScript代码</span></div><div class="line">element.onclick = print</div><div class="line">element.addEventListener(<span class="string">'click'</span>, print, <span class="literal">false</span>)</div><div class="line">element.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(<span class="keyword">this</span>.id);&#125;</div><div class="line"></div><div class="line"><span class="comment">// HTML代码</span></div><div class="line">&lt;element onclick=<span class="string">"console.log(this.id)"</span>&gt;</div></pre></td></tr></table></figure></p>
-<p>以下写法的this对象，都指向全局对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// JavaScript代码</span></div><div class="line">element.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123; doSomething() &#125;;</div><div class="line">element.setAttribute(<span class="string">'onclick'</span>, <span class="string">'doSomething()'</span>);</div><div class="line"></div><div class="line"><span class="comment">// HTML代码</span></div><div class="line">&lt;element onclick=<span class="string">"doSomething()"</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>以下写法的this对象都指向Element节点。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JavaScript代码</span></span><br><span class="line">element.onclick = print</span><br><span class="line">element.addEventListener(<span class="string">'click'</span>, print, <span class="literal">false</span>)</span><br><span class="line">element.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(<span class="keyword">this</span>.id);&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// HTML代码</span></span><br><span class="line">&lt;element onclick=<span class="string">"console.log(this.id)"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>以下写法的this对象，都指向全局对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JavaScript代码</span></span><br><span class="line">element.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123; doSomething() &#125;;</span><br><span class="line">element.setAttribute(<span class="string">'onclick'</span>, <span class="string">'doSomething()'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// HTML代码</span></span><br><span class="line">&lt;element onclick=<span class="string">"doSomething()"</span>&gt;</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p>JavaScript事件传播02<br><a href="http://blog.csdn.net/BaiHuaXiu123/article/details/53148842" target="_blank" rel="external">http://blog.csdn.net/BaiHuaXiu123/article/details/53148842</a>  </p>
-<p>JavaScript事件Event对象03<br><a href="http://blog.csdn.net/BaiHuaXiu123/article/details/53148850" target="_blank" rel="external">http://blog.csdn.net/BaiHuaXiu123/article/details/53148850</a>  </p>
-<p>JavaScript之鼠标事件04<br><a href="http://blog.csdn.net/BaiHuaXiu123/article/details/53148859" target="_blank" rel="external">http://blog.csdn.net/BaiHuaXiu123/article/details/53148859</a>  </p>
+<p>JavaScript事件传播02<br><a href="http://blog.csdn.net/BaiHuaXiu123/article/details/53148842" target="_blank" rel="noopener">http://blog.csdn.net/BaiHuaXiu123/article/details/53148842</a>  </p>
+</blockquote>
+<blockquote>
+<p>JavaScript事件Event对象03<br><a href="http://blog.csdn.net/BaiHuaXiu123/article/details/53148850" target="_blank" rel="noopener">http://blog.csdn.net/BaiHuaXiu123/article/details/53148850</a>  </p>
+</blockquote>
+<blockquote>
+<p>JavaScript之鼠标事件04<br><a href="http://blog.csdn.net/BaiHuaXiu123/article/details/53148859" target="_blank" rel="noopener">http://blog.csdn.net/BaiHuaXiu123/article/details/53148859</a>  </p>
 </blockquote>
 <p>click事件<br>dblclick事件<br>mouseup事件，mousedown事件<br>mousemove事件<br>mouseover事件，mouseenter事件<br>mouseout事件，mouseleave事件<br>contextmenu</p>
 <blockquote>
-<p>JavaScript之键盘事件05<br><a href="http://blog.csdn.net/BaiHuaXiu123/article/details/53148868" target="_blank" rel="external">http://blog.csdn.net/BaiHuaXiu123/article/details/53148868</a>  </p>
-<p>JavaScript之拖拽事件06<br><a href="http://blog.csdn.net/BaiHuaXiu123/article/details/53148880" target="_blank" rel="external">http://blog.csdn.net/BaiHuaXiu123/article/details/53148880</a>  </p>
+<p>JavaScript之键盘事件05<br><a href="http://blog.csdn.net/BaiHuaXiu123/article/details/53148868" target="_blank" rel="noopener">http://blog.csdn.net/BaiHuaXiu123/article/details/53148868</a>  </p>
+</blockquote>
+<blockquote>
+<p>JavaScript之拖拽事件06<br><a href="http://blog.csdn.net/BaiHuaXiu123/article/details/53148880" target="_blank" rel="noopener">http://blog.csdn.net/BaiHuaXiu123/article/details/53148880</a>  </p>
 </blockquote>
 <p>drag事件<br>dragstart事件<br>dragend事件<br>dragenter事件<br>dragover事件<br>dragleave事件<br>drop事件</p>
 <blockquote>
-<p>javaScript之触摸事件07<br><a href="http://blog.csdn.net/BaiHuaXiu123/article/details/53148887" target="_blank" rel="external">http://blog.csdn.net/BaiHuaXiu123/article/details/53148887</a>  </p>
+<p>javaScript之触摸事件07<br><a href="http://blog.csdn.net/BaiHuaXiu123/article/details/53148887" target="_blank" rel="noopener">http://blog.csdn.net/BaiHuaXiu123/article/details/53148887</a>  </p>
 </blockquote>
 <p>触摸API由三个对象组成。<br>Touch<br>TouchList<br>TouchEvent</p>
 <blockquote>
-<p>javaScript之文档事件08<br><a href="http://blog.csdn.net/BaiHuaXiu123/article/details/53148896" target="_blank" rel="external">http://blog.csdn.net/BaiHuaXiu123/article/details/53148896</a>  </p>
+<p>javaScript之文档事件08<br><a href="http://blog.csdn.net/BaiHuaXiu123/article/details/53148896" target="_blank" rel="noopener">http://blog.csdn.net/BaiHuaXiu123/article/details/53148896</a>  </p>
 </blockquote>
 
       
@@ -315,7 +323,7 @@ form input.st-default-search-input {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 不结冰
+    		&copy; 2019 不结冰
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
